@@ -5,6 +5,7 @@
  * @version v1.16.230.52
  * @name GameTest
  * @memberof MinecraftGameTest
+ * @license MIT
  */
 import { Block, BlockLocation, Entity, ItemStack, Location } from "./Minecraft";
 

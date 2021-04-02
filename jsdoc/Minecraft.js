@@ -5,6 +5,7 @@
  * @version v1.16.230.52
  * @name Minecraft
  * @memberof MinecraftGameTest
+ * @license MIT
  */
 
 export class Block {
