@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
  * @author toka7290
- * @since v1.16.230.54
- * @version v1.16.230.54
+ * @since v1.16.230.52
+ * @version v1.16.230.52
  * @name Minecraft
  * @memberof MinecraftGameTest
  * @license MIT
@@ -2011,59 +2011,9 @@ export class Commands {
   /**
    *
    * @param {string} command
+   * @return {{message:string,statusCode:Number}}
    */
-  static run(command) {
-    return {
-      count: Number(),
-      statusCode: Number(),
-      statusMessage: String(),
-      difficulty: String(),
-      playerNames: Array(""),
-      blockName: String(),
-      fillCount: Number(),
-      gameMode: String(),
-      player: Array(""),
-      name: String(),
-      value: Boolean(),
-      page: Number(),
-      pageCount: Number(),
-      targetname: Array(""),
-      message: String(),
-      recipient: Array(""),
-      sound: String(),
-      position: { x: 0, y: 0, z: 0 },
-      spawnPoint: { x: 0, y: 0, z: 0 },
-      victim: Array(""),
-      time: Number(),
-      itemRemoved: Array(""),
-      amplifier: Number(),
-      effect: String(),
-      itemAmount: Number(),
-      itemName: String(),
-      playerName: Array(""),
-      currentPlayerCount: Number(),
-      maxPlayerCount: Number(),
-      players: String(),
-      destination: { x: 0, y: 0, z: 0 },
-      feature: String(),
-      itemData: Number(),
-      slotId: Number(),
-      slotType: String(),
-      spawnPos: { x: 0, y: 0, z: 0 },
-      victims: Array(""),
-      x: Number(),
-      z: Number(),
-      all_sounds: Boolean(),
-      one_sound: Boolean(),
-      entityType: String(),
-      uID: String(),
-      wasSpawned: Boolean(),
-      matches: Boolean(),
-      compareCount: Number(),
-      amount: Number(),
-      level: Number(),
-    };
-  }
+  static run(command) {}
 }
 
 class Component {

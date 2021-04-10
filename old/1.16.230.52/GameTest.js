@@ -1,13 +1,13 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework GameTest module JSDoc
  * @author toka7290
- * @since v1.16.230.54
- * @version v1.16.230.54
+ * @since v1.16.230.52
+ * @version v1.16.230.52
  * @name GameTest
  * @memberof MinecraftGameTest
  * @license MIT
  */
-import { Block, BlockLocation, Entity, ItemStack, ItemType, Location } from "./Minecraft";
+import { Block, BlockLocation, Entity, ItemStack, Location } from "./Minecraft";
 
 /**
  *
@@ -117,10 +117,10 @@ class GameTestInterface {
     this.assertBlockState = function (stateName, state, blockLocation) {};
     /**
      *
-     * @param {ItemStack} itemStack
+     * @param {string} identifier
      * @param {BlockLocation} blockLocation
      */
-    this.assertContainerContains = function (itemStack, blockLocation) {};
+    this.assertContainerContains = function (identifier, blockLocation) {};
     /**
      *
      * @param {BlockLocation} blockLocation
@@ -133,12 +133,7 @@ class GameTestInterface {
      * @param {function(Entity):void} callback
      */
     this.assertEntityData = function (position, entityIdentifier, callback) {};
-    /**
-     *
-     * @param {Entity} entity
-     * @param {BlockLocation} position
-     */
-    this.assertEntityInstancePresent = function (entity, position) {};
+    // test.assertEntityInstancePresent(entity, position); 1.16.230.52
     /**
      *
      * @param {string} identifier
@@ -180,38 +175,18 @@ class GameTestInterface {
     this.assertEntityHasArmor = function (identifier, slot, armor, blockLocation, evaluation) {};
     /**
      *
-     * @param {string} entityIdentifier
-     * @param {Location} position
-     */
-    this.assertEntityTouching = function (entityIdentifier, position) {};
-    /**
-     *
-     * @param {string} entityIdentifier
-     * @param {Location} position
-     */
-    this.assertEntityNotTouching = function (entityIdentifier, position) {};
-    /**
-     *
-     * @param {ItemType} itemType
-     * @param {BlockLocation} position
-     * @param {number} searchDistance
-     * @param {number} count
-     */
-    this.assertItemEntityCountIs = function (itemType, position, searchDistance, count) {};
-    /**
-     *
-     * @param {ItemType} itemType
+     * @param {ItemStack} itemStack
      * @param {BlockLocation} blockLocation
      * @param {Number} quantity
      */
-    this.assertItemEntityNotPresent = function (itemType, blockLocation, quantity) {};
+    this.assertItemEntityNotPresent = function (itemStack, blockLocation, quantity) {};
     /**
      *
-     * @param {ItemType} itemType
+     * @param {ItemStack} itemStack
      * @param {BlockLocation} blockLocation
      * @param {Number} quantity
      */
-    this.assertItemEntityPresent = function (itemType, blockLocation, quantity) {};
+    this.assertItemEntityPresent = function (itemStack, blockLocation, quantity) {};
     /**
      *
      * @param {BlockLocation} position
@@ -252,12 +227,6 @@ class GameTestInterface {
      * @param {BlockLocation} blockLocation
      */
     this.pullLever = function (blockLocation) {};
-    /**
-     *
-     * @param {BlockLocation} position
-     * @param {number} duration
-     */
-    this.pulseRedstone = function (position, duration) {};
 
     /**
      *
