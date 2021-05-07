@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
  * @author toka7290
- * @since v1.17.0.54
- * @version v1.17.0.54
+ * @since v1.16.230.54
+ * @version v1.16.230.54
  * @name Minecraft
  * @memberof MinecraftGameTest
  * @license MIT
@@ -13,7 +13,6 @@ export class Block {
     /**
      *
      * @param {BlockState} state
-     * @return {any}
      */
     this.setState = function (state) {};
   }
@@ -36,10 +35,10 @@ export class BlockLocation {
   }
   /**
    *
-   * @param {BlockLocation} other
+   * @param {BlockLocation} location
    * @return {boolean}
    */
-  equals(other) {}
+  equals(location) {}
   /**
    *
    * @param {Number} x

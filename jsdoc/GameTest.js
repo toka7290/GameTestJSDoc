@@ -1,20 +1,20 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework GameTest module JSDoc
  * @author toka7290
- * @since v1.16.230.54
- * @version v1.16.230.54
+ * @since v1.17.0.54
+ * @version v1.17.0.54
  * @name GameTest
  * @memberof MinecraftGameTest
  * @license MIT
  */
-import { Block, BlockLocation, Entity, ItemStack, ItemType, Location } from "./Minecraft";
+import * as Minecraft from "./Minecraft";
 
 /**
  *
  * @param {string} category
  * @param {string} indenter
- * @param {function(GameTestInterface):void} callback
- * @return {gametest}
+ * @param {function(Helper):void} callback
+ * @return {RegistrationBuilder}
  */
 export function register(category, indenter, callback) {}
 
@@ -30,102 +30,101 @@ export var Tags = {
   suiteDebug: "suite:debug",
 };
 
-/** @type {any} */
-export const GameTestSequence = undefined;
-export function Helper() {}
-export function RegistrationBuilder() {}
-
-class gametest {
+class RegistrationBuilder {
   constructor() {
     /**
      *  @method
-     * @param {Number} time
-     * @return {gametest}
+     * @param {('night'|'day')} batchName
+     * @return {RegistrationBuilder}
      */
-    this.batch = function (time) {};
+    this.batch = function (batchName) {};
     /**
      *
-     * @param {boolean} value
-     * @return {gametest}
+     * @param {boolean} isRequired
+     * @return {RegistrationBuilder}
      */
-    this.required = function (value) {};
+    this.required = function (isRequired) {};
     /**
      *
-     * @param {Number} num
-     * @return {gametest}
+     * @param {Number} attemptCount
+     * @return {RegistrationBuilder}
      */
-    this.requiredSuccessfulAttempts = function (num) {};
+    this.requiredSuccessfulAttempts = function (attemptCount) {};
     /**
      *
-     * @param {Number} num
-     * @return {gametest}
+     * @param {Number} attemptCount
+     * @return {RegistrationBuilder}
      */
-    this.maxAttempts = function (num) {};
+    this.maxAttempts = function (attemptCount) {};
     /**
      *
-     * @param {Number} tick
-     * @return {gametest}
+     * @param {Number} tickCount
+     * @return {RegistrationBuilder}
      */
-    this.maxTicks = function (tick) {};
+    this.maxTicks = function (tickCount) {};
     /**
      *
-     * @param {Number} tick
-     * @return {gametest}
+     * @param {Number} tickCount
+     * @return {RegistrationBuilder}
      */
-    this.setupTicks = function (tick) {};
+    this.setupTicks = function (tickCount) {};
     /**
      *
-     * @param {string} structure
-     * @return {gametest}
+     * @param {string} structureName
+     * @return {RegistrationBuilder}
      */
-    this.structureName = function (structure) {};
+    this.structureName = function (structureName) {};
     /**
      *
-     * @param {Number} distance
-     * @return {gametest}
+     * @param {Number} paddingBlocks
+     * @return {RegistrationBuilder}
      */
-    this.padding = function (distance) {};
+    this.padding = function (paddingBlocks) {};
     /**
      *
      * @param {string} tag
-     * @return {gametest}
+     * @return {RegistrationBuilder}
      */
     this.tag = function (tag) {};
   }
 }
 
-class GameTestInterface {
+class Helper {
   constructor() {
     /**
      * @function
-     * @param {Block} blockObj
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.Block} block
+     * @param {Minecraft.BlockLocation} position
+     * @return {any}
      */
-    this.assertBlockNotPresent = function (blockObj, blockLocation) {};
+    this.assertBlockNotPresent = function (block, position) {};
     /**
      *
-     * @param {Block} blockObj
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.Block} block
+     * @param {Minecraft.BlockLocation} position
+     * @return {any}
      */
-    this.assertBlockPresent = function (blockObj, blockLocation) {};
+    this.assertBlockPresent = function (block, position) {};
     /**
      *
-     * @param {string} stateName
-     * @param {string} state
-     * @param {BlockLocation} blockLocation
+     * @param {string} blockStateName
+     * @param {string} stateValue
+     * @param {Minecraft.BlockLocation} position
+     * @return {any}
      */
-    this.assertBlockState = function (stateName, state, blockLocation) {};
+    this.assertBlockState = function (blockStateName, stateValue, position) {};
     /**
      *
-     * @param {ItemStack} itemStack
-     * @param {BlockLocation} blockLocation
+     * @param {ItemStack} itemName
+     * @param {Minecraft.BlockLocation} position
+     * @return {any}
      */
-    this.assertContainerContains = function (itemStack, blockLocation) {};
+    this.assertContainerContains = function (itemName, position) {};
     /**
      *
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.BlockLocation} position
      */
-    this.assertContainerEmpty = function (blockLocation) {};
+    this.assertContainerEmpty = function (position) {};
     /**
      *
      * @param {BlockLocation} position
@@ -135,35 +134,40 @@ class GameTestInterface {
     this.assertEntityData = function (position, entityIdentifier, callback) {};
     /**
      *
-     * @param {Entity} entity
+     * @param {Minecraft.Entity} entity
      * @param {BlockLocation} position
      */
     this.assertEntityInstancePresent = function (entity, position) {};
     /**
      *
-     * @param {string} identifier
-     * @param {string} component
-     * @param {BlockLocation} blockLocation
-     * @param {boolean} evaluation
+     * @param {string} entityIdentifier
+     * @param {string} componentIdentifier
+     * @param {Minecraft.BlockLocation} position
+     * @param {boolean} hasComponent
      */
-    this.assertEntityHasComponent = function (identifier, component, blockLocation, evaluation) {};
+    this.assertEntityHasComponent = function (
+      entityIdentifier,
+      componentIdentifier,
+      position,
+      hasComponent
+    ) {};
     /**
      *
-     * @param {string} identifier
-     * @param {BlockLocation} blockLocation
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
      */
-    this.assertEntityNotPresent = function (identifier, blockLocation) {};
+    this.assertEntityNotPresent = function (entityIdentifier, position) {};
     /**
      *
-     * @param {string} identifier
+     * @param {string} entityIdentifier
      */
-    this.assertEntityNotPresentInArea = function (identifier) {};
+    this.assertEntityNotPresentInArea = function (entityIdentifier) {};
     /**
      *
-     * @param {string} identifier
-     * @param {BlockLocation} blockLocation
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
      */
-    this.assertEntityPresent = function (identifier, blockLocation) {};
+    this.assertEntityPresent = function (entityIdentifier, position) {};
     /**
      *
      * @param {string} entityIdentifier
@@ -171,13 +175,13 @@ class GameTestInterface {
     this.assertEntityPresentInArea = function (entityIdentifier) {};
     /**
      *
-     * @param {string} identifier
+     * @param {string} entityIdentifier
      * @param {Number} slot
      * @param {string} armor
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.BlockLocation} position
      * @param {boolean} evaluation
      */
-    this.assertEntityHasArmor = function (identifier, slot, armor, blockLocation, evaluation) {};
+    this.assertEntityHasArmor = function (entityIdentifier, slot, armor, position, evaluation) {};
     /**
      *
      * @param {string} entityIdentifier
@@ -201,17 +205,17 @@ class GameTestInterface {
     /**
      *
      * @param {ItemType} itemType
-     * @param {BlockLocation} blockLocation
-     * @param {Number} quantity
+     * @param {Minecraft.BlockLocation} position
+     * @param {Number} searchDistance
      */
-    this.assertItemEntityNotPresent = function (itemType, blockLocation, quantity) {};
+    this.assertItemEntityNotPresent = function (itemType, position, searchDistance) {};
     /**
      *
-     * @param {ItemType} itemType
-     * @param {BlockLocation} blockLocation
-     * @param {Number} quantity
+     * @param {ItemType} item
+     * @param {Minecraft.BlockLocation} position
+     * @param {Number} searchDistance
      */
-    this.assertItemEntityPresent = function (itemType, blockLocation, quantity) {};
+    this.assertItemEntityPresent = function (item, position, searchDistance) {};
     /**
      *
      * @param {BlockLocation} position
@@ -227,9 +231,9 @@ class GameTestInterface {
 
     /**
      *
-     * @param {string} message
+     * @param {string} errorMessage
      */
-    this.fail = function (message) {};
+    this.fail = function (errorMessage) {};
     /**
      *
      * @param {function():void} callback
@@ -239,9 +243,9 @@ class GameTestInterface {
     this.killAllEntities = function () {};
     /**
      *
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.BlockLocation} position
      */
-    this.pressButton = function (blockLocation) {};
+    this.pressButton = function (position) {};
     /**
      *
      * @param {string} text
@@ -249,9 +253,9 @@ class GameTestInterface {
     this.print = function (text) {};
     /**
      *
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.BlockLocation} position
      */
-    this.pullLever = function (blockLocation) {};
+    this.pullLever = function (position) {};
     /**
      *
      * @param {BlockLocation} position
@@ -261,10 +265,10 @@ class GameTestInterface {
 
     /**
      *
-     * @param {Number} tick
+     * @param {Number} delayTicks
      * @param {function():void} callback
      */
-    this.runAfterDelay = function (tick, callback) {};
+    this.runAfterDelay = function (delayTicks, callback) {};
     /**
      *
      * @param {Number} tick
@@ -273,18 +277,18 @@ class GameTestInterface {
     this.runAtTickTime = function (tick, callback) {};
     /**
      * @function
-     * @param {Block} blockObj
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.Block} block
+     * @param {Minecraft.BlockLocation} position
      */
-    this.setBlock = function (blockObj, blockLocation) {};
-    // test.setEntityTamed(identifier, blockLocation); 1.16.230.50
+    this.setBlock = function (block, position) {};
+    // test.setEntityTamed(identifier, position); 1.16.230.50
     /**
      *
-     * @param {string} identifier
-     * @param {BlockLocation} blockLocation
-     * @return {Entity}
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
+     * @return {Minecraft.Entity}
      */
-    this.spawn = function (identifier, blockLocation) {};
+    this.spawn = function (entityIdentifier, position) {};
     /**
      *
      * @param {ItemStack} itemType
@@ -293,7 +297,7 @@ class GameTestInterface {
     this.spawnItem = function (itemType, position) {};
 
     /**
-     * @return {sequence}
+     * @return {GameTestSequence}
      */
     this.startSequence = function () {};
 
@@ -321,72 +325,78 @@ class GameTestInterface {
     this.succeedWhen = function (callback) {};
     /**
      *
-     * @param {Block} blockObj
-     * @param {BlockLocation} blockLocation
+     * @param {Minecraft.Block} block
+     * @param {Minecraft.BlockLocation} position
      */
-    this.succeedWhenBlockPresent = function (blockObj, blockLocation) {};
+    this.succeedWhenBlockPresent = function (block, position) {};
     /**
      *
-     * @param {string} identifier
-     * @param {string} component
-     * @param {BlockLocation} blockLocation
-     * @param {boolean} have
+     * @param {string} entityIdentifier
+     * @param {string} componentIdentifier
+     * @param {Minecraft.BlockLocation} position
+     * @param {boolean} hasComponent
      */
-    this.succeedWhenEntityHasComponent = function (identifier, component, blockLocation, have) {};
+    this.succeedWhenEntityHasComponent = function (
+      entityIdentifier,
+      componentIdentifier,
+      position,
+      hasComponent
+    ) {};
     /**
      *
-     * @param {string} identifier
-     * @param {BlockLocation} blockLocation
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
      */
-    this.succeedWhenEntityNotPresent = function (identifier, blockLocation) {};
+    this.succeedWhenEntityNotPresent = function (entityIdentifier, position) {};
     /**
      *
-     * @param {string} identifier
-     * @param {BlockLocation} blockLocation
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
      */
-    this.succeedWhenEntityPresent = function (identifier, blockLocation) {};
+    this.succeedWhenEntityPresent = function (entityIdentifier, position) {};
   }
 }
 
-class sequence {
+class GameTestSequence {
   constructor() {
     /**
      *
-     * @param {function():void} callback
+     * @param {function():undefined} callback
+     * @return {GameTestSequence}
      */
     this.thenExecute = function (callback) {};
     /**
      *
-     * @param {function():void} callback
+     * @param {Number} delayTicks
+     * @param {function():undefined} callback
+     * @return {GameTestSequence}
      */
-    this.thenExecute = function (callback) {};
+    this.thenExecuteAfter = function (delayTicks, callback) {};
     /**
      *
-     * @param {Number} tick
-     * @param {function():void} callback
+     * @param {string} errorMessage
+     * @return {void}
      */
-    this.thenExecuteAfter = function (tick, callback) {};
+    this.thenFail = function (errorMessage) {};
     /**
      *
-     * @param {string} message
+     * @param {Number} delayTicks
+     * @return {GameTestSequence}
      */
-    this.thenFail = function (message) {};
-    /**
-     *
-     * @param {Number} tick
-     */
-    this.thenIdle = function (tick) {};
+    this.thenIdle = function (delayTicks) {};
     this.thenSucceed = function () {};
     /**
      *
-     * @param {function():void} callback
+     * @param {function():undefined} callback
+     * @return {GameTestSequence}
      */
     this.thenWait = function (callback) {};
     /**
      *
-     * @param {Number} tick
-     * @param {function():void} callback
+     * @param {Number} delayTicks
+     * @param {function():undefined} callback
+     * @return {GameTestSequence}
      */
-    this.thenWaitWithDelay = function (tick, callback) {};
+    this.thenWaitWithDelay = function (delayTicks, callback) {};
   }
 }
