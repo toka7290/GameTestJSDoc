@@ -2032,8 +2032,8 @@ export class Commands {
       message: String(),
       recipient: Array(""),
       sound: String(),
-      position: { x: 0, y: 0, z: 0 },
-      spawnPoint: { x: 0, y: 0, z: 0 },
+      position: { x = 0, y = 0, z = 0 },
+      spawnPoint: { x = 0, y = 0, z = 0 },
       victim: Array(""),
       time: Number(),
       itemRemoved: Array(""),
@@ -2045,12 +2045,12 @@ export class Commands {
       currentPlayerCount: Number(),
       maxPlayerCount: Number(),
       players: String(),
-      destination: { x: 0, y: 0, z: 0 },
+      destination: { x = 0, y = 0, z = 0 },
       feature: String(),
       itemData: Number(),
       slotId: Number(),
       slotType: String(),
-      spawnPos: { x: 0, y: 0, z: 0 },
+      spawnPos: { x = 0, y = 0, z = 0 },
       victims: Array(""),
       x: Number(),
       z: Number(),
@@ -2069,28 +2069,271 @@ export class Commands {
 
 class Component {
   constructor() {
-    /**@type {Number} */
+    // return values
+    /**
+     * @type {string}
+     */
+    this.id = undefined;
+    /**
+     * @type {number}
+     */
+    this.maxTurn = undefined;
+    /**
+     * @type {number}
+     */
     this.value = undefined;
-    /**@type {Number} */
+    this.setCurrent = (val) => {};
+    this.restToMinValue = () => {};
+    this.restToMaxValue = () => {};
+    this.restToDefaultValue = () => {};
+    /**
+     * @type {number}
+     */
     this.current = undefined;
-    /**@type {Number} */
-    this.softDistance = undefined;
+    this.setAirSupply = (val) => {};
     /**
-     * @return {string}
+     * @type {number}
      */
-    this.getName = () => {};
+    this.totalSupply = undefined;
     /**
-     *
-     * @param {Number} num
+     * @type {number}
      */
-    this.setColor = (num) => {};
-    this.leash = () => {};
+    this.suffocateTime = undefined;
+    /**
+     * @type {number}
+     */
+    this.inhaleTime = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.breathesAir = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.breathesWater = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.breathesLava = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.breathesSolids = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.generatesBubbles = undefined;
+    /**
+     * @type {Array<string>}
+     */
+    this.breatheBlocks = undefined;
+    /**
+     * @type {Array<string>}
+     */
+    this.nonBreatheBlocks = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.isAmphibious = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.avoidSun = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canPassDoors = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canOpenDoors = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canOpenIronDoors = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canBreakDoors = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.avoidWater = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.avoidDamageBlocks = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canFloat = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canSink = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canPathOverWater = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canPathOverLava = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canWalkInLava = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.avoidPortals = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canWalk = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canSwim = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canBreach = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canJump = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canPathFromAir = undefined;
+    /**
+     * 首紐でつなぎます
+     * @param {Minecraft.Entity} entity 首紐でつなぐ先のエンティティです。
+     */
+    this.leash = (entity) => {};
+    /**
+     * 首紐をとります
+     */
     this.unleash = () => {};
     /**
-     *
-     * @param {boolean} status
+     * @type {number}
+     */
+    this.softDistance = undefined;
+    /**
+     * @type {number}
+     */
+    this.maxTurn = undefined;
+    this.addRider = (val) => {};
+    this.ejectRider = (val) => {};
+    this.ejectRiders = () => {};
+    /**
+     * @type {number}
+     */
+    this.seatCount = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.crouchingSkipInteract = undefined;
+    this.interactText = "";
+    /**
+     * @type {Array<string>}
+     */
+    this.familyTypes = undefined;
+    /**
+     * @type {number}
+     */
+    this.controllingSeat = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.pullInEntities = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.riderCanInteract = undefined;
+    this.seats = [
+      {
+        position: new Location(0, 0, 0),
+        minRiderCount: 0,
+        maxRiderCount: 0,
+        lockRiderRotation: 0,
+      },
+    ];
+    /**
+     * 手懐けの状態を変更します。
+     * @param {boolean} status 手懐けの状態を設定します。 this.true = 手懐けられた状態 this.false = 手懐けられていない状態
      */
     this.setTamed = (status) => {};
+    this.filters = {};
+    /**
+     * @type {boolean}
+     */
+    this.forceUse = undefined;
+    this.items = [
+      {
+        effects: [],
+        healAmount: 0,
+        item: "",
+      },
+    ];
+
+    /**
+     * @type {number}
+     */
+    this.additionalSlotsPerStrength = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.canBeSiphonedFrom = undefined;
+    this.containerType = "";
+    /**
+     * @type {number}
+     */
+    this.inventorySize = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.private = undefined;
+    /**
+     * @type {boolean}
+     */
+    this.restrictToOwner = undefined;
+    this.container = {
+      /**
+       * slotにアイテムを追加
+       * @param {number} slot
+       * @param {Minecraft.ItemStack} itemStack
+       */
+      setItem: (slot, itemStack) => {},
+      /**
+       * slotのアイテムを取得
+       * @param {number} slot 取得するスロット番号
+       * @return {Minecraft.ItemStack}
+       */
+      getItem: (slot) => {},
+      /**
+       * 空いているスロットにItemStackを追加
+       * @param {Minecraft.ItemStack} itemStack
+       */
+      addItem: (itemStack) => {},
+      /**
+       * fromSlotからtoContainerのtoSlotにアイテムを転送
+       * @param {number} fromSlot
+       * @param {number} toSlot
+       * @param {Minecraft.Container} toContainer
+       */
+      transferItem: (fromSlot, toSlot, toContainer) => {},
+      /**
+       * otherContainerのotherSlotとslotのアイテムを交換します。
+       * @param {number} slot
+       * @param {number} otherSlot
+       * @param {Minecraft.Container} otherContainer
+       */
+      swapItems: (slot, otherSlot, otherContainer) => {},
+      size: 0,
+      emptySlotsCount: 0,
+    }
   }
 }
 

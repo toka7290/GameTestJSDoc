@@ -354,6 +354,37 @@ class Helper {
      * @param {Minecraft.BlockLocation} position
      */
     this.succeedWhenEntityPresent = function (entityIdentifier, position) {};
+    /**
+     *
+     * @param {boolean} condition
+     * @param {string} errorMessage
+     */
+    this.assert = function (condition, errorMessage) {};
+    /**
+     *
+     * @param {Minecraft.BlockLocation} worldLocation
+     * @return {Minecraft.BlockLocation}
+     */
+    this.relativeLocation = function (worldLocation) {};
+    /**
+     * @param {string} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
+     * @return {Minecraft.Entity}
+     */
+    this.spawnWithoutBehaviors = function (entityIdentifier, position) {};
+    /**
+     *
+     * @param {Minecraft.Entity} target
+     * @param {Minecraft.BlockLocation} blockLocation
+     * @param {number} speed
+     */
+    this.walkTo = function (target, blockLocation, speed) {};
+    /**
+     *
+     * @param {Minecraft.BlockLocation} relativeLocation
+     * @return {Minecraft.BlockLocation}
+     */
+    this.worldLocation = function (relativeLocation) {};
   }
 }
 
