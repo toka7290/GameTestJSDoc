@@ -110,10 +110,6 @@ export class BlockLocation {
   above() {return}
 }
 
-class BlockState {
-  constructor() {return}
-}
-
 /**
  * @enum {String}
  */
@@ -2905,7 +2901,7 @@ export class BlockTypes  {
   yellowGlazedTerracotta
 }
 
-class BlockType{
+export class BlockType{
   /**
    * @return {String}
    */
