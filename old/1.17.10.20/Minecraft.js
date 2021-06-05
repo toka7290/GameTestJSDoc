@@ -1,77 +1,21 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
  * @author toka7290
- * @since v1.17.10.21
- * @version v1.17.10.21
+ * @since v1.17.0.54
+ * @version v1.17.0.54
  * @name Minecraft
  * @memberof MinecraftGameTest
  * @license MIT
  */
 
-class Block {
+export class Block {
   constructor() {
     /**
-     * @return {Boolean}
-     */
-    this.canBeWaterlogged = function(){return};
-    /**
-     * @return {BlockType}
-     */
-    this.getBlockData = function(){return};
-    /**
      *
-     * @param {String} ComponentName
-     * @return {Component}
+     * @param {BlockState} state
+     * @return {any}
      */
-    this.getComponent = function(){return};
-    /**
-     * @return {BlockLocation}
-     */
-    this.getLocation = function(){return};
-    /**
-     * @return {String[]}
-     */
-    this.getTags = function(){return};
-    /**
-     * @return {Boolean}
-     */
-    this.isEmpty = function(){return};
-    /**
-     * @return {Boolean}
-     */
-    this.isWaterlogged = function(){return};
-    /**
-     * @param {String} tagName
-     * @return {Boolean}
-     */
-    this.hasTag = function(tagName){return};
-    /**
-     *
-     * @param {BlockPermutation} permutation
-     */
-    this.setPermutation = function(permutation){return};
-    /**
-     *
-     * @param {BlockType} blockType
-     */
-    this.setType = function(blockType){return};
-    /**
-     *
-     * @param {Boolean} logged
-     */
-    this.setWaterlogged = function(logged){return};
-    /**
-     * @type {Number}
-     */
-    this.x = Number();
-    /**
-     * @type {Number}
-     */
-    this.y = Number();
-    /**
-     * @type {Number}
-     */
-    this.z = Number();
+    this.setState = function (state) {};
   }
 }
 /**
@@ -93,9 +37,9 @@ export class BlockLocation {
   /**
    *
    * @param {BlockLocation} other
-   * @return {Boolean}
+   * @return {boolean}
    */
-  equals(other) {return}
+  equals(other) {}
   /**
    *
    * @param {Number} x
@@ -103,2901 +47,1971 @@ export class BlockLocation {
    * @param {Number} z
    * @return {BlockLocation}
    */
-  offset(x, y, z) {return}
+  offset(x, y, z) {}
   /**
    * @return {BlockLocation}
    */
-  above() {return}
+  above() {}
 }
 
 class BlockState {
-  constructor() {return}
+  constructor() {}
 }
 
-/**
- * @enum {String}
- */
-export const BlockProperties = {
-  multiFaceDirectionBits : "multi_face_direction_bits",
-  bigDripleafHead : "big_dripleaf_head",
-  bigDripleafTilt : "big_dripleaf_tilt",
-  growingPlantAge : "growing_plant_age",
-  dripstoneThickness : "dripstone_thickness",
-  respawnAnchorCharge : "respawn_anchor_charge",
-  twistingVinesAge : "twisting_vines_age",
-  rotation : "rotation",
-  wallConnectionTypeWest : "wall_connection_type_west",
-  wallConnectionTypeSouth : "wall_connection_type_south",
-  wallConnectionTypeEast : "wall_connection_type_east",
-  wallConnectionTypeNorth : "wall_connection_type_north",
-  wallPostBit : "wall_post_bit",
-  weepingVinesAge : "weeping_vines_age",
-  honeyLevel : "honey_level",
-  blockLightLevel : "block_light_level",
-  pillarAxis : "pillar_axis",
-  leverDirection : "lever_direction",
-  coralFanDirection : "coral_fan_direction",
-  composterFillLevel : "composter_fill_level",
-  extinguished : "extinguished",
-  structureBlockType : "structure_block_type",
-  structureVoidType : "structure_void_type",
-  attachment : "attachment",
-  coralHangTypeBit : "coral_hang_type_bit",
-  strippedBit : "stripped_bit",
-  hanging : "hanging",
-  cauldronLiquid : "cauldron_liquid",
-  coralColor : "coral_color",
-  seaGrassType : "sea_grass_type",
-  chemistryTableType : "chemistry_table_type",
-  doublePlantType : "double_plant_type",
-  prismarineBlockType : "prismarine_block_type",
-  wallBlockType : "wall_block_type",
-  hugeMushroomBits : "huge_mushroom_bits",
-  stoneBrickType : "stone_brick_type",
-  monsterEggStoneType : "monster_egg_stone_type",
-  stoneSlabType4 : "stone_slab_type_4",
-  stoneSlabType3 : "stone_slab_type_3",
-  stoneSlabType2 : "stone_slab_type_2",
-  stoneSlabType : "stone_slab_type",
-  flowerType : "flower_type",
-  tallGrassType : "tall_grass_type",
-  sandStoneType : "sand_stone_type",
-  spongeType : "sponge_type",
-  newLeafType : "new_leaf_type",
-  oldLeafType : "old_leaf_type",
-  deprecated : "deprecated",
-  chiselType : "chisel_type",
-  newLogType : "new_log_type",
-  oldLogType : "old_log_type",
-  sandType : "sand_type",
-  dirtType : "dirt_type",
-  stoneType : "stone_type",
-  woodType : "wood_type",
-  stabilityCheck : "stability_check",
-  stability : "stability",
-  bambooLeafSize : "bamboo_leaf_size",
-  bambooStalkThickness : "bamboo_stalk_thickness",
-  color : "color",
-  coralDirection : "coral_direction",
-  weirdoDirection : "weirdo_direction",
-  groundSignDirection : "ground_sign_direction",
-  crackedState : "cracked_state",
-  turtleEggCount : "turtle_egg_count",
-  dragDown : "drag_down",
-  torchFacingDirection : "torch_facing_direction",
-  saplingType : "sapling_type",
-  itemFrameMapBit : "item_frame_map_bit",
-  clusterCount : "cluster_count",
-  deadBit : "dead_bit",
-  colorBit : "color_bit",
-  allowUnderwaterBit : "allow_underwater_bit",
-  vineDirectionBits : "vine_direction_bits",
-  upsideDownBit : "upside_down_bit",
-  updateBit : "update_bit",
-  triggeredBit : "triggered_bit",
-  topSlotBit : "top_slot_bit",
-  toggleBit : "toggle_bit",
-  suspendedBit : "suspended_bit",
-  repeaterDelay : "repeater_delay",
-  redstoneSignal : "redstone_signal",
-  railDirection : "rail_direction",
-  railDataBit : "rail_data_bit",
-  poweredBit : "powered_bit",
-  persistentBit : "persistent_bit",
-  outputLitBit : "output_lit_bit",
-  outputSubtractBit : "output_subtract_bit",
-  openBit : "open_bit",
-  occupiedBit : "occupied_bit",
-  kelpAge : "kelp_age",
-  noDropBit : "no_drop_bit",
-  moisturizedAmount : "moisturized_amount",
-  liquidDepth : "liquid_depth",
-  inWallBit : "in_wall_bit",
-  infiniburnBit : "infiniburn_bit",
-  height : "height",
-  headPieceBit : "head_piece_bit",
-  growth : "growth",
-  fillLevel : "fill_level",
-  facingDirection : "facing_direction",
-  explodeBit : "explode_bit",
-  endPortalEyeBit : "end_portal_eye_bit",
-  direction : "direction",
-  upperBlockBit : "upper_block_bit",
-  doorHingeBit : "door_hinge_bit",
-  disarmedBit : "disarmed_bit",
-  damage : "damage",
-  coveredBit : "covered_bit",
-  conditionalBit : "conditional_bit",
-  buttonPressedBit : "button_pressed_bit",
-  brewingStandSlotCBit : "brewing_stand_slot_c_bit",
-  brewingStandSlotBBit : "brewing_stand_slot_b_bit",
-  brewingStandSlotABit : "brewing_stand_slot_a_bit",
-  biteCounter : "bite_counter",
-  portalAxis : "portal_axis",
-  attachedBit : "attached_bit",
-  age : "age",
-  ageBit : "age_bit",
+export class BlockStates {
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static multiFaceDirectionBits = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static bigDripleafHead = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static bigDripleafTilt = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static growingPlantAge = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static dripstoneThickness = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static respawnAnchorCharge = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static twistingVinesAge = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static rotation = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallConnectionTypeWest = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallConnectionTypeSouth = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallConnectionTypeEast = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallConnectionTypeNorth = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallPostBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static weepingVinesAge = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static honeyLevel = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static blockLightLevel = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static pillarAxis = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static leverDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static coralFanDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static composterFillLevel = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static extinguished = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static structureBlockType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static structureVoidType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static attachment = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static coralHangTypeBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static strippedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static hanging = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static cauldronLiquid = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static coralColor = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static seaGrassType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static chemistryTableType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static doublePlantType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static prismarineBlockType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static wallBlockType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static hugeMushroomBits = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneBrickType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static monsterEggStoneType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneSlabType4 = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneSlabType3 = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneSlabType2 = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneSlabType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static flowerType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static tallGrassType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static sandStoneType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static spongeType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static newLeafType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static oldLeafType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static deprecated = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static chiselType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static newLogType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static oldLogType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static sandType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static dirtType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stoneType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static woodType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stabilityCheck = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static stability = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static bambooLeafSize = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static bambooStalkThickness = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static color = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static coralDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static weirdoDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static groundSignDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static crackedState = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static turtleEggCount = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static dragDown = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static torchFacingDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static saplingType = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static itemFrameMapBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static clusterCount = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static deadBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static colorBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static allowUnderwaterBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static vineDirectionBits = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static upsideDownBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static updateBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static triggeredBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static topSlotBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static toggleBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static suspendedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static repeaterDelay = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static redstoneSignal = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static railDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static railDataBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static poweredBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static persistentBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static outputLitBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static outputSubtractBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static openBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static occupiedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static kelpAge = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static noDropBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static moisturizedAmount = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static liquidDepth = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static inWallBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static infiniburnBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static height = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static headPieceBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static growth = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static fillLevel = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static facingDirection = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static explodeBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static endPortalEyeBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static direction = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static upperBlockBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static doorHingeBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static disarmedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static damage = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static coveredBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static conditionalBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static buttonPressedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static brewingStandSlotCBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static brewingStandSlotBBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static brewingStandSlotABit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static biteCounter = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static portalAxis = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static attachedBit = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static age = function (val) {};
+  /**
+   *
+   * @param {string|Number|boolean} val
+   * @return {BlockState}
+   */
+  static ageBit = function (val) {};
 }
 
-export class BlockTypes  {
-  /**
-   * @return {BlockType[]}
-   */
-  getAllBlockTypes = function(){return}
-  /**
-   * @param {String} id
-   * @return {BlockType}
-   */
-  get(id){return}
-
-  // vanilla blocks
-  /**
-   * @type {BlockType}
-   */
-  acaciaButton
-  /**
-   * @type {BlockType}
-   */
-  acaciaDoor
-  /**
-   * @type {BlockType}
-   */
-  acaciaFenceGate
-  /**
-   * @type {BlockType}
-   */
-  acaciaPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  acaciaStairs
-  /**
-   * @type {BlockType}
-   */
-  acaciaStandingSign
-  /**
-   * @type {BlockType}
-   */
-  acaciaTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  acaciaWallSign
-  /**
-   * @type {BlockType}
-   */
-  activatorRail
-  /**
-   * @type {BlockType}
-   */
-  air
-  /**
-   * @type {BlockType}
-   */
-  allow
-  /**
-   * @type {BlockType}
-   */
-  amethystBlock
-  /**
-   * @type {BlockType}
-   */
-  amethystCluster
-  /**
-   * @type {BlockType}
-   */
-  ancientDebris
-  /**
-   * @type {BlockType}
-   */
-  andesiteStairs
-  /**
-   * @type {BlockType}
-   */
-  anvil
-  /**
-   * @type {BlockType}
-   */
-  azalea
-  /**
-   * @type {BlockType}
-   */
-  azaleaLeaves
-  /**
-   * @type {BlockType}
-   */
-  azaleaLeavesFlowered
-  /**
-   * @type {BlockType}
-   */
-  bamboo
-  /**
-   * @type {BlockType}
-   */
-  bambooSapling
-  /**
-   * @type {BlockType}
-   */
-  barrel
-  /**
-   * @type {BlockType}
-   */
-  barrier
-  /**
-   * @type {BlockType}
-   */
-  basalt
-  /**
-   * @type {BlockType}
-   */
-  beacon
-  /**
-   * @type {BlockType}
-   */
-  bed
-  /**
-   * @type {BlockType}
-   */
-  bedrock
-  /**
-   * @type {BlockType}
-   */
-  beeNest
-  /**
-   * @type {BlockType}
-   */
-  beehive
-  /**
-   * @type {BlockType}
-   */
-  beetroot
-  /**
-   * @type {BlockType}
-   */
-  bell
-  /**
-   * @type {BlockType}
-   */
-  bigDripleaf
-  /**
-   * @type {BlockType}
-   */
-  birchButton
-  /**
-   * @type {BlockType}
-   */
-  birchDoor
-  /**
-   * @type {BlockType}
-   */
-  birchFenceGate
-  /**
-   * @type {BlockType}
-   */
-  birchPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  birchStairs
-  /**
-   * @type {BlockType}
-   */
-  birchStandingSign
-  /**
-   * @type {BlockType}
-   */
-  birchTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  birchWallSign
-  /**
-   * @type {BlockType}
-   */
-  blackGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  blackstone
-  /**
-   * @type {BlockType}
-   */
-  blackstoneDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  blackstoneSlab
-  /**
-   * @type {BlockType}
-   */
-  blackstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  blackstoneWall
-  /**
-   * @type {BlockType}
-   */
-  blastFurnace
-  /**
-   * @type {BlockType}
-   */
-  blueGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  blueIce
-  /**
-   * @type {BlockType}
-   */
-  boneBlock
-  /**
-   * @type {BlockType}
-   */
-  bookshelf
-  /**
-   * @type {BlockType}
-   */
-  borderBlock
-  /**
-   * @type {BlockType}
-   */
-  brewingStand
-  /**
-   * @type {BlockType}
-   */
-  brickBlock
-  /**
-   * @type {BlockType}
-   */
-  brickStairs
-  /**
-   * @type {BlockType}
-   */
-  brownGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  brownMushroom
-  /**
-   * @type {BlockType}
-   */
-  brownMushroomBlock
-  /**
-   * @type {BlockType}
-   */
-  bubbleColumn
-  /**
-   * @type {BlockType}
-   */
-  buddingAmethyst
-  /**
-   * @type {BlockType}
-   */
-  cactus
-  /**
-   * @type {BlockType}
-   */
-  cake
-  /**
-   * @type {BlockType}
-   */
-  calcite
-  /**
-   * @type {BlockType}
-   */
-  camera
-  /**
-   * @type {BlockType}
-   */
-  campfire
-  /**
-   * @type {BlockType}
-   */
-  carpet
-  /**
-   * @type {BlockType}
-   */
-  carrots
-  /**
-   * @type {BlockType}
-   */
-  cartographyTable
-  /**
-   * @type {BlockType}
-   */
-  carvedPumpkin
-  /**
-   * @type {BlockType}
-   */
-  cauldron
-  /**
-   * @type {BlockType}
-   */
-  caveVines
-  /**
-   * @type {BlockType}
-   */
-  caveVinesBodyWithBerries
-  /**
-   * @type {BlockType}
-   */
-  caveVinesHeadWithBerries
-  /**
-   * @type {BlockType}
-   */
-  chain
-  /**
-   * @type {BlockType}
-   */
-  chainCommandBlock
-  /**
-   * @type {BlockType}
-   */
-  chemicalHeat
-  /**
-   * @type {BlockType}
-   */
-  chemistryTable
-  /**
-   * @type {BlockType}
-   */
-  chest
-  /**
-   * @type {BlockType}
-   */
-  chiseledDeepslate
-  /**
-   * @type {BlockType}
-   */
-  chiseledNetherBricks
-  /**
-   * @type {BlockType}
-   */
-  chiseledPolishedBlackstone
-  /**
-   * @type {BlockType}
-   */
-  chorusFlower
-  /**
-   * @type {BlockType}
-   */
-  chorusPlant
-  /**
-   * @type {BlockType}
-   */
-  clay
-  /**
-   * @type {BlockType}
-   */
-  coalBlock
-  /**
-   * @type {BlockType}
-   */
-  coalOre
-  /**
-   * @type {BlockType}
-   */
-  cobbledDeepslate
-  /**
-   * @type {BlockType}
-   */
-  cobbledDeepslateDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  cobbledDeepslateSlab
-  /**
-   * @type {BlockType}
-   */
-  cobbledDeepslateStairs
-  /**
-   * @type {BlockType}
-   */
-  cobbledDeepslateWall
-  /**
-   * @type {BlockType}
-   */
-  cobblestone
-  /**
-   * @type {BlockType}
-   */
-  cobblestoneWall
-  /**
-   * @type {BlockType}
-   */
-  cocoa
-  /**
-   * @type {BlockType}
-   */
-  coloredTorchBp
-  /**
-   * @type {BlockType}
-   */
-  coloredTorchRg
-  /**
-   * @type {BlockType}
-   */
-  commandBlock
-  /**
-   * @type {BlockType}
-   */
-  composter
-  /**
-   * @type {BlockType}
-   */
-  concrete
-  /**
-   * @type {BlockType}
-   */
-  concretepowder
-  /**
-   * @type {BlockType}
-   */
-  conduit
-  /**
-   * @type {BlockType}
-   */
-  copperBlock
-  /**
-   * @type {BlockType}
-   */
-  copperOre
-  /**
-   * @type {BlockType}
-   */
-  coral
-  /**
-   * @type {BlockType}
-   */
-  coralBlock
-  /**
-   * @type {BlockType}
-   */
-  coralFan
-  /**
-   * @type {BlockType}
-   */
-  coralFanDead
-  /**
-   * @type {BlockType}
-   */
-  coralFanHang
-  /**
-   * @type {BlockType}
-   */
-  coralFanHang2
-  /**
-   * @type {BlockType}
-   */
-  coralFanHang3
-  /**
-   * @type {BlockType}
-   */
-  crackedDeepslateBricks
-  /**
-   * @type {BlockType}
-   */
-  crackedDeepslateTiles
-  /**
-   * @type {BlockType}
-   */
-  crackedNetherBricks
-  /**
-   * @type {BlockType}
-   */
-  crackedPolishedBlackstoneBricks
-  /**
-   * @type {BlockType}
-   */
-  craftingTable
-  /**
-   * @type {BlockType}
-   */
-  crimsonButton
-  /**
-   * @type {BlockType}
-   */
-  crimsonDoor
-  /**
-   * @type {BlockType}
-   */
-  crimsonDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  crimsonFence
-  /**
-   * @type {BlockType}
-   */
-  crimsonFenceGate
-  /**
-   * @type {BlockType}
-   */
-  crimsonFungus
-  /**
-   * @type {BlockType}
-   */
-  crimsonHyphae
-  /**
-   * @type {BlockType}
-   */
-  crimsonNylium
-  /**
-   * @type {BlockType}
-   */
-  crimsonPlanks
-  /**
-   * @type {BlockType}
-   */
-  crimsonPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  crimsonRoots
-  /**
-   * @type {BlockType}
-   */
-  crimsonSlab
-  /**
-   * @type {BlockType}
-   */
-  crimsonStairs
-  /**
-   * @type {BlockType}
-   */
-  crimsonStandingSign
-  /**
-   * @type {BlockType}
-   */
-  crimsonStem
-  /**
-   * @type {BlockType}
-   */
-  crimsonTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  crimsonWallSign
-  /**
-   * @type {BlockType}
-   */
-  cryingObsidian
-  /**
-   * @type {BlockType}
-   */
-  cutCopper
-  /**
-   * @type {BlockType}
-   */
-  cutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  cutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  cyanGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  darkOakButton
-  /**
-   * @type {BlockType}
-   */
-  darkOakDoor
-  /**
-   * @type {BlockType}
-   */
-  darkOakFenceGate
-  /**
-   * @type {BlockType}
-   */
-  darkOakPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  darkOakStairs
-  /**
-   * @type {BlockType}
-   */
-  darkOakTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  darkPrismarineStairs
-  /**
-   * @type {BlockType}
-   */
-  darkoakStandingSign
-  /**
-   * @type {BlockType}
-   */
-  darkoakWallSign
-  /**
-   * @type {BlockType}
-   */
-  daylightDetector
-  /**
-   * @type {BlockType}
-   */
-  daylightDetectorInverted
-  /**
-   * @type {BlockType}
-   */
-  deadbush
-  /**
-   * @type {BlockType}
-   */
-  deepslate
-  /**
-   * @type {BlockType}
-   */
-  deepslateBrickDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  deepslateBrickSlab
-  /**
-   * @type {BlockType}
-   */
-  deepslateBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  deepslateBrickWall
-  /**
-   * @type {BlockType}
-   */
-  deepslateBricks
-  /**
-   * @type {BlockType}
-   */
-  deepslateCoalOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateCopperOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateDiamondOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateEmeraldOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateGoldOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateIronOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateLapisOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateRedstoneOre
-  /**
-   * @type {BlockType}
-   */
-  deepslateTileDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  deepslateTileSlab
-  /**
-   * @type {BlockType}
-   */
-  deepslateTileStairs
-  /**
-   * @type {BlockType}
-   */
-  deepslateTileWall
-  /**
-   * @type {BlockType}
-   */
-  deepslateTiles
-  /**
-   * @type {BlockType}
-   */
-  deny
-  /**
-   * @type {BlockType}
-   */
-  detectorRail
-  /**
-   * @type {BlockType}
-   */
-  diamondBlock
-  /**
-   * @type {BlockType}
-   */
-  diamondOre
-  /**
-   * @type {BlockType}
-   */
-  dioriteStairs
-  /**
-   * @type {BlockType}
-   */
-  dirt
-  /**
-   * @type {BlockType}
-   */
-  dirtWithRoots
-  /**
-   * @type {BlockType}
-   */
-  dispenser
-  /**
-   * @type {BlockType}
-   */
-  doubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  doublePlant
-  /**
-   * @type {BlockType}
-   */
-  doubleStoneSlab
-  /**
-   * @type {BlockType}
-   */
-  doubleStoneSlab2
-  /**
-   * @type {BlockType}
-   */
-  doubleStoneSlab3
-  /**
-   * @type {BlockType}
-   */
-  doubleStoneSlab4
-  /**
-   * @type {BlockType}
-   */
-  doubleWoodenSlab
-  /**
-   * @type {BlockType}
-   */
-  dragonEgg
-  /**
-   * @type {BlockType}
-   */
-  driedKelpBlock
-  /**
-   * @type {BlockType}
-   */
-  dripstoneBlock
-  /**
-   * @type {BlockType}
-   */
-  dropper
-  /**
-   * @type {BlockType}
-   */
-  element0
-  /**
-   * @type {BlockType}
-   */
-  element1
-  /**
-   * @type {BlockType}
-   */
-  element10
-  /**
-   * @type {BlockType}
-   */
-  element100
-  /**
-   * @type {BlockType}
-   */
-  element101
-  /**
-   * @type {BlockType}
-   */
-  element102
-  /**
-   * @type {BlockType}
-   */
-  element103
-  /**
-   * @type {BlockType}
-   */
-  element104
-  /**
-   * @type {BlockType}
-   */
-  element105
-  /**
-   * @type {BlockType}
-   */
-  element106
-  /**
-   * @type {BlockType}
-   */
-  element107
-  /**
-   * @type {BlockType}
-   */
-  element108
-  /**
-   * @type {BlockType}
-   */
-  element109
-  /**
-   * @type {BlockType}
-   */
-  element11
-  /**
-   * @type {BlockType}
-   */
-  element110
-  /**
-   * @type {BlockType}
-   */
-  element111
-  /**
-   * @type {BlockType}
-   */
-  element112
-  /**
-   * @type {BlockType}
-   */
-  element113
-  /**
-   * @type {BlockType}
-   */
-  element114
-  /**
-   * @type {BlockType}
-   */
-  element115
-  /**
-   * @type {BlockType}
-   */
-  element116
-  /**
-   * @type {BlockType}
-   */
-  element117
-  /**
-   * @type {BlockType}
-   */
-  element118
-  /**
-   * @type {BlockType}
-   */
-  element12
-  /**
-   * @type {BlockType}
-   */
-  element13
-  /**
-   * @type {BlockType}
-   */
-  element14
-  /**
-   * @type {BlockType}
-   */
-  element15
-  /**
-   * @type {BlockType}
-   */
-  element16
-  /**
-   * @type {BlockType}
-   */
-  element17
-  /**
-   * @type {BlockType}
-   */
-  element18
-  /**
-   * @type {BlockType}
-   */
-  element19
-  /**
-   * @type {BlockType}
-   */
-  element2
-  /**
-   * @type {BlockType}
-   */
-  element20
-  /**
-   * @type {BlockType}
-   */
-  element21
-  /**
-   * @type {BlockType}
-   */
-  element22
-  /**
-   * @type {BlockType}
-   */
-  element23
-  /**
-   * @type {BlockType}
-   */
-  element24
-  /**
-   * @type {BlockType}
-   */
-  element25
-  /**
-   * @type {BlockType}
-   */
-  element26
-  /**
-   * @type {BlockType}
-   */
-  element27
-  /**
-   * @type {BlockType}
-   */
-  element28
-  /**
-   * @type {BlockType}
-   */
-  element29
-  /**
-   * @type {BlockType}
-   */
-  element3
-  /**
-   * @type {BlockType}
-   */
-  element30
-  /**
-   * @type {BlockType}
-   */
-  element31
-  /**
-   * @type {BlockType}
-   */
-  element32
-  /**
-   * @type {BlockType}
-   */
-  element33
-  /**
-   * @type {BlockType}
-   */
-  element34
-  /**
-   * @type {BlockType}
-   */
-  element35
-  /**
-   * @type {BlockType}
-   */
-  element36
-  /**
-   * @type {BlockType}
-   */
-  element37
-  /**
-   * @type {BlockType}
-   */
-  element38
-  /**
-   * @type {BlockType}
-   */
-  element39
-  /**
-   * @type {BlockType}
-   */
-  element4
-  /**
-   * @type {BlockType}
-   */
-  element40
-  /**
-   * @type {BlockType}
-   */
-  element41
-  /**
-   * @type {BlockType}
-   */
-  element42
-  /**
-   * @type {BlockType}
-   */
-  element43
-  /**
-   * @type {BlockType}
-   */
-  element44
-  /**
-   * @type {BlockType}
-   */
-  element45
-  /**
-   * @type {BlockType}
-   */
-  element46
-  /**
-   * @type {BlockType}
-   */
-  element47
-  /**
-   * @type {BlockType}
-   */
-  element48
-  /**
-   * @type {BlockType}
-   */
-  element49
-  /**
-   * @type {BlockType}
-   */
-  element5
-  /**
-   * @type {BlockType}
-   */
-  element50
-  /**
-   * @type {BlockType}
-   */
-  element51
-  /**
-   * @type {BlockType}
-   */
-  element52
-  /**
-   * @type {BlockType}
-   */
-  element53
-  /**
-   * @type {BlockType}
-   */
-  element54
-  /**
-   * @type {BlockType}
-   */
-  element55
-  /**
-   * @type {BlockType}
-   */
-  element56
-  /**
-   * @type {BlockType}
-   */
-  element57
-  /**
-   * @type {BlockType}
-   */
-  element58
-  /**
-   * @type {BlockType}
-   */
-  element59
-  /**
-   * @type {BlockType}
-   */
-  element6
-  /**
-   * @type {BlockType}
-   */
-  element60
-  /**
-   * @type {BlockType}
-   */
-  element61
-  /**
-   * @type {BlockType}
-   */
-  element62
-  /**
-   * @type {BlockType}
-   */
-  element63
-  /**
-   * @type {BlockType}
-   */
-  element64
-  /**
-   * @type {BlockType}
-   */
-  element65
-  /**
-   * @type {BlockType}
-   */
-  element66
-  /**
-   * @type {BlockType}
-   */
-  element67
-  /**
-   * @type {BlockType}
-   */
-  element68
-  /**
-   * @type {BlockType}
-   */
-  element69
-  /**
-   * @type {BlockType}
-   */
-  element7
-  /**
-   * @type {BlockType}
-   */
-  element70
-  /**
-   * @type {BlockType}
-   */
-  element71
-  /**
-   * @type {BlockType}
-   */
-  element72
-  /**
-   * @type {BlockType}
-   */
-  element73
-  /**
-   * @type {BlockType}
-   */
-  element74
-  /**
-   * @type {BlockType}
-   */
-  element75
-  /**
-   * @type {BlockType}
-   */
-  element76
-  /**
-   * @type {BlockType}
-   */
-  element77
-  /**
-   * @type {BlockType}
-   */
-  element78
-  /**
-   * @type {BlockType}
-   */
-  element79
-  /**
-   * @type {BlockType}
-   */
-  element8
-  /**
-   * @type {BlockType}
-   */
-  element80
-  /**
-   * @type {BlockType}
-   */
-  element81
-  /**
-   * @type {BlockType}
-   */
-  element82
-  /**
-   * @type {BlockType}
-   */
-  element83
-  /**
-   * @type {BlockType}
-   */
-  element84
-  /**
-   * @type {BlockType}
-   */
-  element85
-  /**
-   * @type {BlockType}
-   */
-  element86
-  /**
-   * @type {BlockType}
-   */
-  element87
-  /**
-   * @type {BlockType}
-   */
-  element88
-  /**
-   * @type {BlockType}
-   */
-  element89
-  /**
-   * @type {BlockType}
-   */
-  element9
-  /**
-   * @type {BlockType}
-   */
-  element90
-  /**
-   * @type {BlockType}
-   */
-  element91
-  /**
-   * @type {BlockType}
-   */
-  element92
-  /**
-   * @type {BlockType}
-   */
-  element93
-  /**
-   * @type {BlockType}
-   */
-  element94
-  /**
-   * @type {BlockType}
-   */
-  element95
-  /**
-   * @type {BlockType}
-   */
-  element96
-  /**
-   * @type {BlockType}
-   */
-  element97
-  /**
-   * @type {BlockType}
-   */
-  element98
-  /**
-   * @type {BlockType}
-   */
-  element99
-  /**
-   * @type {BlockType}
-   */
-  emeraldBlock
-  /**
-   * @type {BlockType}
-   */
-  emeraldOre
-  /**
-   * @type {BlockType}
-   */
-  enchantingTable
-  /**
-   * @type {BlockType}
-   */
-  endBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  endBricks
-  /**
-   * @type {BlockType}
-   */
-  endGateway
-  /**
-   * @type {BlockType}
-   */
-  endPortal
-  /**
-   * @type {BlockType}
-   */
-  endPortalFrame
-  /**
-   * @type {BlockType}
-   */
-  endRod
-  /**
-   * @type {BlockType}
-   */
-  endStone
-  /**
-   * @type {BlockType}
-   */
-  enderChest
-  /**
-   * @type {BlockType}
-   */
-  exposedCopper
-  /**
-   * @type {BlockType}
-   */
-  exposedCutCopper
-  /**
-   * @type {BlockType}
-   */
-  exposedCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  exposedCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  exposedDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  farmland
-  /**
-   * @type {BlockType}
-   */
-  fence
-  /**
-   * @type {BlockType}
-   */
-  fenceGate
-  /**
-   * @type {BlockType}
-   */
-  fire
-  /**
-   * @type {BlockType}
-   */
-  fletchingTable
-  /**
-   * @type {BlockType}
-   */
-  flowerPot
-  /**
-   * @type {BlockType}
-   */
-  floweringAzalea
-  /**
-   * @type {BlockType}
-   */
-  flowingLava
-  /**
-   * @type {BlockType}
-   */
-  flowingWater
-  /**
-   * @type {BlockType}
-   */
-  frame
-  /**
-   * @type {BlockType}
-   */
-  frostedIce
-  /**
-   * @type {BlockType}
-   */
-  furnace
-  /**
-   * @type {BlockType}
-   */
-  gildedBlackstone
-  /**
-   * @type {BlockType}
-   */
-  glass
-  /**
-   * @type {BlockType}
-   */
-  glassPane
-  /**
-   * @type {BlockType}
-   */
-  glowFrame
-  /**
-   * @type {BlockType}
-   */
-  glowLichen
-  /**
-   * @type {BlockType}
-   */
-  glowingobsidian
-  /**
-   * @type {BlockType}
-   */
-  glowstone
-  /**
-   * @type {BlockType}
-   */
-  goldBlock
-  /**
-   * @type {BlockType}
-   */
-  goldOre
-  /**
-   * @type {BlockType}
-   */
-  goldenRail
-  /**
-   * @type {BlockType}
-   */
-  graniteStairs
-  /**
-   * @type {BlockType}
-   */
-  grass
-  /**
-   * @type {BlockType}
-   */
-  grassPath
-  /**
-   * @type {BlockType}
-   */
-  gravel
-  /**
-   * @type {BlockType}
-   */
-  grayGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  greenGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  grindstone
-  /**
-   * @type {BlockType}
-   */
-  hangingRoots
-  /**
-   * @type {BlockType}
-   */
-  hardGlass
-  /**
-   * @type {BlockType}
-   */
-  hardGlassPane
-  /**
-   * @type {BlockType}
-   */
-  hardStainedGlass
-  /**
-   * @type {BlockType}
-   */
-  hardStainedGlassPane
-  /**
-   * @type {BlockType}
-   */
-  hardenedClay
-  /**
-   * @type {BlockType}
-   */
-  hayBlock
-  /**
-   * @type {BlockType}
-   */
-  heavyWeightedPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  honeyBlock
-  /**
-   * @type {BlockType}
-   */
-  honeycombBlock
-  /**
-   * @type {BlockType}
-   */
-  hopper
-  /**
-   * @type {BlockType}
-   */
-  ice
-  /**
-   * @type {BlockType}
-   */
-  infestedDeepslate
-  /**
-   * @type {BlockType}
-   */
-  infoUpdate
-  /**
-   * @type {BlockType}
-   */
-  infoUpdate2
-  /**
-   * @type {BlockType}
-   */
-  invisiblebedrock
-  /**
-   * @type {BlockType}
-   */
-  ironBars
-  /**
-   * @type {BlockType}
-   */
-  ironBlock
-  /**
-   * @type {BlockType}
-   */
-  ironDoor
-  /**
-   * @type {BlockType}
-   */
-  ironOre
-  /**
-   * @type {BlockType}
-   */
-  ironTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  jigsaw
-  /**
-   * @type {BlockType}
-   */
-  jukebox
-  /**
-   * @type {BlockType}
-   */
-  jungleButton
-  /**
-   * @type {BlockType}
-   */
-  jungleDoor
-  /**
-   * @type {BlockType}
-   */
-  jungleFenceGate
-  /**
-   * @type {BlockType}
-   */
-  junglePressurePlate
-  /**
-   * @type {BlockType}
-   */
-  jungleStairs
-  /**
-   * @type {BlockType}
-   */
-  jungleStandingSign
-  /**
-   * @type {BlockType}
-   */
-  jungleTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  jungleWallSign
-  /**
-   * @type {BlockType}
-   */
-  kelp
-  /**
-   * @type {BlockType}
-   */
-  ladder
-  /**
-   * @type {BlockType}
-   */
-  lantern
-  /**
-   * @type {BlockType}
-   */
-  lapisBlock
-  /**
-   * @type {BlockType}
-   */
-  lapisOre
-  /**
-   * @type {BlockType}
-   */
-  largeAmethystBud
-  /**
-   * @type {BlockType}
-   */
-  lava
-  /**
-   * @type {BlockType}
-   */
-  lavaCauldron
-  /**
-   * @type {BlockType}
-   */
-  leaves
-  /**
-   * @type {BlockType}
-   */
-  leaves2
-  /**
-   * @type {BlockType}
-   */
-  lectern
-  /**
-   * @type {BlockType}
-   */
-  lever
-  /**
-   * @type {BlockType}
-   */
-  lightBlock
-  /**
-   * @type {BlockType}
-   */
-  lightBlueGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  lightWeightedPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  lightningRod
-  /**
-   * @type {BlockType}
-   */
-  limeGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  litBlastFurnace
-  /**
-   * @type {BlockType}
-   */
-  litDeepslateRedstoneOre
-  /**
-   * @type {BlockType}
-   */
-  litFurnace
-  /**
-   * @type {BlockType}
-   */
-  litPumpkin
-  /**
-   * @type {BlockType}
-   */
-  litRedstoneLamp
-  /**
-   * @type {BlockType}
-   */
-  litRedstoneOre
-  /**
-   * @type {BlockType}
-   */
-  litSmoker
-  /**
-   * @type {BlockType}
-   */
-  lodestone
-  /**
-   * @type {BlockType}
-   */
-  log
-  /**
-   * @type {BlockType}
-   */
-  log2
-  /**
-   * @type {BlockType}
-   */
-  loom
-  /**
-   * @type {BlockType}
-   */
-  magentaGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  magma
-  /**
-   * @type {BlockType}
-   */
-  mediumAmethystBud
-  /**
-   * @type {BlockType}
-   */
-  melonBlock
-  /**
-   * @type {BlockType}
-   */
-  melonStem
-  /**
-   * @type {BlockType}
-   */
-  mobSpawner
-  /**
-   * @type {BlockType}
-   */
-  monsterEgg
-  /**
-   * @type {BlockType}
-   */
-  mossBlock
-  /**
-   * @type {BlockType}
-   */
-  mossCarpet
-  /**
-   * @type {BlockType}
-   */
-  mossyCobblestone
-  /**
-   * @type {BlockType}
-   */
-  mossyCobblestoneStairs
-  /**
-   * @type {BlockType}
-   */
-  mossyStoneBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  movingblock
-  /**
-   * @type {BlockType}
-   */
-  mycelium
-  /**
-   * @type {BlockType}
-   */
-  netherBrick
-  /**
-   * @type {BlockType}
-   */
-  netherBrickFence
-  /**
-   * @type {BlockType}
-   */
-  netherBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  netherGoldOre
-  /**
-   * @type {BlockType}
-   */
-  netherSprouts
-  /**
-   * @type {BlockType}
-   */
-  netherWart
-  /**
-   * @type {BlockType}
-   */
-  netherWartBlock
-  /**
-   * @type {BlockType}
-   */
-  netheriteBlock
-  /**
-   * @type {BlockType}
-   */
-  netherrack
-  /**
-   * @type {BlockType}
-   */
-  netherreactor
-  /**
-   * @type {BlockType}
-   */
-  normalStoneStairs
-  /**
-   * @type {BlockType}
-   */
-  noteblock
-  /**
-   * @type {BlockType}
-   */
-  oakStairs
-  /**
-   * @type {BlockType}
-   */
-  observer
-  /**
-   * @type {BlockType}
-   */
-  obsidian
-  /**
-   * @type {BlockType}
-   */
-  orangeGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  oxidizedCopper
-  /**
-   * @type {BlockType}
-   */
-  oxidizedCutCopper
-  /**
-   * @type {BlockType}
-   */
-  oxidizedCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  oxidizedCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  oxidizedDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  packedIce
-  /**
-   * @type {BlockType}
-   */
-  pinkGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  piston
-  /**
-   * @type {BlockType}
-   */
-  pistonarmcollision
-  /**
-   * @type {BlockType}
-   */
-  planks
-  /**
-   * @type {BlockType}
-   */
-  podzol
-  /**
-   * @type {BlockType}
-   */
-  pointedDripstone
-  /**
-   * @type {BlockType}
-   */
-  polishedAndesiteStairs
-  /**
-   * @type {BlockType}
-   */
-  polishedBasalt
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstone
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneBrickDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneBrickSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneBrickWall
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneBricks
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneButton
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstonePressurePlate
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  polishedBlackstoneWall
-  /**
-   * @type {BlockType}
-   */
-  polishedDeepslate
-  /**
-   * @type {BlockType}
-   */
-  polishedDeepslateDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedDeepslateSlab
-  /**
-   * @type {BlockType}
-   */
-  polishedDeepslateStairs
-  /**
-   * @type {BlockType}
-   */
-  polishedDeepslateWall
-  /**
-   * @type {BlockType}
-   */
-  polishedDioriteStairs
-  /**
-   * @type {BlockType}
-   */
-  polishedGraniteStairs
-  /**
-   * @type {BlockType}
-   */
-  portal
-  /**
-   * @type {BlockType}
-   */
-  potatoes
-  /**
-   * @type {BlockType}
-   */
-  powderSnow
-  /**
-   * @type {BlockType}
-   */
-  poweredComparator
-  /**
-   * @type {BlockType}
-   */
-  poweredRepeater
-  /**
-   * @type {BlockType}
-   */
-  prismarine
-  /**
-   * @type {BlockType}
-   */
-  prismarineBricksStairs
-  /**
-   * @type {BlockType}
-   */
-  prismarineStairs
-  /**
-   * @type {BlockType}
-   */
-  pumpkin
-  /**
-   * @type {BlockType}
-   */
-  pumpkinStem
-  /**
-   * @type {BlockType}
-   */
-  purpleGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  purpurBlock
-  /**
-   * @type {BlockType}
-   */
-  purpurStairs
-  /**
-   * @type {BlockType}
-   */
-  quartzBlock
-  /**
-   * @type {BlockType}
-   */
-  quartzBricks
-  /**
-   * @type {BlockType}
-   */
-  quartzOre
-  /**
-   * @type {BlockType}
-   */
-  quartzStairs
-  /**
-   * @type {BlockType}
-   */
-  rail
-  /**
-   * @type {BlockType}
-   */
-  rawCopperBlock
-  /**
-   * @type {BlockType}
-   */
-  rawGoldBlock
-  /**
-   * @type {BlockType}
-   */
-  rawIronBlock
-  /**
-   * @type {BlockType}
-   */
-  redFlower
-  /**
-   * @type {BlockType}
-   */
-  redGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  redMushroom
-  /**
-   * @type {BlockType}
-   */
-  redMushroomBlock
-  /**
-   * @type {BlockType}
-   */
-  redNetherBrick
-  /**
-   * @type {BlockType}
-   */
-  redNetherBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  redSandstone
-  /**
-   * @type {BlockType}
-   */
-  redSandstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  redstoneBlock
-  /**
-   * @type {BlockType}
-   */
-  redstoneLamp
-  /**
-   * @type {BlockType}
-   */
-  redstoneOre
-  /**
-   * @type {BlockType}
-   */
-  redstoneTorch
-  /**
-   * @type {BlockType}
-   */
-  redstoneWire
-  /**
-   * @type {BlockType}
-   */
-  reeds
-  /**
-   * @type {BlockType}
-   */
-  repeatingCommandBlock
-  /**
-   * @type {BlockType}
-   */
-  reserved6
-  /**
-   * @type {BlockType}
-   */
-  respawnAnchor
-  /**
-   * @type {BlockType}
-   */
-  sand
-  /**
-   * @type {BlockType}
-   */
-  sandstone
-  /**
-   * @type {BlockType}
-   */
-  sandstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  sapling
-  /**
-   * @type {BlockType}
-   */
-  scaffolding
-  /**
-   * @type {BlockType}
-   */
-  sculkSensor
-  /**
-   * @type {BlockType}
-   */
-  seaPickle
-  /**
-   * @type {BlockType}
-   */
-  seagrass
-  /**
-   * @type {BlockType}
-   */
-  sealantern
-  /**
-   * @type {BlockType}
-   */
-  shroomlight
-  /**
-   * @type {BlockType}
-   */
-  shulkerBox
-  /**
-   * @type {BlockType}
-   */
-  silverGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  skull
-  /**
-   * @type {BlockType}
-   */
-  slime
-  /**
-   * @type {BlockType}
-   */
-  smallAmethystBud
-  /**
-   * @type {BlockType}
-   */
-  smallDripleafBlock
-  /**
-   * @type {BlockType}
-   */
-  smithingTable
-  /**
-   * @type {BlockType}
-   */
-  smoker
-  /**
-   * @type {BlockType}
-   */
-  smoothBasalt
-  /**
-   * @type {BlockType}
-   */
-  smoothQuartzStairs
-  /**
-   * @type {BlockType}
-   */
-  smoothRedSandstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  smoothSandstoneStairs
-  /**
-   * @type {BlockType}
-   */
-  smoothStone
-  /**
-   * @type {BlockType}
-   */
-  snow
-  /**
-   * @type {BlockType}
-   */
-  snowLayer
-  /**
-   * @type {BlockType}
-   */
-  soulCampfire
-  /**
-   * @type {BlockType}
-   */
-  soulFire
-  /**
-   * @type {BlockType}
-   */
-  soulLantern
-  /**
-   * @type {BlockType}
-   */
-  soulSand
-  /**
-   * @type {BlockType}
-   */
-  soulSoil
-  /**
-   * @type {BlockType}
-   */
-  soulTorch
-  /**
-   * @type {BlockType}
-   */
-  sponge
-  /**
-   * @type {BlockType}
-   */
-  sporeBlossom
-  /**
-   * @type {BlockType}
-   */
-  spruceButton
-  /**
-   * @type {BlockType}
-   */
-  spruceDoor
-  /**
-   * @type {BlockType}
-   */
-  spruceFenceGate
-  /**
-   * @type {BlockType}
-   */
-  sprucePressurePlate
-  /**
-   * @type {BlockType}
-   */
-  spruceStairs
-  /**
-   * @type {BlockType}
-   */
-  spruceStandingSign
-  /**
-   * @type {BlockType}
-   */
-  spruceTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  spruceWallSign
-  /**
-   * @type {BlockType}
-   */
-  stainedGlass
-  /**
-   * @type {BlockType}
-   */
-  stainedGlassPane
-  /**
-   * @type {BlockType}
-   */
-  stainedHardenedClay
-  /**
-   * @type {BlockType}
-   */
-  standingBanner
-  /**
-   * @type {BlockType}
-   */
-  standingSign
-  /**
-   * @type {BlockType}
-   */
-  stickyPiston
-  /**
-   * @type {BlockType}
-   */
-  stickypistonarmcollision
-  /**
-   * @type {BlockType}
-   */
-  stone
-  /**
-   * @type {BlockType}
-   */
-  stoneBrickStairs
-  /**
-   * @type {BlockType}
-   */
-  stoneButton
-  /**
-   * @type {BlockType}
-   */
-  stonePressurePlate
-  /**
-   * @type {BlockType}
-   */
-  stoneSlab
-  /**
-   * @type {BlockType}
-   */
-  stoneSlab2
-  /**
-   * @type {BlockType}
-   */
-  stoneSlab3
-  /**
-   * @type {BlockType}
-   */
-  stoneSlab4
-  /**
-   * @type {BlockType}
-   */
-  stoneStairs
-  /**
-   * @type {BlockType}
-   */
-  stonebrick
-  /**
-   * @type {BlockType}
-   */
-  stonecutter
-  /**
-   * @type {BlockType}
-   */
-  stonecutterBlock
-  /**
-   * @type {BlockType}
-   */
-  strippedAcaciaLog
-  /**
-   * @type {BlockType}
-   */
-  strippedBirchLog
-  /**
-   * @type {BlockType}
-   */
-  strippedCrimsonHyphae
-  /**
-   * @type {BlockType}
-   */
-  strippedCrimsonStem
-  /**
-   * @type {BlockType}
-   */
-  strippedDarkOakLog
-  /**
-   * @type {BlockType}
-   */
-  strippedJungleLog
-  /**
-   * @type {BlockType}
-   */
-  strippedOakLog
-  /**
-   * @type {BlockType}
-   */
-  strippedSpruceLog
-  /**
-   * @type {BlockType}
-   */
-  strippedWarpedHyphae
-  /**
-   * @type {BlockType}
-   */
-  strippedWarpedStem
-  /**
-   * @type {BlockType}
-   */
-  structureBlock
-  /**
-   * @type {BlockType}
-   */
-  structureVoid
-  /**
-   * @type {BlockType}
-   */
-  sweetBerryBush
-  /**
-   * @type {BlockType}
-   */
-  tallgrass
-  /**
-   * @type {BlockType}
-   */
-  target
-  /**
-   * @type {BlockType}
-   */
-  tintedGlass
-  /**
-   * @type {BlockType}
-   */
-  tnt
-  /**
-   * @type {BlockType}
-   */
-  torch
-  /**
-   * @type {BlockType}
-   */
-  trapdoor
-  /**
-   * @type {BlockType}
-   */
-  trappedChest
-  /**
-   * @type {BlockType}
-   */
-  tripwire
-  /**
-   * @type {BlockType}
-   */
-  tripwireHook
-  /**
-   * @type {BlockType}
-   */
-  tuff
-  /**
-   * @type {BlockType}
-   */
-  turtleEgg
-  /**
-   * @type {BlockType}
-   */
-  twistingVines
-  /**
-   * @type {BlockType}
-   */
-  underwaterTorch
-  /**
-   * @type {BlockType}
-   */
-  undyedShulkerBox
-  /**
-   * @type {BlockType}
-   */
-  unknown
-  /**
-   * @type {BlockType}
-   */
-  unlitRedstoneTorch
-  /**
-   * @type {BlockType}
-   */
-  unpoweredComparator
-  /**
-   * @type {BlockType}
-   */
-  unpoweredRepeater
-  /**
-   * @type {BlockType}
-   */
-  vine
-  /**
-   * @type {BlockType}
-   */
-  wallBanner
-  /**
-   * @type {BlockType}
-   */
-  wallSign
-  /**
-   * @type {BlockType}
-   */
-  warpedButton
-  /**
-   * @type {BlockType}
-   */
-  warpedDoor
-  /**
-   * @type {BlockType}
-   */
-  warpedDoubleSlab
-  /**
-   * @type {BlockType}
-   */
-  warpedFence
-  /**
-   * @type {BlockType}
-   */
-  warpedFenceGate
-  /**
-   * @type {BlockType}
-   */
-  warpedFungus
-  /**
-   * @type {BlockType}
-   */
-  warpedHyphae
-  /**
-   * @type {BlockType}
-   */
-  warpedNylium
-  /**
-   * @type {BlockType}
-   */
-  warpedPlanks
-  /**
-   * @type {BlockType}
-   */
-  warpedPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  warpedRoots
-  /**
-   * @type {BlockType}
-   */
-  warpedSlab
-  /**
-   * @type {BlockType}
-   */
-  warpedStairs
-  /**
-   * @type {BlockType}
-   */
-  warpedStandingSign
-  /**
-   * @type {BlockType}
-   */
-  warpedStem
-  /**
-   * @type {BlockType}
-   */
-  warpedTrapdoor
-  /**
-   * @type {BlockType}
-   */
-  warpedWallSign
-  /**
-   * @type {BlockType}
-   */
-  warpedWartBlock
-  /**
-   * @type {BlockType}
-   */
-  water
-  /**
-   * @type {BlockType}
-   */
-  waterlily
-  /**
-   * @type {BlockType}
-   */
-  waxedCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedCutCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  waxedDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedExposedCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedExposedCutCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedExposedCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedExposedCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  waxedExposedDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedOxidizedCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedOxidizedCutCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedOxidizedCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedOxidizedCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  waxedOxidizedDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedWeatheredCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedWeatheredCutCopper
-  /**
-   * @type {BlockType}
-   */
-  waxedWeatheredCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  waxedWeatheredCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  waxedWeatheredDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  weatheredCopper
-  /**
-   * @type {BlockType}
-   */
-  weatheredCutCopper
-  /**
-   * @type {BlockType}
-   */
-  weatheredCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  weatheredCutCopperStairs
-  /**
-   * @type {BlockType}
-   */
-  weatheredDoubleCutCopperSlab
-  /**
-   * @type {BlockType}
-   */
-  web
-  /**
-   * @type {BlockType}
-   */
-  weepingVines
-  /**
-   * @type {BlockType}
-   */
-  wheat
-  /**
-   * @type {BlockType}
-   */
-  whiteGlazedTerracotta
-  /**
-   * @type {BlockType}
-   */
-  witherRose
-  /**
-   * @type {BlockType}
-   */
-  wood
-  /**
-   * @type {BlockType}
-   */
-  woodenButton
-  /**
-   * @type {BlockType}
-   */
-  woodenDoor
-  /**
-   * @type {BlockType}
-   */
-  woodenPressurePlate
-  /**
-   * @type {BlockType}
-   */
-  woodenSlab
-  /**
-   * @type {BlockType}
-   */
-  wool
-  /**
-   * @type {BlockType}
-   */
-  yellowFlower
-  /**
-   * @type {BlockType}
-   */
-  yellowGlazedTerracotta
-}
-
-class BlockType{
-  /**
-   * @return {String}
-   */
-  getName = function(){return}
-  /**
-   * @return {Boolean}
-   */
-  canBeWaterlogged = function(){return}
-  /**
-   * @return {BlockPermutation}
-   */
-  createDefaultBlockPermutation = function(){return}
-}
-
-class BlockPermutation{
-  /**
-   * @return {BlockPermutation}
-   */
-  clone(){return};
-  /**
-   * @return {BoolBlockProperty[]|IntBlockProperty[]|StringBlockProperty[]}
-   */
-  getAllProperties(){return};
-  /**
-   * @param {String} block_property
-   * @param {any} arg unknown
-   * @param {any} arg2 unknown
-   * @return {(BoolBlockProperty|IntBlockProperty|StringBlockProperty)}
-   */
-  getProperty(block_property, arg, arg2){return};
-  /**
-   * @return {String}
-   */
-  getTags(){return};
-  /**
-   * @return {BlockType}
-   */
-  getType(){return};
-  /**
-   * @param {String} tag_name
-   * @return {Boolean}
-   */
-  hasTag(tag_name){return};
-}
-
-class BoolBlockProperty{
-  /**
-   * @type {Boolean}
-   */
-  value
-  /**
-   * @type {Boolean[]}
-   */
-  validValues
-  /**
-   * @type {String}
-   */
-  name;
-}
-class IntBlockProperty{
-  /**
-   * @type {Number}
-   */
-  value
-  /**
-   * @type {Number[]}
-   */
-  validValues
-  /**
-   * @type {String}
-   */
-  name;
-}
-class StringBlockProperty{
-  /**
-   * @type {String}
-   */
-  value
-  /**
-   * @type {String[]}
-   */
-  validValues
-  /**
-   * @type {String}
-   */
-  name;
+export class Blocks {
+  /**
+   *
+   * @param {string} identifier
+   * @return {Block}
+   */
+  static get = function (identifier) {};
+  /** @return {Block} */
+  static air = function () {};
+  /** @return {Block} */
+  static acaciaButton = function () {};
+  /** @return {Block} */
+  static acaciaDoor = function () {};
+  /** @return {Block} */
+  static acaciaFenceGate = function () {};
+  /** @return {Block} */
+  static acaciaPressurePlate = function () {};
+  /** @return {Block} */
+  static acaciaStairs = function () {};
+  /** @return {Block} */
+  static acaciaStandingSign = function () {};
+  /** @return {Block} */
+  static acaciaTrapdoor = function () {};
+  /** @return {Block} */
+  static acaciaWallSign = function () {};
+  /** @return {Block} */
+  static activatorRail = function () {};
+  /** @return {Block} */
+  static air = function () {};
+  /** @return {Block} */
+  static allow = function () {};
+  /** @return {Block} */
+  static ancientDebris = function () {};
+  /** @return {Block} */
+  static andesiteStairs = function () {};
+  /** @return {Block} */
+  static anvil = function () {};
+  /** @return {Block} */
+  static azalea = function () {};
+  /** @return {Block} */
+  static azaleaLeaves = function () {};
+  /** @return {Block} */
+  static azaleaLeavesFlowered = function () {};
+  /** @return {Block} */
+  static bamboo = function () {};
+  /** @return {Block} */
+  static bambooSapling = function () {};
+  /** @return {Block} */
+  static barrel = function () {};
+  /** @return {Block} */
+  static barrier = function () {};
+  /** @return {Block} */
+  static basalt = function () {};
+  /** @return {Block} */
+  static beacon = function () {};
+  /** @return {Block} */
+  static bed = function () {};
+  /** @return {Block} */
+  static bedrock = function () {};
+  /** @return {Block} */
+  static beeNest = function () {};
+  /** @return {Block} */
+  static beehive = function () {};
+  /** @return {Block} */
+  static beetroot = function () {};
+  /** @return {Block} */
+  static bell = function () {};
+  /** @return {Block} */
+  static bigDripleaf = function () {};
+  /** @return {Block} */
+  static birchButton = function () {};
+  /** @return {Block} */
+  static birchDoor = function () {};
+  /** @return {Block} */
+  static birchFenceGate = function () {};
+  /** @return {Block} */
+  static birchPressurePlate = function () {};
+  /** @return {Block} */
+  static birchStairs = function () {};
+  /** @return {Block} */
+  static birchStandingSign = function () {};
+  /** @return {Block} */
+  static birchTrapdoor = function () {};
+  /** @return {Block} */
+  static birchWallSign = function () {};
+  /** @return {Block} */
+  static blackGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static blackstone = function () {};
+  /** @return {Block} */
+  static blackstoneDoubleSlab = function () {};
+  /** @return {Block} */
+  static blackstoneSlab = function () {};
+  /** @return {Block} */
+  static blackstoneStairs = function () {};
+  /** @return {Block} */
+  static blackstoneWall = function () {};
+  /** @return {Block} */
+  static blastFurnace = function () {};
+  /** @return {Block} */
+  static blueGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static blueIce = function () {};
+  /** @return {Block} */
+  static boneBlock = function () {};
+  /** @return {Block} */
+  static bookshelf = function () {};
+  /** @return {Block} */
+  static borderBlock = function () {};
+  /** @return {Block} */
+  static brewingStand = function () {};
+  /** @return {Block} */
+  static brickBlock = function () {};
+  /** @return {Block} */
+  static brickStairs = function () {};
+  /** @return {Block} */
+  static brownGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static brownMushroom = function () {};
+  /** @return {Block} */
+  static brownMushroomBlock = function () {};
+  /** @return {Block} */
+  static bubbleColumn = function () {};
+  /** @return {Block} */
+  static cactus = function () {};
+  /** @return {Block} */
+  static cake = function () {};
+  /** @return {Block} */
+  static camera = function () {};
+  /** @return {Block} */
+  static campfire = function () {};
+  /** @return {Block} */
+  static carpet = function () {};
+  /** @return {Block} */
+  static carrots = function () {};
+  /** @return {Block} */
+  static cartographyTable = function () {};
+  /** @return {Block} */
+  static carvedPumpkin = function () {};
+  /** @return {Block} */
+  static cauldron = function () {};
+  /** @return {Block} */
+  static caveVines = function () {};
+  /** @return {Block} */
+  static caveVinesBodyWithBerries = function () {};
+  /** @return {Block} */
+  static caveVinesHeadWithBerries = function () {};
+  /** @return {Block} */
+  static chain = function () {};
+  /** @return {Block} */
+  static chainCommandBlock = function () {};
+  /** @return {Block} */
+  static chemicalHeat = function () {};
+  /** @return {Block} */
+  static chemistryTable = function () {};
+  /** @return {Block} */
+  static chest = function () {};
+  /** @return {Block} */
+  static chiseledNetherBricks = function () {};
+  /** @return {Block} */
+  static chiseledPolishedBlackstone = function () {};
+  /** @return {Block} */
+  static chorusFlower = function () {};
+  /** @return {Block} */
+  static chorusPlant = function () {};
+  /** @return {Block} */
+  static clay = function () {};
+  /** @return {Block} */
+  static coalBlock = function () {};
+  /** @return {Block} */
+  static coalOre = function () {};
+  /** @return {Block} */
+  static cobblestone = function () {};
+  /** @return {Block} */
+  static cobblestoneWall = function () {};
+  /** @return {Block} */
+  static cocoa = function () {};
+  /** @return {Block} */
+  static coloredTorchBp = function () {};
+  /** @return {Block} */
+  static coloredTorchRg = function () {};
+  /** @return {Block} */
+  static commandBlock = function () {};
+  /** @return {Block} */
+  static composter = function () {};
+  /** @return {Block} */
+  static concrete = function () {};
+  /** @return {Block} */
+  static concretepowder = function () {};
+  /** @return {Block} */
+  static conduit = function () {};
+  /** @return {Block} */
+  static copperBlock = function () {};
+  /** @return {Block} */
+  static copperOre = function () {};
+  /** @return {Block} */
+  static coral = function () {};
+  /** @return {Block} */
+  static coralBlock = function () {};
+  /** @return {Block} */
+  static coralFan = function () {};
+  /** @return {Block} */
+  static coralFanDead = function () {};
+  /** @return {Block} */
+  static coralFanHang = function () {};
+  /** @return {Block} */
+  static coralFanHang2 = function () {};
+  /** @return {Block} */
+  static coralFanHang3 = function () {};
+  /** @return {Block} */
+  static crackedNetherBricks = function () {};
+  /** @return {Block} */
+  static crackedPolishedBlackstoneBricks = function () {};
+  /** @return {Block} */
+  static craftingTable = function () {};
+  /** @return {Block} */
+  static crimsonButton = function () {};
+  /** @return {Block} */
+  static crimsonDoor = function () {};
+  /** @return {Block} */
+  static crimsonDoubleSlab = function () {};
+  /** @return {Block} */
+  static crimsonFence = function () {};
+  /** @return {Block} */
+  static crimsonFenceGate = function () {};
+  /** @return {Block} */
+  static crimsonFungus = function () {};
+  /** @return {Block} */
+  static crimsonHyphae = function () {};
+  /** @return {Block} */
+  static crimsonNylium = function () {};
+  /** @return {Block} */
+  static crimsonPlanks = function () {};
+  /** @return {Block} */
+  static crimsonPressurePlate = function () {};
+  /** @return {Block} */
+  static crimsonRoots = function () {};
+  /** @return {Block} */
+  static crimsonSlab = function () {};
+  /** @return {Block} */
+  static crimsonStairs = function () {};
+  /** @return {Block} */
+  static crimsonStandingSign = function () {};
+  /** @return {Block} */
+  static crimsonStem = function () {};
+  /** @return {Block} */
+  static crimsonTrapdoor = function () {};
+  /** @return {Block} */
+  static crimsonWallSign = function () {};
+  /** @return {Block} */
+  static cryingObsidian = function () {};
+  /** @return {Block} */
+  static cutCopper = function () {};
+  /** @return {Block} */
+  static cutCopperSlab = function () {};
+  /** @return {Block} */
+  static cutCopperStairs = function () {};
+  /** @return {Block} */
+  static cyanGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static darkOakButton = function () {};
+  /** @return {Block} */
+  static darkOakDoor = function () {};
+  /** @return {Block} */
+  static darkOakFenceGate = function () {};
+  /** @return {Block} */
+  static darkOakPressurePlate = function () {};
+  /** @return {Block} */
+  static darkOakStairs = function () {};
+  /** @return {Block} */
+  static darkOakTrapdoor = function () {};
+  /** @return {Block} */
+  static darkPrismarineStairs = function () {};
+  /** @return {Block} */
+  static darkoakStandingSign = function () {};
+  /** @return {Block} */
+  static darkoakWallSign = function () {};
+  /** @return {Block} */
+  static daylightDetector = function () {};
+  /** @return {Block} */
+  static daylightDetectorInverted = function () {};
+  /** @return {Block} */
+  static deadbush = function () {};
+  /** @return {Block} */
+  static deny = function () {};
+  /** @return {Block} */
+  static detectorRail = function () {};
+  /** @return {Block} */
+  static diamondBlock = function () {};
+  /** @return {Block} */
+  static diamondOre = function () {};
+  /** @return {Block} */
+  static dioriteStairs = function () {};
+  /** @return {Block} */
+  static dirt = function () {};
+  /** @return {Block} */
+  static dirtWithRoots = function () {};
+  /** @return {Block} */
+  static dispenser = function () {};
+  /** @return {Block} */
+  static doubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static doublePlant = function () {};
+  /** @return {Block} */
+  static doubleStoneSlab = function () {};
+  /** @return {Block} */
+  static doubleStoneSlab2 = function () {};
+  /** @return {Block} */
+  static doubleStoneSlab3 = function () {};
+  /** @return {Block} */
+  static doubleStoneSlab4 = function () {};
+  /** @return {Block} */
+  static doubleWoodenSlab = function () {};
+  /** @return {Block} */
+  static dragonEgg = function () {};
+  /** @return {Block} */
+  static driedKelpBlock = function () {};
+  /** @return {Block} */
+  static dripstoneBlock = function () {};
+  /** @return {Block} */
+  static dropper = function () {};
+  /** @return {Block} */
+  static element0 = function () {};
+  /** @return {Block} */
+  static element1 = function () {};
+  /** @return {Block} */
+  static element10 = function () {};
+  /** @return {Block} */
+  static element100 = function () {};
+  /** @return {Block} */
+  static element101 = function () {};
+  /** @return {Block} */
+  static element102 = function () {};
+  /** @return {Block} */
+  static element103 = function () {};
+  /** @return {Block} */
+  static element104 = function () {};
+  /** @return {Block} */
+  static element105 = function () {};
+  /** @return {Block} */
+  static element106 = function () {};
+  /** @return {Block} */
+  static element107 = function () {};
+  /** @return {Block} */
+  static element108 = function () {};
+  /** @return {Block} */
+  static element109 = function () {};
+  /** @return {Block} */
+  static element11 = function () {};
+  /** @return {Block} */
+  static element110 = function () {};
+  /** @return {Block} */
+  static element111 = function () {};
+  /** @return {Block} */
+  static element112 = function () {};
+  /** @return {Block} */
+  static element113 = function () {};
+  /** @return {Block} */
+  static element114 = function () {};
+  /** @return {Block} */
+  static element115 = function () {};
+  /** @return {Block} */
+  static element116 = function () {};
+  /** @return {Block} */
+  static element117 = function () {};
+  /** @return {Block} */
+  static element118 = function () {};
+  /** @return {Block} */
+  static element12 = function () {};
+  /** @return {Block} */
+  static element13 = function () {};
+  /** @return {Block} */
+  static element14 = function () {};
+  /** @return {Block} */
+  static element15 = function () {};
+  /** @return {Block} */
+  static element16 = function () {};
+  /** @return {Block} */
+  static element17 = function () {};
+  /** @return {Block} */
+  static element18 = function () {};
+  /** @return {Block} */
+  static element19 = function () {};
+  /** @return {Block} */
+  static element2 = function () {};
+  /** @return {Block} */
+  static element20 = function () {};
+  /** @return {Block} */
+  static element21 = function () {};
+  /** @return {Block} */
+  static element22 = function () {};
+  /** @return {Block} */
+  static element23 = function () {};
+  /** @return {Block} */
+  static element24 = function () {};
+  /** @return {Block} */
+  static element25 = function () {};
+  /** @return {Block} */
+  static element26 = function () {};
+  /** @return {Block} */
+  static element27 = function () {};
+  /** @return {Block} */
+  static element28 = function () {};
+  /** @return {Block} */
+  static element29 = function () {};
+  /** @return {Block} */
+  static element3 = function () {};
+  /** @return {Block} */
+  static element30 = function () {};
+  /** @return {Block} */
+  static element31 = function () {};
+  /** @return {Block} */
+  static element32 = function () {};
+  /** @return {Block} */
+  static element33 = function () {};
+  /** @return {Block} */
+  static element34 = function () {};
+  /** @return {Block} */
+  static element35 = function () {};
+  /** @return {Block} */
+  static element36 = function () {};
+  /** @return {Block} */
+  static element37 = function () {};
+  /** @return {Block} */
+  static element38 = function () {};
+  /** @return {Block} */
+  static element39 = function () {};
+  /** @return {Block} */
+  static element4 = function () {};
+  /** @return {Block} */
+  static element40 = function () {};
+  /** @return {Block} */
+  static element41 = function () {};
+  /** @return {Block} */
+  static element42 = function () {};
+  /** @return {Block} */
+  static element43 = function () {};
+  /** @return {Block} */
+  static element44 = function () {};
+  /** @return {Block} */
+  static element45 = function () {};
+  /** @return {Block} */
+  static element46 = function () {};
+  /** @return {Block} */
+  static element47 = function () {};
+  /** @return {Block} */
+  static element48 = function () {};
+  /** @return {Block} */
+  static element49 = function () {};
+  /** @return {Block} */
+  static element5 = function () {};
+  /** @return {Block} */
+  static element50 = function () {};
+  /** @return {Block} */
+  static element51 = function () {};
+  /** @return {Block} */
+  static element52 = function () {};
+  /** @return {Block} */
+  static element53 = function () {};
+  /** @return {Block} */
+  static element54 = function () {};
+  /** @return {Block} */
+  static element55 = function () {};
+  /** @return {Block} */
+  static element56 = function () {};
+  /** @return {Block} */
+  static element57 = function () {};
+  /** @return {Block} */
+  static element58 = function () {};
+  /** @return {Block} */
+  static element59 = function () {};
+  /** @return {Block} */
+  static element6 = function () {};
+  /** @return {Block} */
+  static element60 = function () {};
+  /** @return {Block} */
+  static element61 = function () {};
+  /** @return {Block} */
+  static element62 = function () {};
+  /** @return {Block} */
+  static element63 = function () {};
+  /** @return {Block} */
+  static element64 = function () {};
+  /** @return {Block} */
+  static element65 = function () {};
+  /** @return {Block} */
+  static element66 = function () {};
+  /** @return {Block} */
+  static element67 = function () {};
+  /** @return {Block} */
+  static element68 = function () {};
+  /** @return {Block} */
+  static element69 = function () {};
+  /** @return {Block} */
+  static element7 = function () {};
+  /** @return {Block} */
+  static element70 = function () {};
+  /** @return {Block} */
+  static element71 = function () {};
+  /** @return {Block} */
+  static element72 = function () {};
+  /** @return {Block} */
+  static element73 = function () {};
+  /** @return {Block} */
+  static element74 = function () {};
+  /** @return {Block} */
+  static element75 = function () {};
+  /** @return {Block} */
+  static element76 = function () {};
+  /** @return {Block} */
+  static element77 = function () {};
+  /** @return {Block} */
+  static element78 = function () {};
+  /** @return {Block} */
+  static element79 = function () {};
+  /** @return {Block} */
+  static element8 = function () {};
+  /** @return {Block} */
+  static element80 = function () {};
+  /** @return {Block} */
+  static element81 = function () {};
+  /** @return {Block} */
+  static element82 = function () {};
+  /** @return {Block} */
+  static element83 = function () {};
+  /** @return {Block} */
+  static element84 = function () {};
+  /** @return {Block} */
+  static element85 = function () {};
+  /** @return {Block} */
+  static element86 = function () {};
+  /** @return {Block} */
+  static element87 = function () {};
+  /** @return {Block} */
+  static element88 = function () {};
+  /** @return {Block} */
+  static element89 = function () {};
+  /** @return {Block} */
+  static element9 = function () {};
+  /** @return {Block} */
+  static element90 = function () {};
+  /** @return {Block} */
+  static element91 = function () {};
+  /** @return {Block} */
+  static element92 = function () {};
+  /** @return {Block} */
+  static element93 = function () {};
+  /** @return {Block} */
+  static element94 = function () {};
+  /** @return {Block} */
+  static element95 = function () {};
+  /** @return {Block} */
+  static element96 = function () {};
+  /** @return {Block} */
+  static element97 = function () {};
+  /** @return {Block} */
+  static element98 = function () {};
+  /** @return {Block} */
+  static element99 = function () {};
+  /** @return {Block} */
+  static emeraldBlock = function () {};
+  /** @return {Block} */
+  static emeraldOre = function () {};
+  /** @return {Block} */
+  static enchantingTable = function () {};
+  /** @return {Block} */
+  static endBrickStairs = function () {};
+  /** @return {Block} */
+  static endBricks = function () {};
+  /** @return {Block} */
+  static endGateway = function () {};
+  /** @return {Block} */
+  static endPortal = function () {};
+  /** @return {Block} */
+  static endPortalFrame = function () {};
+  /** @return {Block} */
+  static endRod = function () {};
+  /** @return {Block} */
+  static endStone = function () {};
+  /** @return {Block} */
+  static enderChest = function () {};
+  /** @return {Block} */
+  static exposedCopper = function () {};
+  /** @return {Block} */
+  static exposedCutCopper = function () {};
+  /** @return {Block} */
+  static exposedCutCopperSlab = function () {};
+  /** @return {Block} */
+  static exposedCutCopperStairs = function () {};
+  /** @return {Block} */
+  static exposedDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static farmland = function () {};
+  /** @return {Block} */
+  static fence = function () {};
+  /** @return {Block} */
+  static fenceGate = function () {};
+  /** @return {Block} */
+  static fire = function () {};
+  /** @return {Block} */
+  static fletchingTable = function () {};
+  /** @return {Block} */
+  static flowerPot = function () {};
+  /** @return {Block} */
+  static floweringAzalea = function () {};
+  /** @return {Block} */
+  static flowingLava = function () {};
+  /** @return {Block} */
+  static flowingWater = function () {};
+  /** @return {Block} */
+  static frame = function () {};
+  /** @return {Block} */
+  static frostedIce = function () {};
+  /** @return {Block} */
+  static furnace = function () {};
+  /** @return {Block} */
+  static gildedBlackstone = function () {};
+  /** @return {Block} */
+  static glass = function () {};
+  /** @return {Block} */
+  static glassPane = function () {};
+  /** @return {Block} */
+  static glowFrame = function () {};
+  /** @return {Block} */
+  static glowLichen = function () {};
+  /** @return {Block} */
+  static glowingobsidian = function () {};
+  /** @return {Block} */
+  static glowstone = function () {};
+  /** @return {Block} */
+  static goldBlock = function () {};
+  /** @return {Block} */
+  static goldOre = function () {};
+  /** @return {Block} */
+  static goldenRail = function () {};
+  /** @return {Block} */
+  static graniteStairs = function () {};
+  /** @return {Block} */
+  static grass = function () {};
+  /** @return {Block} */
+  static grassPath = function () {};
+  /** @return {Block} */
+  static gravel = function () {};
+  /** @return {Block} */
+  static grayGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static greenGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static grindstone = function () {};
+  /** @return {Block} */
+  static hangingRoots = function () {};
+  /** @return {Block} */
+  static hardGlass = function () {};
+  /** @return {Block} */
+  static hardGlassPane = function () {};
+  /** @return {Block} */
+  static hardStainedGlass = function () {};
+  /** @return {Block} */
+  static hardStainedGlassPane = function () {};
+  /** @return {Block} */
+  static hardenedClay = function () {};
+  /** @return {Block} */
+  static hayBlock = function () {};
+  /** @return {Block} */
+  static heavyWeightedPressurePlate = function () {};
+  /** @return {Block} */
+  static honeyBlock = function () {};
+  /** @return {Block} */
+  static honeycombBlock = function () {};
+  /** @return {Block} */
+  static hopper = function () {};
+  /** @return {Block} */
+  static ice = function () {};
+  /** @return {Block} */
+  static infoUpdate = function () {};
+  /** @return {Block} */
+  static infoUpdate2 = function () {};
+  /** @return {Block} */
+  static invisiblebedrock = function () {};
+  /** @return {Block} */
+  static ironBars = function () {};
+  /** @return {Block} */
+  static ironBlock = function () {};
+  /** @return {Block} */
+  static ironDoor = function () {};
+  /** @return {Block} */
+  static ironOre = function () {};
+  /** @return {Block} */
+  static ironTrapdoor = function () {};
+  /** @return {Block} */
+  static jigsaw = function () {};
+  /** @return {Block} */
+  static jukebox = function () {};
+  /** @return {Block} */
+  static jungleButton = function () {};
+  /** @return {Block} */
+  static jungleDoor = function () {};
+  /** @return {Block} */
+  static jungleFenceGate = function () {};
+  /** @return {Block} */
+  static junglePressurePlate = function () {};
+  /** @return {Block} */
+  static jungleStairs = function () {};
+  /** @return {Block} */
+  static jungleStandingSign = function () {};
+  /** @return {Block} */
+  static jungleTrapdoor = function () {};
+  /** @return {Block} */
+  static jungleWallSign = function () {};
+  /** @return {Block} */
+  static kelp = function () {};
+  /** @return {Block} */
+  static ladder = function () {};
+  /** @return {Block} */
+  static lantern = function () {};
+  /** @return {Block} */
+  static lapisBlock = function () {};
+  /** @return {Block} */
+  static lapisOre = function () {};
+  /** @return {Block} */
+  static lava = function () {};
+  /** @return {Block} */
+  static lavaCauldron = function () {};
+  /** @return {Block} */
+  static leaves = function () {};
+  /** @return {Block} */
+  static leaves2 = function () {};
+  /** @return {Block} */
+  static lectern = function () {};
+  /** @return {Block} */
+  static lever = function () {};
+  /** @return {Block} */
+  static lightBlock = function () {};
+  /** @return {Block} */
+  static lightBlueGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static lightWeightedPressurePlate = function () {};
+  /** @return {Block} */
+  static lightningRod = function () {};
+  /** @return {Block} */
+  static limeGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static litBlastFurnace = function () {};
+  /** @return {Block} */
+  static litFurnace = function () {};
+  /** @return {Block} */
+  static litPumpkin = function () {};
+  /** @return {Block} */
+  static litRedstoneLamp = function () {};
+  /** @return {Block} */
+  static litRedstoneOre = function () {};
+  /** @return {Block} */
+  static litSmoker = function () {};
+  /** @return {Block} */
+  static lodestone = function () {};
+  /** @return {Block} */
+  static log = function () {};
+  /** @return {Block} */
+  static log2 = function () {};
+  /** @return {Block} */
+  static loom = function () {};
+  /** @return {Block} */
+  static magentaGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static magma = function () {};
+  /** @return {Block} */
+  static melonBlock = function () {};
+  /** @return {Block} */
+  static melonStem = function () {};
+  /** @return {Block} */
+  static mobSpawner = function () {};
+  /** @return {Block} */
+  static monsterEgg = function () {};
+  /** @return {Block} */
+  static mossBlock = function () {};
+  /** @return {Block} */
+  static mossCarpet = function () {};
+  /** @return {Block} */
+  static mossyCobblestone = function () {};
+  /** @return {Block} */
+  static mossyCobblestoneStairs = function () {};
+  /** @return {Block} */
+  static mossyStoneBrickStairs = function () {};
+  /** @return {Block} */
+  static movingblock = function () {};
+  /** @return {Block} */
+  static mycelium = function () {};
+  /** @return {Block} */
+  static netherBrick = function () {};
+  /** @return {Block} */
+  static netherBrickFence = function () {};
+  /** @return {Block} */
+  static netherBrickStairs = function () {};
+  /** @return {Block} */
+  static netherGoldOre = function () {};
+  /** @return {Block} */
+  static netherSprouts = function () {};
+  /** @return {Block} */
+  static netherWart = function () {};
+  /** @return {Block} */
+  static netherWartBlock = function () {};
+  /** @return {Block} */
+  static netheriteBlock = function () {};
+  /** @return {Block} */
+  static netherrack = function () {};
+  /** @return {Block} */
+  static netherreactor = function () {};
+  /** @return {Block} */
+  static normalStoneStairs = function () {};
+  /** @return {Block} */
+  static noteblock = function () {};
+  /** @return {Block} */
+  static oakStairs = function () {};
+  /** @return {Block} */
+  static observer = function () {};
+  /** @return {Block} */
+  static obsidian = function () {};
+  /** @return {Block} */
+  static orangeGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static oxidizedCopper = function () {};
+  /** @return {Block} */
+  static oxidizedCutCopper = function () {};
+  /** @return {Block} */
+  static oxidizedCutCopperSlab = function () {};
+  /** @return {Block} */
+  static oxidizedCutCopperStairs = function () {};
+  /** @return {Block} */
+  static oxidizedDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static packedIce = function () {};
+  /** @return {Block} */
+  static pinkGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static piston = function () {};
+  /** @return {Block} */
+  static pistonarmcollision = function () {};
+  /** @return {Block} */
+  static planks = function () {};
+  /** @return {Block} */
+  static podzol = function () {};
+  /** @return {Block} */
+  static pointedDripstone = function () {};
+  /** @return {Block} */
+  static polishedAndesiteStairs = function () {};
+  /** @return {Block} */
+  static polishedBasalt = function () {};
+  /** @return {Block} */
+  static polishedBlackstone = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneBrickDoubleSlab = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneBrickSlab = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneBrickStairs = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneBrickWall = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneBricks = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneButton = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneDoubleSlab = function () {};
+  /** @return {Block} */
+  static polishedBlackstonePressurePlate = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneSlab = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneStairs = function () {};
+  /** @return {Block} */
+  static polishedBlackstoneWall = function () {};
+  /** @return {Block} */
+  static polishedDioriteStairs = function () {};
+  /** @return {Block} */
+  static polishedGraniteStairs = function () {};
+  /** @return {Block} */
+  static portal = function () {};
+  /** @return {Block} */
+  static potatoes = function () {};
+  /** @return {Block} */
+  static powderSnow = function () {};
+  /** @return {Block} */
+  static poweredComparator = function () {};
+  /** @return {Block} */
+  static poweredRepeater = function () {};
+  /** @return {Block} */
+  static prismarine = function () {};
+  /** @return {Block} */
+  static prismarineBricksStairs = function () {};
+  /** @return {Block} */
+  static prismarineStairs = function () {};
+  /** @return {Block} */
+  static pumpkin = function () {};
+  /** @return {Block} */
+  static pumpkinStem = function () {};
+  /** @return {Block} */
+  static purpleGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static purpurBlock = function () {};
+  /** @return {Block} */
+  static purpurStairs = function () {};
+  /** @return {Block} */
+  static quartzBlock = function () {};
+  /** @return {Block} */
+  static quartzBricks = function () {};
+  /** @return {Block} */
+  static quartzOre = function () {};
+  /** @return {Block} */
+  static quartzStairs = function () {};
+  /** @return {Block} */
+  static rail = function () {};
+  /** @return {Block} */
+  static redFlower = function () {};
+  /** @return {Block} */
+  static redGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static redMushroom = function () {};
+  /** @return {Block} */
+  static redMushroomBlock = function () {};
+  /** @return {Block} */
+  static redNetherBrick = function () {};
+  /** @return {Block} */
+  static redNetherBrickStairs = function () {};
+  /** @return {Block} */
+  static redSandstone = function () {};
+  /** @return {Block} */
+  static redSandstoneStairs = function () {};
+  /** @return {Block} */
+  static redstoneBlock = function () {};
+  /** @return {Block} */
+  static redstoneLamp = function () {};
+  /** @return {Block} */
+  static redstoneOre = function () {};
+  /** @return {Block} */
+  static redstoneTorch = function () {};
+  /** @return {Block} */
+  static redstoneWire = function () {};
+  /** @return {Block} */
+  static reeds = function () {};
+  /** @return {Block} */
+  static repeatingCommandBlock = function () {};
+  /** @return {Block} */
+  static reserved6 = function () {};
+  /** @return {Block} */
+  static respawnAnchor = function () {};
+  /** @return {Block} */
+  static sand = function () {};
+  /** @return {Block} */
+  static sandstone = function () {};
+  /** @return {Block} */
+  static sandstoneStairs = function () {};
+  /** @return {Block} */
+  static sapling = function () {};
+  /** @return {Block} */
+  static scaffolding = function () {};
+  /** @return {Block} */
+  static sculkSensor = function () {};
+  /** @return {Block} */
+  static seaPickle = function () {};
+  /** @return {Block} */
+  static seagrass = function () {};
+  /** @return {Block} */
+  static sealantern = function () {};
+  /** @return {Block} */
+  static shroomlight = function () {};
+  /** @return {Block} */
+  static shulkerBox = function () {};
+  /** @return {Block} */
+  static silverGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static skull = function () {};
+  /** @return {Block} */
+  static slime = function () {};
+  /** @return {Block} */
+  static smallDripleafBlock = function () {};
+  /** @return {Block} */
+  static smithingTable = function () {};
+  /** @return {Block} */
+  static smoker = function () {};
+  /** @return {Block} */
+  static smoothQuartzStairs = function () {};
+  /** @return {Block} */
+  static smoothRedSandstoneStairs = function () {};
+  /** @return {Block} */
+  static smoothSandstoneStairs = function () {};
+  /** @return {Block} */
+  static smoothStone = function () {};
+  /** @return {Block} */
+  static snow = function () {};
+  /** @return {Block} */
+  static snowLayer = function () {};
+  /** @return {Block} */
+  static soulCampfire = function () {};
+  /** @return {Block} */
+  static soulFire = function () {};
+  /** @return {Block} */
+  static soulLantern = function () {};
+  /** @return {Block} */
+  static soulSand = function () {};
+  /** @return {Block} */
+  static soulSoil = function () {};
+  /** @return {Block} */
+  static soulTorch = function () {};
+  /** @return {Block} */
+  static sponge = function () {};
+  /** @return {Block} */
+  static sporeBlossom = function () {};
+  /** @return {Block} */
+  static spruceButton = function () {};
+  /** @return {Block} */
+  static spruceDoor = function () {};
+  /** @return {Block} */
+  static spruceFenceGate = function () {};
+  /** @return {Block} */
+  static sprucePressurePlate = function () {};
+  /** @return {Block} */
+  static spruceStairs = function () {};
+  /** @return {Block} */
+  static spruceStandingSign = function () {};
+  /** @return {Block} */
+  static spruceTrapdoor = function () {};
+  /** @return {Block} */
+  static spruceWallSign = function () {};
+  /** @return {Block} */
+  static stainedGlass = function () {};
+  /** @return {Block} */
+  static stainedGlassPane = function () {};
+  /** @return {Block} */
+  static stainedHardenedClay = function () {};
+  /** @return {Block} */
+  static standingBanner = function () {};
+  /** @return {Block} */
+  static standingSign = function () {};
+  /** @return {Block} */
+  static stickyPiston = function () {};
+  /** @return {Block} */
+  static stickypistonarmcollision = function () {};
+  /** @return {Block} */
+  static stone = function () {};
+  /** @return {Block} */
+  static stoneBrickStairs = function () {};
+  /** @return {Block} */
+  static stoneButton = function () {};
+  /** @return {Block} */
+  static stonePressurePlate = function () {};
+  /** @return {Block} */
+  static stoneSlab = function () {};
+  /** @return {Block} */
+  static stoneSlab2 = function () {};
+  /** @return {Block} */
+  static stoneSlab3 = function () {};
+  /** @return {Block} */
+  static stoneSlab4 = function () {};
+  /** @return {Block} */
+  static stoneStairs = function () {};
+  /** @return {Block} */
+  static stonebrick = function () {};
+  /** @return {Block} */
+  static stonecutter = function () {};
+  /** @return {Block} */
+  static stonecutterBlock = function () {};
+  /** @return {Block} */
+  static strippedAcaciaLog = function () {};
+  /** @return {Block} */
+  static strippedBirchLog = function () {};
+  /** @return {Block} */
+  static strippedCrimsonHyphae = function () {};
+  /** @return {Block} */
+  static strippedCrimsonStem = function () {};
+  /** @return {Block} */
+  static strippedDarkOakLog = function () {};
+  /** @return {Block} */
+  static strippedJungleLog = function () {};
+  /** @return {Block} */
+  static strippedOakLog = function () {};
+  /** @return {Block} */
+  static strippedSpruceLog = function () {};
+  /** @return {Block} */
+  static strippedWarpedHyphae = function () {};
+  /** @return {Block} */
+  static strippedWarpedStem = function () {};
+  /** @return {Block} */
+  static structureBlock = function () {};
+  /** @return {Block} */
+  static structureVoid = function () {};
+  /** @return {Block} */
+  static sweetBerryBush = function () {};
+  /** @return {Block} */
+  static tallgrass = function () {};
+  /** @return {Block} */
+  static target = function () {};
+  /** @return {Block} */
+  static tnt = function () {};
+  /** @return {Block} */
+  static torch = function () {};
+  /** @return {Block} */
+  static trapdoor = function () {};
+  /** @return {Block} */
+  static trappedChest = function () {};
+  /** @return {Block} */
+  static tripwire = function () {};
+  /** @return {Block} */
+  static tripwireHook = function () {};
+  /** @return {Block} */
+  static turtleEgg = function () {};
+  /** @return {Block} */
+  static twistingVines = function () {};
+  /** @return {Block} */
+  static underwaterTorch = function () {};
+  /** @return {Block} */
+  static undyedShulkerBox = function () {};
+  /** @return {Block} */
+  static unknown = function () {};
+  /** @return {Block} */
+  static unlitRedstoneTorch = function () {};
+  /** @return {Block} */
+  static unpoweredComparator = function () {};
+  /** @return {Block} */
+  static unpoweredRepeater = function () {};
+  /** @return {Block} */
+  static vine = function () {};
+  /** @return {Block} */
+  static wallBanner = function () {};
+  /** @return {Block} */
+  static wallSign = function () {};
+  /** @return {Block} */
+  static warpedButton = function () {};
+  /** @return {Block} */
+  static warpedDoor = function () {};
+  /** @return {Block} */
+  static warpedDoubleSlab = function () {};
+  /** @return {Block} */
+  static warpedFence = function () {};
+  /** @return {Block} */
+  static warpedFenceGate = function () {};
+  /** @return {Block} */
+  static warpedFungus = function () {};
+  /** @return {Block} */
+  static warpedHyphae = function () {};
+  /** @return {Block} */
+  static warpedNylium = function () {};
+  /** @return {Block} */
+  static warpedPlanks = function () {};
+  /** @return {Block} */
+  static warpedPressurePlate = function () {};
+  /** @return {Block} */
+  static warpedRoots = function () {};
+  /** @return {Block} */
+  static warpedSlab = function () {};
+  /** @return {Block} */
+  static warpedStairs = function () {};
+  /** @return {Block} */
+  static warpedStandingSign = function () {};
+  /** @return {Block} */
+  static warpedStem = function () {};
+  /** @return {Block} */
+  static warpedTrapdoor = function () {};
+  /** @return {Block} */
+  static warpedWallSign = function () {};
+  /** @return {Block} */
+  static warpedWartBlock = function () {};
+  /** @return {Block} */
+  static water = function () {};
+  /** @return {Block} */
+  static waterlily = function () {};
+  /** @return {Block} */
+  static waxedCopper = function () {};
+  /** @return {Block} */
+  static waxedCutCopper = function () {};
+  /** @return {Block} */
+  static waxedCutCopperSlab = function () {};
+  /** @return {Block} */
+  static waxedCutCopperStairs = function () {};
+  /** @return {Block} */
+  static waxedDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static waxedExposedCopper = function () {};
+  /** @return {Block} */
+  static waxedExposedCutCopper = function () {};
+  /** @return {Block} */
+  static waxedExposedCutCopperSlab = function () {};
+  /** @return {Block} */
+  static waxedExposedCutCopperStairs = function () {};
+  /** @return {Block} */
+  static waxedExposedDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static waxedWeatheredCopper = function () {};
+  /** @return {Block} */
+  static waxedWeatheredCutCopper = function () {};
+  /** @return {Block} */
+  static waxedWeatheredCutCopperSlab = function () {};
+  /** @return {Block} */
+  static waxedWeatheredCutCopperStairs = function () {};
+  /** @return {Block} */
+  static waxedWeatheredDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static weatheredCopper = function () {};
+  /** @return {Block} */
+  static weatheredCutCopper = function () {};
+  /** @return {Block} */
+  static weatheredCutCopperSlab = function () {};
+  /** @return {Block} */
+  static weatheredCutCopperStairs = function () {};
+  /** @return {Block} */
+  static weatheredDoubleCutCopperSlab = function () {};
+  /** @return {Block} */
+  static web = function () {};
+  /** @return {Block} */
+  static weepingVines = function () {};
+  /** @return {Block} */
+  static wheat = function () {};
+  /** @return {Block} */
+  static whiteGlazedTerracotta = function () {};
+  /** @return {Block} */
+  static witherRose = function () {};
+  /** @return {Block} */
+  static wood = function () {};
+  /** @return {Block} */
+  static woodenButton = function () {};
+  /** @return {Block} */
+  static woodenDoor = function () {};
+  /** @return {Block} */
+  static woodenPressurePlate = function () {};
+  /** @return {Block} */
+  static woodenSlab = function () {};
+  /** @return {Block} */
+  static wool = function () {};
+  /** @return {Block} */
+  static yellowFlower = function () {};
+  /** @return {Block} */
+  static yellowGlazedTerracotta = function () {};
 }
 
 export class Commands {
   /**
    *
-   * @param {String} command
+   * @param {string} command
    */
   static run(command) {
     return {
@@ -3057,185 +2071,185 @@ class Component {
   constructor() {
     // return values
     /**
-     * @type {String}
+     * @type {string}
      */
     this.id = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.maxTurn = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.value = undefined;
-    this.setCurrent = (val) => {return};
-    this.restToMinValue = () => {return};
-    this.restToMaxValue = () => {return};
-    this.restToDefaultValue = () => {return};
+    this.setCurrent = (val) => {};
+    this.restToMinValue = () => {};
+    this.restToMaxValue = () => {};
+    this.restToDefaultValue = () => {};
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.current = undefined;
-    this.setAirSupply = (val) => {return};
+    this.setAirSupply = (val) => {};
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.totalSupply = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.suffocateTime = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.inhaleTime = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.breathesAir = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.breathesWater = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.breathesLava = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.breathesSolids = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.generatesBubbles = undefined;
     /**
-     * @type {String[]}
+     * @type {Array<string>}
      */
     this.breatheBlocks = undefined;
     /**
-     * @type {String[]}
+     * @type {Array<string>}
      */
     this.nonBreatheBlocks = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.isAmphibious = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.avoidSun = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canPassDoors = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canOpenDoors = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canOpenIronDoors = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canBreakDoors = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.avoidWater = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.avoidDamageBlocks = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canFloat = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canSink = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canPathOverWater = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canPathOverLava = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canWalkInLava = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.avoidPortals = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canWalk = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canSwim = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canBreach = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canJump = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canPathFromAir = undefined;
     /**
      * 首紐でつなぎます
      * @param {Minecraft.Entity} entity 首紐でつなぐ先のエンティティです。
      */
-    this.leash = (entity) => {return};
+    this.leash = (entity) => {};
     /**
      * 首紐をとります
      */
-    this.unleash = () => {return};
+    this.unleash = () => {};
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.softDistance = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.maxTurn = undefined;
-    this.addRider = (val) => {return};
-    this.ejectRider = (val) => {return};
-    this.ejectRiders = () => {return};
+    this.addRider = (val) => {};
+    this.ejectRider = (val) => {};
+    this.ejectRiders = () => {};
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.seatCount = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.crouchingSkipInteract = undefined;
     this.interactText = "";
     /**
-     * @type {String}
+     * @type {Array<string>}
      */
     this.familyTypes = undefined;
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.controllingSeat = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.pullInEntities = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.riderCanInteract = undefined;
     this.seats = [
@@ -3248,15 +2262,12 @@ class Component {
     ];
     /**
      * 手懐けの状態を変更します。
-     * @param {Boolean} status 手懐けの状態を設定します。 this.true = 手懐けられた状態 this.false = 手懐けられていない状態
+     * @param {boolean} status 手懐けの状態を設定します。 this.true = 手懐けられた状態 this.false = 手懐けられていない状態
      */
-    this.setTamed = (status) => {return};
-    /**
-     * @type {Object}
-     */
+    this.setTamed = (status) => {};
     this.filters = {};
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.forceUse = undefined;
     this.items = [
@@ -3268,109 +2279,77 @@ class Component {
     ];
 
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.additionalSlotsPerStrength = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.canBeSiphonedFrom = undefined;
     this.containerType = "";
     /**
-     * @type {Number}
+     * @type {number}
      */
     this.inventorySize = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.private = undefined;
     /**
-     * @type {Boolean}
+     * @type {boolean}
      */
     this.restrictToOwner = undefined;
     this.container = {
       /**
        * slotにアイテムを追加
-       * @param {Number} slot
+       * @param {number} slot
        * @param {Minecraft.ItemStack} itemStack
        */
-      setItem: (slot, itemStack) => {return},
+      setItem: (slot, itemStack) => {},
       /**
        * slotのアイテムを取得
-       * @param {Number} slot 取得するスロット番号
+       * @param {number} slot 取得するスロット番号
        * @return {Minecraft.ItemStack}
        */
-      getItem: (slot) => {return},
+      getItem: (slot) => {},
       /**
        * 空いているスロットにItemStackを追加
        * @param {Minecraft.ItemStack} itemStack
        */
-      addItem: (itemStack) => {return},
+      addItem: (itemStack) => {},
       /**
        * fromSlotからtoContainerのtoSlotにアイテムを転送
-       * @param {Number} fromSlot
-       * @param {Number} toSlot
+       * @param {number} fromSlot
+       * @param {number} toSlot
        * @param {Minecraft.Container} toContainer
        */
-      transferItem: (fromSlot, toSlot, toContainer) => {return},
+      transferItem: (fromSlot, toSlot, toContainer) => {},
       /**
        * otherContainerのotherSlotとslotのアイテムを交換します。
-       * @param {Number} slot
-       * @param {Number} otherSlot
+       * @param {number} slot
+       * @param {number} otherSlot
        * @param {Minecraft.Container} otherContainer
        */
-      swapItems: (slot, otherSlot, otherContainer) => {return},
+      swapItems: (slot, otherSlot, otherContainer) => {},
       size: 0,
       emptySlotsCount: 0,
     }
   }
 }
 
-class Dimension {
-  /**
-   * 
-   * @param {BlockLocation} location 
-   * @return {Boolean}
-   */
-  isEmpty = function(location){return};
-  /**
-   * 
-   * @param {BlockLocation} location 
-   * @return {Entity[]}
-   */
-  getEntitiesAtBlockLocation = function(location){return};
-  /**
-   * 
-   * @param {BlockLocation} position 
-   * @return {Block}
-   */
-  getBlock = function(position){return};
-  /**
-   * 
-   * @param {String} identifier 
-   * @param {BlockLocation} blockLocation 
-   * @return {Entity}
-   */
-  spawnEntity = function(identifier, blockLocation){return};
-  /**
-   * @param {Location} location
-   * @param {Number} radius
-   * @param {ExplosionOptions} explosionOptions
-   */
-  createExplosion = function(location, radius, explosionOptions){return};
-}
+export class Dimension {}
 
 export class Effect {
   constructor() {
     /**@return {Number} */
-    this.getAmplifier = () => {return};
+    this.getAmplifier = () => {};
     /**@return {Number} */
-    this.getDuration = () => {return};
+    this.getDuration = () => {};
   }
 }
 
 /**
- * @typedef {{getName:function():String}} EffectType
+ * @typedef {{getName:function():string}} EffectType
  */
 
 export class Effects {
@@ -3436,84 +2415,46 @@ export class Effects {
   static villageHero;
 }
 
-export class ExplosionOptions{
-  constructor(){
-    /**
-     * @type {Entity}
-     */
-    this.source = Entity()
-    /**
-     * @type {Boolean}
-     */
-    this.breaksBlocks = Boolean()
-    /**
-     * @type {Boolean}
-     */
-    this.causesFire = Boolean()
-    /**
-     * @type {Boolean}
-     */
-    this.allowUnderwater = Boolean()
-  }
-}
-
 export class Entity {
   constructor() {
     /**
      *
-     * @param {String} ComponentName
-     * @return {Boolean}
+     * @param {string} ComponentName
+     * @return {boolean}
      */
-    this.hasComponent = (ComponentName) => {return};
+    this.hasComponent = (ComponentName) => {};
     /**
      *
-     * @param {String} ComponentName
+     * @param {string} ComponentName
      * @return {Component}
      */
-    this.getComponent = (ComponentName) => {return};
+    this.getComponent = (ComponentName) => {};
     /**
-     * @return {Component[]}
+     * @return {Array<Component>}
      */
-    this.getComponents = () => {return};
-    this.kill = () => {return};
+    this.getComponents = () => {};
+    /**
+     * @return {string}
+     */
+    this.getName = () => {};
+    this.kill = () => {};
     /**
      *
      * @param {EffectType} effectType
      * @return {Effect}
      */
-    this.getEffect = (effectType) => {return};
+    this.getEffect = (effectType) => {};
     /**
      *
      * @param {EffectType} effectType
      * @param {Number} duration
      * @param {Number} amplifier
      */
-    this.addEffect = (effectType, duration, amplifier) => {return};
-    /**
-     * 
-     * @param {String} eventName 
-     */
-    this.triggerEvent = function(eventName){return};
-    /**
-     * @type {String}
-     */
-    this.id = String()
-    /**
-     * @type {Location}
-     */
-    this.location = new Location()
-    /**
-     * @type {Location}
-     */
-    this.velocity = new Location()
-    /**
-     * @type {String}
-     */
-    this.nameTag = String()
+    this.addEffect = (effectType, duration, amplifier) => {};
   }
 }
 
-export class Events {return}
+export class Events {}
 
 /**
  * @constructor
@@ -3526,11 +2467,11 @@ export class ItemStack {
    * @param {Number} amount
    * @param {Number} data
    */
-  constructor(itemName, amount, data) {return}
+  constructor(itemName, amount, data) {}
 }
 
 /**
- * @typedef {{getName:function():String}} ItemType
+ * @typedef {{getName:function():string}} ItemType
  */
 
 export class Items {
@@ -3677,7 +2618,7 @@ export class Items {
   /**@type {ItemType} */
   static goldenAxe;
   /**@type {ItemType} */
-  static String;
+  static string;
   /**@type {ItemType} */
   static feather;
   /**@type {ItemType} */
@@ -5717,7 +4658,7 @@ export class Items {
   /**@type {ItemType} */
   static ["minecraft:golden_axe"];
   /**@type {ItemType} */
-  static ["minecraft:String"];
+  static ["minecraft:string"];
   /**@type {ItemType} */
   static ["minecraft:feather"];
   /**@type {ItemType} */
@@ -7635,66 +6576,9 @@ export class Location {
   /**
    *
    * @param {Location} location
-   * @return {Boolean}
+   * @return {boolean}
    */
-  equals(location) {return}
-}
-
-class Player {
-  /**
-   *
-   * @param {String} ComponentName
-   * @return {Boolean}
-   */
-  hasComponent = function(ComponentName){return}
-  /**
-   *
-   * @param {String} ComponentName
-   * @return {Component}
-   */
-  getComponent = function(ComponentName){return}
-  /**
-   * @return {Component[]}
-   */
-  getComponents = function(){return}
-  kill = function(){return}
-  /**
-   *
-   * @param {EffectType} effectType
-   * @return {Effect}
-   */
-  getEffect = function(effectType){return}
-  /**
-   *
-   * @param {EffectType} effectType
-   * @param {Number} duration
-   * @param {Number} amplifier
-   */
-  addEffect = function(effectType, duration, amplifier){return}
-  /**
-   * @param {String} eventName 
-   */
-  triggerEvent = function(eventName){return}
-  /**
-   * @type {String}
-   */
-  id
-  /**
-   * @type {Location}
-   */
-  location
-  /**
-   * @type {Location}
-   */
-  velocity
-  /**
-   * @type {String}
-   */
-  nameTag
-  /**
-   * @type {String}
-   */
-  name
+  equals(location) {}
 }
 
 class Tick {}
@@ -7702,42 +6586,18 @@ class Tick {}
 export class World {
   /**
    *
-   * @param {('overworld'|'nether'|'the end')} dimension
-   * @return {Dimension}
+   * @param {Dimension} dimension
    */
-  static getDimension = (dimension) => {return};
+  static getDimension = (dimension) => {};
   /**
    *
-   * @param {String} eventName
+   * @param {string} eventName
    * @param {function(Entity):void} callback
    */
-  static addEventListener = (eventName, callback) => {return};
-
-  /**
-   * @return {Player[]}
-   */
-  static getPlayers = function(){return};
-  static events = {
-    /**
-     * @type {TickEventSignal}
-     */
-    tick,
-    /**
-     * @type {WeatherChangedEventSignal}
-     */
-    weatherChanged,
-    /**
-     * @type {ChatEventSignal}
-     */
-    beforeChat,
-    /**
-     * @type {ChatEvent}
-     */
-    chat,
-  };
+  static addEventListener = (eventName, callback) => {};
 }
 
-// "minecraft:color" = class {return};
-// "minecraft:health" = class {return};
-// "minecraft:leashable" = class {return};
-// "minecraft:tamemount" = class {return};
+// "minecraft:color" = class {};
+// "minecraft:health" = class {};
+// "minecraft:leashable" = class {};
+// "minecraft:tamemount" = class {};
