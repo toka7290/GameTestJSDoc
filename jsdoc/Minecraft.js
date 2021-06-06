@@ -20,10 +20,10 @@ class Block {
     this.getBlockData = function(){return};
     /**
      *
-     * @param {String} ComponentName
+     * @param {String} componentName
      * @return {Component}
      */
-    this.getComponent = function(){return};
+    this.getComponent = function(componentName){return};
     /**
      * @return {BlockLocation}
      */
