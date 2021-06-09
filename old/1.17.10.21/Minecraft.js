@@ -3356,14 +3356,12 @@ class Dimension {
   createExplosion = function(location, radius, explosionOptions){return};
 }
 
-class Effect {
+export class Effect {
   constructor() {
     /**@return {Number} */
-    this.amplifier = Number()
+    this.getAmplifier = () => {return};
     /**@return {Number} */
-    this.duration = Number()
-    /**@return {String} */
-    this.displayName = String()
+    this.getDuration = () => {return};
   }
 }
 
@@ -7704,6 +7702,12 @@ export class World {
    * @return {Dimension}
    */
   static getDimension = (dimension) => {return};
+  /**
+   *
+   * @param {String} eventName
+   * @param {function(Entity):void} callback
+   */
+  static addEventListener = (eventName, callback) => {return};
 
   /**
    * @return {Player[]}
@@ -7717,45 +7721,16 @@ export class World {
     /**
      * @type {WeatherChangedEventSignal}
      */
-    changeWeather,
-    /**
-     * @type {AddEffectEventSignal}
-     */
-    addEffect,
+    weatherChanged,
     /**
      * @type {ChatEventSignal}
      */
     beforeChat,
     /**
-     * @type {ChatEventSignal}
+     * @type {ChatEvent}
      */
     chat,
-    /**
-     * @type {EntityEventSignal}
-     */
-    createEntity,
   };
-}
-
-class TickEventSignal{
-  subscribe()
-  unsubscribe()
-}
-class WeatherChangedEventSignal{
-  subscribe()
-  unsubscribe()
-}
-class AddEffectEventSignal{
-  subscribe()
-  unsubscribe()
-}
-class ChatEventSignal{
-  subscribe()
-  unsubscribe()
-}
-class EntityEventSignal{
-  subscribe()
-  unsubscribe()
 }
 
 // "minecraft:color" = class {return};
