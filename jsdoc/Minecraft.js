@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
  * @author toka7290
- * @since v1.17.10.21
- * @version v1.17.10.21
+ * @since v1.17.20.20
+ * @version v1.17.20.20
  * @name Minecraft
  * @memberof MinecraftGameTest
  * @license MIT
@@ -13,53 +13,79 @@ class Block {
     /**
      * @return {Boolean}
      */
-    this.canBeWaterlogged = function(){return};
+    this.canBeWaterlogged = function () {
+      return;
+    };
     /**
      * @return {BlockType}
      */
-    this.getBlockData = function(){return};
+    this.getBlockData = function () {
+      return;
+    };
     /**
      *
      * @param {String} componentName
      * @return {Component}
      */
-    this.getComponent = function(componentName){return};
+    this.getComponent = function (componentName) {
+      return;
+    };
+    /**
+     * @return {Dimension}
+     */
+    this.getDimension() = function(){return;};
     /**
      * @return {BlockLocation}
      */
-    this.getLocation = function(){return};
+    this.getLocation = function () {
+      return;
+    };
     /**
      * @return {String[]}
      */
-    this.getTags = function(){return};
+    this.getTags = function () {
+      return;
+    };
     /**
      * @return {Boolean}
      */
-    this.isEmpty = function(){return};
+    this.isEmpty = function () {
+      return;
+    };
     /**
      * @return {Boolean}
      */
-    this.isWaterlogged = function(){return};
+    this.isWaterlogged = function () {
+      return;
+    };
     /**
      * @param {String} tagName
      * @return {Boolean}
      */
-    this.hasTag = function(tagName){return};
+    this.hasTag = function (tagName) {
+      return;
+    };
     /**
      *
      * @param {BlockPermutation} permutation
      */
-    this.setPermutation = function(permutation){return};
+    this.setPermutation = function (permutation) {
+      return;
+    };
     /**
      *
      * @param {BlockType} blockType
      */
-    this.setType = function(blockType){return};
+    this.setType = function (blockType) {
+      return;
+    };
     /**
      *
      * @param {Boolean} logged
      */
-    this.setWaterlogged = function(logged){return};
+    this.setWaterlogged = function (logged) {
+      return;
+    };
     /**
      * @type {Number}
      */
@@ -95,7 +121,9 @@ export class BlockLocation {
    * @param {BlockLocation} other
    * @return {Boolean}
    */
-  equals(other) {return}
+  equals(other) {
+    return;
+  }
   /**
    *
    * @param {Number} x
@@ -103,2887 +131,2913 @@ export class BlockLocation {
    * @param {Number} z
    * @return {BlockLocation}
    */
-  offset(x, y, z) {return}
+  offset(x, y, z) {
+    return;
+  }
   /**
    * @return {BlockLocation}
    */
-  above() {return}
+  above() {
+    return;
+  }
 }
 
 /**
  * @enum {String}
  */
 export const BlockProperties = {
-  multiFaceDirectionBits : "multi_face_direction_bits",
-  bigDripleafHead : "big_dripleaf_head",
-  bigDripleafTilt : "big_dripleaf_tilt",
-  growingPlantAge : "growing_plant_age",
-  dripstoneThickness : "dripstone_thickness",
-  respawnAnchorCharge : "respawn_anchor_charge",
-  twistingVinesAge : "twisting_vines_age",
-  rotation : "rotation",
-  wallConnectionTypeWest : "wall_connection_type_west",
-  wallConnectionTypeSouth : "wall_connection_type_south",
-  wallConnectionTypeEast : "wall_connection_type_east",
-  wallConnectionTypeNorth : "wall_connection_type_north",
-  wallPostBit : "wall_post_bit",
-  weepingVinesAge : "weeping_vines_age",
-  honeyLevel : "honey_level",
-  blockLightLevel : "block_light_level",
-  pillarAxis : "pillar_axis",
-  leverDirection : "lever_direction",
-  coralFanDirection : "coral_fan_direction",
-  composterFillLevel : "composter_fill_level",
-  extinguished : "extinguished",
-  structureBlockType : "structure_block_type",
-  structureVoidType : "structure_void_type",
-  attachment : "attachment",
-  coralHangTypeBit : "coral_hang_type_bit",
-  strippedBit : "stripped_bit",
-  hanging : "hanging",
-  cauldronLiquid : "cauldron_liquid",
-  coralColor : "coral_color",
-  seaGrassType : "sea_grass_type",
-  chemistryTableType : "chemistry_table_type",
-  doublePlantType : "double_plant_type",
-  prismarineBlockType : "prismarine_block_type",
-  wallBlockType : "wall_block_type",
-  hugeMushroomBits : "huge_mushroom_bits",
-  stoneBrickType : "stone_brick_type",
-  monsterEggStoneType : "monster_egg_stone_type",
-  stoneSlabType4 : "stone_slab_type_4",
-  stoneSlabType3 : "stone_slab_type_3",
-  stoneSlabType2 : "stone_slab_type_2",
-  stoneSlabType : "stone_slab_type",
-  flowerType : "flower_type",
-  tallGrassType : "tall_grass_type",
-  sandStoneType : "sand_stone_type",
-  spongeType : "sponge_type",
-  newLeafType : "new_leaf_type",
-  oldLeafType : "old_leaf_type",
-  deprecated : "deprecated",
-  chiselType : "chisel_type",
-  newLogType : "new_log_type",
-  oldLogType : "old_log_type",
-  sandType : "sand_type",
-  dirtType : "dirt_type",
-  stoneType : "stone_type",
-  woodType : "wood_type",
-  stabilityCheck : "stability_check",
-  stability : "stability",
-  bambooLeafSize : "bamboo_leaf_size",
-  bambooStalkThickness : "bamboo_stalk_thickness",
-  color : "color",
-  coralDirection : "coral_direction",
-  weirdoDirection : "weirdo_direction",
-  groundSignDirection : "ground_sign_direction",
-  crackedState : "cracked_state",
-  turtleEggCount : "turtle_egg_count",
-  dragDown : "drag_down",
-  torchFacingDirection : "torch_facing_direction",
-  saplingType : "sapling_type",
-  itemFrameMapBit : "item_frame_map_bit",
-  clusterCount : "cluster_count",
-  deadBit : "dead_bit",
-  colorBit : "color_bit",
-  allowUnderwaterBit : "allow_underwater_bit",
-  vineDirectionBits : "vine_direction_bits",
-  upsideDownBit : "upside_down_bit",
-  updateBit : "update_bit",
-  triggeredBit : "triggered_bit",
-  topSlotBit : "top_slot_bit",
-  toggleBit : "toggle_bit",
-  suspendedBit : "suspended_bit",
-  repeaterDelay : "repeater_delay",
-  redstoneSignal : "redstone_signal",
-  railDirection : "rail_direction",
-  railDataBit : "rail_data_bit",
-  poweredBit : "powered_bit",
-  persistentBit : "persistent_bit",
-  outputLitBit : "output_lit_bit",
-  outputSubtractBit : "output_subtract_bit",
-  openBit : "open_bit",
-  occupiedBit : "occupied_bit",
-  kelpAge : "kelp_age",
-  noDropBit : "no_drop_bit",
-  moisturizedAmount : "moisturized_amount",
-  liquidDepth : "liquid_depth",
-  inWallBit : "in_wall_bit",
-  infiniburnBit : "infiniburn_bit",
-  height : "height",
-  headPieceBit : "head_piece_bit",
-  growth : "growth",
-  fillLevel : "fill_level",
-  facingDirection : "facing_direction",
-  explodeBit : "explode_bit",
-  endPortalEyeBit : "end_portal_eye_bit",
-  direction : "direction",
-  upperBlockBit : "upper_block_bit",
-  doorHingeBit : "door_hinge_bit",
-  disarmedBit : "disarmed_bit",
-  damage : "damage",
-  coveredBit : "covered_bit",
-  conditionalBit : "conditional_bit",
-  buttonPressedBit : "button_pressed_bit",
-  brewingStandSlotCBit : "brewing_stand_slot_c_bit",
-  brewingStandSlotBBit : "brewing_stand_slot_b_bit",
-  brewingStandSlotABit : "brewing_stand_slot_a_bit",
-  biteCounter : "bite_counter",
-  portalAxis : "portal_axis",
-  attachedBit : "attached_bit",
-  age : "age",
-  ageBit : "age_bit",
-}
+  multiFaceDirectionBits: "multi_face_direction_bits",
+  bigDripleafHead: "big_dripleaf_head",
+  bigDripleafTilt: "big_dripleaf_tilt",
+  growingPlantAge: "growing_plant_age",
+  dripstoneThickness: "dripstone_thickness",
+  respawnAnchorCharge: "respawn_anchor_charge",
+  twistingVinesAge: "twisting_vines_age",
+  rotation: "rotation",
+  wallConnectionTypeWest: "wall_connection_type_west",
+  wallConnectionTypeSouth: "wall_connection_type_south",
+  wallConnectionTypeEast: "wall_connection_type_east",
+  wallConnectionTypeNorth: "wall_connection_type_north",
+  wallPostBit: "wall_post_bit",
+  weepingVinesAge: "weeping_vines_age",
+  honeyLevel: "honey_level",
+  blockLightLevel: "block_light_level",
+  pillarAxis: "pillar_axis",
+  leverDirection: "lever_direction",
+  coralFanDirection: "coral_fan_direction",
+  composterFillLevel: "composter_fill_level",
+  extinguished: "extinguished",
+  structureBlockType: "structure_block_type",
+  structureVoidType: "structure_void_type",
+  attachment: "attachment",
+  coralHangTypeBit: "coral_hang_type_bit",
+  strippedBit: "stripped_bit",
+  hanging: "hanging",
+  cauldronLiquid: "cauldron_liquid",
+  coralColor: "coral_color",
+  seaGrassType: "sea_grass_type",
+  chemistryTableType: "chemistry_table_type",
+  doublePlantType: "double_plant_type",
+  prismarineBlockType: "prismarine_block_type",
+  wallBlockType: "wall_block_type",
+  hugeMushroomBits: "huge_mushroom_bits",
+  stoneBrickType: "stone_brick_type",
+  monsterEggStoneType: "monster_egg_stone_type",
+  stoneSlabType4: "stone_slab_type_4",
+  stoneSlabType3: "stone_slab_type_3",
+  stoneSlabType2: "stone_slab_type_2",
+  stoneSlabType: "stone_slab_type",
+  flowerType: "flower_type",
+  tallGrassType: "tall_grass_type",
+  sandStoneType: "sand_stone_type",
+  spongeType: "sponge_type",
+  newLeafType: "new_leaf_type",
+  oldLeafType: "old_leaf_type",
+  deprecated: "deprecated",
+  chiselType: "chisel_type",
+  newLogType: "new_log_type",
+  oldLogType: "old_log_type",
+  sandType: "sand_type",
+  dirtType: "dirt_type",
+  stoneType: "stone_type",
+  woodType: "wood_type",
+  stabilityCheck: "stability_check",
+  stability: "stability",
+  bambooLeafSize: "bamboo_leaf_size",
+  bambooStalkThickness: "bamboo_stalk_thickness",
+  color: "color",
+  coralDirection: "coral_direction",
+  weirdoDirection: "weirdo_direction",
+  groundSignDirection: "ground_sign_direction",
+  crackedState: "cracked_state",
+  turtleEggCount: "turtle_egg_count",
+  dragDown: "drag_down",
+  torchFacingDirection: "torch_facing_direction",
+  saplingType: "sapling_type",
+  itemFrameMapBit: "item_frame_map_bit",
+  clusterCount: "cluster_count",
+  deadBit: "dead_bit",
+  colorBit: "color_bit",
+  allowUnderwaterBit: "allow_underwater_bit",
+  vineDirectionBits: "vine_direction_bits",
+  upsideDownBit: "upside_down_bit",
+  updateBit: "update_bit",
+  triggeredBit: "triggered_bit",
+  topSlotBit: "top_slot_bit",
+  toggleBit: "toggle_bit",
+  suspendedBit: "suspended_bit",
+  repeaterDelay: "repeater_delay",
+  redstoneSignal: "redstone_signal",
+  railDirection: "rail_direction",
+  railDataBit: "rail_data_bit",
+  poweredBit: "powered_bit",
+  persistentBit: "persistent_bit",
+  outputLitBit: "output_lit_bit",
+  outputSubtractBit: "output_subtract_bit",
+  openBit: "open_bit",
+  occupiedBit: "occupied_bit",
+  kelpAge: "kelp_age",
+  noDropBit: "no_drop_bit",
+  moisturizedAmount: "moisturized_amount",
+  liquidDepth: "liquid_depth",
+  inWallBit: "in_wall_bit",
+  infiniburnBit: "infiniburn_bit",
+  height: "height",
+  headPieceBit: "head_piece_bit",
+  growth: "growth",
+  fillLevel: "fill_level",
+  facingDirection: "facing_direction",
+  explodeBit: "explode_bit",
+  endPortalEyeBit: "end_portal_eye_bit",
+  direction: "direction",
+  upperBlockBit: "upper_block_bit",
+  doorHingeBit: "door_hinge_bit",
+  disarmedBit: "disarmed_bit",
+  damage: "damage",
+  coveredBit: "covered_bit",
+  conditionalBit: "conditional_bit",
+  buttonPressedBit: "button_pressed_bit",
+  brewingStandSlotCBit: "brewing_stand_slot_c_bit",
+  brewingStandSlotBBit: "brewing_stand_slot_b_bit",
+  brewingStandSlotABit: "brewing_stand_slot_a_bit",
+  biteCounter: "bite_counter",
+  portalAxis: "portal_axis",
+  attachedBit: "attached_bit",
+  age: "age",
+  ageBit: "age_bit",
+};
 
-export class BlockTypes  {
+export class BlockTypes {
   /**
    * @return {BlockType[]}
    */
-  getAllBlockTypes = function(){return}
+  getAllBlockTypes = function () {
+    return;
+  };
   /**
    * @param {String} id
    * @return {BlockType}
    */
-  get(id){return}
+  get(id) {
+    return;
+  }
 
   // vanilla blocks
   /**
    * @type {BlockType}
    */
-  acaciaButton
+  acaciaButton;
   /**
    * @type {BlockType}
    */
-  acaciaDoor
+  acaciaDoor;
   /**
    * @type {BlockType}
    */
-  acaciaFenceGate
+  acaciaFenceGate;
   /**
    * @type {BlockType}
    */
-  acaciaPressurePlate
+  acaciaPressurePlate;
   /**
    * @type {BlockType}
    */
-  acaciaStairs
+  acaciaStairs;
   /**
    * @type {BlockType}
    */
-  acaciaStandingSign
+  acaciaStandingSign;
   /**
    * @type {BlockType}
    */
-  acaciaTrapdoor
+  acaciaTrapdoor;
   /**
    * @type {BlockType}
    */
-  acaciaWallSign
+  acaciaWallSign;
   /**
    * @type {BlockType}
    */
-  activatorRail
+  activatorRail;
   /**
    * @type {BlockType}
    */
-  air
+  air;
   /**
    * @type {BlockType}
    */
-  allow
+  allow;
   /**
    * @type {BlockType}
    */
-  amethystBlock
+  amethystBlock;
   /**
    * @type {BlockType}
    */
-  amethystCluster
+  amethystCluster;
   /**
    * @type {BlockType}
    */
-  ancientDebris
+  ancientDebris;
   /**
    * @type {BlockType}
    */
-  andesiteStairs
+  andesiteStairs;
   /**
    * @type {BlockType}
    */
-  anvil
+  anvil;
   /**
    * @type {BlockType}
    */
-  azalea
+  azalea;
   /**
    * @type {BlockType}
    */
-  azaleaLeaves
+  azaleaLeaves;
   /**
    * @type {BlockType}
    */
-  azaleaLeavesFlowered
+  azaleaLeavesFlowered;
   /**
    * @type {BlockType}
    */
-  bamboo
+  bamboo;
   /**
    * @type {BlockType}
    */
-  bambooSapling
+  bambooSapling;
   /**
    * @type {BlockType}
    */
-  barrel
+  barrel;
   /**
    * @type {BlockType}
    */
-  barrier
+  barrier;
   /**
    * @type {BlockType}
    */
-  basalt
+  basalt;
   /**
    * @type {BlockType}
    */
-  beacon
+  beacon;
   /**
    * @type {BlockType}
    */
-  bed
+  bed;
   /**
    * @type {BlockType}
    */
-  bedrock
+  bedrock;
   /**
    * @type {BlockType}
    */
-  beeNest
+  beeNest;
   /**
    * @type {BlockType}
    */
-  beehive
+  beehive;
   /**
    * @type {BlockType}
    */
-  beetroot
+  beetroot;
   /**
    * @type {BlockType}
    */
-  bell
+  bell;
   /**
    * @type {BlockType}
    */
-  bigDripleaf
+  bigDripleaf;
   /**
    * @type {BlockType}
    */
-  birchButton
+  birchButton;
   /**
    * @type {BlockType}
    */
-  birchDoor
+  birchDoor;
   /**
    * @type {BlockType}
    */
-  birchFenceGate
+  birchFenceGate;
   /**
    * @type {BlockType}
    */
-  birchPressurePlate
+  birchPressurePlate;
   /**
    * @type {BlockType}
    */
-  birchStairs
+  birchStairs;
   /**
    * @type {BlockType}
    */
-  birchStandingSign
+  birchStandingSign;
   /**
    * @type {BlockType}
    */
-  birchTrapdoor
+  birchTrapdoor;
   /**
    * @type {BlockType}
    */
-  birchWallSign
+  birchWallSign;
   /**
    * @type {BlockType}
    */
-  blackGlazedTerracotta
+  blackGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  blackstone
+  blackstone;
   /**
    * @type {BlockType}
    */
-  blackstoneDoubleSlab
+  blackstoneDoubleSlab;
   /**
    * @type {BlockType}
    */
-  blackstoneSlab
+  blackstoneSlab;
   /**
    * @type {BlockType}
    */
-  blackstoneStairs
+  blackstoneStairs;
   /**
    * @type {BlockType}
    */
-  blackstoneWall
+  blackstoneWall;
   /**
    * @type {BlockType}
    */
-  blastFurnace
+  blastFurnace;
   /**
    * @type {BlockType}
    */
-  blueGlazedTerracotta
+  blueGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  blueIce
+  blueIce;
   /**
    * @type {BlockType}
    */
-  boneBlock
+  boneBlock;
   /**
    * @type {BlockType}
    */
-  bookshelf
+  bookshelf;
   /**
    * @type {BlockType}
    */
-  borderBlock
+  borderBlock;
   /**
    * @type {BlockType}
    */
-  brewingStand
+  brewingStand;
   /**
    * @type {BlockType}
    */
-  brickBlock
+  brickBlock;
   /**
    * @type {BlockType}
    */
-  brickStairs
+  brickStairs;
   /**
    * @type {BlockType}
    */
-  brownGlazedTerracotta
+  brownGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  brownMushroom
+  brownMushroom;
   /**
    * @type {BlockType}
    */
-  brownMushroomBlock
+  brownMushroomBlock;
   /**
    * @type {BlockType}
    */
-  bubbleColumn
+  bubbleColumn;
   /**
    * @type {BlockType}
    */
-  buddingAmethyst
+  buddingAmethyst;
   /**
    * @type {BlockType}
    */
-  cactus
+  cactus;
   /**
    * @type {BlockType}
    */
-  cake
+  cake;
   /**
    * @type {BlockType}
    */
-  calcite
+  calcite;
   /**
    * @type {BlockType}
    */
-  camera
+  camera;
   /**
    * @type {BlockType}
    */
-  campfire
+  campfire;
   /**
    * @type {BlockType}
    */
-  carpet
+  carpet;
   /**
    * @type {BlockType}
    */
-  carrots
+  carrots;
   /**
    * @type {BlockType}
    */
-  cartographyTable
+  cartographyTable;
   /**
    * @type {BlockType}
    */
-  carvedPumpkin
+  carvedPumpkin;
   /**
    * @type {BlockType}
    */
-  cauldron
+  cauldron;
   /**
    * @type {BlockType}
    */
-  caveVines
+  caveVines;
   /**
    * @type {BlockType}
    */
-  caveVinesBodyWithBerries
+  caveVinesBodyWithBerries;
   /**
    * @type {BlockType}
    */
-  caveVinesHeadWithBerries
+  caveVinesHeadWithBerries;
   /**
    * @type {BlockType}
    */
-  chain
+  chain;
   /**
    * @type {BlockType}
    */
-  chainCommandBlock
+  chainCommandBlock;
   /**
    * @type {BlockType}
    */
-  chemicalHeat
+  chemicalHeat;
   /**
    * @type {BlockType}
    */
-  chemistryTable
+  chemistryTable;
   /**
    * @type {BlockType}
    */
-  chest
+  chest;
   /**
    * @type {BlockType}
    */
-  chiseledDeepslate
+  chiseledDeepslate;
   /**
    * @type {BlockType}
    */
-  chiseledNetherBricks
+  chiseledNetherBricks;
   /**
    * @type {BlockType}
    */
-  chiseledPolishedBlackstone
+  chiseledPolishedBlackstone;
   /**
    * @type {BlockType}
    */
-  chorusFlower
+  chorusFlower;
   /**
    * @type {BlockType}
    */
-  chorusPlant
+  chorusPlant;
   /**
    * @type {BlockType}
    */
-  clay
+  clay;
   /**
    * @type {BlockType}
    */
-  coalBlock
+  coalBlock;
   /**
    * @type {BlockType}
    */
-  coalOre
+  coalOre;
   /**
    * @type {BlockType}
    */
-  cobbledDeepslate
+  cobbledDeepslate;
   /**
    * @type {BlockType}
    */
-  cobbledDeepslateDoubleSlab
+  cobbledDeepslateDoubleSlab;
   /**
    * @type {BlockType}
    */
-  cobbledDeepslateSlab
+  cobbledDeepslateSlab;
   /**
    * @type {BlockType}
    */
-  cobbledDeepslateStairs
+  cobbledDeepslateStairs;
   /**
    * @type {BlockType}
    */
-  cobbledDeepslateWall
+  cobbledDeepslateWall;
   /**
    * @type {BlockType}
    */
-  cobblestone
+  cobblestone;
   /**
    * @type {BlockType}
    */
-  cobblestoneWall
+  cobblestoneWall;
   /**
    * @type {BlockType}
    */
-  cocoa
+  cocoa;
   /**
    * @type {BlockType}
    */
-  coloredTorchBp
+  coloredTorchBp;
   /**
    * @type {BlockType}
    */
-  coloredTorchRg
+  coloredTorchRg;
   /**
    * @type {BlockType}
    */
-  commandBlock
+  commandBlock;
   /**
    * @type {BlockType}
    */
-  composter
+  composter;
   /**
    * @type {BlockType}
    */
-  concrete
+  concrete;
   /**
    * @type {BlockType}
    */
-  concretepowder
+  concretepowder;
   /**
    * @type {BlockType}
    */
-  conduit
+  conduit;
   /**
    * @type {BlockType}
    */
-  copperBlock
+  copperBlock;
   /**
    * @type {BlockType}
    */
-  copperOre
+  copperOre;
   /**
    * @type {BlockType}
    */
-  coral
+  coral;
   /**
    * @type {BlockType}
    */
-  coralBlock
+  coralBlock;
   /**
    * @type {BlockType}
    */
-  coralFan
+  coralFan;
   /**
    * @type {BlockType}
    */
-  coralFanDead
+  coralFanDead;
   /**
    * @type {BlockType}
    */
-  coralFanHang
+  coralFanHang;
   /**
    * @type {BlockType}
    */
-  coralFanHang2
+  coralFanHang2;
   /**
    * @type {BlockType}
    */
-  coralFanHang3
+  coralFanHang3;
   /**
    * @type {BlockType}
    */
-  crackedDeepslateBricks
+  crackedDeepslateBricks;
   /**
    * @type {BlockType}
    */
-  crackedDeepslateTiles
+  crackedDeepslateTiles;
   /**
    * @type {BlockType}
    */
-  crackedNetherBricks
+  crackedNetherBricks;
   /**
    * @type {BlockType}
    */
-  crackedPolishedBlackstoneBricks
+  crackedPolishedBlackstoneBricks;
   /**
    * @type {BlockType}
    */
-  craftingTable
+  craftingTable;
   /**
    * @type {BlockType}
    */
-  crimsonButton
+  crimsonButton;
   /**
    * @type {BlockType}
    */
-  crimsonDoor
+  crimsonDoor;
   /**
    * @type {BlockType}
    */
-  crimsonDoubleSlab
+  crimsonDoubleSlab;
   /**
    * @type {BlockType}
    */
-  crimsonFence
+  crimsonFence;
   /**
    * @type {BlockType}
    */
-  crimsonFenceGate
+  crimsonFenceGate;
   /**
    * @type {BlockType}
    */
-  crimsonFungus
+  crimsonFungus;
   /**
    * @type {BlockType}
    */
-  crimsonHyphae
+  crimsonHyphae;
   /**
    * @type {BlockType}
    */
-  crimsonNylium
+  crimsonNylium;
   /**
    * @type {BlockType}
    */
-  crimsonPlanks
+  crimsonPlanks;
   /**
    * @type {BlockType}
    */
-  crimsonPressurePlate
+  crimsonPressurePlate;
   /**
    * @type {BlockType}
    */
-  crimsonRoots
+  crimsonRoots;
   /**
    * @type {BlockType}
    */
-  crimsonSlab
+  crimsonSlab;
   /**
    * @type {BlockType}
    */
-  crimsonStairs
+  crimsonStairs;
   /**
    * @type {BlockType}
    */
-  crimsonStandingSign
+  crimsonStandingSign;
   /**
    * @type {BlockType}
    */
-  crimsonStem
+  crimsonStem;
   /**
    * @type {BlockType}
    */
-  crimsonTrapdoor
+  crimsonTrapdoor;
   /**
    * @type {BlockType}
    */
-  crimsonWallSign
+  crimsonWallSign;
   /**
    * @type {BlockType}
    */
-  cryingObsidian
+  cryingObsidian;
   /**
    * @type {BlockType}
    */
-  cutCopper
+  cutCopper;
   /**
    * @type {BlockType}
    */
-  cutCopperSlab
+  cutCopperSlab;
   /**
    * @type {BlockType}
    */
-  cutCopperStairs
+  cutCopperStairs;
   /**
    * @type {BlockType}
    */
-  cyanGlazedTerracotta
+  cyanGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  darkOakButton
+  darkOakButton;
   /**
    * @type {BlockType}
    */
-  darkOakDoor
+  darkOakDoor;
   /**
    * @type {BlockType}
    */
-  darkOakFenceGate
+  darkOakFenceGate;
   /**
    * @type {BlockType}
    */
-  darkOakPressurePlate
+  darkOakPressurePlate;
   /**
    * @type {BlockType}
    */
-  darkOakStairs
+  darkOakStairs;
   /**
    * @type {BlockType}
    */
-  darkOakTrapdoor
+  darkOakTrapdoor;
   /**
    * @type {BlockType}
    */
-  darkPrismarineStairs
+  darkPrismarineStairs;
   /**
    * @type {BlockType}
    */
-  darkoakStandingSign
+  darkoakStandingSign;
   /**
    * @type {BlockType}
    */
-  darkoakWallSign
+  darkoakWallSign;
   /**
    * @type {BlockType}
    */
-  daylightDetector
+  daylightDetector;
   /**
    * @type {BlockType}
    */
-  daylightDetectorInverted
+  daylightDetectorInverted;
   /**
    * @type {BlockType}
    */
-  deadbush
+  deadbush;
   /**
    * @type {BlockType}
    */
-  deepslate
+  deepslate;
   /**
    * @type {BlockType}
    */
-  deepslateBrickDoubleSlab
+  deepslateBrickDoubleSlab;
   /**
    * @type {BlockType}
    */
-  deepslateBrickSlab
+  deepslateBrickSlab;
   /**
    * @type {BlockType}
    */
-  deepslateBrickStairs
+  deepslateBrickStairs;
   /**
    * @type {BlockType}
    */
-  deepslateBrickWall
+  deepslateBrickWall;
   /**
    * @type {BlockType}
    */
-  deepslateBricks
+  deepslateBricks;
   /**
    * @type {BlockType}
    */
-  deepslateCoalOre
+  deepslateCoalOre;
   /**
    * @type {BlockType}
    */
-  deepslateCopperOre
+  deepslateCopperOre;
   /**
    * @type {BlockType}
    */
-  deepslateDiamondOre
+  deepslateDiamondOre;
   /**
    * @type {BlockType}
    */
-  deepslateEmeraldOre
+  deepslateEmeraldOre;
   /**
    * @type {BlockType}
    */
-  deepslateGoldOre
+  deepslateGoldOre;
   /**
    * @type {BlockType}
    */
-  deepslateIronOre
+  deepslateIronOre;
   /**
    * @type {BlockType}
    */
-  deepslateLapisOre
+  deepslateLapisOre;
   /**
    * @type {BlockType}
    */
-  deepslateRedstoneOre
+  deepslateRedstoneOre;
   /**
    * @type {BlockType}
    */
-  deepslateTileDoubleSlab
+  deepslateTileDoubleSlab;
   /**
    * @type {BlockType}
    */
-  deepslateTileSlab
+  deepslateTileSlab;
   /**
    * @type {BlockType}
    */
-  deepslateTileStairs
+  deepslateTileStairs;
   /**
    * @type {BlockType}
    */
-  deepslateTileWall
+  deepslateTileWall;
   /**
    * @type {BlockType}
    */
-  deepslateTiles
+  deepslateTiles;
   /**
    * @type {BlockType}
    */
-  deny
+  deny;
   /**
    * @type {BlockType}
    */
-  detectorRail
+  detectorRail;
   /**
    * @type {BlockType}
    */
-  diamondBlock
+  diamondBlock;
   /**
    * @type {BlockType}
    */
-  diamondOre
+  diamondOre;
   /**
    * @type {BlockType}
    */
-  dioriteStairs
+  dioriteStairs;
   /**
    * @type {BlockType}
    */
-  dirt
+  dirt;
   /**
    * @type {BlockType}
    */
-  dirtWithRoots
+  dirtWithRoots;
   /**
    * @type {BlockType}
    */
-  dispenser
+  dispenser;
   /**
    * @type {BlockType}
    */
-  doubleCutCopperSlab
+  doubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  doublePlant
+  doublePlant;
   /**
    * @type {BlockType}
    */
-  doubleStoneSlab
+  doubleStoneSlab;
   /**
    * @type {BlockType}
    */
-  doubleStoneSlab2
+  doubleStoneSlab2;
   /**
    * @type {BlockType}
    */
-  doubleStoneSlab3
+  doubleStoneSlab3;
   /**
    * @type {BlockType}
    */
-  doubleStoneSlab4
+  doubleStoneSlab4;
   /**
    * @type {BlockType}
    */
-  doubleWoodenSlab
+  doubleWoodenSlab;
   /**
    * @type {BlockType}
    */
-  dragonEgg
+  dragonEgg;
   /**
    * @type {BlockType}
    */
-  driedKelpBlock
+  driedKelpBlock;
   /**
    * @type {BlockType}
    */
-  dripstoneBlock
+  dripstoneBlock;
   /**
    * @type {BlockType}
    */
-  dropper
+  dropper;
   /**
    * @type {BlockType}
    */
-  element0
+  element0;
   /**
    * @type {BlockType}
    */
-  element1
+  element1;
   /**
    * @type {BlockType}
    */
-  element10
+  element10;
   /**
    * @type {BlockType}
    */
-  element100
+  element100;
   /**
    * @type {BlockType}
    */
-  element101
+  element101;
   /**
    * @type {BlockType}
    */
-  element102
+  element102;
   /**
    * @type {BlockType}
    */
-  element103
+  element103;
   /**
    * @type {BlockType}
    */
-  element104
+  element104;
   /**
    * @type {BlockType}
    */
-  element105
+  element105;
   /**
    * @type {BlockType}
    */
-  element106
+  element106;
   /**
    * @type {BlockType}
    */
-  element107
+  element107;
   /**
    * @type {BlockType}
    */
-  element108
+  element108;
   /**
    * @type {BlockType}
    */
-  element109
+  element109;
   /**
    * @type {BlockType}
    */
-  element11
+  element11;
   /**
    * @type {BlockType}
    */
-  element110
+  element110;
   /**
    * @type {BlockType}
    */
-  element111
+  element111;
   /**
    * @type {BlockType}
    */
-  element112
+  element112;
   /**
    * @type {BlockType}
    */
-  element113
+  element113;
   /**
    * @type {BlockType}
    */
-  element114
+  element114;
   /**
    * @type {BlockType}
    */
-  element115
+  element115;
   /**
    * @type {BlockType}
    */
-  element116
+  element116;
   /**
    * @type {BlockType}
    */
-  element117
+  element117;
   /**
    * @type {BlockType}
    */
-  element118
+  element118;
   /**
    * @type {BlockType}
    */
-  element12
+  element12;
   /**
    * @type {BlockType}
    */
-  element13
+  element13;
   /**
    * @type {BlockType}
    */
-  element14
+  element14;
   /**
    * @type {BlockType}
    */
-  element15
+  element15;
   /**
    * @type {BlockType}
    */
-  element16
+  element16;
   /**
    * @type {BlockType}
    */
-  element17
+  element17;
   /**
    * @type {BlockType}
    */
-  element18
+  element18;
   /**
    * @type {BlockType}
    */
-  element19
+  element19;
   /**
    * @type {BlockType}
    */
-  element2
+  element2;
   /**
    * @type {BlockType}
    */
-  element20
+  element20;
   /**
    * @type {BlockType}
    */
-  element21
+  element21;
   /**
    * @type {BlockType}
    */
-  element22
+  element22;
   /**
    * @type {BlockType}
    */
-  element23
+  element23;
   /**
    * @type {BlockType}
    */
-  element24
+  element24;
   /**
    * @type {BlockType}
    */
-  element25
+  element25;
   /**
    * @type {BlockType}
    */
-  element26
+  element26;
   /**
    * @type {BlockType}
    */
-  element27
+  element27;
   /**
    * @type {BlockType}
    */
-  element28
+  element28;
   /**
    * @type {BlockType}
    */
-  element29
+  element29;
   /**
    * @type {BlockType}
    */
-  element3
+  element3;
   /**
    * @type {BlockType}
    */
-  element30
+  element30;
   /**
    * @type {BlockType}
    */
-  element31
+  element31;
   /**
    * @type {BlockType}
    */
-  element32
+  element32;
   /**
    * @type {BlockType}
    */
-  element33
+  element33;
   /**
    * @type {BlockType}
    */
-  element34
+  element34;
   /**
    * @type {BlockType}
    */
-  element35
+  element35;
   /**
    * @type {BlockType}
    */
-  element36
+  element36;
   /**
    * @type {BlockType}
    */
-  element37
+  element37;
   /**
    * @type {BlockType}
    */
-  element38
+  element38;
   /**
    * @type {BlockType}
    */
-  element39
+  element39;
   /**
    * @type {BlockType}
    */
-  element4
+  element4;
   /**
    * @type {BlockType}
    */
-  element40
+  element40;
   /**
    * @type {BlockType}
    */
-  element41
+  element41;
   /**
    * @type {BlockType}
    */
-  element42
+  element42;
   /**
    * @type {BlockType}
    */
-  element43
+  element43;
   /**
    * @type {BlockType}
    */
-  element44
+  element44;
   /**
    * @type {BlockType}
    */
-  element45
+  element45;
   /**
    * @type {BlockType}
    */
-  element46
+  element46;
   /**
    * @type {BlockType}
    */
-  element47
+  element47;
   /**
    * @type {BlockType}
    */
-  element48
+  element48;
   /**
    * @type {BlockType}
    */
-  element49
+  element49;
   /**
    * @type {BlockType}
    */
-  element5
+  element5;
   /**
    * @type {BlockType}
    */
-  element50
+  element50;
   /**
    * @type {BlockType}
    */
-  element51
+  element51;
   /**
    * @type {BlockType}
    */
-  element52
+  element52;
   /**
    * @type {BlockType}
    */
-  element53
+  element53;
   /**
    * @type {BlockType}
    */
-  element54
+  element54;
   /**
    * @type {BlockType}
    */
-  element55
+  element55;
   /**
    * @type {BlockType}
    */
-  element56
+  element56;
   /**
    * @type {BlockType}
    */
-  element57
+  element57;
   /**
    * @type {BlockType}
    */
-  element58
+  element58;
   /**
    * @type {BlockType}
    */
-  element59
+  element59;
   /**
    * @type {BlockType}
    */
-  element6
+  element6;
   /**
    * @type {BlockType}
    */
-  element60
+  element60;
   /**
    * @type {BlockType}
    */
-  element61
+  element61;
   /**
    * @type {BlockType}
    */
-  element62
+  element62;
   /**
    * @type {BlockType}
    */
-  element63
+  element63;
   /**
    * @type {BlockType}
    */
-  element64
+  element64;
   /**
    * @type {BlockType}
    */
-  element65
+  element65;
   /**
    * @type {BlockType}
    */
-  element66
+  element66;
   /**
    * @type {BlockType}
    */
-  element67
+  element67;
   /**
    * @type {BlockType}
    */
-  element68
+  element68;
   /**
    * @type {BlockType}
    */
-  element69
+  element69;
   /**
    * @type {BlockType}
    */
-  element7
+  element7;
   /**
    * @type {BlockType}
    */
-  element70
+  element70;
   /**
    * @type {BlockType}
    */
-  element71
+  element71;
   /**
    * @type {BlockType}
    */
-  element72
+  element72;
   /**
    * @type {BlockType}
    */
-  element73
+  element73;
   /**
    * @type {BlockType}
    */
-  element74
+  element74;
   /**
    * @type {BlockType}
    */
-  element75
+  element75;
   /**
    * @type {BlockType}
    */
-  element76
+  element76;
   /**
    * @type {BlockType}
    */
-  element77
+  element77;
   /**
    * @type {BlockType}
    */
-  element78
+  element78;
   /**
    * @type {BlockType}
    */
-  element79
+  element79;
   /**
    * @type {BlockType}
    */
-  element8
+  element8;
   /**
    * @type {BlockType}
    */
-  element80
+  element80;
   /**
    * @type {BlockType}
    */
-  element81
+  element81;
   /**
    * @type {BlockType}
    */
-  element82
+  element82;
   /**
    * @type {BlockType}
    */
-  element83
+  element83;
   /**
    * @type {BlockType}
    */
-  element84
+  element84;
   /**
    * @type {BlockType}
    */
-  element85
+  element85;
   /**
    * @type {BlockType}
    */
-  element86
+  element86;
   /**
    * @type {BlockType}
    */
-  element87
+  element87;
   /**
    * @type {BlockType}
    */
-  element88
+  element88;
   /**
    * @type {BlockType}
    */
-  element89
+  element89;
   /**
    * @type {BlockType}
    */
-  element9
+  element9;
   /**
    * @type {BlockType}
    */
-  element90
+  element90;
   /**
    * @type {BlockType}
    */
-  element91
+  element91;
   /**
    * @type {BlockType}
    */
-  element92
+  element92;
   /**
    * @type {BlockType}
    */
-  element93
+  element93;
   /**
    * @type {BlockType}
    */
-  element94
+  element94;
   /**
    * @type {BlockType}
    */
-  element95
+  element95;
   /**
    * @type {BlockType}
    */
-  element96
+  element96;
   /**
    * @type {BlockType}
    */
-  element97
+  element97;
   /**
    * @type {BlockType}
    */
-  element98
+  element98;
   /**
    * @type {BlockType}
    */
-  element99
+  element99;
   /**
    * @type {BlockType}
    */
-  emeraldBlock
+  emeraldBlock;
   /**
    * @type {BlockType}
    */
-  emeraldOre
+  emeraldOre;
   /**
    * @type {BlockType}
    */
-  enchantingTable
+  enchantingTable;
   /**
    * @type {BlockType}
    */
-  endBrickStairs
+  endBrickStairs;
   /**
    * @type {BlockType}
    */
-  endBricks
+  endBricks;
   /**
    * @type {BlockType}
    */
-  endGateway
+  endGateway;
   /**
    * @type {BlockType}
    */
-  endPortal
+  endPortal;
   /**
    * @type {BlockType}
    */
-  endPortalFrame
+  endPortalFrame;
   /**
    * @type {BlockType}
    */
-  endRod
+  endRod;
   /**
    * @type {BlockType}
    */
-  endStone
+  endStone;
   /**
    * @type {BlockType}
    */
-  enderChest
+  enderChest;
   /**
    * @type {BlockType}
    */
-  exposedCopper
+  exposedCopper;
   /**
    * @type {BlockType}
    */
-  exposedCutCopper
+  exposedCutCopper;
   /**
    * @type {BlockType}
    */
-  exposedCutCopperSlab
+  exposedCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  exposedCutCopperStairs
+  exposedCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  exposedDoubleCutCopperSlab
+  exposedDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  farmland
+  farmland;
   /**
    * @type {BlockType}
    */
-  fence
+  fence;
   /**
    * @type {BlockType}
    */
-  fenceGate
+  fenceGate;
   /**
    * @type {BlockType}
    */
-  fire
+  fire;
   /**
    * @type {BlockType}
    */
-  fletchingTable
+  fletchingTable;
   /**
    * @type {BlockType}
    */
-  flowerPot
+  flowerPot;
   /**
    * @type {BlockType}
    */
-  floweringAzalea
+  floweringAzalea;
   /**
    * @type {BlockType}
    */
-  flowingLava
+  flowingLava;
   /**
    * @type {BlockType}
    */
-  flowingWater
+  flowingWater;
   /**
    * @type {BlockType}
    */
-  frame
+  frame;
   /**
    * @type {BlockType}
    */
-  frostedIce
+  frostedIce;
   /**
    * @type {BlockType}
    */
-  furnace
+  furnace;
   /**
    * @type {BlockType}
    */
-  gildedBlackstone
+  gildedBlackstone;
   /**
    * @type {BlockType}
    */
-  glass
+  glass;
   /**
    * @type {BlockType}
    */
-  glassPane
+  glassPane;
   /**
    * @type {BlockType}
    */
-  glowFrame
+  glowFrame;
   /**
    * @type {BlockType}
    */
-  glowLichen
+  glowLichen;
   /**
    * @type {BlockType}
    */
-  glowingobsidian
+  glowingobsidian;
   /**
    * @type {BlockType}
    */
-  glowstone
+  glowstone;
   /**
    * @type {BlockType}
    */
-  goldBlock
+  goldBlock;
   /**
    * @type {BlockType}
    */
-  goldOre
+  goldOre;
   /**
    * @type {BlockType}
    */
-  goldenRail
+  goldenRail;
   /**
    * @type {BlockType}
    */
-  graniteStairs
+  graniteStairs;
   /**
    * @type {BlockType}
    */
-  grass
+  grass;
   /**
    * @type {BlockType}
    */
-  grassPath
+  grassPath;
   /**
    * @type {BlockType}
    */
-  gravel
+  gravel;
   /**
    * @type {BlockType}
    */
-  grayGlazedTerracotta
+  grayGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  greenGlazedTerracotta
+  greenGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  grindstone
+  grindstone;
   /**
    * @type {BlockType}
    */
-  hangingRoots
+  hangingRoots;
   /**
    * @type {BlockType}
    */
-  hardGlass
+  hardGlass;
   /**
    * @type {BlockType}
    */
-  hardGlassPane
+  hardGlassPane;
   /**
    * @type {BlockType}
    */
-  hardStainedGlass
+  hardStainedGlass;
   /**
    * @type {BlockType}
    */
-  hardStainedGlassPane
+  hardStainedGlassPane;
   /**
    * @type {BlockType}
    */
-  hardenedClay
+  hardenedClay;
   /**
    * @type {BlockType}
    */
-  hayBlock
+  hayBlock;
   /**
    * @type {BlockType}
    */
-  heavyWeightedPressurePlate
+  heavyWeightedPressurePlate;
   /**
    * @type {BlockType}
    */
-  honeyBlock
+  honeyBlock;
   /**
    * @type {BlockType}
    */
-  honeycombBlock
+  honeycombBlock;
   /**
    * @type {BlockType}
    */
-  hopper
+  hopper;
   /**
    * @type {BlockType}
    */
-  ice
+  ice;
   /**
    * @type {BlockType}
    */
-  infestedDeepslate
+  infestedDeepslate;
   /**
    * @type {BlockType}
    */
-  infoUpdate
+  infoUpdate;
   /**
    * @type {BlockType}
    */
-  infoUpdate2
+  infoUpdate2;
   /**
    * @type {BlockType}
    */
-  invisiblebedrock
+  invisiblebedrock;
   /**
    * @type {BlockType}
    */
-  ironBars
+  ironBars;
   /**
    * @type {BlockType}
    */
-  ironBlock
+  ironBlock;
   /**
    * @type {BlockType}
    */
-  ironDoor
+  ironDoor;
   /**
    * @type {BlockType}
    */
-  ironOre
+  ironOre;
   /**
    * @type {BlockType}
    */
-  ironTrapdoor
+  ironTrapdoor;
   /**
    * @type {BlockType}
    */
-  jigsaw
+  jigsaw;
   /**
    * @type {BlockType}
    */
-  jukebox
+  jukebox;
   /**
    * @type {BlockType}
    */
-  jungleButton
+  jungleButton;
   /**
    * @type {BlockType}
    */
-  jungleDoor
+  jungleDoor;
   /**
    * @type {BlockType}
    */
-  jungleFenceGate
+  jungleFenceGate;
   /**
    * @type {BlockType}
    */
-  junglePressurePlate
+  junglePressurePlate;
   /**
    * @type {BlockType}
    */
-  jungleStairs
+  jungleStairs;
   /**
    * @type {BlockType}
    */
-  jungleStandingSign
+  jungleStandingSign;
   /**
    * @type {BlockType}
    */
-  jungleTrapdoor
+  jungleTrapdoor;
   /**
    * @type {BlockType}
    */
-  jungleWallSign
+  jungleWallSign;
   /**
    * @type {BlockType}
    */
-  kelp
+  kelp;
   /**
    * @type {BlockType}
    */
-  ladder
+  ladder;
   /**
    * @type {BlockType}
    */
-  lantern
+  lantern;
   /**
    * @type {BlockType}
    */
-  lapisBlock
+  lapisBlock;
   /**
    * @type {BlockType}
    */
-  lapisOre
+  lapisOre;
   /**
    * @type {BlockType}
    */
-  largeAmethystBud
+  largeAmethystBud;
   /**
    * @type {BlockType}
    */
-  lava
+  lava;
   /**
    * @type {BlockType}
    */
-  lavaCauldron
+  lavaCauldron;
   /**
    * @type {BlockType}
    */
-  leaves
+  leaves;
   /**
    * @type {BlockType}
    */
-  leaves2
+  leaves2;
   /**
    * @type {BlockType}
    */
-  lectern
+  lectern;
   /**
    * @type {BlockType}
    */
-  lever
+  lever;
   /**
    * @type {BlockType}
    */
-  lightBlock
+  lightBlock;
   /**
    * @type {BlockType}
    */
-  lightBlueGlazedTerracotta
+  lightBlueGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  lightWeightedPressurePlate
+  lightWeightedPressurePlate;
   /**
    * @type {BlockType}
    */
-  lightningRod
+  lightningRod;
   /**
    * @type {BlockType}
    */
-  limeGlazedTerracotta
+  limeGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  litBlastFurnace
+  litBlastFurnace;
   /**
    * @type {BlockType}
    */
-  litDeepslateRedstoneOre
+  litDeepslateRedstoneOre;
   /**
    * @type {BlockType}
    */
-  litFurnace
+  litFurnace;
   /**
    * @type {BlockType}
    */
-  litPumpkin
+  litPumpkin;
   /**
    * @type {BlockType}
    */
-  litRedstoneLamp
+  litRedstoneLamp;
   /**
    * @type {BlockType}
    */
-  litRedstoneOre
+  litRedstoneOre;
   /**
    * @type {BlockType}
    */
-  litSmoker
+  litSmoker;
   /**
    * @type {BlockType}
    */
-  lodestone
+  lodestone;
   /**
    * @type {BlockType}
    */
-  log
+  log;
   /**
    * @type {BlockType}
    */
-  log2
+  log2;
   /**
    * @type {BlockType}
    */
-  loom
+  loom;
   /**
    * @type {BlockType}
    */
-  magentaGlazedTerracotta
+  magentaGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  magma
+  magma;
   /**
    * @type {BlockType}
    */
-  mediumAmethystBud
+  mediumAmethystBud;
   /**
    * @type {BlockType}
    */
-  melonBlock
+  melonBlock;
   /**
    * @type {BlockType}
    */
-  melonStem
+  melonStem;
   /**
    * @type {BlockType}
    */
-  mobSpawner
+  mobSpawner;
   /**
    * @type {BlockType}
    */
-  monsterEgg
+  monsterEgg;
   /**
    * @type {BlockType}
    */
-  mossBlock
+  mossBlock;
   /**
    * @type {BlockType}
    */
-  mossCarpet
+  mossCarpet;
   /**
    * @type {BlockType}
    */
-  mossyCobblestone
+  mossyCobblestone;
   /**
    * @type {BlockType}
    */
-  mossyCobblestoneStairs
+  mossyCobblestoneStairs;
   /**
    * @type {BlockType}
    */
-  mossyStoneBrickStairs
+  mossyStoneBrickStairs;
   /**
    * @type {BlockType}
    */
-  movingblock
+  movingblock;
   /**
    * @type {BlockType}
    */
-  mycelium
+  mycelium;
   /**
    * @type {BlockType}
    */
-  netherBrick
+  netherBrick;
   /**
    * @type {BlockType}
    */
-  netherBrickFence
+  netherBrickFence;
   /**
    * @type {BlockType}
    */
-  netherBrickStairs
+  netherBrickStairs;
   /**
    * @type {BlockType}
    */
-  netherGoldOre
+  netherGoldOre;
   /**
    * @type {BlockType}
    */
-  netherSprouts
+  netherSprouts;
   /**
    * @type {BlockType}
    */
-  netherWart
+  netherWart;
   /**
    * @type {BlockType}
    */
-  netherWartBlock
+  netherWartBlock;
   /**
    * @type {BlockType}
    */
-  netheriteBlock
+  netheriteBlock;
   /**
    * @type {BlockType}
    */
-  netherrack
+  netherrack;
   /**
    * @type {BlockType}
    */
-  netherreactor
+  netherreactor;
   /**
    * @type {BlockType}
    */
-  normalStoneStairs
+  normalStoneStairs;
   /**
    * @type {BlockType}
    */
-  noteblock
+  noteblock;
   /**
    * @type {BlockType}
    */
-  oakStairs
+  oakStairs;
   /**
    * @type {BlockType}
    */
-  observer
+  observer;
   /**
    * @type {BlockType}
    */
-  obsidian
+  obsidian;
   /**
    * @type {BlockType}
    */
-  orangeGlazedTerracotta
+  orangeGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  oxidizedCopper
+  oxidizedCopper;
   /**
    * @type {BlockType}
    */
-  oxidizedCutCopper
+  oxidizedCutCopper;
   /**
    * @type {BlockType}
    */
-  oxidizedCutCopperSlab
+  oxidizedCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  oxidizedCutCopperStairs
+  oxidizedCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  oxidizedDoubleCutCopperSlab
+  oxidizedDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  packedIce
+  packedIce;
   /**
    * @type {BlockType}
    */
-  pinkGlazedTerracotta
+  pinkGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  piston
+  piston;
   /**
    * @type {BlockType}
    */
-  pistonarmcollision
+  pistonarmcollision;
   /**
    * @type {BlockType}
    */
-  planks
+  planks;
   /**
    * @type {BlockType}
    */
-  podzol
+  podzol;
   /**
    * @type {BlockType}
    */
-  pointedDripstone
+  pointedDripstone;
   /**
    * @type {BlockType}
    */
-  polishedAndesiteStairs
+  polishedAndesiteStairs;
   /**
    * @type {BlockType}
    */
-  polishedBasalt
+  polishedBasalt;
   /**
    * @type {BlockType}
    */
-  polishedBlackstone
+  polishedBlackstone;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneBrickDoubleSlab
+  polishedBlackstoneBrickDoubleSlab;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneBrickSlab
+  polishedBlackstoneBrickSlab;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneBrickStairs
+  polishedBlackstoneBrickStairs;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneBrickWall
+  polishedBlackstoneBrickWall;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneBricks
+  polishedBlackstoneBricks;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneButton
+  polishedBlackstoneButton;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneDoubleSlab
+  polishedBlackstoneDoubleSlab;
   /**
    * @type {BlockType}
    */
-  polishedBlackstonePressurePlate
+  polishedBlackstonePressurePlate;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneSlab
+  polishedBlackstoneSlab;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneStairs
+  polishedBlackstoneStairs;
   /**
    * @type {BlockType}
    */
-  polishedBlackstoneWall
+  polishedBlackstoneWall;
   /**
    * @type {BlockType}
    */
-  polishedDeepslate
+  polishedDeepslate;
   /**
    * @type {BlockType}
    */
-  polishedDeepslateDoubleSlab
+  polishedDeepslateDoubleSlab;
   /**
    * @type {BlockType}
    */
-  polishedDeepslateSlab
+  polishedDeepslateSlab;
   /**
    * @type {BlockType}
    */
-  polishedDeepslateStairs
+  polishedDeepslateStairs;
   /**
    * @type {BlockType}
    */
-  polishedDeepslateWall
+  polishedDeepslateWall;
   /**
    * @type {BlockType}
    */
-  polishedDioriteStairs
+  polishedDioriteStairs;
   /**
    * @type {BlockType}
    */
-  polishedGraniteStairs
+  polishedGraniteStairs;
   /**
    * @type {BlockType}
    */
-  portal
+  portal;
   /**
    * @type {BlockType}
    */
-  potatoes
+  potatoes;
   /**
    * @type {BlockType}
    */
-  powderSnow
+  powderSnow;
   /**
    * @type {BlockType}
    */
-  poweredComparator
+  poweredComparator;
   /**
    * @type {BlockType}
    */
-  poweredRepeater
+  poweredRepeater;
   /**
    * @type {BlockType}
    */
-  prismarine
+  prismarine;
   /**
    * @type {BlockType}
    */
-  prismarineBricksStairs
+  prismarineBricksStairs;
   /**
    * @type {BlockType}
    */
-  prismarineStairs
+  prismarineStairs;
   /**
    * @type {BlockType}
    */
-  pumpkin
+  pumpkin;
   /**
    * @type {BlockType}
    */
-  pumpkinStem
+  pumpkinStem;
   /**
    * @type {BlockType}
    */
-  purpleGlazedTerracotta
+  purpleGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  purpurBlock
+  purpurBlock;
   /**
    * @type {BlockType}
    */
-  purpurStairs
+  purpurStairs;
   /**
    * @type {BlockType}
    */
-  quartzBlock
+  quartzBlock;
   /**
    * @type {BlockType}
    */
-  quartzBricks
+  quartzBricks;
   /**
    * @type {BlockType}
    */
-  quartzOre
+  quartzOre;
   /**
    * @type {BlockType}
    */
-  quartzStairs
+  quartzStairs;
   /**
    * @type {BlockType}
    */
-  rail
+  rail;
   /**
    * @type {BlockType}
    */
-  rawCopperBlock
+  rawCopperBlock;
   /**
    * @type {BlockType}
    */
-  rawGoldBlock
+  rawGoldBlock;
   /**
    * @type {BlockType}
    */
-  rawIronBlock
+  rawIronBlock;
   /**
    * @type {BlockType}
    */
-  redFlower
+  redFlower;
   /**
    * @type {BlockType}
    */
-  redGlazedTerracotta
+  redGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  redMushroom
+  redMushroom;
   /**
    * @type {BlockType}
    */
-  redMushroomBlock
+  redMushroomBlock;
   /**
    * @type {BlockType}
    */
-  redNetherBrick
+  redNetherBrick;
   /**
    * @type {BlockType}
    */
-  redNetherBrickStairs
+  redNetherBrickStairs;
   /**
    * @type {BlockType}
    */
-  redSandstone
+  redSandstone;
   /**
    * @type {BlockType}
    */
-  redSandstoneStairs
+  redSandstoneStairs;
   /**
    * @type {BlockType}
    */
-  redstoneBlock
+  redstoneBlock;
   /**
    * @type {BlockType}
    */
-  redstoneLamp
+  redstoneLamp;
   /**
    * @type {BlockType}
    */
-  redstoneOre
+  redstoneOre;
   /**
    * @type {BlockType}
    */
-  redstoneTorch
+  redstoneTorch;
   /**
    * @type {BlockType}
    */
-  redstoneWire
+  redstoneWire;
   /**
    * @type {BlockType}
    */
-  reeds
+  reeds;
   /**
    * @type {BlockType}
    */
-  repeatingCommandBlock
+  repeatingCommandBlock;
   /**
    * @type {BlockType}
    */
-  reserved6
+  reserved6;
   /**
    * @type {BlockType}
    */
-  respawnAnchor
+  respawnAnchor;
   /**
    * @type {BlockType}
    */
-  sand
+  sand;
   /**
    * @type {BlockType}
    */
-  sandstone
+  sandstone;
   /**
    * @type {BlockType}
    */
-  sandstoneStairs
+  sandstoneStairs;
   /**
    * @type {BlockType}
    */
-  sapling
+  sapling;
   /**
    * @type {BlockType}
    */
-  scaffolding
+  scaffolding;
   /**
    * @type {BlockType}
    */
-  sculkSensor
+  sculkSensor;
   /**
    * @type {BlockType}
    */
-  seaPickle
+  seaPickle;
   /**
    * @type {BlockType}
    */
-  seagrass
+  seagrass;
   /**
    * @type {BlockType}
    */
-  sealantern
+  sealantern;
   /**
    * @type {BlockType}
    */
-  shroomlight
+  shroomlight;
   /**
    * @type {BlockType}
    */
-  shulkerBox
+  shulkerBox;
   /**
    * @type {BlockType}
    */
-  silverGlazedTerracotta
+  silverGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  skull
+  skull;
   /**
    * @type {BlockType}
    */
-  slime
+  slime;
   /**
    * @type {BlockType}
    */
-  smallAmethystBud
+  smallAmethystBud;
   /**
    * @type {BlockType}
    */
-  smallDripleafBlock
+  smallDripleafBlock;
   /**
    * @type {BlockType}
    */
-  smithingTable
+  smithingTable;
   /**
    * @type {BlockType}
    */
-  smoker
+  smoker;
   /**
    * @type {BlockType}
    */
-  smoothBasalt
+  smoothBasalt;
   /**
    * @type {BlockType}
    */
-  smoothQuartzStairs
+  smoothQuartzStairs;
   /**
    * @type {BlockType}
    */
-  smoothRedSandstoneStairs
+  smoothRedSandstoneStairs;
   /**
    * @type {BlockType}
    */
-  smoothSandstoneStairs
+  smoothSandstoneStairs;
   /**
    * @type {BlockType}
    */
-  smoothStone
+  smoothStone;
   /**
    * @type {BlockType}
    */
-  snow
+  snow;
   /**
    * @type {BlockType}
    */
-  snowLayer
+  snowLayer;
   /**
    * @type {BlockType}
    */
-  soulCampfire
+  soulCampfire;
   /**
    * @type {BlockType}
    */
-  soulFire
+  soulFire;
   /**
    * @type {BlockType}
    */
-  soulLantern
+  soulLantern;
   /**
    * @type {BlockType}
    */
-  soulSand
+  soulSand;
   /**
    * @type {BlockType}
    */
-  soulSoil
+  soulSoil;
   /**
    * @type {BlockType}
    */
-  soulTorch
+  soulTorch;
   /**
    * @type {BlockType}
    */
-  sponge
+  sponge;
   /**
    * @type {BlockType}
    */
-  sporeBlossom
+  sporeBlossom;
   /**
    * @type {BlockType}
    */
-  spruceButton
+  spruceButton;
   /**
    * @type {BlockType}
    */
-  spruceDoor
+  spruceDoor;
   /**
    * @type {BlockType}
    */
-  spruceFenceGate
+  spruceFenceGate;
   /**
    * @type {BlockType}
    */
-  sprucePressurePlate
+  sprucePressurePlate;
   /**
    * @type {BlockType}
    */
-  spruceStairs
+  spruceStairs;
   /**
    * @type {BlockType}
    */
-  spruceStandingSign
+  spruceStandingSign;
   /**
    * @type {BlockType}
    */
-  spruceTrapdoor
+  spruceTrapdoor;
   /**
    * @type {BlockType}
    */
-  spruceWallSign
+  spruceWallSign;
   /**
    * @type {BlockType}
    */
-  stainedGlass
+  stainedGlass;
   /**
    * @type {BlockType}
    */
-  stainedGlassPane
+  stainedGlassPane;
   /**
    * @type {BlockType}
    */
-  stainedHardenedClay
+  stainedHardenedClay;
   /**
    * @type {BlockType}
    */
-  standingBanner
+  standingBanner;
   /**
    * @type {BlockType}
    */
-  standingSign
+  standingSign;
   /**
    * @type {BlockType}
    */
-  stickyPiston
+  stickyPiston;
   /**
    * @type {BlockType}
    */
-  stickypistonarmcollision
+  stickypistonarmcollision;
   /**
    * @type {BlockType}
    */
-  stone
+  stone;
   /**
    * @type {BlockType}
    */
-  stoneBrickStairs
+  stoneBrickStairs;
   /**
    * @type {BlockType}
    */
-  stoneButton
+  stoneButton;
   /**
    * @type {BlockType}
    */
-  stonePressurePlate
+  stonePressurePlate;
   /**
    * @type {BlockType}
    */
-  stoneSlab
+  stoneSlab;
   /**
    * @type {BlockType}
    */
-  stoneSlab2
+  stoneSlab2;
   /**
    * @type {BlockType}
    */
-  stoneSlab3
+  stoneSlab3;
   /**
    * @type {BlockType}
    */
-  stoneSlab4
+  stoneSlab4;
   /**
    * @type {BlockType}
    */
-  stoneStairs
+  stoneStairs;
   /**
    * @type {BlockType}
    */
-  stonebrick
+  stonebrick;
   /**
    * @type {BlockType}
    */
-  stonecutter
+  stonecutter;
   /**
    * @type {BlockType}
    */
-  stonecutterBlock
+  stonecutterBlock;
   /**
    * @type {BlockType}
    */
-  strippedAcaciaLog
+  strippedAcaciaLog;
   /**
    * @type {BlockType}
    */
-  strippedBirchLog
+  strippedBirchLog;
   /**
    * @type {BlockType}
    */
-  strippedCrimsonHyphae
+  strippedCrimsonHyphae;
   /**
    * @type {BlockType}
    */
-  strippedCrimsonStem
+  strippedCrimsonStem;
   /**
    * @type {BlockType}
    */
-  strippedDarkOakLog
+  strippedDarkOakLog;
   /**
    * @type {BlockType}
    */
-  strippedJungleLog
+  strippedJungleLog;
   /**
    * @type {BlockType}
    */
-  strippedOakLog
+  strippedOakLog;
   /**
    * @type {BlockType}
    */
-  strippedSpruceLog
+  strippedSpruceLog;
   /**
    * @type {BlockType}
    */
-  strippedWarpedHyphae
+  strippedWarpedHyphae;
   /**
    * @type {BlockType}
    */
-  strippedWarpedStem
+  strippedWarpedStem;
   /**
    * @type {BlockType}
    */
-  structureBlock
+  structureBlock;
   /**
    * @type {BlockType}
    */
-  structureVoid
+  structureVoid;
   /**
    * @type {BlockType}
    */
-  sweetBerryBush
+  sweetBerryBush;
   /**
    * @type {BlockType}
    */
-  tallgrass
+  tallgrass;
   /**
    * @type {BlockType}
    */
-  target
+  target;
   /**
    * @type {BlockType}
    */
-  tintedGlass
+  tintedGlass;
   /**
    * @type {BlockType}
    */
-  tnt
+  tnt;
   /**
    * @type {BlockType}
    */
-  torch
+  torch;
   /**
    * @type {BlockType}
    */
-  trapdoor
+  trapdoor;
   /**
    * @type {BlockType}
    */
-  trappedChest
+  trappedChest;
   /**
    * @type {BlockType}
    */
-  tripwire
+  tripwire;
   /**
    * @type {BlockType}
    */
-  tripwireHook
+  tripwireHook;
   /**
    * @type {BlockType}
    */
-  tuff
+  tuff;
   /**
    * @type {BlockType}
    */
-  turtleEgg
+  turtleEgg;
   /**
    * @type {BlockType}
    */
-  twistingVines
+  twistingVines;
   /**
    * @type {BlockType}
    */
-  underwaterTorch
+  underwaterTorch;
   /**
    * @type {BlockType}
    */
-  undyedShulkerBox
+  undyedShulkerBox;
   /**
    * @type {BlockType}
    */
-  unknown
+  unknown;
   /**
    * @type {BlockType}
    */
-  unlitRedstoneTorch
+  unlitRedstoneTorch;
   /**
    * @type {BlockType}
    */
-  unpoweredComparator
+  unpoweredComparator;
   /**
    * @type {BlockType}
    */
-  unpoweredRepeater
+  unpoweredRepeater;
   /**
    * @type {BlockType}
    */
-  vine
+  vine;
   /**
    * @type {BlockType}
    */
-  wallBanner
+  wallBanner;
   /**
    * @type {BlockType}
    */
-  wallSign
+  wallSign;
   /**
    * @type {BlockType}
    */
-  warpedButton
+  warpedButton;
   /**
    * @type {BlockType}
    */
-  warpedDoor
+  warpedDoor;
   /**
    * @type {BlockType}
    */
-  warpedDoubleSlab
+  warpedDoubleSlab;
   /**
    * @type {BlockType}
    */
-  warpedFence
+  warpedFence;
   /**
    * @type {BlockType}
    */
-  warpedFenceGate
+  warpedFenceGate;
   /**
    * @type {BlockType}
    */
-  warpedFungus
+  warpedFungus;
   /**
    * @type {BlockType}
    */
-  warpedHyphae
+  warpedHyphae;
   /**
    * @type {BlockType}
    */
-  warpedNylium
+  warpedNylium;
   /**
    * @type {BlockType}
    */
-  warpedPlanks
+  warpedPlanks;
   /**
    * @type {BlockType}
    */
-  warpedPressurePlate
+  warpedPressurePlate;
   /**
    * @type {BlockType}
    */
-  warpedRoots
+  warpedRoots;
   /**
    * @type {BlockType}
    */
-  warpedSlab
+  warpedSlab;
   /**
    * @type {BlockType}
    */
-  warpedStairs
+  warpedStairs;
   /**
    * @type {BlockType}
    */
-  warpedStandingSign
+  warpedStandingSign;
   /**
    * @type {BlockType}
    */
-  warpedStem
+  warpedStem;
   /**
    * @type {BlockType}
    */
-  warpedTrapdoor
+  warpedTrapdoor;
   /**
    * @type {BlockType}
    */
-  warpedWallSign
+  warpedWallSign;
   /**
    * @type {BlockType}
    */
-  warpedWartBlock
+  warpedWartBlock;
   /**
    * @type {BlockType}
    */
-  water
+  water;
   /**
    * @type {BlockType}
    */
-  waterlily
+  waterlily;
   /**
    * @type {BlockType}
    */
-  waxedCopper
+  waxedCopper;
   /**
    * @type {BlockType}
    */
-  waxedCutCopper
+  waxedCutCopper;
   /**
    * @type {BlockType}
    */
-  waxedCutCopperSlab
+  waxedCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedCutCopperStairs
+  waxedCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  waxedDoubleCutCopperSlab
+  waxedDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedExposedCopper
+  waxedExposedCopper;
   /**
    * @type {BlockType}
    */
-  waxedExposedCutCopper
+  waxedExposedCutCopper;
   /**
    * @type {BlockType}
    */
-  waxedExposedCutCopperSlab
+  waxedExposedCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedExposedCutCopperStairs
+  waxedExposedCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  waxedExposedDoubleCutCopperSlab
+  waxedExposedDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedOxidizedCopper
+  waxedOxidizedCopper;
   /**
    * @type {BlockType}
    */
-  waxedOxidizedCutCopper
+  waxedOxidizedCutCopper;
   /**
    * @type {BlockType}
    */
-  waxedOxidizedCutCopperSlab
+  waxedOxidizedCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedOxidizedCutCopperStairs
+  waxedOxidizedCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  waxedOxidizedDoubleCutCopperSlab
+  waxedOxidizedDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedWeatheredCopper
+  waxedWeatheredCopper;
   /**
    * @type {BlockType}
    */
-  waxedWeatheredCutCopper
+  waxedWeatheredCutCopper;
   /**
    * @type {BlockType}
    */
-  waxedWeatheredCutCopperSlab
+  waxedWeatheredCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  waxedWeatheredCutCopperStairs
+  waxedWeatheredCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  waxedWeatheredDoubleCutCopperSlab
+  waxedWeatheredDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  weatheredCopper
+  weatheredCopper;
   /**
    * @type {BlockType}
    */
-  weatheredCutCopper
+  weatheredCutCopper;
   /**
    * @type {BlockType}
    */
-  weatheredCutCopperSlab
+  weatheredCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  weatheredCutCopperStairs
+  weatheredCutCopperStairs;
   /**
    * @type {BlockType}
    */
-  weatheredDoubleCutCopperSlab
+  weatheredDoubleCutCopperSlab;
   /**
    * @type {BlockType}
    */
-  web
+  web;
   /**
    * @type {BlockType}
    */
-  weepingVines
+  weepingVines;
   /**
    * @type {BlockType}
    */
-  wheat
+  wheat;
   /**
    * @type {BlockType}
    */
-  whiteGlazedTerracotta
+  whiteGlazedTerracotta;
   /**
    * @type {BlockType}
    */
-  witherRose
+  witherRose;
   /**
    * @type {BlockType}
    */
-  wood
+  wood;
   /**
    * @type {BlockType}
    */
-  woodenButton
+  woodenButton;
   /**
    * @type {BlockType}
    */
-  woodenDoor
+  woodenDoor;
   /**
    * @type {BlockType}
    */
-  woodenPressurePlate
+  woodenPressurePlate;
   /**
    * @type {BlockType}
    */
-  woodenSlab
+  woodenSlab;
   /**
    * @type {BlockType}
    */
-  wool
+  wool;
   /**
    * @type {BlockType}
    */
-  yellowFlower
+  yellowFlower;
   /**
    * @type {BlockType}
    */
-  yellowGlazedTerracotta
+  yellowGlazedTerracotta;
 }
 
-export class BlockType{
+export class BlockType {
   /**
    * @return {String}
    */
-  getName = function(){return}
+  getName = function () {
+    return;
+  };
   /**
    * @return {Boolean}
    */
-  canBeWaterlogged = function(){return}
+  canBeWaterlogged = function () {
+    return;
+  };
   /**
    * @return {BlockPermutation}
    */
-  createDefaultBlockPermutation = function(){return}
+  createDefaultBlockPermutation = function () {
+    return;
+  };
 }
 
-class BlockPermutation{
+class BlockPermutation {
   /**
    * @return {BlockPermutation}
    */
-  clone(){return};
+  clone() {
+    return;
+  }
   /**
    * @return {BoolBlockProperty[]|IntBlockProperty[]|StringBlockProperty[]}
    */
-  getAllProperties(){return};
+  getAllProperties() {
+    return;
+  }
   /**
    * @param {String} block_property
    * @param {any} arg unknown
    * @param {any} arg2 unknown
    * @return {(BoolBlockProperty|IntBlockProperty|StringBlockProperty)}
    */
-  getProperty(block_property, arg, arg2){return};
+  getProperty(block_property, arg, arg2) {
+    return;
+  }
   /**
    * @return {String}
    */
-  getTags(){return};
+  getTags() {
+    return;
+  }
   /**
    * @return {BlockType}
    */
-  getType(){return};
+  getType() {
+    return;
+  }
   /**
    * @param {String} tag_name
    * @return {Boolean}
    */
-  hasTag(tag_name){return};
+  hasTag(tag_name) {
+    return;
+  }
 }
 
-class BoolBlockProperty{
+class BoolBlockProperty {
   /**
    * @type {Boolean}
    */
-  value
+  value;
   /**
    * @type {Boolean[]}
    */
-  validValues
+  validValues;
   /**
    * @type {String}
    */
   name;
 }
-class IntBlockProperty{
+class IntBlockProperty {
   /**
    * @type {Number}
    */
-  value
+  value;
   /**
    * @type {Number[]}
    */
-  validValues
+  validValues;
   /**
    * @type {String}
    */
   name;
 }
-class StringBlockProperty{
+class StringBlockProperty {
   /**
    * @type {String}
    */
-  value
+  value;
   /**
    * @type {String[]}
    */
-  validValues
+  validValues;
   /**
    * @type {String}
    */
@@ -3014,8 +3068,8 @@ export class Commands {
       message: String(),
       recipient: Array(""),
       sound: String(),
-      position: { x = 0, y = 0, z = 0 },
-      spawnPoint: { x = 0, y = 0, z = 0 },
+      position: { x: 0, y: 0, z: 0 },
+      spawnPoint: { x: 0, y: 0, z: 0 },
       victim: Array(""),
       time: Number(),
       itemRemoved: Array(""),
@@ -3027,12 +3081,12 @@ export class Commands {
       currentPlayerCount: Number(),
       maxPlayerCount: Number(),
       players: String(),
-      destination: { x = 0, y = 0, z = 0 },
+      destination: { x: 0, y: 0, z: 0 },
       feature: String(),
       itemData: Number(),
       slotId: Number(),
       slotType: String(),
-      spawnPos: { x = 0, y = 0, z = 0 },
+      spawnPos: { x: 0, y: 0, z: 0 },
       victims: Array(""),
       x: Number(),
       z: Number(),
@@ -3064,15 +3118,25 @@ class Component {
      * @type {Number}
      */
     this.value = undefined;
-    this.setCurrent = (val) => {return};
-    this.restToMinValue = () => {return};
-    this.restToMaxValue = () => {return};
-    this.restToDefaultValue = () => {return};
+    this.setCurrent = (val) => {
+      return;
+    };
+    this.restToMinValue = () => {
+      return;
+    };
+    this.restToMaxValue = () => {
+      return;
+    };
+    this.restToDefaultValue = () => {
+      return;
+    };
     /**
      * @type {Number}
      */
     this.current = undefined;
-    this.setAirSupply = (val) => {return};
+    this.setAirSupply = (val) => {
+      return;
+    };
     /**
      * @type {Number}
      */
@@ -3193,11 +3257,15 @@ class Component {
      * 首紐でつなぎます
      * @param {Minecraft.Entity} entity 首紐でつなぐ先のエンティティです。
      */
-    this.leash = (entity) => {return};
+    this.leash = (entity) => {
+      return;
+    };
     /**
      * 首紐をとります
      */
-    this.unleash = () => {return};
+    this.unleash = () => {
+      return;
+    };
     /**
      * @type {Number}
      */
@@ -3206,9 +3274,15 @@ class Component {
      * @type {Number}
      */
     this.maxTurn = undefined;
-    this.addRider = (val) => {return};
-    this.ejectRider = (val) => {return};
-    this.ejectRiders = () => {return};
+    this.addRider = (val) => {
+      return;
+    };
+    this.ejectRider = (val) => {
+      return;
+    };
+    this.ejectRiders = () => {
+      return;
+    };
     /**
      * @type {Number}
      */
@@ -3246,7 +3320,9 @@ class Component {
      * 手懐けの状態を変更します。
      * @param {Boolean} status 手懐けの状態を設定します。 this.true = 手懐けられた状態 this.false = 手懐けられていない状態
      */
-    this.setTamed = (status) => {return};
+    this.setTamed = (status) => {
+      return;
+    };
     /**
      * @type {Object}
      */
@@ -3290,80 +3366,100 @@ class Component {
        * @param {Number} slot
        * @param {Minecraft.ItemStack} itemStack
        */
-      setItem: (slot, itemStack) => {return},
+      setItem: (slot, itemStack) => {
+        return;
+      },
       /**
        * slotのアイテムを取得
        * @param {Number} slot 取得するスロット番号
        * @return {Minecraft.ItemStack}
        */
-      getItem: (slot) => {return},
+      getItem: (slot) => {
+        return;
+      },
       /**
        * 空いているスロットにItemStackを追加
        * @param {Minecraft.ItemStack} itemStack
        */
-      addItem: (itemStack) => {return},
+      addItem: (itemStack) => {
+        return;
+      },
       /**
        * fromSlotからtoContainerのtoSlotにアイテムを転送
        * @param {Number} fromSlot
        * @param {Number} toSlot
        * @param {Minecraft.Container} toContainer
        */
-      transferItem: (fromSlot, toSlot, toContainer) => {return},
+      transferItem: (fromSlot, toSlot, toContainer) => {
+        return;
+      },
       /**
        * otherContainerのotherSlotとslotのアイテムを交換します。
        * @param {Number} slot
        * @param {Number} otherSlot
        * @param {Minecraft.Container} otherContainer
        */
-      swapItems: (slot, otherSlot, otherContainer) => {return},
+      swapItems: (slot, otherSlot, otherContainer) => {
+        return;
+      },
       size: 0,
       emptySlotsCount: 0,
-    }
+    };
   }
 }
 
 class Dimension {
   /**
-   * 
-   * @param {BlockLocation} location 
+   *
+   * @param {BlockLocation} location
    * @return {Boolean}
    */
-  isEmpty = function(location){return};
+  isEmpty = function (location) {
+    return;
+  };
   /**
-   * 
-   * @param {BlockLocation} location 
+   *
+   * @param {BlockLocation} location
    * @return {Entity[]}
    */
-  getEntitiesAtBlockLocation = function(location){return};
+  getEntitiesAtBlockLocation = function (location) {
+    return;
+  };
   /**
-   * 
-   * @param {BlockLocation} position 
+   *
+   * @param {BlockLocation} position
    * @return {Block}
    */
-  getBlock = function(position){return};
+  getBlock = function (position) {
+    return;
+  };
   /**
-   * 
-   * @param {String} identifier 
-   * @param {BlockLocation} blockLocation 
+   *
+   * @param {String} identifier
+   * @param {BlockLocation} blockLocation
    * @return {Entity}
    */
-  spawnEntity = function(identifier, blockLocation){return};
+  spawnEntity = function (identifier, blockLocation) {
+    return;
+  };
   /**
    * @param {Location} location
    * @param {Number} radius
    * @param {ExplosionOptions} explosionOptions
    */
-  createExplosion = function(location, radius, explosionOptions){return};
+  createExplosion = function (location, radius, explosionOptions) {
+    return;
+  };
 }
 
 class Effect {
   constructor() {
     /**@return {Number} */
-    this.amplifier = Number()
+    this.amplifier = Number();
     /**@return {Number} */
-    this.duration = Number()
+    this.duration = Number();
     /**@return {String} */
-    this.displayName = String()
+    this.displayName = String();
   }
 }
 
@@ -3434,24 +3530,24 @@ export class Effects {
   static villageHero;
 }
 
-export class ExplosionOptions{
-  constructor(){
+export class ExplosionOptions {
+  constructor() {
     /**
      * @type {Entity}
      */
-    this.source = Entity()
+    this.source = Entity();
     /**
      * @type {Boolean}
      */
-    this.breaksBlocks = Boolean()
+    this.breaksBlocks = Boolean();
     /**
      * @type {Boolean}
      */
-    this.causesFire = Boolean()
+    this.causesFire = Boolean();
     /**
      * @type {Boolean}
      */
-    this.allowUnderwater = Boolean()
+    this.allowUnderwater = Boolean();
   }
 }
 
@@ -3462,56 +3558,72 @@ export class Entity {
      * @param {String} ComponentName
      * @return {Boolean}
      */
-    this.hasComponent = (ComponentName) => {return};
+    this.hasComponent = (ComponentName) => {
+      return;
+    };
     /**
      *
      * @param {String} ComponentName
      * @return {Component}
      */
-    this.getComponent = (ComponentName) => {return};
+    this.getComponent = (ComponentName) => {
+      return;
+    };
     /**
      * @return {Component[]}
      */
-    this.getComponents = () => {return};
-    this.kill = () => {return};
+    this.getComponents = () => {
+      return;
+    };
+    this.kill = () => {
+      return;
+    };
     /**
      *
      * @param {EffectType} effectType
      * @return {Effect}
      */
-    this.getEffect = (effectType) => {return};
+    this.getEffect = (effectType) => {
+      return;
+    };
     /**
      *
      * @param {EffectType} effectType
      * @param {Number} duration
      * @param {Number} amplifier
      */
-    this.addEffect = (effectType, duration, amplifier) => {return};
+    this.addEffect = (effectType, duration, amplifier) => {
+      return;
+    };
     /**
-     * 
-     * @param {String} eventName 
+     *
+     * @param {String} eventName
      */
-    this.triggerEvent = function(eventName){return};
-    /**
-     * @type {String}
-     */
-    this.id = String()
-    /**
-     * @type {Location}
-     */
-    this.location = new Location()
-    /**
-     * @type {Location}
-     */
-    this.velocity = new Location()
+    this.triggerEvent = function (eventName) {
+      return;
+    };
     /**
      * @type {String}
      */
-    this.nameTag = String()
+    this.id = String();
+    /**
+     * @type {Location}
+     */
+    this.location = new Location();
+    /**
+     * @type {Location}
+     */
+    this.velocity = new Location();
+    /**
+     * @type {String}
+     */
+    this.nameTag = String();
   }
 }
 
-export class Events {return}
+export class Events {
+  return;
+}
 
 /**
  * @constructor
@@ -3524,7 +3636,9 @@ export class ItemStack {
    * @param {Number} amount
    * @param {Number} data
    */
-  constructor(itemName, amount, data) {return}
+  constructor(itemName, amount, data) {
+    return;
+  }
 }
 
 /**
@@ -7635,7 +7749,9 @@ export class Location {
    * @param {Location} location
    * @return {Boolean}
    */
-  equals(location) {return}
+  equals(location) {
+    return;
+  }
 }
 
 class Player {
@@ -7644,55 +7760,69 @@ class Player {
    * @param {String} ComponentName
    * @return {Boolean}
    */
-  hasComponent = function(ComponentName){return}
+  hasComponent = function (ComponentName) {
+    return;
+  };
   /**
    *
    * @param {String} ComponentName
    * @return {Component}
    */
-  getComponent = function(ComponentName){return}
+  getComponent = function (ComponentName) {
+    return;
+  };
   /**
    * @return {Component[]}
    */
-  getComponents = function(){return}
-  kill = function(){return}
+  getComponents = function () {
+    return;
+  };
+  kill = function () {
+    return;
+  };
   /**
    *
    * @param {EffectType} effectType
    * @return {Effect}
    */
-  getEffect = function(effectType){return}
+  getEffect = function (effectType) {
+    return;
+  };
   /**
    *
    * @param {EffectType} effectType
    * @param {Number} duration
    * @param {Number} amplifier
    */
-  addEffect = function(effectType, duration, amplifier){return}
+  addEffect = function (effectType, duration, amplifier) {
+    return;
+  };
   /**
-   * @param {String} eventName 
+   * @param {String} eventName
    */
-  triggerEvent = function(eventName){return}
+  triggerEvent = function (eventName) {
+    return;
+  };
   /**
    * @type {String}
    */
-  id
+  id;
   /**
    * @type {Location}
    */
-  location
+  location;
   /**
    * @type {Location}
    */
-  velocity
+  velocity;
   /**
    * @type {String}
    */
-  nameTag
+  nameTag;
   /**
    * @type {String}
    */
-  name
+  name;
 }
 
 class Tick {}
@@ -7703,12 +7833,16 @@ export class World {
    * @param {('overworld'|'nether'|'the end')} dimension
    * @return {Dimension}
    */
-  static getDimension = (dimension) => {return};
+  static getDimension = (dimension) => {
+    return;
+  };
 
   /**
    * @return {Player[]}
    */
-  static getPlayers = function(){return};
+  static getPlayers = function () {
+    return;
+  };
   static events = {
     /**
      * @type {TickEventSignal}
@@ -7734,28 +7868,80 @@ export class World {
      * @type {EntityEventSignal}
      */
     createEntity,
+    beforeExplosion,
+    explosion,
+    explodeBlock,
+    activatePiston,
+    beforeActivatePiston,
   };
 }
 
-class TickEventSignal{
-  subscribe()
-  unsubscribe()
+class TickEventSignal {
+  subscribe() {
+    return;
+  }
+  unsubscribe() {
+    return;
+  }
 }
-class WeatherChangedEventSignal{
-  subscribe()
-  unsubscribe()
+class WeatherChangedEventSignal {
+  subscribe() {
+    return;
+  }
+  unsubscribe() {
+    return;
+  }
 }
-class AddEffectEventSignal{
-  subscribe()
-  unsubscribe()
+class AddEffectEventSignal {
+  subscribe() {
+    return;
+  }
+  unsubscribe() {
+    return;
+  }
 }
-class ChatEventSignal{
-  subscribe()
-  unsubscribe()
+class ChatEventSignal {
+  subscribe() {
+    return;
+  }
+  unsubscribe() {
+    return;
+  }
 }
-class EntityEventSignal{
-  subscribe()
-  unsubscribe()
+class EntityEventSignal {
+  subscribe() {
+    return;
+  }
+  unsubscribe() {
+    return;
+  }
+}
+
+class BlockPiston {
+  /**
+   * @type {BlockLocation[]}
+   */
+  attachedBlocks;
+  /**
+   * @type {Boolean}
+   */
+  isMoving;
+  /**
+   * @type {Boolean}
+   */
+  isExpanded;
+  /**
+   * @type {Boolean}
+   */
+  isExpanding;
+  /**
+   * @type {Boolean}
+   */
+  isRetracting;
+  /**
+   * @type {Boolean}
+   */
+  isRetracted;
 }
 
 // "minecraft:color" = class {return};

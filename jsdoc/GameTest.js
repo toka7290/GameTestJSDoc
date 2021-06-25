@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework GameTest module JSDoc
  * @author toka7290
- * @since v1.17.10.21
- * @version v1.17.10.21
+ * @since v1.17.20.20
+ * @version v1.17.20.20
  * @name GameTest
  * @memberof MinecraftGameTest
  * @license MIT
@@ -591,3 +591,5 @@ class GameTestSequence {
     };
   }
 }
+
+class ScriptGameTestConnectivity {}
