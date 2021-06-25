@@ -33,7 +33,9 @@ class Block {
     /**
      * @return {Dimension}
      */
-    this.getDimension() = function(){return;};
+    this.getDimension = function () {
+      return;
+    };
     /**
      * @return {BlockLocation}
      */
