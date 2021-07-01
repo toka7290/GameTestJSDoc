@@ -112,6 +112,16 @@ class RegistrationBuilder {
 class Helper {
   constructor() {
     /**
+     *
+     * @param {String} blockStateName
+     * @param {String} stateValue
+     * @param {Minecraft.BlockLocation} position
+     * @return {any}
+     */
+    this.assertBlockState = function (blockStateName, stateValue, position) {
+      return;
+    };
+    /**
      * @function
      * @param {Minecraft.BlockType} block
      * @param {Minecraft.BlockLocation} position
@@ -131,14 +141,17 @@ class Helper {
     };
     /**
      *
-     * @param {String} blockStateName
-     * @param {String} stateValue
-     * @param {Minecraft.BlockLocation} position
-     * @return {any}
+     * @param {Minecraft.Entity} mob
+     * @param {Minecraft.BlockLocation} location
+     * @param {Boolean} canReach
      */
-    this.assertBlockState = function (blockStateName, stateValue, position) {
-      return;
-    };
+    this.assertCanReachLocation = function (mob, location, canReach) {};
+    /**
+     *
+     * @param {Boolean} arg
+     * @param {String} errorMessage
+     */
+    this.assert = function (arg, errorMessage) {};
     /**
      *
      * @param {ItemStack} itemName
@@ -166,10 +179,13 @@ class Helper {
     };
     /**
      *
-     * @param {Minecraft.Entity} entity
+     * @param {String} entityIdentifier
+     * @param {Number} slot
+     * @param {String} armor
      * @param {Minecraft.BlockLocation} position
+     * @param {Boolean} evaluation
      */
-    this.assertEntityInstancePresent = function (entity, position) {
+    this.assertEntityHasArmor = function (entityIdentifier, slot, armor, position, evaluation) {
       return;
     };
     /**
@@ -185,6 +201,14 @@ class Helper {
       position,
       hasComponent
     ) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.Entity} entity
+     * @param {Minecraft.BlockLocation} position
+     */
+    this.assertEntityInstancePresent = function (entity, position) {
       return;
     };
     /**
@@ -205,6 +229,14 @@ class Helper {
     /**
      *
      * @param {String} entityIdentifier
+     * @param {Location} position
+     */
+    this.assertEntityNotTouching = function (entityIdentifier, position) {
+      return;
+    };
+    /**
+     *
+     * @param {String} entityIdentifier
      * @param {Minecraft.BlockLocation} position
      */
     this.assertEntityPresent = function (entityIdentifier, position) {
@@ -220,17 +252,6 @@ class Helper {
     /**
      *
      * @param {String} entityIdentifier
-     * @param {Number} slot
-     * @param {String} armor
-     * @param {Minecraft.BlockLocation} position
-     * @param {Boolean} evaluation
-     */
-    this.assertEntityHasArmor = function (entityIdentifier, slot, armor, position, evaluation) {
-      return;
-    };
-    /**
-     *
-     * @param {String} entityIdentifier
      * @param {Location} position
      */
     this.assertEntityTouching = function (entityIdentifier, position) {
@@ -238,10 +259,10 @@ class Helper {
     };
     /**
      *
-     * @param {String} entityIdentifier
-     * @param {Location} position
+     * @param {Minecraft.BlockLocation} position
+     * @param {Boolean} isWaterlogged
      */
-    this.assertEntityNotTouching = function (entityIdentifier, position) {
+    this.assertIsWaterlogged = function (position, isWaterlogged) {
       return;
     };
     /**
@@ -270,14 +291,6 @@ class Helper {
      * @param {Number} searchDistance
      */
     this.assertItemEntityPresent = function (item, position, searchDistance) {
-      return;
-    };
-    /**
-     *
-     * @param {Minecraft.BlockLocation} position
-     * @param {Boolean} isWaterlogged
-     */
-    this.assertIsWaterlogged = function (position, isWaterlogged) {
       return;
     };
     /**
@@ -361,6 +374,15 @@ class Helper {
 
     /**
      *
+     * @param {Minecraft.BlockLocation} worldLocation
+     * @return {Minecraft.BlockLocation}
+     */
+    this.relativeLocation = function (worldLocation) {
+      return;
+    };
+
+    /**
+     *
      * @param {Number} delayTicks
      * @param {function():void} callback
      */
@@ -391,6 +413,14 @@ class Helper {
     this.setBlockType = function (block, position) {
       return;
     };
+    /**
+     *
+     * @param {Minecraft.Entity} projectile
+     * @param {Number} tick
+     */
+    this.setTntFuse = function (projectile, tick) {
+      return;
+    };
     // test.setEntityTamed(identifier, position); 1.16.230.50
     /**
      *
@@ -403,10 +433,36 @@ class Helper {
     };
     /**
      *
+     * @param {String} identifier
+     * @param {Minecraft.Location} location
+     * @return {Minecraft.Entity}
+     */
+    this.spawnAtLocation = function (identifier, location) {
+      return;
+    };
+    /**
+     *
      * @param {ItemStack} itemType
      * @param {Location} position
      */
     this.spawnItem = function (itemType, position) {
+      return;
+    };
+    /**
+     * @param {String} entityIdentifier
+     * @param {Minecraft.BlockLocation} position
+     * @return {Minecraft.Entity}
+     */
+    this.spawnWithoutBehaviors = function (entityIdentifier, position) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.BlockLocation} position
+     * @param {Number} face
+     * @param {Number} toward_direction
+     */
+    this.spreadFromFaceTowardDirection = function (position, face, toward_direction) {
       return;
     };
 
@@ -488,45 +544,23 @@ class Helper {
     this.succeedWhenEntityPresent = function (entityIdentifier, position) {
       return;
     };
+
     /**
      *
-     * @param {Boolean} condition
-     * @param {String} errorMessage
-     */
-    this.assert = function (condition, errorMessage) {
-      return;
-    };
-    /**
-     *
-     * @param {Minecraft.BlockLocation} worldLocation
-     * @return {Minecraft.BlockLocation}
-     */
-    this.relativeLocation = function (worldLocation) {
-      return;
-    };
-    /**
-     * @param {String} entityIdentifier
-     * @param {Minecraft.BlockLocation} position
-     * @return {Minecraft.Entity}
-     */
-    this.spawnWithoutBehaviors = function (entityIdentifier, position) {
-      return;
-    };
-    /**
-     *
-     * @param {Minecraft.Entity} projectile
-     * @param {Number} tick
-     */
-    this.setTntFuse = function (projectile, tick) {
-      return;
-    };
-    /**
-     *
-     * @param {Minecraft.Entity} target
+     * @param {Minecraft.BlockLocation} target
      * @param {Minecraft.BlockLocation} blockLocation
      * @param {Number} speed
      */
-    this.worldLocation = function (relativeLocation) {
+    this.walkTo = function (target, blockLocation, speed) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.BlockLocation} target
+     * @param {Minecraft.Location} location
+     * @param {Number} speed
+     */
+    this.walkToLocation = function (target, location, speed) {
       return;
     };
     /**

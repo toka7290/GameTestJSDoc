@@ -89,6 +89,13 @@ class Block {
       return;
     };
     /**
+     *
+     * @returns {Dimension}
+     */
+    this.getDimension = function () {
+      return;
+    };
+    /**
      * @type {Number}
      */
     this.x = Number();
@@ -3410,6 +3417,18 @@ class Component {
   }
 }
 
+/**
+ * @enum {Number}
+ */
+export const Direction = {
+  down: 0,
+  up: 1,
+  north: 2,
+  south: 3,
+  west: 4,
+  east: 5,
+};
+
 class Dimension {
   /**
    *
@@ -3552,7 +3571,6 @@ export class ExplosionOptions {
     this.allowUnderwater = Boolean();
   }
 }
-
 export class Entity {
   constructor() {
     /**
@@ -3644,4093 +3662,6 @@ export class ItemStack {
 }
 
 /**
- * @typedef {{getName:function():String}} ItemType
- */
-
-export class Items {
-  /**@type {ItemType} */
-  static air;
-  /**@type {ItemType} */
-  static air;
-  /**@type {ItemType} */
-  static apple;
-  /**@type {ItemType} */
-  static goldenApple;
-  /**@type {ItemType} */
-  static enchantedGoldenApple;
-  /**@type {ItemType} */
-  static mushroomStew;
-  /**@type {ItemType} */
-  static bread;
-  /**@type {ItemType} */
-  static porkchop;
-  /**@type {ItemType} */
-  static cookedPorkchop;
-  /**@type {ItemType} */
-  static cod;
-  /**@type {ItemType} */
-  static salmon;
-  /**@type {ItemType} */
-  static tropicalFish;
-  /**@type {ItemType} */
-  static pufferfish;
-  /**@type {ItemType} */
-  static cookedCod;
-  /**@type {ItemType} */
-  static cookedSalmon;
-  /**@type {ItemType} */
-  static driedKelp;
-  /**@type {ItemType} */
-  static cookie;
-  /**@type {ItemType} */
-  static melonSlice;
-  /**@type {ItemType} */
-  static beef;
-  /**@type {ItemType} */
-  static cookedBeef;
-  /**@type {ItemType} */
-  static chicken;
-  /**@type {ItemType} */
-  static cookedChicken;
-  /**@type {ItemType} */
-  static rottenFlesh;
-  /**@type {ItemType} */
-  static spiderEye;
-  /**@type {ItemType} */
-  static carrot;
-  /**@type {ItemType} */
-  static potato;
-  /**@type {ItemType} */
-  static bakedPotato;
-  /**@type {ItemType} */
-  static poisonousPotato;
-  /**@type {ItemType} */
-  static goldenCarrot;
-  /**@type {ItemType} */
-  static pumpkinPie;
-  /**@type {ItemType} */
-  static beetroot;
-  /**@type {ItemType} */
-  static beetrootSoup;
-  /**@type {ItemType} */
-  static sweetBerries;
-  /**@type {ItemType} */
-  static rabbit;
-  /**@type {ItemType} */
-  static cookedRabbit;
-  /**@type {ItemType} */
-  static rabbitStew;
-  /**@type {ItemType} */
-  static wheatSeeds;
-  /**@type {ItemType} */
-  static pumpkinSeeds;
-  /**@type {ItemType} */
-  static melonSeeds;
-  /**@type {ItemType} */
-  static netherWart;
-  /**@type {ItemType} */
-  static beetrootSeeds;
-  /**@type {ItemType} */
-  static ironShovel;
-  /**@type {ItemType} */
-  static ironPickaxe;
-  /**@type {ItemType} */
-  static ironAxe;
-  /**@type {ItemType} */
-  static flintAndSteel;
-  /**@type {ItemType} */
-  static bow;
-  /**@type {ItemType} */
-  static arrow;
-  /**@type {ItemType} */
-  static coal;
-  /**@type {ItemType} */
-  static charcoal;
-  /**@type {ItemType} */
-  static diamond;
-  /**@type {ItemType} */
-  static ironIngot;
-  /**@type {ItemType} */
-  static goldIngot;
-  /**@type {ItemType} */
-  static ironSword;
-  /**@type {ItemType} */
-  static woodenSword;
-  /**@type {ItemType} */
-  static woodenShovel;
-  /**@type {ItemType} */
-  static woodenPickaxe;
-  /**@type {ItemType} */
-  static woodenAxe;
-  /**@type {ItemType} */
-  static stoneSword;
-  /**@type {ItemType} */
-  static stoneShovel;
-  /**@type {ItemType} */
-  static stonePickaxe;
-  /**@type {ItemType} */
-  static stoneAxe;
-  /**@type {ItemType} */
-  static diamondSword;
-  /**@type {ItemType} */
-  static diamondShovel;
-  /**@type {ItemType} */
-  static diamondPickaxe;
-  /**@type {ItemType} */
-  static diamondAxe;
-  /**@type {ItemType} */
-  static stick;
-  /**@type {ItemType} */
-  static bowl;
-  /**@type {ItemType} */
-  static goldenSword;
-  /**@type {ItemType} */
-  static goldenShovel;
-  /**@type {ItemType} */
-  static goldenPickaxe;
-  /**@type {ItemType} */
-  static goldenAxe;
-  /**@type {ItemType} */
-  static String;
-  /**@type {ItemType} */
-  static feather;
-  /**@type {ItemType} */
-  static gunpowder;
-  /**@type {ItemType} */
-  static woodenHoe;
-  /**@type {ItemType} */
-  static stoneHoe;
-  /**@type {ItemType} */
-  static ironHoe;
-  /**@type {ItemType} */
-  static diamondHoe;
-  /**@type {ItemType} */
-  static goldenHoe;
-  /**@type {ItemType} */
-  static wheat;
-  /**@type {ItemType} */
-  static leatherHelmet;
-  /**@type {ItemType} */
-  static leatherChestplate;
-  /**@type {ItemType} */
-  static leatherLeggings;
-  /**@type {ItemType} */
-  static leatherBoots;
-  /**@type {ItemType} */
-  static chainmailHelmet;
-  /**@type {ItemType} */
-  static chainmailChestplate;
-  /**@type {ItemType} */
-  static chainmailLeggings;
-  /**@type {ItemType} */
-  static chainmailBoots;
-  /**@type {ItemType} */
-  static ironHelmet;
-  /**@type {ItemType} */
-  static ironChestplate;
-  /**@type {ItemType} */
-  static ironLeggings;
-  /**@type {ItemType} */
-  static ironBoots;
-  /**@type {ItemType} */
-  static diamondHelmet;
-  /**@type {ItemType} */
-  static diamondChestplate;
-  /**@type {ItemType} */
-  static diamondLeggings;
-  /**@type {ItemType} */
-  static diamondBoots;
-  /**@type {ItemType} */
-  static goldenHelmet;
-  /**@type {ItemType} */
-  static goldenChestplate;
-  /**@type {ItemType} */
-  static goldenLeggings;
-  /**@type {ItemType} */
-  static goldenBoots;
-  /**@type {ItemType} */
-  static shield;
-  /**@type {ItemType} */
-  static flint;
-  /**@type {ItemType} */
-  static painting;
-  /**@type {ItemType} */
-  static oakSign;
-  /**@type {ItemType} */
-  static woodenDoor;
-  /**@type {ItemType} */
-  static bucket;
-  /**@type {ItemType} */
-  static milkBucket;
-  /**@type {ItemType} */
-  static waterBucket;
-  /**@type {ItemType} */
-  static lavaBucket;
-  /**@type {ItemType} */
-  static codBucket;
-  /**@type {ItemType} */
-  static salmonBucket;
-  /**@type {ItemType} */
-  static tropicalFishBucket;
-  /**@type {ItemType} */
-  static pufferfishBucket;
-  /**@type {ItemType} */
-  static powderSnowBucket;
-  /**@type {ItemType} */
-  static axolotlBucket;
-  /**@type {ItemType} */
-  static minecart;
-  /**@type {ItemType} */
-  static saddle;
-  /**@type {ItemType} */
-  static ironDoor;
-  /**@type {ItemType} */
-  static redstone;
-  /**@type {ItemType} */
-  static snowball;
-  /**@type {ItemType} */
-  static oakBoat;
-  /**@type {ItemType} */
-  static birchBoat;
-  /**@type {ItemType} */
-  static jungleBoat;
-  /**@type {ItemType} */
-  static spruceBoat;
-  /**@type {ItemType} */
-  static acaciaBoat;
-  /**@type {ItemType} */
-  static darkOakBoat;
-  /**@type {ItemType} */
-  static leather;
-  /**@type {ItemType} */
-  static kelp;
-  /**@type {ItemType} */
-  static brick;
-  /**@type {ItemType} */
-  static clayBall;
-  /**@type {ItemType} */
-  static sugarCane;
-  /**@type {ItemType} */
-  static paper;
-  /**@type {ItemType} */
-  static book;
-  /**@type {ItemType} */
-  static slimeBall;
-  /**@type {ItemType} */
-  static chestMinecart;
-  /**@type {ItemType} */
-  static egg;
-  /**@type {ItemType} */
-  static compass;
-  /**@type {ItemType} */
-  static fishingRod;
-  /**@type {ItemType} */
-  static clock;
-  /**@type {ItemType} */
-  static glowstoneDust;
-  /**@type {ItemType} */
-  static blackDye;
-  /**@type {ItemType} */
-  static redDye;
-  /**@type {ItemType} */
-  static greenDye;
-  /**@type {ItemType} */
-  static brownDye;
-  /**@type {ItemType} */
-  static blueDye;
-  /**@type {ItemType} */
-  static purpleDye;
-  /**@type {ItemType} */
-  static cyanDye;
-  /**@type {ItemType} */
-  static lightGrayDye;
-  /**@type {ItemType} */
-  static grayDye;
-  /**@type {ItemType} */
-  static pinkDye;
-  /**@type {ItemType} */
-  static limeDye;
-  /**@type {ItemType} */
-  static yellowDye;
-  /**@type {ItemType} */
-  static lightBlueDye;
-  /**@type {ItemType} */
-  static magentaDye;
-  /**@type {ItemType} */
-  static orangeDye;
-  /**@type {ItemType} */
-  static whiteDye;
-  /**@type {ItemType} */
-  static boneMeal;
-  /**@type {ItemType} */
-  static cocoaBeans;
-  /**@type {ItemType} */
-  static inkSac;
-  /**@type {ItemType} */
-  static lapisLazuli;
-  /**@type {ItemType} */
-  static bone;
-  /**@type {ItemType} */
-  static sugar;
-  /**@type {ItemType} */
-  static cake;
-  /**@type {ItemType} */
-  static bed;
-  /**@type {ItemType} */
-  static repeater;
-  /**@type {ItemType} */
-  static filledMap;
-  /**@type {ItemType} */
-  static shears;
-  /**@type {ItemType} */
-  static enderPearl;
-  /**@type {ItemType} */
-  static blazeRod;
-  /**@type {ItemType} */
-  static ghastTear;
-  /**@type {ItemType} */
-  static goldNugget;
-  /**@type {ItemType} */
-  static potion;
-  /**@type {ItemType} */
-  static glassBottle;
-  /**@type {ItemType} */
-  static fermentedSpiderEye;
-  /**@type {ItemType} */
-  static blazePowder;
-  /**@type {ItemType} */
-  static magmaCream;
-  /**@type {ItemType} */
-  static brewingStand;
-  /**@type {ItemType} */
-  static cauldron;
-  /**@type {ItemType} */
-  static enderEye;
-  /**@type {ItemType} */
-  static glisteringMelonSlice;
-  /**@type {ItemType} */
-  static chickenSpawnEgg;
-  /**@type {ItemType} */
-  static cowSpawnEgg;
-  /**@type {ItemType} */
-  static pigSpawnEgg;
-  /**@type {ItemType} */
-  static sheepSpawnEgg;
-  /**@type {ItemType} */
-  static wolfSpawnEgg;
-  /**@type {ItemType} */
-  static mooshroomSpawnEgg;
-  /**@type {ItemType} */
-  static creeperSpawnEgg;
-  /**@type {ItemType} */
-  static endermanSpawnEgg;
-  /**@type {ItemType} */
-  static silverfishSpawnEgg;
-  /**@type {ItemType} */
-  static skeletonSpawnEgg;
-  /**@type {ItemType} */
-  static slimeSpawnEgg;
-  /**@type {ItemType} */
-  static spiderSpawnEgg;
-  /**@type {ItemType} */
-  static zombieSpawnEgg;
-  /**@type {ItemType} */
-  static zombiePigmanSpawnEgg;
-  /**@type {ItemType} */
-  static villagerSpawnEgg;
-  /**@type {ItemType} */
-  static squidSpawnEgg;
-  /**@type {ItemType} */
-  static ocelotSpawnEgg;
-  /**@type {ItemType} */
-  static witchSpawnEgg;
-  /**@type {ItemType} */
-  static batSpawnEgg;
-  /**@type {ItemType} */
-  static ghastSpawnEgg;
-  /**@type {ItemType} */
-  static magmaCubeSpawnEgg;
-  /**@type {ItemType} */
-  static blazeSpawnEgg;
-  /**@type {ItemType} */
-  static caveSpiderSpawnEgg;
-  /**@type {ItemType} */
-  static horseSpawnEgg;
-  /**@type {ItemType} */
-  static rabbitSpawnEgg;
-  /**@type {ItemType} */
-  static endermiteSpawnEgg;
-  /**@type {ItemType} */
-  static guardianSpawnEgg;
-  /**@type {ItemType} */
-  static straySpawnEgg;
-  /**@type {ItemType} */
-  static huskSpawnEgg;
-  /**@type {ItemType} */
-  static witherSkeletonSpawnEgg;
-  /**@type {ItemType} */
-  static donkeySpawnEgg;
-  /**@type {ItemType} */
-  static muleSpawnEgg;
-  /**@type {ItemType} */
-  static skeletonHorseSpawnEgg;
-  /**@type {ItemType} */
-  static zombieHorseSpawnEgg;
-  /**@type {ItemType} */
-  static shulkerSpawnEgg;
-  /**@type {ItemType} */
-  static npcSpawnEgg;
-  /**@type {ItemType} */
-  static elderGuardianSpawnEgg;
-  /**@type {ItemType} */
-  static polarBearSpawnEgg;
-  /**@type {ItemType} */
-  static llamaSpawnEgg;
-  /**@type {ItemType} */
-  static vindicatorSpawnEgg;
-  /**@type {ItemType} */
-  static evokerSpawnEgg;
-  /**@type {ItemType} */
-  static vexSpawnEgg;
-  /**@type {ItemType} */
-  static zombieVillagerSpawnEgg;
-  /**@type {ItemType} */
-  static parrotSpawnEgg;
-  /**@type {ItemType} */
-  static tropicalFishSpawnEgg;
-  /**@type {ItemType} */
-  static codSpawnEgg;
-  /**@type {ItemType} */
-  static pufferfishSpawnEgg;
-  /**@type {ItemType} */
-  static salmonSpawnEgg;
-  /**@type {ItemType} */
-  static drownedSpawnEgg;
-  /**@type {ItemType} */
-  static dolphinSpawnEgg;
-  /**@type {ItemType} */
-  static turtleSpawnEgg;
-  /**@type {ItemType} */
-  static phantomSpawnEgg;
-  /**@type {ItemType} */
-  static agentSpawnEgg;
-  /**@type {ItemType} */
-  static catSpawnEgg;
-  /**@type {ItemType} */
-  static pandaSpawnEgg;
-  /**@type {ItemType} */
-  static foxSpawnEgg;
-  /**@type {ItemType} */
-  static pillagerSpawnEgg;
-  /**@type {ItemType} */
-  static wanderingTraderSpawnEgg;
-  /**@type {ItemType} */
-  static ravagerSpawnEgg;
-  /**@type {ItemType} */
-  static beeSpawnEgg;
-  /**@type {ItemType} */
-  static striderSpawnEgg;
-  /**@type {ItemType} */
-  static hoglinSpawnEgg;
-  /**@type {ItemType} */
-  static piglinSpawnEgg;
-  /**@type {ItemType} */
-  static zoglinSpawnEgg;
-  /**@type {ItemType} */
-  static piglinBruteSpawnEgg;
-  /**@type {ItemType} */
-  static goatSpawnEgg;
-  /**@type {ItemType} */
-  static axolotlSpawnEgg;
-  /**@type {ItemType} */
-  static copperIngot;
-  /**@type {ItemType} */
-  static copperBlock;
-  /**@type {ItemType} */
-  static cutCopper;
-  /**@type {ItemType} */
-  static cutCopperStairs;
-  /**@type {ItemType} */
-  static cutCopperSlab;
-  /**@type {ItemType} */
-  static exposedCutCopperSlab;
-  /**@type {ItemType} */
-  static weatheredCutCopperSlab;
-  /**@type {ItemType} */
-  static oxidizedCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedExposedCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedWeatheredCutCopperSlab;
-  /**@type {ItemType} */
-  static glowSquidSpawnEgg;
-  /**@type {ItemType} */
-  static glowInkSac;
-  /**@type {ItemType} */
-  static experienceBottle;
-  /**@type {ItemType} */
-  static fireCharge;
-  /**@type {ItemType} */
-  static writableBook;
-  /**@type {ItemType} */
-  static writtenBook;
-  /**@type {ItemType} */
-  static emerald;
-  /**@type {ItemType} */
-  static frame;
-  /**@type {ItemType} */
-  static flowerPot;
-  /**@type {ItemType} */
-  static emptyMap;
-  /**@type {ItemType} */
-  static skull;
-  /**@type {ItemType} */
-  static carrotOnAStick;
-  /**@type {ItemType} */
-  static netherStar;
-  /**@type {ItemType} */
-  static fireworkRocket;
-  /**@type {ItemType} */
-  static fireworkStar;
-  /**@type {ItemType} */
-  static enchantedBook;
-  /**@type {ItemType} */
-  static comparator;
-  /**@type {ItemType} */
-  static netherbrick;
-  /**@type {ItemType} */
-  static quartz;
-  /**@type {ItemType} */
-  static tntMinecart;
-  /**@type {ItemType} */
-  static hopperMinecart;
-  /**@type {ItemType} */
-  static hopper;
-  /**@type {ItemType} */
-  static rabbitFoot;
-  /**@type {ItemType} */
-  static rabbitHide;
-  /**@type {ItemType} */
-  static leatherHorseArmor;
-  /**@type {ItemType} */
-  static ironHorseArmor;
-  /**@type {ItemType} */
-  static goldenHorseArmor;
-  /**@type {ItemType} */
-  static diamondHorseArmor;
-  /**@type {ItemType} */
-  static musicDisc13;
-  /**@type {ItemType} */
-  static musicDiscCat;
-  /**@type {ItemType} */
-  static musicDiscBlocks;
-  /**@type {ItemType} */
-  static musicDiscChirp;
-  /**@type {ItemType} */
-  static musicDiscFar;
-  /**@type {ItemType} */
-  static musicDiscMall;
-  /**@type {ItemType} */
-  static musicDiscMellohi;
-  /**@type {ItemType} */
-  static musicDiscStal;
-  /**@type {ItemType} */
-  static musicDiscStrad;
-  /**@type {ItemType} */
-  static musicDiscWard;
-  /**@type {ItemType} */
-  static musicDisc11;
-  /**@type {ItemType} */
-  static musicDiscWait;
-  /**@type {ItemType} */
-  static trident;
-  /**@type {ItemType} */
-  static lead;
-  /**@type {ItemType} */
-  static nameTag;
-  /**@type {ItemType} */
-  static prismarineCrystals;
-  /**@type {ItemType} */
-  static mutton;
-  /**@type {ItemType} */
-  static cookedMutton;
-  /**@type {ItemType} */
-  static armorStand;
-  /**@type {ItemType} */
-  static spruceDoor;
-  /**@type {ItemType} */
-  static birchDoor;
-  /**@type {ItemType} */
-  static jungleDoor;
-  /**@type {ItemType} */
-  static acaciaDoor;
-  /**@type {ItemType} */
-  static darkOakDoor;
-  /**@type {ItemType} */
-  static chorusFruit;
-  /**@type {ItemType} */
-  static poppedChorusFruit;
-  /**@type {ItemType} */
-  static dragonBreath;
-  /**@type {ItemType} */
-  static splashPotion;
-  /**@type {ItemType} */
-  static lingeringPotion;
-  /**@type {ItemType} */
-  static commandBlockMinecart;
-  /**@type {ItemType} */
-  static elytra;
-  /**@type {ItemType} */
-  static prismarineShard;
-  /**@type {ItemType} */
-  static shulkerShell;
-  /**@type {ItemType} */
-  static banner;
-  /**@type {ItemType} */
-  static totemOfUndying;
-  /**@type {ItemType} */
-  static ironNugget;
-  /**@type {ItemType} */
-  static nautilusShell;
-  /**@type {ItemType} */
-  static heartOfTheSea;
-  /**@type {ItemType} */
-  static scute;
-  /**@type {ItemType} */
-  static turtleHelmet;
-  /**@type {ItemType} */
-  static phantomMembrane;
-  /**@type {ItemType} */
-  static crossbow;
-  /**@type {ItemType} */
-  static spruceSign;
-  /**@type {ItemType} */
-  static birchSign;
-  /**@type {ItemType} */
-  static jungleSign;
-  /**@type {ItemType} */
-  static acaciaSign;
-  /**@type {ItemType} */
-  static darkOakSign;
-  /**@type {ItemType} */
-  static flowerBannerPattern;
-  /**@type {ItemType} */
-  static creeperBannerPattern;
-  /**@type {ItemType} */
-  static skullBannerPattern;
-  /**@type {ItemType} */
-  static mojangBannerPattern;
-  /**@type {ItemType} */
-  static fieldMasonedBannerPattern;
-  /**@type {ItemType} */
-  static bordureIndentedBannerPattern;
-  /**@type {ItemType} */
-  static piglinBannerPattern;
-  /**@type {ItemType} */
-  static campfire;
-  /**@type {ItemType} */
-  static suspiciousStew;
-  /**@type {ItemType} */
-  static honeycomb;
-  /**@type {ItemType} */
-  static honeyBottle;
-  /**@type {ItemType} */
-  static camera;
-  /**@type {ItemType} */
-  static compound;
-  /**@type {ItemType} */
-  static iceBomb;
-  /**@type {ItemType} */
-  static bleach;
-  /**@type {ItemType} */
-  static rapidFertilizer;
-  /**@type {ItemType} */
-  static balloon;
-  /**@type {ItemType} */
-  static medicine;
-  /**@type {ItemType} */
-  static sparkler;
-  /**@type {ItemType} */
-  static glowStick;
-  /**@type {ItemType} */
-  static lodestoneCompass;
-  /**@type {ItemType} */
-  static netheriteIngot;
-  /**@type {ItemType} */
-  static netheriteSword;
-  /**@type {ItemType} */
-  static netheriteShovel;
-  /**@type {ItemType} */
-  static netheritePickaxe;
-  /**@type {ItemType} */
-  static netheriteAxe;
-  /**@type {ItemType} */
-  static netheriteHoe;
-  /**@type {ItemType} */
-  static netheriteHelmet;
-  /**@type {ItemType} */
-  static netheriteChestplate;
-  /**@type {ItemType} */
-  static netheriteLeggings;
-  /**@type {ItemType} */
-  static netheriteBoots;
-  /**@type {ItemType} */
-  static netheriteScrap;
-  /**@type {ItemType} */
-  static crimsonSign;
-  /**@type {ItemType} */
-  static warpedSign;
-  /**@type {ItemType} */
-  static crimsonDoor;
-  /**@type {ItemType} */
-  static warpedDoor;
-  /**@type {ItemType} */
-  static warpedFungusOnAStick;
-  /**@type {ItemType} */
-  static chain;
-  /**@type {ItemType} */
-  static musicDiscPigstep;
-  /**@type {ItemType} */
-  static netherSprouts;
-  /**@type {ItemType} */
-  static blackstoneSlab;
-  /**@type {ItemType} */
-  static polishedBlackstoneBrickSlab;
-  /**@type {ItemType} */
-  static polishedBlackstoneSlab;
-  /**@type {ItemType} */
-  static soulCampfire;
-  /**@type {ItemType} */
-  static goatHorn;
-  /**@type {ItemType} */
-  static glowFrame;
-  /**@type {ItemType} */
-  static cobbledDeepslateSlab;
-  /**@type {ItemType} */
-  static polishedDeepslateSlab;
-  /**@type {ItemType} */
-  static deepslateTileSlab;
-  /**@type {ItemType} */
-  static deepslateBrickSlab;
-  /**@type {ItemType} */
-  static stone;
-  /**@type {ItemType} */
-  static dirt;
-  /**@type {ItemType} */
-  static farmland;
-  /**@type {ItemType} */
-  static sand;
-  /**@type {ItemType} */
-  static stainedHardenedClay;
-  /**@type {ItemType} */
-  static wool;
-  /**@type {ItemType} */
-  static carpet;
-  /**@type {ItemType} */
-  static log;
-  /**@type {ItemType} */
-  static fence;
-  /**@type {ItemType} */
-  static stonebrick;
-  /**@type {ItemType} */
-  static coralBlock;
-  /**@type {ItemType} */
-  static doubleStoneSlab;
-  /**@type {ItemType} */
-  static doubleStoneSlab2;
-  /**@type {ItemType} */
-  static doubleStoneSlab3;
-  /**@type {ItemType} */
-  static doubleStoneSlab4;
-  /**@type {ItemType} */
-  static realDoubleStoneSlab;
-  /**@type {ItemType} */
-  static realDoubleStoneSlab2;
-  /**@type {ItemType} */
-  static realDoubleStoneSlab3;
-  /**@type {ItemType} */
-  static realDoubleStoneSlab4;
-  /**@type {ItemType} */
-  static coralFan;
-  /**@type {ItemType} */
-  static coralFanDead;
-  /**@type {ItemType} */
-  static seaPickle;
-  /**@type {ItemType} */
-  static sapling;
-  /**@type {ItemType} */
-  static leaves;
-  /**@type {ItemType} */
-  static leaves2;
-  /**@type {ItemType} */
-  static azaleaLeaves;
-  /**@type {ItemType} */
-  static azaleaLeavesFlowered;
-  /**@type {ItemType} */
-  static sandstone;
-  /**@type {ItemType} */
-  static redSandstone;
-  /**@type {ItemType} */
-  static woodenSlab;
-  /**@type {ItemType} */
-  static crimsonRoots;
-  /**@type {ItemType} */
-  static warpedRoots;
-  /**@type {ItemType} */
-  static yellowFlower;
-  /**@type {ItemType} */
-  static redFlower;
-  /**@type {ItemType} */
-  static doublePlant;
-  /**@type {ItemType} */
-  static waterlily;
-  /**@type {ItemType} */
-  static sponge;
-  /**@type {ItemType} */
-  static snowLayer;
-  /**@type {ItemType} */
-  static planks;
-  /**@type {ItemType} */
-  static quartzBlock;
-  /**@type {ItemType} */
-  static purpurBlock;
-  /**@type {ItemType} */
-  static cobblestoneWall;
-  /**@type {ItemType} */
-  static coral;
-  /**@type {ItemType} */
-  static tallgrass;
-  /**@type {ItemType} */
-  static seagrass;
-  /**@type {ItemType} */
-  static brownMushroomBlock;
-  /**@type {ItemType} */
-  static redMushroomBlock;
-  /**@type {ItemType} */
-  static log2;
-  /**@type {ItemType} */
-  static endPortalFrame;
-  /**@type {ItemType} */
-  static anvil;
-  /**@type {ItemType} */
-  static monsterEgg;
-  /**@type {ItemType} */
-  static brewingstandblock;
-  /**@type {ItemType} */
-  static beacon;
-  /**@type {ItemType} */
-  static conduit;
-  /**@type {ItemType} */
-  static prismarine;
-  /**@type {ItemType} */
-  static sealantern;
-  /**@type {ItemType} */
-  static concrete;
-  /**@type {ItemType} */
-  static concretePowder;
-  /**@type {ItemType} */
-  static magma;
-  /**@type {ItemType} */
-  static stainedGlass;
-  /**@type {ItemType} */
-  static stainedGlassPane;
-  /**@type {ItemType} */
-  static undyedShulkerBox;
-  /**@type {ItemType} */
-  static shulkerBox;
-  /**@type {ItemType} */
-  static piston;
-  /**@type {ItemType} */
-  static stickyPiston;
-  /**@type {ItemType} */
-  static turtleEgg;
-  /**@type {ItemType} */
-  static bamboo;
-  /**@type {ItemType} */
-  static scaffolding;
-  /**@type {ItemType} */
-  static blastFurnace;
-  /**@type {ItemType} */
-  static smoker;
-  /**@type {ItemType} */
-  static smithingTable;
-  /**@type {ItemType} */
-  static barrel;
-  /**@type {ItemType} */
-  static lantern;
-  /**@type {ItemType} */
-  static loom;
-  /**@type {ItemType} */
-  static grindstone;
-  /**@type {ItemType} */
-  static bell;
-  /**@type {ItemType} */
-  static cartographyTable;
-  /**@type {ItemType} */
-  static fletchingTable;
-  /**@type {ItemType} */
-  static wood;
-  /**@type {ItemType} */
-  static chemistryTable;
-  /**@type {ItemType} */
-  static tnt;
-  /**@type {ItemType} */
-  static hardStainedGlass;
-  /**@type {ItemType} */
-  static hardStainedGlassPane;
-  /**@type {ItemType} */
-  static coloredTorchRg;
-  /**@type {ItemType} */
-  static coloredTorchBp;
-  /**@type {ItemType} */
-  static lightBlock;
-  /**@type {ItemType} */
-  static pumpkin;
-  /**@type {ItemType} */
-  static carvedPumpkin;
-  /**@type {ItemType} */
-  static litPumpkin;
-  /**@type {ItemType} */
-  static crimsonSlab;
-  /**@type {ItemType} */
-  static warpedSlab;
-  /**@type {ItemType} */
-  static element0;
-  /**@type {ItemType} */
-  static element1;
-  /**@type {ItemType} */
-  static element2;
-  /**@type {ItemType} */
-  static element3;
-  /**@type {ItemType} */
-  static element4;
-  /**@type {ItemType} */
-  static element5;
-  /**@type {ItemType} */
-  static element6;
-  /**@type {ItemType} */
-  static element7;
-  /**@type {ItemType} */
-  static element8;
-  /**@type {ItemType} */
-  static element9;
-  /**@type {ItemType} */
-  static element10;
-  /**@type {ItemType} */
-  static element11;
-  /**@type {ItemType} */
-  static element12;
-  /**@type {ItemType} */
-  static element13;
-  /**@type {ItemType} */
-  static element14;
-  /**@type {ItemType} */
-  static element15;
-  /**@type {ItemType} */
-  static element16;
-  /**@type {ItemType} */
-  static element17;
-  /**@type {ItemType} */
-  static element18;
-  /**@type {ItemType} */
-  static element19;
-  /**@type {ItemType} */
-  static element20;
-  /**@type {ItemType} */
-  static element21;
-  /**@type {ItemType} */
-  static element22;
-  /**@type {ItemType} */
-  static element23;
-  /**@type {ItemType} */
-  static element24;
-  /**@type {ItemType} */
-  static element25;
-  /**@type {ItemType} */
-  static element26;
-  /**@type {ItemType} */
-  static element27;
-  /**@type {ItemType} */
-  static element28;
-  /**@type {ItemType} */
-  static element29;
-  /**@type {ItemType} */
-  static element30;
-  /**@type {ItemType} */
-  static element31;
-  /**@type {ItemType} */
-  static element32;
-  /**@type {ItemType} */
-  static element33;
-  /**@type {ItemType} */
-  static element34;
-  /**@type {ItemType} */
-  static element35;
-  /**@type {ItemType} */
-  static element36;
-  /**@type {ItemType} */
-  static element37;
-  /**@type {ItemType} */
-  static element38;
-  /**@type {ItemType} */
-  static element39;
-  /**@type {ItemType} */
-  static element40;
-  /**@type {ItemType} */
-  static element41;
-  /**@type {ItemType} */
-  static element42;
-  /**@type {ItemType} */
-  static element43;
-  /**@type {ItemType} */
-  static element44;
-  /**@type {ItemType} */
-  static element45;
-  /**@type {ItemType} */
-  static element46;
-  /**@type {ItemType} */
-  static element47;
-  /**@type {ItemType} */
-  static element48;
-  /**@type {ItemType} */
-  static element49;
-  /**@type {ItemType} */
-  static element50;
-  /**@type {ItemType} */
-  static element51;
-  /**@type {ItemType} */
-  static element52;
-  /**@type {ItemType} */
-  static element53;
-  /**@type {ItemType} */
-  static element54;
-  /**@type {ItemType} */
-  static element55;
-  /**@type {ItemType} */
-  static element56;
-  /**@type {ItemType} */
-  static element57;
-  /**@type {ItemType} */
-  static element58;
-  /**@type {ItemType} */
-  static element59;
-  /**@type {ItemType} */
-  static element60;
-  /**@type {ItemType} */
-  static element61;
-  /**@type {ItemType} */
-  static element62;
-  /**@type {ItemType} */
-  static element63;
-  /**@type {ItemType} */
-  static element64;
-  /**@type {ItemType} */
-  static element65;
-  /**@type {ItemType} */
-  static element66;
-  /**@type {ItemType} */
-  static element67;
-  /**@type {ItemType} */
-  static element68;
-  /**@type {ItemType} */
-  static element69;
-  /**@type {ItemType} */
-  static element70;
-  /**@type {ItemType} */
-  static element71;
-  /**@type {ItemType} */
-  static element72;
-  /**@type {ItemType} */
-  static element73;
-  /**@type {ItemType} */
-  static element74;
-  /**@type {ItemType} */
-  static element75;
-  /**@type {ItemType} */
-  static element76;
-  /**@type {ItemType} */
-  static element77;
-  /**@type {ItemType} */
-  static element78;
-  /**@type {ItemType} */
-  static element79;
-  /**@type {ItemType} */
-  static element80;
-  /**@type {ItemType} */
-  static element81;
-  /**@type {ItemType} */
-  static element82;
-  /**@type {ItemType} */
-  static element83;
-  /**@type {ItemType} */
-  static element84;
-  /**@type {ItemType} */
-  static element85;
-  /**@type {ItemType} */
-  static element86;
-  /**@type {ItemType} */
-  static element87;
-  /**@type {ItemType} */
-  static element88;
-  /**@type {ItemType} */
-  static element89;
-  /**@type {ItemType} */
-  static element90;
-  /**@type {ItemType} */
-  static element91;
-  /**@type {ItemType} */
-  static element92;
-  /**@type {ItemType} */
-  static element93;
-  /**@type {ItemType} */
-  static element94;
-  /**@type {ItemType} */
-  static element95;
-  /**@type {ItemType} */
-  static element96;
-  /**@type {ItemType} */
-  static element97;
-  /**@type {ItemType} */
-  static element98;
-  /**@type {ItemType} */
-  static element99;
-  /**@type {ItemType} */
-  static element100;
-  /**@type {ItemType} */
-  static element101;
-  /**@type {ItemType} */
-  static element102;
-  /**@type {ItemType} */
-  static element103;
-  /**@type {ItemType} */
-  static element104;
-  /**@type {ItemType} */
-  static element105;
-  /**@type {ItemType} */
-  static element106;
-  /**@type {ItemType} */
-  static element107;
-  /**@type {ItemType} */
-  static element108;
-  /**@type {ItemType} */
-  static element109;
-  /**@type {ItemType} */
-  static element110;
-  /**@type {ItemType} */
-  static element111;
-  /**@type {ItemType} */
-  static element112;
-  /**@type {ItemType} */
-  static element113;
-  /**@type {ItemType} */
-  static element114;
-  /**@type {ItemType} */
-  static element115;
-  /**@type {ItemType} */
-  static element116;
-  /**@type {ItemType} */
-  static element117;
-  /**@type {ItemType} */
-  static element118;
-  /**@type {ItemType} */
-  static composter;
-  /**@type {ItemType} */
-  static netheriteBlock;
-  /**@type {ItemType} */
-  static ancientDebris;
-  /**@type {ItemType} */
-  static respawnAnchor;
-  /**@type {ItemType} */
-  static cryingObsidian;
-  /**@type {ItemType} */
-  static boat;
-  /**@type {ItemType} */
-  static dye;
-  /**@type {ItemType} */
-  static bannerPattern;
-  /**@type {ItemType} */
-  static spawnEgg;
-  /**@type {ItemType} */
-  static endCrystal;
-  /**@type {ItemType} */
-  static glowBerries;
-  /**@type {ItemType} */
-  static acaciaButton;
-  /**@type {ItemType} */
-  static acaciaFenceGate;
-  /**@type {ItemType} */
-  static acaciaPressurePlate;
-  /**@type {ItemType} */
-  static acaciaStairs;
-  /**@type {ItemType} */
-  static acaciaStandingSign;
-  /**@type {ItemType} */
-  static acaciaTrapdoor;
-  /**@type {ItemType} */
-  static acaciaWallSign;
-  /**@type {ItemType} */
-  static activatorRail;
-  /**@type {ItemType} */
-  static allow;
-  /**@type {ItemType} */
-  static andesiteStairs;
-  /**@type {ItemType} */
-  static azalea;
-  /**@type {ItemType} */
-  static bambooSapling;
-  /**@type {ItemType} */
-  static barrier;
-  /**@type {ItemType} */
-  static basalt;
-  /**@type {ItemType} */
-  static bedrock;
-  /**@type {ItemType} */
-  static beeNest;
-  /**@type {ItemType} */
-  static beehive;
-  /**@type {ItemType} */
-  static bigDripleaf;
-  /**@type {ItemType} */
-  static birchButton;
-  /**@type {ItemType} */
-  static birchFenceGate;
-  /**@type {ItemType} */
-  static birchPressurePlate;
-  /**@type {ItemType} */
-  static birchStairs;
-  /**@type {ItemType} */
-  static birchStandingSign;
-  /**@type {ItemType} */
-  static birchTrapdoor;
-  /**@type {ItemType} */
-  static birchWallSign;
-  /**@type {ItemType} */
-  static blackGlazedTerracotta;
-  /**@type {ItemType} */
-  static blackstone;
-  /**@type {ItemType} */
-  static blackstoneDoubleSlab;
-  /**@type {ItemType} */
-  static blackstoneStairs;
-  /**@type {ItemType} */
-  static blackstoneWall;
-  /**@type {ItemType} */
-  static blueGlazedTerracotta;
-  /**@type {ItemType} */
-  static blueIce;
-  /**@type {ItemType} */
-  static boneBlock;
-  /**@type {ItemType} */
-  static bookshelf;
-  /**@type {ItemType} */
-  static borderBlock;
-  /**@type {ItemType} */
-  static brickBlock;
-  /**@type {ItemType} */
-  static brickStairs;
-  /**@type {ItemType} */
-  static brownGlazedTerracotta;
-  /**@type {ItemType} */
-  static brownMushroom;
-  /**@type {ItemType} */
-  static bubbleColumn;
-  /**@type {ItemType} */
-  static cactus;
-  /**@type {ItemType} */
-  static carrots;
-  /**@type {ItemType} */
-  static caveVines;
-  /**@type {ItemType} */
-  static caveVinesBodyWithBerries;
-  /**@type {ItemType} */
-  static caveVinesHeadWithBerries;
-  /**@type {ItemType} */
-  static chainCommandBlock;
-  /**@type {ItemType} */
-  static chemicalHeat;
-  /**@type {ItemType} */
-  static chest;
-  /**@type {ItemType} */
-  static chiseledDeepslate;
-  /**@type {ItemType} */
-  static chiseledNetherBricks;
-  /**@type {ItemType} */
-  static chiseledPolishedBlackstone;
-  /**@type {ItemType} */
-  static chorusFlower;
-  /**@type {ItemType} */
-  static chorusPlant;
-  /**@type {ItemType} */
-  static clay;
-  /**@type {ItemType} */
-  static coalBlock;
-  /**@type {ItemType} */
-  static coalOre;
-  /**@type {ItemType} */
-  static cobbledDeepslate;
-  /**@type {ItemType} */
-  static cobbledDeepslateDoubleSlab;
-  /**@type {ItemType} */
-  static cobbledDeepslateStairs;
-  /**@type {ItemType} */
-  static cobbledDeepslateWall;
-  /**@type {ItemType} */
-  static cobblestone;
-  /**@type {ItemType} */
-  static cocoa;
-  /**@type {ItemType} */
-  static commandBlock;
-  /**@type {ItemType} */
-  static copperOre;
-  /**@type {ItemType} */
-  static coralFanHang;
-  /**@type {ItemType} */
-  static coralFanHang2;
-  /**@type {ItemType} */
-  static coralFanHang3;
-  /**@type {ItemType} */
-  static crackedDeepslateBricks;
-  /**@type {ItemType} */
-  static crackedDeepslateTiles;
-  /**@type {ItemType} */
-  static crackedNetherBricks;
-  /**@type {ItemType} */
-  static crackedPolishedBlackstoneBricks;
-  /**@type {ItemType} */
-  static craftingTable;
-  /**@type {ItemType} */
-  static crimsonButton;
-  /**@type {ItemType} */
-  static crimsonDoubleSlab;
-  /**@type {ItemType} */
-  static crimsonFence;
-  /**@type {ItemType} */
-  static crimsonFenceGate;
-  /**@type {ItemType} */
-  static crimsonFungus;
-  /**@type {ItemType} */
-  static crimsonHyphae;
-  /**@type {ItemType} */
-  static crimsonNylium;
-  /**@type {ItemType} */
-  static crimsonPlanks;
-  /**@type {ItemType} */
-  static crimsonPressurePlate;
-  /**@type {ItemType} */
-  static crimsonStairs;
-  /**@type {ItemType} */
-  static crimsonStandingSign;
-  /**@type {ItemType} */
-  static crimsonStem;
-  /**@type {ItemType} */
-  static crimsonTrapdoor;
-  /**@type {ItemType} */
-  static crimsonWallSign;
-  /**@type {ItemType} */
-  static cyanGlazedTerracotta;
-  /**@type {ItemType} */
-  static darkOakButton;
-  /**@type {ItemType} */
-  static darkOakFenceGate;
-  /**@type {ItemType} */
-  static darkOakPressurePlate;
-  /**@type {ItemType} */
-  static darkOakStairs;
-  /**@type {ItemType} */
-  static darkOakTrapdoor;
-  /**@type {ItemType} */
-  static darkPrismarineStairs;
-  /**@type {ItemType} */
-  static darkoakStandingSign;
-  /**@type {ItemType} */
-  static darkoakWallSign;
-  /**@type {ItemType} */
-  static daylightDetector;
-  /**@type {ItemType} */
-  static daylightDetectorInverted;
-  /**@type {ItemType} */
-  static deadbush;
-  /**@type {ItemType} */
-  static deepslate;
-  /**@type {ItemType} */
-  static deepslateBrickDoubleSlab;
-  /**@type {ItemType} */
-  static deepslateBrickStairs;
-  /**@type {ItemType} */
-  static deepslateBrickWall;
-  /**@type {ItemType} */
-  static deepslateBricks;
-  /**@type {ItemType} */
-  static deepslateCoalOre;
-  /**@type {ItemType} */
-  static deepslateCopperOre;
-  /**@type {ItemType} */
-  static deepslateDiamondOre;
-  /**@type {ItemType} */
-  static deepslateEmeraldOre;
-  /**@type {ItemType} */
-  static deepslateGoldOre;
-  /**@type {ItemType} */
-  static deepslateIronOre;
-  /**@type {ItemType} */
-  static deepslateLapisOre;
-  /**@type {ItemType} */
-  static deepslateRedstoneOre;
-  /**@type {ItemType} */
-  static deepslateTileDoubleSlab;
-  /**@type {ItemType} */
-  static deepslateTileStairs;
-  /**@type {ItemType} */
-  static deepslateTileWall;
-  /**@type {ItemType} */
-  static deepslateTiles;
-  /**@type {ItemType} */
-  static deny;
-  /**@type {ItemType} */
-  static detectorRail;
-  /**@type {ItemType} */
-  static diamondBlock;
-  /**@type {ItemType} */
-  static diamondOre;
-  /**@type {ItemType} */
-  static dioriteStairs;
-  /**@type {ItemType} */
-  static dirtWithRoots;
-  /**@type {ItemType} */
-  static dispenser;
-  /**@type {ItemType} */
-  static doubleCutCopperSlab;
-  /**@type {ItemType} */
-  static doubleWoodenSlab;
-  /**@type {ItemType} */
-  static dragonEgg;
-  /**@type {ItemType} */
-  static driedKelpBlock;
-  /**@type {ItemType} */
-  static dripstoneBlock;
-  /**@type {ItemType} */
-  static dropper;
-  /**@type {ItemType} */
-  static emeraldBlock;
-  /**@type {ItemType} */
-  static emeraldOre;
-  /**@type {ItemType} */
-  static enchantingTable;
-  /**@type {ItemType} */
-  static endBrickStairs;
-  /**@type {ItemType} */
-  static endBricks;
-  /**@type {ItemType} */
-  static endGateway;
-  /**@type {ItemType} */
-  static endPortal;
-  /**@type {ItemType} */
-  static endRod;
-  /**@type {ItemType} */
-  static endStone;
-  /**@type {ItemType} */
-  static enderChest;
-  /**@type {ItemType} */
-  static exposedCopper;
-  /**@type {ItemType} */
-  static exposedCutCopper;
-  /**@type {ItemType} */
-  static exposedCutCopperStairs;
-  /**@type {ItemType} */
-  static exposedDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static fenceGate;
-  /**@type {ItemType} */
-  static fire;
-  /**@type {ItemType} */
-  static floweringAzalea;
-  /**@type {ItemType} */
-  static flowingLava;
-  /**@type {ItemType} */
-  static flowingWater;
-  /**@type {ItemType} */
-  static frostedIce;
-  /**@type {ItemType} */
-  static furnace;
-  /**@type {ItemType} */
-  static gildedBlackstone;
-  /**@type {ItemType} */
-  static glass;
-  /**@type {ItemType} */
-  static glassPane;
-  /**@type {ItemType} */
-  static glowLichen;
-  /**@type {ItemType} */
-  static glowingobsidian;
-  /**@type {ItemType} */
-  static glowstone;
-  /**@type {ItemType} */
-  static goldBlock;
-  /**@type {ItemType} */
-  static goldOre;
-  /**@type {ItemType} */
-  static goldenRail;
-  /**@type {ItemType} */
-  static graniteStairs;
-  /**@type {ItemType} */
-  static grass;
-  /**@type {ItemType} */
-  static grassPath;
-  /**@type {ItemType} */
-  static gravel;
-  /**@type {ItemType} */
-  static grayGlazedTerracotta;
-  /**@type {ItemType} */
-  static greenGlazedTerracotta;
-  /**@type {ItemType} */
-  static hangingRoots;
-  /**@type {ItemType} */
-  static hardGlass;
-  /**@type {ItemType} */
-  static hardGlassPane;
-  /**@type {ItemType} */
-  static hardenedClay;
-  /**@type {ItemType} */
-  static hayBlock;
-  /**@type {ItemType} */
-  static heavyWeightedPressurePlate;
-  /**@type {ItemType} */
-  static honeyBlock;
-  /**@type {ItemType} */
-  static honeycombBlock;
-  /**@type {ItemType} */
-  static ice;
-  /**@type {ItemType} */
-  static infoUpdate;
-  /**@type {ItemType} */
-  static infoUpdate2;
-  /**@type {ItemType} */
-  static invisiblebedrock;
-  /**@type {ItemType} */
-  static ironBars;
-  /**@type {ItemType} */
-  static ironBlock;
-  /**@type {ItemType} */
-  static ironOre;
-  /**@type {ItemType} */
-  static ironTrapdoor;
-  /**@type {ItemType} */
-  static jigsaw;
-  /**@type {ItemType} */
-  static jukebox;
-  /**@type {ItemType} */
-  static jungleButton;
-  /**@type {ItemType} */
-  static jungleFenceGate;
-  /**@type {ItemType} */
-  static junglePressurePlate;
-  /**@type {ItemType} */
-  static jungleStairs;
-  /**@type {ItemType} */
-  static jungleStandingSign;
-  /**@type {ItemType} */
-  static jungleTrapdoor;
-  /**@type {ItemType} */
-  static jungleWallSign;
-  /**@type {ItemType} */
-  static ladder;
-  /**@type {ItemType} */
-  static lapisBlock;
-  /**@type {ItemType} */
-  static lapisOre;
-  /**@type {ItemType} */
-  static lava;
-  /**@type {ItemType} */
-  static lavaCauldron;
-  /**@type {ItemType} */
-  static lectern;
-  /**@type {ItemType} */
-  static lever;
-  /**@type {ItemType} */
-  static lightBlueGlazedTerracotta;
-  /**@type {ItemType} */
-  static lightWeightedPressurePlate;
-  /**@type {ItemType} */
-  static lightningRod;
-  /**@type {ItemType} */
-  static limeGlazedTerracotta;
-  /**@type {ItemType} */
-  static litBlastFurnace;
-  /**@type {ItemType} */
-  static litDeepslateRedstoneOre;
-  /**@type {ItemType} */
-  static litFurnace;
-  /**@type {ItemType} */
-  static litRedstoneLamp;
-  /**@type {ItemType} */
-  static litRedstoneOre;
-  /**@type {ItemType} */
-  static litSmoker;
-  /**@type {ItemType} */
-  static lodestone;
-  /**@type {ItemType} */
-  static magentaGlazedTerracotta;
-  /**@type {ItemType} */
-  static melonBlock;
-  /**@type {ItemType} */
-  static melonStem;
-  /**@type {ItemType} */
-  static mobSpawner;
-  /**@type {ItemType} */
-  static mossBlock;
-  /**@type {ItemType} */
-  static mossCarpet;
-  /**@type {ItemType} */
-  static mossyCobblestone;
-  /**@type {ItemType} */
-  static mossyCobblestoneStairs;
-  /**@type {ItemType} */
-  static mossyStoneBrickStairs;
-  /**@type {ItemType} */
-  static movingblock;
-  /**@type {ItemType} */
-  static mycelium;
-  /**@type {ItemType} */
-  static netherBrick;
-  /**@type {ItemType} */
-  static netherBrickFence;
-  /**@type {ItemType} */
-  static netherBrickStairs;
-  /**@type {ItemType} */
-  static netherGoldOre;
-  /**@type {ItemType} */
-  static netherWartBlock;
-  /**@type {ItemType} */
-  static netherrack;
-  /**@type {ItemType} */
-  static netherreactor;
-  /**@type {ItemType} */
-  static normalStoneStairs;
-  /**@type {ItemType} */
-  static noteblock;
-  /**@type {ItemType} */
-  static oakStairs;
-  /**@type {ItemType} */
-  static observer;
-  /**@type {ItemType} */
-  static obsidian;
-  /**@type {ItemType} */
-  static orangeGlazedTerracotta;
-  /**@type {ItemType} */
-  static oxidizedCopper;
-  /**@type {ItemType} */
-  static oxidizedCutCopper;
-  /**@type {ItemType} */
-  static oxidizedCutCopperStairs;
-  /**@type {ItemType} */
-  static oxidizedDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static packedIce;
-  /**@type {ItemType} */
-  static pinkGlazedTerracotta;
-  /**@type {ItemType} */
-  static pistonarmcollision;
-  /**@type {ItemType} */
-  static podzol;
-  /**@type {ItemType} */
-  static pointedDripstone;
-  /**@type {ItemType} */
-  static polishedAndesiteStairs;
-  /**@type {ItemType} */
-  static polishedBasalt;
-  /**@type {ItemType} */
-  static polishedBlackstone;
-  /**@type {ItemType} */
-  static polishedBlackstoneBrickDoubleSlab;
-  /**@type {ItemType} */
-  static polishedBlackstoneBrickStairs;
-  /**@type {ItemType} */
-  static polishedBlackstoneBrickWall;
-  /**@type {ItemType} */
-  static polishedBlackstoneBricks;
-  /**@type {ItemType} */
-  static polishedBlackstoneButton;
-  /**@type {ItemType} */
-  static polishedBlackstoneDoubleSlab;
-  /**@type {ItemType} */
-  static polishedBlackstonePressurePlate;
-  /**@type {ItemType} */
-  static polishedBlackstoneStairs;
-  /**@type {ItemType} */
-  static polishedBlackstoneWall;
-  /**@type {ItemType} */
-  static polishedDeepslate;
-  /**@type {ItemType} */
-  static polishedDeepslateDoubleSlab;
-  /**@type {ItemType} */
-  static polishedDeepslateStairs;
-  /**@type {ItemType} */
-  static polishedDeepslateWall;
-  /**@type {ItemType} */
-  static polishedDioriteStairs;
-  /**@type {ItemType} */
-  static polishedGraniteStairs;
-  /**@type {ItemType} */
-  static portal;
-  /**@type {ItemType} */
-  static potatoes;
-  /**@type {ItemType} */
-  static powderSnow;
-  /**@type {ItemType} */
-  static poweredComparator;
-  /**@type {ItemType} */
-  static poweredRepeater;
-  /**@type {ItemType} */
-  static prismarineBricksStairs;
-  /**@type {ItemType} */
-  static prismarineStairs;
-  /**@type {ItemType} */
-  static pumpkinStem;
-  /**@type {ItemType} */
-  static purpleGlazedTerracotta;
-  /**@type {ItemType} */
-  static purpurStairs;
-  /**@type {ItemType} */
-  static quartzBricks;
-  /**@type {ItemType} */
-  static quartzOre;
-  /**@type {ItemType} */
-  static quartzStairs;
-  /**@type {ItemType} */
-  static rail;
-  /**@type {ItemType} */
-  static redGlazedTerracotta;
-  /**@type {ItemType} */
-  static redMushroom;
-  /**@type {ItemType} */
-  static redNetherBrick;
-  /**@type {ItemType} */
-  static redNetherBrickStairs;
-  /**@type {ItemType} */
-  static redSandstoneStairs;
-  /**@type {ItemType} */
-  static redstoneBlock;
-  /**@type {ItemType} */
-  static redstoneLamp;
-  /**@type {ItemType} */
-  static redstoneOre;
-  /**@type {ItemType} */
-  static redstoneTorch;
-  /**@type {ItemType} */
-  static redstoneWire;
-  /**@type {ItemType} */
-  static repeatingCommandBlock;
-  /**@type {ItemType} */
-  static reserved6;
-  /**@type {ItemType} */
-  static sandstoneStairs;
-  /**@type {ItemType} */
-  static sculkSensor;
-  /**@type {ItemType} */
-  static shroomlight;
-  /**@type {ItemType} */
-  static silverGlazedTerracotta;
-  /**@type {ItemType} */
-  static slime;
-  /**@type {ItemType} */
-  static smallDripleafBlock;
-  /**@type {ItemType} */
-  static smoothQuartzStairs;
-  /**@type {ItemType} */
-  static smoothRedSandstoneStairs;
-  /**@type {ItemType} */
-  static smoothSandstoneStairs;
-  /**@type {ItemType} */
-  static smoothStone;
-  /**@type {ItemType} */
-  static snow;
-  /**@type {ItemType} */
-  static soulFire;
-  /**@type {ItemType} */
-  static soulLantern;
-  /**@type {ItemType} */
-  static soulSand;
-  /**@type {ItemType} */
-  static soulSoil;
-  /**@type {ItemType} */
-  static soulTorch;
-  /**@type {ItemType} */
-  static sporeBlossom;
-  /**@type {ItemType} */
-  static spruceButton;
-  /**@type {ItemType} */
-  static spruceFenceGate;
-  /**@type {ItemType} */
-  static sprucePressurePlate;
-  /**@type {ItemType} */
-  static spruceStairs;
-  /**@type {ItemType} */
-  static spruceStandingSign;
-  /**@type {ItemType} */
-  static spruceTrapdoor;
-  /**@type {ItemType} */
-  static spruceWallSign;
-  /**@type {ItemType} */
-  static standingBanner;
-  /**@type {ItemType} */
-  static standingSign;
-  /**@type {ItemType} */
-  static stickypistonarmcollision;
-  /**@type {ItemType} */
-  static stoneBrickStairs;
-  /**@type {ItemType} */
-  static stoneButton;
-  /**@type {ItemType} */
-  static stonePressurePlate;
-  /**@type {ItemType} */
-  static stoneStairs;
-  /**@type {ItemType} */
-  static stonecutter;
-  /**@type {ItemType} */
-  static stonecutterBlock;
-  /**@type {ItemType} */
-  static strippedAcaciaLog;
-  /**@type {ItemType} */
-  static strippedBirchLog;
-  /**@type {ItemType} */
-  static strippedCrimsonHyphae;
-  /**@type {ItemType} */
-  static strippedCrimsonStem;
-  /**@type {ItemType} */
-  static strippedDarkOakLog;
-  /**@type {ItemType} */
-  static strippedJungleLog;
-  /**@type {ItemType} */
-  static strippedOakLog;
-  /**@type {ItemType} */
-  static strippedSpruceLog;
-  /**@type {ItemType} */
-  static strippedWarpedHyphae;
-  /**@type {ItemType} */
-  static strippedWarpedStem;
-  /**@type {ItemType} */
-  static structureBlock;
-  /**@type {ItemType} */
-  static structureVoid;
-  /**@type {ItemType} */
-  static sweetBerryBush;
-  /**@type {ItemType} */
-  static target;
-  /**@type {ItemType} */
-  static torch;
-  /**@type {ItemType} */
-  static trapdoor;
-  /**@type {ItemType} */
-  static trappedChest;
-  /**@type {ItemType} */
-  static tripwire;
-  /**@type {ItemType} */
-  static tripwireHook;
-  /**@type {ItemType} */
-  static twistingVines;
-  /**@type {ItemType} */
-  static underwaterTorch;
-  /**@type {ItemType} */
-  static unknown;
-  /**@type {ItemType} */
-  static unlitRedstoneTorch;
-  /**@type {ItemType} */
-  static unpoweredComparator;
-  /**@type {ItemType} */
-  static unpoweredRepeater;
-  /**@type {ItemType} */
-  static vine;
-  /**@type {ItemType} */
-  static wallBanner;
-  /**@type {ItemType} */
-  static wallSign;
-  /**@type {ItemType} */
-  static warpedButton;
-  /**@type {ItemType} */
-  static warpedDoubleSlab;
-  /**@type {ItemType} */
-  static warpedFence;
-  /**@type {ItemType} */
-  static warpedFenceGate;
-  /**@type {ItemType} */
-  static warpedFungus;
-  /**@type {ItemType} */
-  static warpedHyphae;
-  /**@type {ItemType} */
-  static warpedNylium;
-  /**@type {ItemType} */
-  static warpedPlanks;
-  /**@type {ItemType} */
-  static warpedPressurePlate;
-  /**@type {ItemType} */
-  static warpedStairs;
-  /**@type {ItemType} */
-  static warpedStandingSign;
-  /**@type {ItemType} */
-  static warpedStem;
-  /**@type {ItemType} */
-  static warpedTrapdoor;
-  /**@type {ItemType} */
-  static warpedWallSign;
-  /**@type {ItemType} */
-  static warpedWartBlock;
-  /**@type {ItemType} */
-  static water;
-  /**@type {ItemType} */
-  static waxedCopper;
-  /**@type {ItemType} */
-  static waxedCutCopper;
-  /**@type {ItemType} */
-  static waxedCutCopperStairs;
-  /**@type {ItemType} */
-  static waxedDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedExposedCopper;
-  /**@type {ItemType} */
-  static waxedExposedCutCopper;
-  /**@type {ItemType} */
-  static waxedExposedCutCopperStairs;
-  /**@type {ItemType} */
-  static waxedExposedDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedOxidizedCopper;
-  /**@type {ItemType} */
-  static waxedOxidizedCutCopper;
-  /**@type {ItemType} */
-  static waxedOxidizedCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedOxidizedCutCopperStairs;
-  /**@type {ItemType} */
-  static waxedOxidizedDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static waxedWeatheredCopper;
-  /**@type {ItemType} */
-  static waxedWeatheredCutCopper;
-  /**@type {ItemType} */
-  static waxedWeatheredCutCopperStairs;
-  /**@type {ItemType} */
-  static waxedWeatheredDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static weatheredCopper;
-  /**@type {ItemType} */
-  static weatheredCutCopper;
-  /**@type {ItemType} */
-  static weatheredCutCopperStairs;
-  /**@type {ItemType} */
-  static weatheredDoubleCutCopperSlab;
-  /**@type {ItemType} */
-  static web;
-  /**@type {ItemType} */
-  static weepingVines;
-  /**@type {ItemType} */
-  static whiteGlazedTerracotta;
-  /**@type {ItemType} */
-  static witherRose;
-  /**@type {ItemType} */
-  static woodenButton;
-  /**@type {ItemType} */
-  static woodenPressurePlate;
-  /**@type {ItemType} */
-  static yellowGlazedTerracotta;
-  /**@type {ItemType} */
-  static ["item.acaciaDoor"];
-  /**@type {ItemType} */
-  static ["item.bed"];
-  /**@type {ItemType} */
-  static ["item.beetroot"];
-  /**@type {ItemType} */
-  static ["item.birchDoor"];
-  /**@type {ItemType} */
-  static ["item.cake"];
-  /**@type {ItemType} */
-  static ["item.camera"];
-  /**@type {ItemType} */
-  static ["item.campfire"];
-  /**@type {ItemType} */
-  static ["item.cauldron"];
-  /**@type {ItemType} */
-  static ["item.chain"];
-  /**@type {ItemType} */
-  static ["item.crimsonDoor"];
-  /**@type {ItemType} */
-  static ["item.darkOakDoor"];
-  /**@type {ItemType} */
-  static ["item.flowerPot"];
-  /**@type {ItemType} */
-  static ["item.frame"];
-  /**@type {ItemType} */
-  static ["item.glowFrame"];
-  /**@type {ItemType} */
-  static ["item.hopper"];
-  /**@type {ItemType} */
-  static ["item.ironDoor"];
-  /**@type {ItemType} */
-  static ["item.jungleDoor"];
-  /**@type {ItemType} */
-  static ["item.kelp"];
-  /**@type {ItemType} */
-  static ["item.netherSprouts"];
-  /**@type {ItemType} */
-  static ["item.netherWart"];
-  /**@type {ItemType} */
-  static ["item.reeds"];
-  /**@type {ItemType} */
-  static ["item.skull"];
-  /**@type {ItemType} */
-  static ["item.soulCampfire"];
-  /**@type {ItemType} */
-  static ["item.spruceDoor"];
-  /**@type {ItemType} */
-  static ["item.warpedDoor"];
-  /**@type {ItemType} */
-  static ["item.wheat"];
-  /**@type {ItemType} */
-  static ["item.woodenDoor"];
-
-  // Namespace
-  /**@type {ItemType} */
-  static ["minecraft:air"];
-  /**@type {ItemType} */
-  static ["minecraft:apple"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_apple"];
-  /**@type {ItemType} */
-  static ["minecraft:enchanted_golden_apple"];
-  /**@type {ItemType} */
-  static ["minecraft:mushroom_stew"];
-  /**@type {ItemType} */
-  static ["minecraft:bread"];
-  /**@type {ItemType} */
-  static ["minecraft:porkchop"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_porkchop"];
-  /**@type {ItemType} */
-  static ["minecraft:cod"];
-  /**@type {ItemType} */
-  static ["minecraft:salmon"];
-  /**@type {ItemType} */
-  static ["minecraft:tropical_fish"];
-  /**@type {ItemType} */
-  static ["minecraft:pufferfish"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_cod"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_salmon"];
-  /**@type {ItemType} */
-  static ["minecraft:dried_kelp"];
-  /**@type {ItemType} */
-  static ["minecraft:cookie"];
-  /**@type {ItemType} */
-  static ["minecraft:melon_slice"];
-  /**@type {ItemType} */
-  static ["minecraft:beef"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_beef"];
-  /**@type {ItemType} */
-  static ["minecraft:chicken"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_chicken"];
-  /**@type {ItemType} */
-  static ["minecraft:rotten_flesh"];
-  /**@type {ItemType} */
-  static ["minecraft:spider_eye"];
-  /**@type {ItemType} */
-  static ["minecraft:carrot"];
-  /**@type {ItemType} */
-  static ["minecraft:potato"];
-  /**@type {ItemType} */
-  static ["minecraft:baked_potato"];
-  /**@type {ItemType} */
-  static ["minecraft:poisonous_potato"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_carrot"];
-  /**@type {ItemType} */
-  static ["minecraft:pumpkin_pie"];
-  /**@type {ItemType} */
-  static ["minecraft:beetroot"];
-  /**@type {ItemType} */
-  static ["minecraft:beetroot_soup"];
-  /**@type {ItemType} */
-  static ["minecraft:sweet_berries"];
-  /**@type {ItemType} */
-  static ["minecraft:rabbit"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_rabbit"];
-  /**@type {ItemType} */
-  static ["minecraft:rabbit_stew"];
-  /**@type {ItemType} */
-  static ["minecraft:wheat_seeds"];
-  /**@type {ItemType} */
-  static ["minecraft:pumpkin_seeds"];
-  /**@type {ItemType} */
-  static ["minecraft:melon_seeds"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_wart"];
-  /**@type {ItemType} */
-  static ["minecraft:beetroot_seeds"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:flint_and_steel"];
-  /**@type {ItemType} */
-  static ["minecraft:bow"];
-  /**@type {ItemType} */
-  static ["minecraft:arrow"];
-  /**@type {ItemType} */
-  static ["minecraft:coal"];
-  /**@type {ItemType} */
-  static ["minecraft:charcoal"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_ingot"];
-  /**@type {ItemType} */
-  static ["minecraft:gold_ingot"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:stick"];
-  /**@type {ItemType} */
-  static ["minecraft:bowl"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:String"];
-  /**@type {ItemType} */
-  static ["minecraft:feather"];
-  /**@type {ItemType} */
-  static ["minecraft:gunpowder"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:wheat"];
-  /**@type {ItemType} */
-  static ["minecraft:leather_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:leather_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:leather_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:leather_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:chainmail_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:chainmail_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:chainmail_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:chainmail_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:shield"];
-  /**@type {ItemType} */
-  static ["minecraft:flint"];
-  /**@type {ItemType} */
-  static ["minecraft:painting"];
-  /**@type {ItemType} */
-  static ["minecraft:oak_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_door"];
-  /**@type {ItemType} */
-  static ["minecraft:bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:milk_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:water_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:lava_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:cod_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:salmon_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:tropical_fish_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:pufferfish_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:powder_snow_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:axolotl_bucket"];
-  /**@type {ItemType} */
-  static ["minecraft:minecart"];
-  /**@type {ItemType} */
-  static ["minecraft:saddle"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_door"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone"];
-  /**@type {ItemType} */
-  static ["minecraft:snowball"];
-  /**@type {ItemType} */
-  static ["minecraft:oak_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_boat"];
-  /**@type {ItemType} */
-  static ["minecraft:leather"];
-  /**@type {ItemType} */
-  static ["minecraft:kelp"];
-  /**@type {ItemType} */
-  static ["minecraft:brick"];
-  /**@type {ItemType} */
-  static ["minecraft:clay_ball"];
-  /**@type {ItemType} */
-  static ["minecraft:sugar_cane"];
-  /**@type {ItemType} */
-  static ["minecraft:paper"];
-  /**@type {ItemType} */
-  static ["minecraft:book"];
-  /**@type {ItemType} */
-  static ["minecraft:slime_ball"];
-  /**@type {ItemType} */
-  static ["minecraft:chest_minecart"];
-  /**@type {ItemType} */
-  static ["minecraft:egg"];
-  /**@type {ItemType} */
-  static ["minecraft:compass"];
-  /**@type {ItemType} */
-  static ["minecraft:fishing_rod"];
-  /**@type {ItemType} */
-  static ["minecraft:clock"];
-  /**@type {ItemType} */
-  static ["minecraft:glowstone_dust"];
-  /**@type {ItemType} */
-  static ["minecraft:black_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:red_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:green_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:brown_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:blue_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:purple_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:cyan_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:light_gray_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:gray_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:pink_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:lime_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:yellow_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:light_blue_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:magenta_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:orange_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:white_dye"];
-  /**@type {ItemType} */
-  static ["minecraft:bone_meal"];
-  /**@type {ItemType} */
-  static ["minecraft:cocoa_beans"];
-  /**@type {ItemType} */
-  static ["minecraft:ink_sac"];
-  /**@type {ItemType} */
-  static ["minecraft:lapis_lazuli"];
-  /**@type {ItemType} */
-  static ["minecraft:bone"];
-  /**@type {ItemType} */
-  static ["minecraft:sugar"];
-  /**@type {ItemType} */
-  static ["minecraft:cake"];
-  /**@type {ItemType} */
-  static ["minecraft:bed"];
-  /**@type {ItemType} */
-  static ["minecraft:repeater"];
-  /**@type {ItemType} */
-  static ["minecraft:filled_map"];
-  /**@type {ItemType} */
-  static ["minecraft:shears"];
-  /**@type {ItemType} */
-  static ["minecraft:ender_pearl"];
-  /**@type {ItemType} */
-  static ["minecraft:blaze_rod"];
-  /**@type {ItemType} */
-  static ["minecraft:ghast_tear"];
-  /**@type {ItemType} */
-  static ["minecraft:gold_nugget"];
-  /**@type {ItemType} */
-  static ["minecraft:potion"];
-  /**@type {ItemType} */
-  static ["minecraft:glass_bottle"];
-  /**@type {ItemType} */
-  static ["minecraft:fermented_spider_eye"];
-  /**@type {ItemType} */
-  static ["minecraft:blaze_powder"];
-  /**@type {ItemType} */
-  static ["minecraft:magma_cream"];
-  /**@type {ItemType} */
-  static ["minecraft:brewing_stand"];
-  /**@type {ItemType} */
-  static ["minecraft:cauldron"];
-  /**@type {ItemType} */
-  static ["minecraft:ender_eye"];
-  /**@type {ItemType} */
-  static ["minecraft:glistering_melon_slice"];
-  /**@type {ItemType} */
-  static ["minecraft:chicken_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:cow_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:pig_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:sheep_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:wolf_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:mooshroom_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:creeper_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:enderman_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:silverfish_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:skeleton_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:slime_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:spider_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:zombie_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:zombie_pigman_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:villager_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:squid_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:ocelot_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:witch_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:bat_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:ghast_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:magma_cube_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:blaze_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:cave_spider_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:horse_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:rabbit_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:endermite_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:guardian_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:stray_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:husk_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:wither_skeleton_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:donkey_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:mule_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:skeleton_horse_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:zombie_horse_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:shulker_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:npc_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:elder_guardian_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:polar_bear_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:llama_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:vindicator_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:evoker_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:vex_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:zombie_villager_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:parrot_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:tropical_fish_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:cod_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:pufferfish_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:salmon_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:drowned_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:dolphin_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:turtle_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:phantom_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:agent_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:cat_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:panda_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:fox_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:pillager_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:wandering_trader_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:ravager_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:bee_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:strider_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:hoglin_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:piglin_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:zoglin_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:piglin_brute_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:goat_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:axolotl_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:copper_ingot"];
-  /**@type {ItemType} */
-  static ["minecraft:copper_block"];
-  /**@type {ItemType} */
-  static ["minecraft:cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:exposed_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:weathered_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:oxidized_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_exposed_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_weathered_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_squid_spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_ink_sac"];
-  /**@type {ItemType} */
-  static ["minecraft:experience_bottle"];
-  /**@type {ItemType} */
-  static ["minecraft:fire_charge"];
-  /**@type {ItemType} */
-  static ["minecraft:writable_book"];
-  /**@type {ItemType} */
-  static ["minecraft:written_book"];
-  /**@type {ItemType} */
-  static ["minecraft:emerald"];
-  /**@type {ItemType} */
-  static ["minecraft:frame"];
-  /**@type {ItemType} */
-  static ["minecraft:flower_pot"];
-  /**@type {ItemType} */
-  static ["minecraft:empty_map"];
-  /**@type {ItemType} */
-  static ["minecraft:skull"];
-  /**@type {ItemType} */
-  static ["minecraft:carrot_on_a_stick"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_star"];
-  /**@type {ItemType} */
-  static ["minecraft:firework_rocket"];
-  /**@type {ItemType} */
-  static ["minecraft:firework_star"];
-  /**@type {ItemType} */
-  static ["minecraft:enchanted_book"];
-  /**@type {ItemType} */
-  static ["minecraft:comparator"];
-  /**@type {ItemType} */
-  static ["minecraft:netherbrick"];
-  /**@type {ItemType} */
-  static ["minecraft:quartz"];
-  /**@type {ItemType} */
-  static ["minecraft:tnt_minecart"];
-  /**@type {ItemType} */
-  static ["minecraft:hopper_minecart"];
-  /**@type {ItemType} */
-  static ["minecraft:hopper"];
-  /**@type {ItemType} */
-  static ["minecraft:rabbit_foot"];
-  /**@type {ItemType} */
-  static ["minecraft:rabbit_hide"];
-  /**@type {ItemType} */
-  static ["minecraft:leather_horse_armor"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_horse_armor"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_horse_armor"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_horse_armor"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_13"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_cat"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_blocks"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_chirp"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_far"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_mall"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_mellohi"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_stal"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_strad"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_ward"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_11"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_wait"];
-  /**@type {ItemType} */
-  static ["minecraft:trident"];
-  /**@type {ItemType} */
-  static ["minecraft:lead"];
-  /**@type {ItemType} */
-  static ["minecraft:name_tag"];
-  /**@type {ItemType} */
-  static ["minecraft:prismarine_crystals"];
-  /**@type {ItemType} */
-  static ["minecraft:mutton"];
-  /**@type {ItemType} */
-  static ["minecraft:cooked_mutton"];
-  /**@type {ItemType} */
-  static ["minecraft:armor_stand"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_door"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_door"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_door"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_door"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_door"];
-  /**@type {ItemType} */
-  static ["minecraft:chorus_fruit"];
-  /**@type {ItemType} */
-  static ["minecraft:popped_chorus_fruit"];
-  /**@type {ItemType} */
-  static ["minecraft:dragon_breath"];
-  /**@type {ItemType} */
-  static ["minecraft:splash_potion"];
-  /**@type {ItemType} */
-  static ["minecraft:lingering_potion"];
-  /**@type {ItemType} */
-  static ["minecraft:command_block_minecart"];
-  /**@type {ItemType} */
-  static ["minecraft:elytra"];
-  /**@type {ItemType} */
-  static ["minecraft:prismarine_shard"];
-  /**@type {ItemType} */
-  static ["minecraft:shulker_shell"];
-  /**@type {ItemType} */
-  static ["minecraft:banner"];
-  /**@type {ItemType} */
-  static ["minecraft:totem_of_undying"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_nugget"];
-  /**@type {ItemType} */
-  static ["minecraft:nautilus_shell"];
-  /**@type {ItemType} */
-  static ["minecraft:heart_of_the_sea"];
-  /**@type {ItemType} */
-  static ["minecraft:scute"];
-  /**@type {ItemType} */
-  static ["minecraft:turtle_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:phantom_membrane"];
-  /**@type {ItemType} */
-  static ["minecraft:crossbow"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:flower_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:creeper_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:skull_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:mojang_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:field_masoned_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:bordure_indented_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:piglin_banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:campfire"];
-  /**@type {ItemType} */
-  static ["minecraft:suspicious_stew"];
-  /**@type {ItemType} */
-  static ["minecraft:honeycomb"];
-  /**@type {ItemType} */
-  static ["minecraft:honey_bottle"];
-  /**@type {ItemType} */
-  static ["minecraft:camera"];
-  /**@type {ItemType} */
-  static ["minecraft:compound"];
-  /**@type {ItemType} */
-  static ["minecraft:ice_bomb"];
-  /**@type {ItemType} */
-  static ["minecraft:bleach"];
-  /**@type {ItemType} */
-  static ["minecraft:rapid_fertilizer"];
-  /**@type {ItemType} */
-  static ["minecraft:balloon"];
-  /**@type {ItemType} */
-  static ["minecraft:medicine"];
-  /**@type {ItemType} */
-  static ["minecraft:sparkler"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_stick"];
-  /**@type {ItemType} */
-  static ["minecraft:lodestone_compass"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_ingot"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_sword"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_shovel"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_pickaxe"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_axe"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_hoe"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_helmet"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_chestplate"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_leggings"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_boots"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_scrap"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_door"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_door"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_fungus_on_a_stick"];
-  /**@type {ItemType} */
-  static ["minecraft:chain"];
-  /**@type {ItemType} */
-  static ["minecraft:music_disc_pigstep"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_sprouts"];
-  /**@type {ItemType} */
-  static ["minecraft:blackstone_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_brick_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_campfire"];
-  /**@type {ItemType} */
-  static ["minecraft:goat_horn"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_frame"];
-  /**@type {ItemType} */
-  static ["minecraft:cobbled_deepslate_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_deepslate_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_tile_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_brick_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:stone"];
-  /**@type {ItemType} */
-  static ["minecraft:dirt"];
-  /**@type {ItemType} */
-  static ["minecraft:farmland"];
-  /**@type {ItemType} */
-  static ["minecraft:sand"];
-  /**@type {ItemType} */
-  static ["minecraft:stained_hardened_clay"];
-  /**@type {ItemType} */
-  static ["minecraft:wool"];
-  /**@type {ItemType} */
-  static ["minecraft:carpet"];
-  /**@type {ItemType} */
-  static ["minecraft:log"];
-  /**@type {ItemType} */
-  static ["minecraft:fence"];
-  /**@type {ItemType} */
-  static ["minecraft:stonebrick"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_block"];
-  /**@type {ItemType} */
-  static ["minecraft:double_stone_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:double_stone_slab2"];
-  /**@type {ItemType} */
-  static ["minecraft:double_stone_slab3"];
-  /**@type {ItemType} */
-  static ["minecraft:double_stone_slab4"];
-  /**@type {ItemType} */
-  static ["minecraft:real_double_stone_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:real_double_stone_slab2"];
-  /**@type {ItemType} */
-  static ["minecraft:real_double_stone_slab3"];
-  /**@type {ItemType} */
-  static ["minecraft:real_double_stone_slab4"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_fan"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_fan_dead"];
-  /**@type {ItemType} */
-  static ["minecraft:sea_pickle"];
-  /**@type {ItemType} */
-  static ["minecraft:sapling"];
-  /**@type {ItemType} */
-  static ["minecraft:leaves"];
-  /**@type {ItemType} */
-  static ["minecraft:leaves2"];
-  /**@type {ItemType} */
-  static ["minecraft:azalea_leaves"];
-  /**@type {ItemType} */
-  static ["minecraft:azalea_leaves_flowered"];
-  /**@type {ItemType} */
-  static ["minecraft:sandstone"];
-  /**@type {ItemType} */
-  static ["minecraft:red_sandstone"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_roots"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_roots"];
-  /**@type {ItemType} */
-  static ["minecraft:yellow_flower"];
-  /**@type {ItemType} */
-  static ["minecraft:red_flower"];
-  /**@type {ItemType} */
-  static ["minecraft:double_plant"];
-  /**@type {ItemType} */
-  static ["minecraft:waterlily"];
-  /**@type {ItemType} */
-  static ["minecraft:sponge"];
-  /**@type {ItemType} */
-  static ["minecraft:snow_layer"];
-  /**@type {ItemType} */
-  static ["minecraft:planks"];
-  /**@type {ItemType} */
-  static ["minecraft:quartz_block"];
-  /**@type {ItemType} */
-  static ["minecraft:purpur_block"];
-  /**@type {ItemType} */
-  static ["minecraft:cobblestone_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:coral"];
-  /**@type {ItemType} */
-  static ["minecraft:tallgrass"];
-  /**@type {ItemType} */
-  static ["minecraft:seagrass"];
-  /**@type {ItemType} */
-  static ["minecraft:brown_mushroom_block"];
-  /**@type {ItemType} */
-  static ["minecraft:red_mushroom_block"];
-  /**@type {ItemType} */
-  static ["minecraft:log2"];
-  /**@type {ItemType} */
-  static ["minecraft:end_portal_frame"];
-  /**@type {ItemType} */
-  static ["minecraft:anvil"];
-  /**@type {ItemType} */
-  static ["minecraft:monster_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:brewingstandblock"];
-  /**@type {ItemType} */
-  static ["minecraft:beacon"];
-  /**@type {ItemType} */
-  static ["minecraft:conduit"];
-  /**@type {ItemType} */
-  static ["minecraft:prismarine"];
-  /**@type {ItemType} */
-  static ["minecraft:sealantern"];
-  /**@type {ItemType} */
-  static ["minecraft:concrete"];
-  /**@type {ItemType} */
-  static ["minecraft:concrete_powder"];
-  /**@type {ItemType} */
-  static ["minecraft:magma"];
-  /**@type {ItemType} */
-  static ["minecraft:stained_glass"];
-  /**@type {ItemType} */
-  static ["minecraft:stained_glass_pane"];
-  /**@type {ItemType} */
-  static ["minecraft:undyed_shulker_box"];
-  /**@type {ItemType} */
-  static ["minecraft:shulker_box"];
-  /**@type {ItemType} */
-  static ["minecraft:piston"];
-  /**@type {ItemType} */
-  static ["minecraft:sticky_piston"];
-  /**@type {ItemType} */
-  static ["minecraft:turtle_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:bamboo"];
-  /**@type {ItemType} */
-  static ["minecraft:scaffolding"];
-  /**@type {ItemType} */
-  static ["minecraft:blast_furnace"];
-  /**@type {ItemType} */
-  static ["minecraft:smoker"];
-  /**@type {ItemType} */
-  static ["minecraft:smithing_table"];
-  /**@type {ItemType} */
-  static ["minecraft:barrel"];
-  /**@type {ItemType} */
-  static ["minecraft:lantern"];
-  /**@type {ItemType} */
-  static ["minecraft:loom"];
-  /**@type {ItemType} */
-  static ["minecraft:grindstone"];
-  /**@type {ItemType} */
-  static ["minecraft:bell"];
-  /**@type {ItemType} */
-  static ["minecraft:cartography_table"];
-  /**@type {ItemType} */
-  static ["minecraft:fletching_table"];
-  /**@type {ItemType} */
-  static ["minecraft:wood"];
-  /**@type {ItemType} */
-  static ["minecraft:chemistry_table"];
-  /**@type {ItemType} */
-  static ["minecraft:tnt"];
-  /**@type {ItemType} */
-  static ["minecraft:hard_stained_glass"];
-  /**@type {ItemType} */
-  static ["minecraft:hard_stained_glass_pane"];
-  /**@type {ItemType} */
-  static ["minecraft:colored_torch_rg"];
-  /**@type {ItemType} */
-  static ["minecraft:colored_torch_bp"];
-  /**@type {ItemType} */
-  static ["minecraft:light_block"];
-  /**@type {ItemType} */
-  static ["minecraft:pumpkin"];
-  /**@type {ItemType} */
-  static ["minecraft:carved_pumpkin"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_pumpkin"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:element_0"];
-  /**@type {ItemType} */
-  static ["minecraft:element_1"];
-  /**@type {ItemType} */
-  static ["minecraft:element_2"];
-  /**@type {ItemType} */
-  static ["minecraft:element_3"];
-  /**@type {ItemType} */
-  static ["minecraft:element_4"];
-  /**@type {ItemType} */
-  static ["minecraft:element_5"];
-  /**@type {ItemType} */
-  static ["minecraft:element_6"];
-  /**@type {ItemType} */
-  static ["minecraft:element_7"];
-  /**@type {ItemType} */
-  static ["minecraft:element_8"];
-  /**@type {ItemType} */
-  static ["minecraft:element_9"];
-  /**@type {ItemType} */
-  static ["minecraft:element_10"];
-  /**@type {ItemType} */
-  static ["minecraft:element_11"];
-  /**@type {ItemType} */
-  static ["minecraft:element_12"];
-  /**@type {ItemType} */
-  static ["minecraft:element_13"];
-  /**@type {ItemType} */
-  static ["minecraft:element_14"];
-  /**@type {ItemType} */
-  static ["minecraft:element_15"];
-  /**@type {ItemType} */
-  static ["minecraft:element_16"];
-  /**@type {ItemType} */
-  static ["minecraft:element_17"];
-  /**@type {ItemType} */
-  static ["minecraft:element_18"];
-  /**@type {ItemType} */
-  static ["minecraft:element_19"];
-  /**@type {ItemType} */
-  static ["minecraft:element_20"];
-  /**@type {ItemType} */
-  static ["minecraft:element_21"];
-  /**@type {ItemType} */
-  static ["minecraft:element_22"];
-  /**@type {ItemType} */
-  static ["minecraft:element_23"];
-  /**@type {ItemType} */
-  static ["minecraft:element_24"];
-  /**@type {ItemType} */
-  static ["minecraft:element_25"];
-  /**@type {ItemType} */
-  static ["minecraft:element_26"];
-  /**@type {ItemType} */
-  static ["minecraft:element_27"];
-  /**@type {ItemType} */
-  static ["minecraft:element_28"];
-  /**@type {ItemType} */
-  static ["minecraft:element_29"];
-  /**@type {ItemType} */
-  static ["minecraft:element_30"];
-  /**@type {ItemType} */
-  static ["minecraft:element_31"];
-  /**@type {ItemType} */
-  static ["minecraft:element_32"];
-  /**@type {ItemType} */
-  static ["minecraft:element_33"];
-  /**@type {ItemType} */
-  static ["minecraft:element_34"];
-  /**@type {ItemType} */
-  static ["minecraft:element_35"];
-  /**@type {ItemType} */
-  static ["minecraft:element_36"];
-  /**@type {ItemType} */
-  static ["minecraft:element_37"];
-  /**@type {ItemType} */
-  static ["minecraft:element_38"];
-  /**@type {ItemType} */
-  static ["minecraft:element_39"];
-  /**@type {ItemType} */
-  static ["minecraft:element_40"];
-  /**@type {ItemType} */
-  static ["minecraft:element_41"];
-  /**@type {ItemType} */
-  static ["minecraft:element_42"];
-  /**@type {ItemType} */
-  static ["minecraft:element_43"];
-  /**@type {ItemType} */
-  static ["minecraft:element_44"];
-  /**@type {ItemType} */
-  static ["minecraft:element_45"];
-  /**@type {ItemType} */
-  static ["minecraft:element_46"];
-  /**@type {ItemType} */
-  static ["minecraft:element_47"];
-  /**@type {ItemType} */
-  static ["minecraft:element_48"];
-  /**@type {ItemType} */
-  static ["minecraft:element_49"];
-  /**@type {ItemType} */
-  static ["minecraft:element_50"];
-  /**@type {ItemType} */
-  static ["minecraft:element_51"];
-  /**@type {ItemType} */
-  static ["minecraft:element_52"];
-  /**@type {ItemType} */
-  static ["minecraft:element_53"];
-  /**@type {ItemType} */
-  static ["minecraft:element_54"];
-  /**@type {ItemType} */
-  static ["minecraft:element_55"];
-  /**@type {ItemType} */
-  static ["minecraft:element_56"];
-  /**@type {ItemType} */
-  static ["minecraft:element_57"];
-  /**@type {ItemType} */
-  static ["minecraft:element_58"];
-  /**@type {ItemType} */
-  static ["minecraft:element_59"];
-  /**@type {ItemType} */
-  static ["minecraft:element_60"];
-  /**@type {ItemType} */
-  static ["minecraft:element_61"];
-  /**@type {ItemType} */
-  static ["minecraft:element_62"];
-  /**@type {ItemType} */
-  static ["minecraft:element_63"];
-  /**@type {ItemType} */
-  static ["minecraft:element_64"];
-  /**@type {ItemType} */
-  static ["minecraft:element_65"];
-  /**@type {ItemType} */
-  static ["minecraft:element_66"];
-  /**@type {ItemType} */
-  static ["minecraft:element_67"];
-  /**@type {ItemType} */
-  static ["minecraft:element_68"];
-  /**@type {ItemType} */
-  static ["minecraft:element_69"];
-  /**@type {ItemType} */
-  static ["minecraft:element_70"];
-  /**@type {ItemType} */
-  static ["minecraft:element_71"];
-  /**@type {ItemType} */
-  static ["minecraft:element_72"];
-  /**@type {ItemType} */
-  static ["minecraft:element_73"];
-  /**@type {ItemType} */
-  static ["minecraft:element_74"];
-  /**@type {ItemType} */
-  static ["minecraft:element_75"];
-  /**@type {ItemType} */
-  static ["minecraft:element_76"];
-  /**@type {ItemType} */
-  static ["minecraft:element_77"];
-  /**@type {ItemType} */
-  static ["minecraft:element_78"];
-  /**@type {ItemType} */
-  static ["minecraft:element_79"];
-  /**@type {ItemType} */
-  static ["minecraft:element_80"];
-  /**@type {ItemType} */
-  static ["minecraft:element_81"];
-  /**@type {ItemType} */
-  static ["minecraft:element_82"];
-  /**@type {ItemType} */
-  static ["minecraft:element_83"];
-  /**@type {ItemType} */
-  static ["minecraft:element_84"];
-  /**@type {ItemType} */
-  static ["minecraft:element_85"];
-  /**@type {ItemType} */
-  static ["minecraft:element_86"];
-  /**@type {ItemType} */
-  static ["minecraft:element_87"];
-  /**@type {ItemType} */
-  static ["minecraft:element_88"];
-  /**@type {ItemType} */
-  static ["minecraft:element_89"];
-  /**@type {ItemType} */
-  static ["minecraft:element_90"];
-  /**@type {ItemType} */
-  static ["minecraft:element_91"];
-  /**@type {ItemType} */
-  static ["minecraft:element_92"];
-  /**@type {ItemType} */
-  static ["minecraft:element_93"];
-  /**@type {ItemType} */
-  static ["minecraft:element_94"];
-  /**@type {ItemType} */
-  static ["minecraft:element_95"];
-  /**@type {ItemType} */
-  static ["minecraft:element_96"];
-  /**@type {ItemType} */
-  static ["minecraft:element_97"];
-  /**@type {ItemType} */
-  static ["minecraft:element_98"];
-  /**@type {ItemType} */
-  static ["minecraft:element_99"];
-  /**@type {ItemType} */
-  static ["minecraft:element_100"];
-  /**@type {ItemType} */
-  static ["minecraft:element_101"];
-  /**@type {ItemType} */
-  static ["minecraft:element_102"];
-  /**@type {ItemType} */
-  static ["minecraft:element_103"];
-  /**@type {ItemType} */
-  static ["minecraft:element_104"];
-  /**@type {ItemType} */
-  static ["minecraft:element_105"];
-  /**@type {ItemType} */
-  static ["minecraft:element_106"];
-  /**@type {ItemType} */
-  static ["minecraft:element_107"];
-  /**@type {ItemType} */
-  static ["minecraft:element_108"];
-  /**@type {ItemType} */
-  static ["minecraft:element_109"];
-  /**@type {ItemType} */
-  static ["minecraft:element_110"];
-  /**@type {ItemType} */
-  static ["minecraft:element_111"];
-  /**@type {ItemType} */
-  static ["minecraft:element_112"];
-  /**@type {ItemType} */
-  static ["minecraft:element_113"];
-  /**@type {ItemType} */
-  static ["minecraft:element_114"];
-  /**@type {ItemType} */
-  static ["minecraft:element_115"];
-  /**@type {ItemType} */
-  static ["minecraft:element_116"];
-  /**@type {ItemType} */
-  static ["minecraft:element_117"];
-  /**@type {ItemType} */
-  static ["minecraft:element_118"];
-  /**@type {ItemType} */
-  static ["minecraft:composter"];
-  /**@type {ItemType} */
-  static ["minecraft:netherite_block"];
-  /**@type {ItemType} */
-  static ["minecraft:ancient_debris"];
-  /**@type {ItemType} */
-  static ["minecraft:respawn_anchor"];
-  /**@type {ItemType} */
-  static ["minecraft:crying_obsidian"];
-  /**@type {ItemType} */
-  static ["minecraft:boat"];
-  /**@type {ItemType} */
-  static ["minecraft:dye"];
-  /**@type {ItemType} */
-  static ["minecraft:banner_pattern"];
-  /**@type {ItemType} */
-  static ["minecraft:spawn_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:end_crystal"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_berries"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.acacia_door"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:acacia_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:activator_rail"];
-  /**@type {ItemType} */
-  static ["minecraft:allow"];
-  /**@type {ItemType} */
-  static ["minecraft:andesite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:azalea"];
-  /**@type {ItemType} */
-  static ["minecraft:bamboo_sapling"];
-  /**@type {ItemType} */
-  static ["minecraft:barrier"];
-  /**@type {ItemType} */
-  static ["minecraft:basalt"];
-  /**@type {ItemType} */
-  static ["minecraft:item.bed"];
-  /**@type {ItemType} */
-  static ["minecraft:bedrock"];
-  /**@type {ItemType} */
-  static ["minecraft:bee_nest"];
-  /**@type {ItemType} */
-  static ["minecraft:beehive"];
-  /**@type {ItemType} */
-  static ["minecraft:item.beetroot"];
-  /**@type {ItemType} */
-  static ["minecraft:big_dripleaf"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.birch_door"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:birch_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:black_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:blackstone"];
-  /**@type {ItemType} */
-  static ["minecraft:blackstone_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:blackstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:blackstone_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:blue_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:blue_ice"];
-  /**@type {ItemType} */
-  static ["minecraft:bone_block"];
-  /**@type {ItemType} */
-  static ["minecraft:bookshelf"];
-  /**@type {ItemType} */
-  static ["minecraft:border_block"];
-  /**@type {ItemType} */
-  static ["minecraft:brick_block"];
-  /**@type {ItemType} */
-  static ["minecraft:brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:brown_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:brown_mushroom"];
-  /**@type {ItemType} */
-  static ["minecraft:bubble_column"];
-  /**@type {ItemType} */
-  static ["minecraft:cactus"];
-  /**@type {ItemType} */
-  static ["minecraft:item.cake"];
-  /**@type {ItemType} */
-  static ["minecraft:item.camera"];
-  /**@type {ItemType} */
-  static ["minecraft:item.campfire"];
-  /**@type {ItemType} */
-  static ["minecraft:carrots"];
-  /**@type {ItemType} */
-  static ["minecraft:item.cauldron"];
-  /**@type {ItemType} */
-  static ["minecraft:cave_vines"];
-  /**@type {ItemType} */
-  static ["minecraft:cave_vines_body_with_berries"];
-  /**@type {ItemType} */
-  static ["minecraft:cave_vines_head_with_berries"];
-  /**@type {ItemType} */
-  static ["minecraft:item.chain"];
-  /**@type {ItemType} */
-  static ["minecraft:chain_command_block"];
-  /**@type {ItemType} */
-  static ["minecraft:chemical_heat"];
-  /**@type {ItemType} */
-  static ["minecraft:chest"];
-  /**@type {ItemType} */
-  static ["minecraft:chiseled_deepslate"];
-  /**@type {ItemType} */
-  static ["minecraft:chiseled_nether_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:chiseled_polished_blackstone"];
-  /**@type {ItemType} */
-  static ["minecraft:chorus_flower"];
-  /**@type {ItemType} */
-  static ["minecraft:chorus_plant"];
-  /**@type {ItemType} */
-  static ["minecraft:clay"];
-  /**@type {ItemType} */
-  static ["minecraft:coal_block"];
-  /**@type {ItemType} */
-  static ["minecraft:coal_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:cobbled_deepslate"];
-  /**@type {ItemType} */
-  static ["minecraft:cobbled_deepslate_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:cobbled_deepslate_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:cobbled_deepslate_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:cobblestone"];
-  /**@type {ItemType} */
-  static ["minecraft:cocoa"];
-  /**@type {ItemType} */
-  static ["minecraft:command_block"];
-  /**@type {ItemType} */
-  static ["minecraft:copper_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_fan_hang"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_fan_hang2"];
-  /**@type {ItemType} */
-  static ["minecraft:coral_fan_hang3"];
-  /**@type {ItemType} */
-  static ["minecraft:cracked_deepslate_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:cracked_deepslate_tiles"];
-  /**@type {ItemType} */
-  static ["minecraft:cracked_nether_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:cracked_polished_blackstone_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:crafting_table"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.crimson_door"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_fence"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_fungus"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_hyphae"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_nylium"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_planks"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:crimson_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:cyan_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.dark_oak_door"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_oak_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:dark_prismarine_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:darkoak_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:darkoak_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:daylight_detector"];
-  /**@type {ItemType} */
-  static ["minecraft:daylight_detector_inverted"];
-  /**@type {ItemType} */
-  static ["minecraft:deadbush"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_brick_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_brick_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_coal_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_copper_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_diamond_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_emerald_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_gold_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_iron_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_lapis_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_redstone_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_tile_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_tile_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_tile_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:deepslate_tiles"];
-  /**@type {ItemType} */
-  static ["minecraft:deny"];
-  /**@type {ItemType} */
-  static ["minecraft:detector_rail"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_block"];
-  /**@type {ItemType} */
-  static ["minecraft:diamond_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:diorite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:dirt_with_roots"];
-  /**@type {ItemType} */
-  static ["minecraft:dispenser"];
-  /**@type {ItemType} */
-  static ["minecraft:double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:double_wooden_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:dragon_egg"];
-  /**@type {ItemType} */
-  static ["minecraft:dried_kelp_block"];
-  /**@type {ItemType} */
-  static ["minecraft:dripstone_block"];
-  /**@type {ItemType} */
-  static ["minecraft:dropper"];
-  /**@type {ItemType} */
-  static ["minecraft:emerald_block"];
-  /**@type {ItemType} */
-  static ["minecraft:emerald_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:enchanting_table"];
-  /**@type {ItemType} */
-  static ["minecraft:end_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:end_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:end_gateway"];
-  /**@type {ItemType} */
-  static ["minecraft:end_portal"];
-  /**@type {ItemType} */
-  static ["minecraft:end_rod"];
-  /**@type {ItemType} */
-  static ["minecraft:end_stone"];
-  /**@type {ItemType} */
-  static ["minecraft:ender_chest"];
-  /**@type {ItemType} */
-  static ["minecraft:exposed_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:exposed_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:exposed_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:exposed_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:fire"];
-  /**@type {ItemType} */
-  static ["minecraft:item.flower_pot"];
-  /**@type {ItemType} */
-  static ["minecraft:flowering_azalea"];
-  /**@type {ItemType} */
-  static ["minecraft:flowing_lava"];
-  /**@type {ItemType} */
-  static ["minecraft:flowing_water"];
-  /**@type {ItemType} */
-  static ["minecraft:item.frame"];
-  /**@type {ItemType} */
-  static ["minecraft:frosted_ice"];
-  /**@type {ItemType} */
-  static ["minecraft:furnace"];
-  /**@type {ItemType} */
-  static ["minecraft:gilded_blackstone"];
-  /**@type {ItemType} */
-  static ["minecraft:glass"];
-  /**@type {ItemType} */
-  static ["minecraft:glass_pane"];
-  /**@type {ItemType} */
-  static ["minecraft:item.glow_frame"];
-  /**@type {ItemType} */
-  static ["minecraft:glow_lichen"];
-  /**@type {ItemType} */
-  static ["minecraft:glowingobsidian"];
-  /**@type {ItemType} */
-  static ["minecraft:glowstone"];
-  /**@type {ItemType} */
-  static ["minecraft:gold_block"];
-  /**@type {ItemType} */
-  static ["minecraft:gold_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:golden_rail"];
-  /**@type {ItemType} */
-  static ["minecraft:granite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:grass"];
-  /**@type {ItemType} */
-  static ["minecraft:grass_path"];
-  /**@type {ItemType} */
-  static ["minecraft:gravel"];
-  /**@type {ItemType} */
-  static ["minecraft:gray_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:green_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:hanging_roots"];
-  /**@type {ItemType} */
-  static ["minecraft:hard_glass"];
-  /**@type {ItemType} */
-  static ["minecraft:hard_glass_pane"];
-  /**@type {ItemType} */
-  static ["minecraft:hardened_clay"];
-  /**@type {ItemType} */
-  static ["minecraft:hay_block"];
-  /**@type {ItemType} */
-  static ["minecraft:heavy_weighted_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:honey_block"];
-  /**@type {ItemType} */
-  static ["minecraft:honeycomb_block"];
-  /**@type {ItemType} */
-  static ["minecraft:item.hopper"];
-  /**@type {ItemType} */
-  static ["minecraft:ice"];
-  /**@type {ItemType} */
-  static ["minecraft:info_update"];
-  /**@type {ItemType} */
-  static ["minecraft:info_update2"];
-  /**@type {ItemType} */
-  static ["minecraft:invisiblebedrock"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_bars"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_block"];
-  /**@type {ItemType} */
-  static ["minecraft:item.iron_door"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:iron_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:jigsaw"];
-  /**@type {ItemType} */
-  static ["minecraft:jukebox"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.jungle_door"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:jungle_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:item.kelp"];
-  /**@type {ItemType} */
-  static ["minecraft:ladder"];
-  /**@type {ItemType} */
-  static ["minecraft:lapis_block"];
-  /**@type {ItemType} */
-  static ["minecraft:lapis_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:lava"];
-  /**@type {ItemType} */
-  static ["minecraft:lava_cauldron"];
-  /**@type {ItemType} */
-  static ["minecraft:lectern"];
-  /**@type {ItemType} */
-  static ["minecraft:lever"];
-  /**@type {ItemType} */
-  static ["minecraft:light_blue_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:light_weighted_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:lightning_rod"];
-  /**@type {ItemType} */
-  static ["minecraft:lime_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_blast_furnace"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_deepslate_redstone_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_furnace"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_redstone_lamp"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_redstone_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:lit_smoker"];
-  /**@type {ItemType} */
-  static ["minecraft:lodestone"];
-  /**@type {ItemType} */
-  static ["minecraft:magenta_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:melon_block"];
-  /**@type {ItemType} */
-  static ["minecraft:melon_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:mob_spawner"];
-  /**@type {ItemType} */
-  static ["minecraft:moss_block"];
-  /**@type {ItemType} */
-  static ["minecraft:moss_carpet"];
-  /**@type {ItemType} */
-  static ["minecraft:mossy_cobblestone"];
-  /**@type {ItemType} */
-  static ["minecraft:mossy_cobblestone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:mossy_stone_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:movingblock"];
-  /**@type {ItemType} */
-  static ["minecraft:mycelium"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_brick"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_brick_fence"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_gold_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:item.nether_sprouts"];
-  /**@type {ItemType} */
-  static ["minecraft:item.nether_wart"];
-  /**@type {ItemType} */
-  static ["minecraft:nether_wart_block"];
-  /**@type {ItemType} */
-  static ["minecraft:netherrack"];
-  /**@type {ItemType} */
-  static ["minecraft:netherreactor"];
-  /**@type {ItemType} */
-  static ["minecraft:normal_stone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:noteblock"];
-  /**@type {ItemType} */
-  static ["minecraft:oak_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:observer"];
-  /**@type {ItemType} */
-  static ["minecraft:obsidian"];
-  /**@type {ItemType} */
-  static ["minecraft:orange_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:oxidized_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:oxidized_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:oxidized_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:oxidized_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:packed_ice"];
-  /**@type {ItemType} */
-  static ["minecraft:pink_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:pistonarmcollision"];
-  /**@type {ItemType} */
-  static ["minecraft:podzol"];
-  /**@type {ItemType} */
-  static ["minecraft:pointed_dripstone"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_andesite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_basalt"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_brick_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_brick_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_button"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_blackstone_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_deepslate"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_deepslate_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_deepslate_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_deepslate_wall"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_diorite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:polished_granite_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:portal"];
-  /**@type {ItemType} */
-  static ["minecraft:potatoes"];
-  /**@type {ItemType} */
-  static ["minecraft:powder_snow"];
-  /**@type {ItemType} */
-  static ["minecraft:powered_comparator"];
-  /**@type {ItemType} */
-  static ["minecraft:powered_repeater"];
-  /**@type {ItemType} */
-  static ["minecraft:prismarine_bricks_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:prismarine_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:pumpkin_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:purple_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:purpur_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:quartz_bricks"];
-  /**@type {ItemType} */
-  static ["minecraft:quartz_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:quartz_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:rail"];
-  /**@type {ItemType} */
-  static ["minecraft:red_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:red_mushroom"];
-  /**@type {ItemType} */
-  static ["minecraft:red_nether_brick"];
-  /**@type {ItemType} */
-  static ["minecraft:red_nether_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:red_sandstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone_block"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone_lamp"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone_ore"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone_torch"];
-  /**@type {ItemType} */
-  static ["minecraft:redstone_wire"];
-  /**@type {ItemType} */
-  static ["minecraft:item.reeds"];
-  /**@type {ItemType} */
-  static ["minecraft:repeating_command_block"];
-  /**@type {ItemType} */
-  static ["minecraft:reserved6"];
-  /**@type {ItemType} */
-  static ["minecraft:sandstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:sculk_sensor"];
-  /**@type {ItemType} */
-  static ["minecraft:shroomlight"];
-  /**@type {ItemType} */
-  static ["minecraft:silver_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:item.skull"];
-  /**@type {ItemType} */
-  static ["minecraft:slime"];
-  /**@type {ItemType} */
-  static ["minecraft:small_dripleaf_block"];
-  /**@type {ItemType} */
-  static ["minecraft:smooth_quartz_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:smooth_red_sandstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:smooth_sandstone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:smooth_stone"];
-  /**@type {ItemType} */
-  static ["minecraft:snow"];
-  /**@type {ItemType} */
-  static ["minecraft:item.soul_campfire"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_fire"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_lantern"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_sand"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_soil"];
-  /**@type {ItemType} */
-  static ["minecraft:soul_torch"];
-  /**@type {ItemType} */
-  static ["minecraft:spore_blossom"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.spruce_door"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:spruce_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:standing_banner"];
-  /**@type {ItemType} */
-  static ["minecraft:standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:stickypistonarmcollision"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_brick_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_button"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:stone_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:stonecutter"];
-  /**@type {ItemType} */
-  static ["minecraft:stonecutter_block"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_acacia_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_birch_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_crimson_hyphae"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_crimson_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_dark_oak_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_jungle_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_oak_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_spruce_log"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_warped_hyphae"];
-  /**@type {ItemType} */
-  static ["minecraft:stripped_warped_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:structure_block"];
-  /**@type {ItemType} */
-  static ["minecraft:structure_void"];
-  /**@type {ItemType} */
-  static ["minecraft:sweet_berry_bush"];
-  /**@type {ItemType} */
-  static ["minecraft:target"];
-  /**@type {ItemType} */
-  static ["minecraft:torch"];
-  /**@type {ItemType} */
-  static ["minecraft:trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:trapped_chest"];
-  /**@type {ItemType} */
-  static ["minecraft:tripwire"];
-  /**@type {ItemType} */
-  static ["minecraft:tripwire_hook"];
-  /**@type {ItemType} */
-  static ["minecraft:twisting_vines"];
-  /**@type {ItemType} */
-  static ["minecraft:underwater_torch"];
-  /**@type {ItemType} */
-  static ["minecraft:unknown"];
-  /**@type {ItemType} */
-  static ["minecraft:unlit_redstone_torch"];
-  /**@type {ItemType} */
-  static ["minecraft:unpowered_comparator"];
-  /**@type {ItemType} */
-  static ["minecraft:unpowered_repeater"];
-  /**@type {ItemType} */
-  static ["minecraft:vine"];
-  /**@type {ItemType} */
-  static ["minecraft:wall_banner"];
-  /**@type {ItemType} */
-  static ["minecraft:wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.warped_door"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_double_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_fence"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_fence_gate"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_fungus"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_hyphae"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_nylium"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_planks"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_standing_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_stem"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_trapdoor"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_wall_sign"];
-  /**@type {ItemType} */
-  static ["minecraft:warped_wart_block"];
-  /**@type {ItemType} */
-  static ["minecraft:water"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_exposed_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_exposed_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_exposed_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_exposed_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_oxidized_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_oxidized_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_oxidized_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_oxidized_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_oxidized_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_weathered_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_weathered_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_weathered_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:waxed_weathered_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:weathered_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:weathered_cut_copper"];
-  /**@type {ItemType} */
-  static ["minecraft:weathered_cut_copper_stairs"];
-  /**@type {ItemType} */
-  static ["minecraft:weathered_double_cut_copper_slab"];
-  /**@type {ItemType} */
-  static ["minecraft:web"];
-  /**@type {ItemType} */
-  static ["minecraft:weeping_vines"];
-  /**@type {ItemType} */
-  static ["minecraft:item.wheat"];
-  /**@type {ItemType} */
-  static ["minecraft:white_glazed_terracotta"];
-  /**@type {ItemType} */
-  static ["minecraft:wither_rose"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_button"];
-  /**@type {ItemType} */
-  static ["minecraft:item.wooden_door"];
-  /**@type {ItemType} */
-  static ["minecraft:wooden_pressure_plate"];
-  /**@type {ItemType} */
-  static ["minecraft:yellow_glazed_terracotta"];
-}
-
-/**
  * @constructor
  * @return {Location}
  */
@@ -7742,6 +3673,7 @@ export class Location {
    * @param {Number} z
    */
   constructor(x, y, z) {
+    this.x = 0;
     this.x = x;
     this.y = y;
     this.z = z;
@@ -7851,7 +3783,7 @@ export class World {
      */
     tick,
     /**
-     * @type {WeatherChangedEventSignal}
+     * @type {ChangeWeatherEventSignal}
      */
     changeWeather,
     /**
@@ -7859,7 +3791,7 @@ export class World {
      */
     addEffect,
     /**
-     * @type {ChatEventSignal}
+     * @type {BeforeChatEventSignal}
      */
     beforeChat,
     /**
@@ -7870,56 +3802,354 @@ export class World {
      * @type {EntityEventSignal}
      */
     createEntity,
+    /**
+     * @type {BeforeExplosionEventSignal}
+     */
     beforeExplosion,
+    /**
+     * @type {ExplosionEventSignal}
+     */
     explosion,
+    /**
+     * @type {ExplodeBlockSignal}
+     */
     explodeBlock,
+    /**
+     * @type {ActivatePistonEventSignal}
+     */
     activatePiston,
+    /**
+     * @type {BeforeActivatePistonEventSignal}
+     */
     beforeActivatePiston,
   };
 }
 
 class TickEventSignal {
-  subscribe() {
+  /**
+   *
+   * @param {function():void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
     return;
   }
-  unsubscribe() {
-    return;
-  }
-}
-class WeatherChangedEventSignal {
-  subscribe() {
-    return;
-  }
-  unsubscribe() {
-    return;
-  }
-}
-class AddEffectEventSignal {
-  subscribe() {
-    return;
-  }
-  unsubscribe() {
+  /**
+   *
+   * @param {TickEventSignal} event
+   * @returns {function}
+   */
+  unsubscribe(event) {
     return;
   }
 }
-class ChatEventSignal {
-  subscribe() {
+class ChangeWeatherEventSignal {
+  /**
+   *
+   * @param {function(WeatherChangedEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
     return;
   }
-  unsubscribe() {
+  /**
+   *
+   * @param {ChangeWeatherEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
     return;
   }
 }
-class EntityEventSignal {
-  subscribe() {
-    return;
-  }
-  unsubscribe() {
-    return;
-  }
+class WeatherChangedEvent {
+  /**
+   * @type {String}
+   */
+  dimension;
+  /**
+   * @type {Boolean}
+   */
+  raining;
+  /**
+   * @type {Boolean}
+   */
+  lightning;
 }
 
-class BlockPiston {
+class AddEffectEventSignal {
+  /**
+   *
+   * @param {function(ActorAddEffectEvent):void} callback
+   * @returns
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {AddEffectEventSignal} event
+   * @returns {function}
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class ActorAddEffectEvent {
+  /**
+   * @type {Entity}
+   */
+  entity;
+  /**
+   * @type {Effect}
+   */
+  effect;
+  /**
+   * @type {Number}
+   */
+  effectStete;
+}
+
+class BeforeChatEventSignal {
+  /**
+   *
+   * @param {function(BeforeChatEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {ActorAddEffectEvent} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class BeforeChatEvent {
+  /**
+   * @type {String}
+   */
+  message;
+  /**
+   * @type {Entity}
+   */
+  sender;
+  /**
+   * @type {String[]}
+   */
+  targets;
+  /**
+   * @type {Boolean}
+   */
+  sendToTargets;
+  /**
+   * @type {Boolean}
+   */
+  cancel;
+}
+
+class ChatEventSignal {
+  /**
+   *
+   * @param {function(ChatEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {ChatEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class ChatEvent {
+  message = String();
+  sender = new Player();
+  targets = new Array(String());
+  sendToTargets = Boolean();
+  cancel = Boolean();
+}
+
+class EntityEventSignal {
+  /**
+   *
+   * @param {function(EntityEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {EntityEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class EntityEvent {
+  /**
+   * @type {Entity}
+   */
+  entity;
+}
+
+class BeforeExplosionEventSignal {
+  /**
+   * @param {function(BeforeExplosionEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {BeforeExplosionEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class BeforeExplosionEvent {
+  /**
+   * @type {BlockLocation[]}
+   */
+  impactedBlocks;
+  /**
+   * @type {Dimension}
+   *  */
+  dimension;
+  /**
+   * @type {Entity}
+   */
+  source;
+  /**
+   * @type {Boolean}
+   */
+  cancel;
+}
+
+class ExplosionEventSignal {
+  /**
+   *
+   * @param {function(ExplosionEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {ExplosionEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class ExplosionEvent {
+  /**
+   * @type {BlockLocation[]}
+   */
+  impactedBlocks;
+  /**
+   * @type {Dimension}
+   *  */
+  dimension;
+  /**
+   * @type {Entity}
+   */
+  source;
+}
+
+class ExplodeBlockSignal {
+  /**
+   * @param {function(ExplodeBlockEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {ExplodeBlockSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class ExplodeBlockEvent {
+  /**
+   * @param {Entity}
+   */
+  source;
+  /**
+   * @param {Block}
+   */
+  destroyedBlock;
+}
+
+class ActivatePistonEventSignal {
+  /**
+   *
+   * @param {function(ActivatePistonEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {ActivatePistonEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class ActivatePistonEvent {
+  piston = new BlockPistonComponent();
+  isExpanding = Boolean();
+  cancel = Boolean();
+}
+
+class BeforeActivatePistonEventSignal {
+  /**
+   *
+   * @param {function(BeforeActivatePistonEvent):void} callback
+   * @returns {function}
+   */
+  subscribe(callback) {
+    return;
+  }
+  /**
+   *
+   * @param {BeforeActivatePistonEventSignal} event
+   * @returns
+   */
+  unsubscribe(event) {
+    return;
+  }
+}
+class BeforeActivatePistonEvent {
+  piston = new BlockPistonComponent();
+  isExpanding = Boolean();
+}
+
+class BlockPistonComponent {
+  /**
+   * @type {BlockLocation}
+   */
+  location;
   /**
    * @type {BlockLocation[]}
    */
@@ -7950,3 +4180,8658 @@ class BlockPiston {
 // "minecraft:health" = class {return};
 // "minecraft:leashable" = class {return};
 // "minecraft:tamemount" = class {return};
+
+/**
+ * @typedef {{getName:function():String}} ItemType
+ */
+
+export class Items {
+  /**
+   * @type {ItemType}
+   */
+  air;
+  /**
+   * @type {ItemType}
+   */
+  apple;
+  /**
+   * @type {ItemType}
+   */
+  goldenApple;
+  /**
+   * @type {ItemType}
+   */
+  enchantedGoldenApple;
+  /**
+   * @type {ItemType}
+   */
+  mushroomStew;
+  /**
+   * @type {ItemType}
+   */
+  bread;
+  /**
+   * @type {ItemType}
+   */
+  porkchop;
+  /**
+   * @type {ItemType}
+   */
+  cookedPorkchop;
+  /**
+   * @type {ItemType}
+   */
+  cod;
+  /**
+   * @type {ItemType}
+   */
+  salmon;
+  /**
+   * @type {ItemType}
+   */
+  tropicalFish;
+  /**
+   * @type {ItemType}
+   */
+  pufferfish;
+  /**
+   * @type {ItemType}
+   */
+  cookedCod;
+  /**
+   * @type {ItemType}
+   */
+  cookedSalmon;
+  /**
+   * @type {ItemType}
+   */
+  driedKelp;
+  /**
+   * @type {ItemType}
+   */
+  cookie;
+  /**
+   * @type {ItemType}
+   */
+  melonSlice;
+  /**
+   * @type {ItemType}
+   */
+  beef;
+  /**
+   * @type {ItemType}
+   */
+  cookedBeef;
+  /**
+   * @type {ItemType}
+   */
+  chicken;
+  /**
+   * @type {ItemType}
+   */
+  cookedChicken;
+  /**
+   * @type {ItemType}
+   */
+  rottenFlesh;
+  /**
+   * @type {ItemType}
+   */
+  spiderEye;
+  /**
+   * @type {ItemType}
+   */
+  carrot;
+  /**
+   * @type {ItemType}
+   */
+  potato;
+  /**
+   * @type {ItemType}
+   */
+  bakedPotato;
+  /**
+   * @type {ItemType}
+   */
+  poisonousPotato;
+  /**
+   * @type {ItemType}
+   */
+  goldenCarrot;
+  /**
+   * @type {ItemType}
+   */
+  pumpkinPie;
+  /**
+   * @type {ItemType}
+   */
+  beetroot;
+  /**
+   * @type {ItemType}
+   */
+  beetrootSoup;
+  /**
+   * @type {ItemType}
+   */
+  sweetBerries;
+  /**
+   * @type {ItemType}
+   */
+  rabbit;
+  /**
+   * @type {ItemType}
+   */
+  cookedRabbit;
+  /**
+   * @type {ItemType}
+   */
+  rabbitStew;
+  /**
+   * @type {ItemType}
+   */
+  wheatSeeds;
+  /**
+   * @type {ItemType}
+   */
+  pumpkinSeeds;
+  /**
+   * @type {ItemType}
+   */
+  melonSeeds;
+  /**
+   * @type {ItemType}
+   */
+  netherWart;
+  /**
+   * @type {ItemType}
+   */
+  beetrootSeeds;
+  /**
+   * @type {ItemType}
+   */
+  ironShovel;
+  /**
+   * @type {ItemType}
+   */
+  ironPickaxe;
+  /**
+   * @type {ItemType}
+   */
+  ironAxe;
+  /**
+   * @type {ItemType}
+   */
+  flintAndSteel;
+  /**
+   * @type {ItemType}
+   */
+  bow;
+  /**
+   * @type {ItemType}
+   */
+  arrow;
+  /**
+   * @type {ItemType}
+   */
+  coal;
+  /**
+   * @type {ItemType}
+   */
+  charcoal;
+  /**
+   * @type {ItemType}
+   */
+  diamond;
+  /**
+   * @type {ItemType}
+   */
+  ironIngot;
+  /**
+   * @type {ItemType}
+   */
+  goldIngot;
+  /**
+   * @type {ItemType}
+   */
+  ironSword;
+  /**
+   * @type {ItemType}
+   */
+  woodenSword;
+  /**
+   * @type {ItemType}
+   */
+  woodenShovel;
+  /**
+   * @type {ItemType}
+   */
+  woodenPickaxe;
+  /**
+   * @type {ItemType}
+   */
+  woodenAxe;
+  /**
+   * @type {ItemType}
+   */
+  stoneSword;
+  /**
+   * @type {ItemType}
+   */
+  stoneShovel;
+  /**
+   * @type {ItemType}
+   */
+  stonePickaxe;
+  /**
+   * @type {ItemType}
+   */
+  stoneAxe;
+  /**
+   * @type {ItemType}
+   */
+  diamondSword;
+  /**
+   * @type {ItemType}
+   */
+  diamondShovel;
+  /**
+   * @type {ItemType}
+   */
+  diamondPickaxe;
+  /**
+   * @type {ItemType}
+   */
+  diamondAxe;
+  /**
+   * @type {ItemType}
+   */
+  stick;
+  /**
+   * @type {ItemType}
+   */
+  bowl;
+  /**
+   * @type {ItemType}
+   */
+  goldenSword;
+  /**
+   * @type {ItemType}
+   */
+  goldenShovel;
+  /**
+   * @type {ItemType}
+   */
+  goldenPickaxe;
+  /**
+   * @type {ItemType}
+   */
+  goldenAxe;
+  /**
+   * @type {ItemType}
+   */
+  string;
+  /**
+   * @type {ItemType}
+   */
+  feather;
+  /**
+   * @type {ItemType}
+   */
+  gunpowder;
+  /**
+   * @type {ItemType}
+   */
+  woodenHoe;
+  /**
+   * @type {ItemType}
+   */
+  stoneHoe;
+  /**
+   * @type {ItemType}
+   */
+  ironHoe;
+  /**
+   * @type {ItemType}
+   */
+  diamondHoe;
+  /**
+   * @type {ItemType}
+   */
+  goldenHoe;
+  /**
+   * @type {ItemType}
+   */
+  wheat;
+  /**
+   * @type {ItemType}
+   */
+  leatherHelmet;
+  /**
+   * @type {ItemType}
+   */
+  leatherChestplate;
+  /**
+   * @type {ItemType}
+   */
+  leatherLeggings;
+  /**
+   * @type {ItemType}
+   */
+  leatherBoots;
+  /**
+   * @type {ItemType}
+   */
+  chainmailHelmet;
+  /**
+   * @type {ItemType}
+   */
+  chainmailChestplate;
+  /**
+   * @type {ItemType}
+   */
+  chainmailLeggings;
+  /**
+   * @type {ItemType}
+   */
+  chainmailBoots;
+  /**
+   * @type {ItemType}
+   */
+  ironHelmet;
+  /**
+   * @type {ItemType}
+   */
+  ironChestplate;
+  /**
+   * @type {ItemType}
+   */
+  ironLeggings;
+  /**
+   * @type {ItemType}
+   */
+  ironBoots;
+  /**
+   * @type {ItemType}
+   */
+  diamondHelmet;
+  /**
+   * @type {ItemType}
+   */
+  diamondChestplate;
+  /**
+   * @type {ItemType}
+   */
+  diamondLeggings;
+  /**
+   * @type {ItemType}
+   */
+  diamondBoots;
+  /**
+   * @type {ItemType}
+   */
+  goldenHelmet;
+  /**
+   * @type {ItemType}
+   */
+  goldenChestplate;
+  /**
+   * @type {ItemType}
+   */
+  goldenLeggings;
+  /**
+   * @type {ItemType}
+   */
+  goldenBoots;
+  /**
+   * @type {ItemType}
+   */
+  shield;
+  /**
+   * @type {ItemType}
+   */
+  flint;
+  /**
+   * @type {ItemType}
+   */
+  painting;
+  /**
+   * @type {ItemType}
+   */
+  oakSign;
+  /**
+   * @type {ItemType}
+   */
+  woodenDoor;
+  /**
+   * @type {ItemType}
+   */
+  bucket;
+  /**
+   * @type {ItemType}
+   */
+  milkBucket;
+  /**
+   * @type {ItemType}
+   */
+  waterBucket;
+  /**
+   * @type {ItemType}
+   */
+  lavaBucket;
+  /**
+   * @type {ItemType}
+   */
+  codBucket;
+  /**
+   * @type {ItemType}
+   */
+  salmonBucket;
+  /**
+   * @type {ItemType}
+   */
+  tropicalFishBucket;
+  /**
+   * @type {ItemType}
+   */
+  pufferfishBucket;
+  /**
+   * @type {ItemType}
+   */
+  powderSnowBucket;
+  /**
+   * @type {ItemType}
+   */
+  axolotlBucket;
+  /**
+   * @type {ItemType}
+   */
+  minecart;
+  /**
+   * @type {ItemType}
+   */
+  saddle;
+  /**
+   * @type {ItemType}
+   */
+  ironDoor;
+  /**
+   * @type {ItemType}
+   */
+  redstone;
+  /**
+   * @type {ItemType}
+   */
+  snowball;
+  /**
+   * @type {ItemType}
+   */
+  oakBoat;
+  /**
+   * @type {ItemType}
+   */
+  birchBoat;
+  /**
+   * @type {ItemType}
+   */
+  jungleBoat;
+  /**
+   * @type {ItemType}
+   */
+  spruceBoat;
+  /**
+   * @type {ItemType}
+   */
+  acaciaBoat;
+  /**
+   * @type {ItemType}
+   */
+  darkOakBoat;
+  /**
+   * @type {ItemType}
+   */
+  leather;
+  /**
+   * @type {ItemType}
+   */
+  kelp;
+  /**
+   * @type {ItemType}
+   */
+  brick;
+  /**
+   * @type {ItemType}
+   */
+  clayBall;
+  /**
+   * @type {ItemType}
+   */
+  sugarCane;
+  /**
+   * @type {ItemType}
+   */
+  paper;
+  /**
+   * @type {ItemType}
+   */
+  book;
+  /**
+   * @type {ItemType}
+   */
+  slimeBall;
+  /**
+   * @type {ItemType}
+   */
+  chestMinecart;
+  /**
+   * @type {ItemType}
+   */
+  egg;
+  /**
+   * @type {ItemType}
+   */
+  compass;
+  /**
+   * @type {ItemType}
+   */
+  fishingRod;
+  /**
+   * @type {ItemType}
+   */
+  clock;
+  /**
+   * @type {ItemType}
+   */
+  glowstoneDust;
+  /**
+   * @type {ItemType}
+   */
+  blackDye;
+  /**
+   * @type {ItemType}
+   */
+  redDye;
+  /**
+   * @type {ItemType}
+   */
+  greenDye;
+  /**
+   * @type {ItemType}
+   */
+  brownDye;
+  /**
+   * @type {ItemType}
+   */
+  blueDye;
+  /**
+   * @type {ItemType}
+   */
+  purpleDye;
+  /**
+   * @type {ItemType}
+   */
+  cyanDye;
+  /**
+   * @type {ItemType}
+   */
+  lightGrayDye;
+  /**
+   * @type {ItemType}
+   */
+  grayDye;
+  /**
+   * @type {ItemType}
+   */
+  pinkDye;
+  /**
+   * @type {ItemType}
+   */
+  limeDye;
+  /**
+   * @type {ItemType}
+   */
+  yellowDye;
+  /**
+   * @type {ItemType}
+   */
+  lightBlueDye;
+  /**
+   * @type {ItemType}
+   */
+  magentaDye;
+  /**
+   * @type {ItemType}
+   */
+  orangeDye;
+  /**
+   * @type {ItemType}
+   */
+  whiteDye;
+  /**
+   * @type {ItemType}
+   */
+  boneMeal;
+  /**
+   * @type {ItemType}
+   */
+  cocoaBeans;
+  /**
+   * @type {ItemType}
+   */
+  inkSac;
+  /**
+   * @type {ItemType}
+   */
+  lapisLazuli;
+  /**
+   * @type {ItemType}
+   */
+  bone;
+  /**
+   * @type {ItemType}
+   */
+  sugar;
+  /**
+   * @type {ItemType}
+   */
+  cake;
+  /**
+   * @type {ItemType}
+   */
+  bed;
+  /**
+   * @type {ItemType}
+   */
+  repeater;
+  /**
+   * @type {ItemType}
+   */
+  filledMap;
+  /**
+   * @type {ItemType}
+   */
+  shears;
+  /**
+   * @type {ItemType}
+   */
+  enderPearl;
+  /**
+   * @type {ItemType}
+   */
+  blazeRod;
+  /**
+   * @type {ItemType}
+   */
+  ghastTear;
+  /**
+   * @type {ItemType}
+   */
+  goldNugget;
+  /**
+   * @type {ItemType}
+   */
+  potion;
+  /**
+   * @type {ItemType}
+   */
+  glassBottle;
+  /**
+   * @type {ItemType}
+   */
+  fermentedSpiderEye;
+  /**
+   * @type {ItemType}
+   */
+  blazePowder;
+  /**
+   * @type {ItemType}
+   */
+  magmaCream;
+  /**
+   * @type {ItemType}
+   */
+  brewingStand;
+  /**
+   * @type {ItemType}
+   */
+  cauldron;
+  /**
+   * @type {ItemType}
+   */
+  enderEye;
+  /**
+   * @type {ItemType}
+   */
+  glisteringMelonSlice;
+  /**
+   * @type {ItemType}
+   */
+  chickenSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  cowSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  pigSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  sheepSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  wolfSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  mooshroomSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  creeperSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  endermanSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  silverfishSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  skeletonSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  slimeSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  spiderSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  zombieSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  zombiePigmanSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  villagerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  squidSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  ocelotSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  witchSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  batSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  ghastSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  magmaCubeSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  blazeSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  caveSpiderSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  horseSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  rabbitSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  endermiteSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  guardianSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  straySpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  huskSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  witherSkeletonSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  donkeySpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  muleSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  skeletonHorseSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  zombieHorseSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  shulkerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  npcSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  elderGuardianSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  polarBearSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  llamaSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  vindicatorSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  evokerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  vexSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  zombieVillagerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  parrotSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  tropicalFishSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  codSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  pufferfishSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  salmonSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  drownedSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  dolphinSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  turtleSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  phantomSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  agentSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  catSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  pandaSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  foxSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  pillagerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  wanderingTraderSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  ravagerSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  beeSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  striderSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  hoglinSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  piglinSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  zoglinSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  piglinBruteSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  axolotlSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  goatSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  glowSquidSpawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  glowInkSac;
+  /**
+   * @type {ItemType}
+   */
+  copperIngot;
+  /**
+   * @type {ItemType}
+   */
+  copperBlock;
+  /**
+   * @type {ItemType}
+   */
+  cutCopper;
+  /**
+   * @type {ItemType}
+   */
+  cutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  cutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  exposedCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  weatheredCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  oxidizedCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedExposedCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedWeatheredCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedOxidizedCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  rawIron;
+  /**
+   * @type {ItemType}
+   */
+  rawGold;
+  /**
+   * @type {ItemType}
+   */
+  rawCopper;
+  /**
+   * @type {ItemType}
+   */
+  experienceBottle;
+  /**
+   * @type {ItemType}
+   */
+  fireCharge;
+  /**
+   * @type {ItemType}
+   */
+  writableBook;
+  /**
+   * @type {ItemType}
+   */
+  writtenBook;
+  /**
+   * @type {ItemType}
+   */
+  emerald;
+  /**
+   * @type {ItemType}
+   */
+  frame;
+  /**
+   * @type {ItemType}
+   */
+  flowerPot;
+  /**
+   * @type {ItemType}
+   */
+  emptyMap;
+  /**
+   * @type {ItemType}
+   */
+  skull;
+  /**
+   * @type {ItemType}
+   */
+  carrotOnAStick;
+  /**
+   * @type {ItemType}
+   */
+  netherStar;
+  /**
+   * @type {ItemType}
+   */
+  fireworkRocket;
+  /**
+   * @type {ItemType}
+   */
+  fireworkStar;
+  /**
+   * @type {ItemType}
+   */
+  enchantedBook;
+  /**
+   * @type {ItemType}
+   */
+  comparator;
+  /**
+   * @type {ItemType}
+   */
+  netherbrick;
+  /**
+   * @type {ItemType}
+   */
+  quartz;
+  /**
+   * @type {ItemType}
+   */
+  tntMinecart;
+  /**
+   * @type {ItemType}
+   */
+  hopperMinecart;
+  /**
+   * @type {ItemType}
+   */
+  hopper;
+  /**
+   * @type {ItemType}
+   */
+  rabbitFoot;
+  /**
+   * @type {ItemType}
+   */
+  rabbitHide;
+  /**
+   * @type {ItemType}
+   */
+  leatherHorseArmor;
+  /**
+   * @type {ItemType}
+   */
+  ironHorseArmor;
+  /**
+   * @type {ItemType}
+   */
+  goldenHorseArmor;
+  /**
+   * @type {ItemType}
+   */
+  diamondHorseArmor;
+  /**
+   * @type {ItemType}
+   */
+  musicDisc13;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscCat;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscBlocks;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscChirp;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscFar;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscMall;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscMellohi;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscStal;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscStrad;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscWard;
+  /**
+   * @type {ItemType}
+   */
+  musicDisc11;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscWait;
+  /**
+   * @type {ItemType}
+   */
+  trident;
+  /**
+   * @type {ItemType}
+   */
+  lead;
+  /**
+   * @type {ItemType}
+   */
+  nameTag;
+  /**
+   * @type {ItemType}
+   */
+  prismarineCrystals;
+  /**
+   * @type {ItemType}
+   */
+  mutton;
+  /**
+   * @type {ItemType}
+   */
+  cookedMutton;
+  /**
+   * @type {ItemType}
+   */
+  armorStand;
+  /**
+   * @type {ItemType}
+   */
+  spruceDoor;
+  /**
+   * @type {ItemType}
+   */
+  birchDoor;
+  /**
+   * @type {ItemType}
+   */
+  jungleDoor;
+  /**
+   * @type {ItemType}
+   */
+  acaciaDoor;
+  /**
+   * @type {ItemType}
+   */
+  darkOakDoor;
+  /**
+   * @type {ItemType}
+   */
+  chorusFruit;
+  /**
+   * @type {ItemType}
+   */
+  poppedChorusFruit;
+  /**
+   * @type {ItemType}
+   */
+  dragonBreath;
+  /**
+   * @type {ItemType}
+   */
+  splashPotion;
+  /**
+   * @type {ItemType}
+   */
+  lingeringPotion;
+  /**
+   * @type {ItemType}
+   */
+  commandBlockMinecart;
+  /**
+   * @type {ItemType}
+   */
+  elytra;
+  /**
+   * @type {ItemType}
+   */
+  prismarineShard;
+  /**
+   * @type {ItemType}
+   */
+  shulkerShell;
+  /**
+   * @type {ItemType}
+   */
+  banner;
+  /**
+   * @type {ItemType}
+   */
+  totemOfUndying;
+  /**
+   * @type {ItemType}
+   */
+  ironNugget;
+  /**
+   * @type {ItemType}
+   */
+  nautilusShell;
+  /**
+   * @type {ItemType}
+   */
+  heartOfTheSea;
+  /**
+   * @type {ItemType}
+   */
+  scute;
+  /**
+   * @type {ItemType}
+   */
+  turtleHelmet;
+  /**
+   * @type {ItemType}
+   */
+  phantomMembrane;
+  /**
+   * @type {ItemType}
+   */
+  crossbow;
+  /**
+   * @type {ItemType}
+   */
+  spruceSign;
+  /**
+   * @type {ItemType}
+   */
+  birchSign;
+  /**
+   * @type {ItemType}
+   */
+  jungleSign;
+  /**
+   * @type {ItemType}
+   */
+  acaciaSign;
+  /**
+   * @type {ItemType}
+   */
+  darkOakSign;
+  /**
+   * @type {ItemType}
+   */
+  flowerBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  creeperBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  skullBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  mojangBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  fieldMasonedBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  bordureIndentedBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  piglinBannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  campfire;
+  /**
+   * @type {ItemType}
+   */
+  suspiciousStew;
+  /**
+   * @type {ItemType}
+   */
+  honeycomb;
+  /**
+   * @type {ItemType}
+   */
+  honeyBottle;
+  /**
+   * @type {ItemType}
+   */
+  camera;
+  /**
+   * @type {ItemType}
+   */
+  compound;
+  /**
+   * @type {ItemType}
+   */
+  iceBomb;
+  /**
+   * @type {ItemType}
+   */
+  bleach;
+  /**
+   * @type {ItemType}
+   */
+  rapidFertilizer;
+  /**
+   * @type {ItemType}
+   */
+  balloon;
+  /**
+   * @type {ItemType}
+   */
+  medicine;
+  /**
+   * @type {ItemType}
+   */
+  sparkler;
+  /**
+   * @type {ItemType}
+   */
+  glowStick;
+  /**
+   * @type {ItemType}
+   */
+  lodestoneCompass;
+  /**
+   * @type {ItemType}
+   */
+  netheriteIngot;
+  /**
+   * @type {ItemType}
+   */
+  netheriteSword;
+  /**
+   * @type {ItemType}
+   */
+  netheriteShovel;
+  /**
+   * @type {ItemType}
+   */
+  netheritePickaxe;
+  /**
+   * @type {ItemType}
+   */
+  netheriteAxe;
+  /**
+   * @type {ItemType}
+   */
+  netheriteHoe;
+  /**
+   * @type {ItemType}
+   */
+  netheriteHelmet;
+  /**
+   * @type {ItemType}
+   */
+  netheriteChestplate;
+  /**
+   * @type {ItemType}
+   */
+  netheriteLeggings;
+  /**
+   * @type {ItemType}
+   */
+  netheriteBoots;
+  /**
+   * @type {ItemType}
+   */
+  netheriteScrap;
+  /**
+   * @type {ItemType}
+   */
+  crimsonSign;
+  /**
+   * @type {ItemType}
+   */
+  warpedSign;
+  /**
+   * @type {ItemType}
+   */
+  crimsonDoor;
+  /**
+   * @type {ItemType}
+   */
+  warpedDoor;
+  /**
+   * @type {ItemType}
+   */
+  warpedFungusOnAStick;
+  /**
+   * @type {ItemType}
+   */
+  chain;
+  /**
+   * @type {ItemType}
+   */
+  musicDiscPigstep;
+  /**
+   * @type {ItemType}
+   */
+  netherSprouts;
+  /**
+   * @type {ItemType}
+   */
+  blackstoneSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneBrickSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneSlab;
+  /**
+   * @type {ItemType}
+   */
+  soulCampfire;
+  /**
+   * @type {ItemType}
+   */
+  glowFrame;
+  /**
+   * @type {ItemType}
+   */
+  goatHorn;
+  /**
+   * @type {ItemType}
+   */
+  cobbledDeepslateSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedDeepslateSlab;
+  /**
+   * @type {ItemType}
+   */
+  deepslateTileSlab;
+  /**
+   * @type {ItemType}
+   */
+  deepslateBrickSlab;
+  /**
+   * @type {ItemType}
+   */
+  amethystShard;
+  /**
+   * @type {ItemType}
+   */
+  spyglass;
+  /**
+   * @type {ItemType}
+   */
+  stone;
+  /**
+   * @type {ItemType}
+   */
+  dirt;
+  /**
+   * @type {ItemType}
+   */
+  farmland;
+  /**
+   * @type {ItemType}
+   */
+  sand;
+  /**
+   * @type {ItemType}
+   */
+  stainedHardenedClay;
+  /**
+   * @type {ItemType}
+   */
+  wool;
+  /**
+   * @type {ItemType}
+   */
+  carpet;
+  /**
+   * @type {ItemType}
+   */
+  log;
+  /**
+   * @type {ItemType}
+   */
+  fence;
+  /**
+   * @type {ItemType}
+   */
+  stonebrick;
+  /**
+   * @type {ItemType}
+   */
+  coralBlock;
+  /**
+   * @type {ItemType}
+   */
+  doubleStoneSlab;
+  /**
+   * @type {ItemType}
+   */
+  doubleStoneSlab2;
+  /**
+   * @type {ItemType}
+   */
+  doubleStoneSlab3;
+  /**
+   * @type {ItemType}
+   */
+  doubleStoneSlab4;
+  /**
+   * @type {ItemType}
+   */
+  realDoubleStoneSlab;
+  /**
+   * @type {ItemType}
+   */
+  realDoubleStoneSlab2;
+  /**
+   * @type {ItemType}
+   */
+  realDoubleStoneSlab3;
+  /**
+   * @type {ItemType}
+   */
+  realDoubleStoneSlab4;
+  /**
+   * @type {ItemType}
+   */
+  coralFan;
+  /**
+   * @type {ItemType}
+   */
+  coralFanDead;
+  /**
+   * @type {ItemType}
+   */
+  seaPickle;
+  /**
+   * @type {ItemType}
+   */
+  sapling;
+  /**
+   * @type {ItemType}
+   */
+  leaves;
+  /**
+   * @type {ItemType}
+   */
+  leaves2;
+  /**
+   * @type {ItemType}
+   */
+  azaleaLeaves;
+  /**
+   * @type {ItemType}
+   */
+  azaleaLeavesFlowered;
+  /**
+   * @type {ItemType}
+   */
+  sandstone;
+  /**
+   * @type {ItemType}
+   */
+  redSandstone;
+  /**
+   * @type {ItemType}
+   */
+  woodenSlab;
+  /**
+   * @type {ItemType}
+   */
+  crimsonRoots;
+  /**
+   * @type {ItemType}
+   */
+  warpedRoots;
+  /**
+   * @type {ItemType}
+   */
+  yellowFlower;
+  /**
+   * @type {ItemType}
+   */
+  redFlower;
+  /**
+   * @type {ItemType}
+   */
+  doublePlant;
+  /**
+   * @type {ItemType}
+   */
+  waterlily;
+  /**
+   * @type {ItemType}
+   */
+  sponge;
+  /**
+   * @type {ItemType}
+   */
+  snowLayer;
+  /**
+   * @type {ItemType}
+   */
+  planks;
+  /**
+   * @type {ItemType}
+   */
+  quartzBlock;
+  /**
+   * @type {ItemType}
+   */
+  purpurBlock;
+  /**
+   * @type {ItemType}
+   */
+  cobblestoneWall;
+  /**
+   * @type {ItemType}
+   */
+  coral;
+  /**
+   * @type {ItemType}
+   */
+  tallgrass;
+  /**
+   * @type {ItemType}
+   */
+  seagrass;
+  /**
+   * @type {ItemType}
+   */
+  brownMushroomBlock;
+  /**
+   * @type {ItemType}
+   */
+  redMushroomBlock;
+  /**
+   * @type {ItemType}
+   */
+  log2;
+  /**
+   * @type {ItemType}
+   */
+  endPortalFrame;
+  /**
+   * @type {ItemType}
+   */
+  anvil;
+  /**
+   * @type {ItemType}
+   */
+  monsterEgg;
+  /**
+   * @type {ItemType}
+   */
+  brewingstandblock;
+  /**
+   * @type {ItemType}
+   */
+  beacon;
+  /**
+   * @type {ItemType}
+   */
+  conduit;
+  /**
+   * @type {ItemType}
+   */
+  prismarine;
+  /**
+   * @type {ItemType}
+   */
+  sealantern;
+  /**
+   * @type {ItemType}
+   */
+  concrete;
+  /**
+   * @type {ItemType}
+   */
+  concretePowder;
+  /**
+   * @type {ItemType}
+   */
+  magma;
+  /**
+   * @type {ItemType}
+   */
+  stainedGlass;
+  /**
+   * @type {ItemType}
+   */
+  stainedGlassPane;
+  /**
+   * @type {ItemType}
+   */
+  undyedShulkerBox;
+  /**
+   * @type {ItemType}
+   */
+  shulkerBox;
+  /**
+   * @type {ItemType}
+   */
+  piston;
+  /**
+   * @type {ItemType}
+   */
+  stickyPiston;
+  /**
+   * @type {ItemType}
+   */
+  turtleEgg;
+  /**
+   * @type {ItemType}
+   */
+  bamboo;
+  /**
+   * @type {ItemType}
+   */
+  scaffolding;
+  /**
+   * @type {ItemType}
+   */
+  blastFurnace;
+  /**
+   * @type {ItemType}
+   */
+  smoker;
+  /**
+   * @type {ItemType}
+   */
+  smithingTable;
+  /**
+   * @type {ItemType}
+   */
+  barrel;
+  /**
+   * @type {ItemType}
+   */
+  lantern;
+  /**
+   * @type {ItemType}
+   */
+  loom;
+  /**
+   * @type {ItemType}
+   */
+  grindstone;
+  /**
+   * @type {ItemType}
+   */
+  bell;
+  /**
+   * @type {ItemType}
+   */
+  cartographyTable;
+  /**
+   * @type {ItemType}
+   */
+  fletchingTable;
+  /**
+   * @type {ItemType}
+   */
+  wood;
+  /**
+   * @type {ItemType}
+   */
+  chemistryTable;
+  /**
+   * @type {ItemType}
+   */
+  tnt;
+  /**
+   * @type {ItemType}
+   */
+  hardStainedGlass;
+  /**
+   * @type {ItemType}
+   */
+  hardStainedGlassPane;
+  /**
+   * @type {ItemType}
+   */
+  coloredTorchRg;
+  /**
+   * @type {ItemType}
+   */
+  coloredTorchBp;
+  /**
+   * @type {ItemType}
+   */
+  lightBlock;
+  /**
+   * @type {ItemType}
+   */
+  pumpkin;
+  /**
+   * @type {ItemType}
+   */
+  carvedPumpkin;
+  /**
+   * @type {ItemType}
+   */
+  litPumpkin;
+  /**
+   * @type {ItemType}
+   */
+  crimsonSlab;
+  /**
+   * @type {ItemType}
+   */
+  warpedSlab;
+  /**
+   * @type {ItemType}
+   */
+  candle;
+  /**
+   * @type {ItemType}
+   */
+  whiteCandle;
+  /**
+   * @type {ItemType}
+   */
+  orangeCandle;
+  /**
+   * @type {ItemType}
+   */
+  magentaCandle;
+  /**
+   * @type {ItemType}
+   */
+  lightBlueCandle;
+  /**
+   * @type {ItemType}
+   */
+  yellowCandle;
+  /**
+   * @type {ItemType}
+   */
+  limeCandle;
+  /**
+   * @type {ItemType}
+   */
+  pinkCandle;
+  /**
+   * @type {ItemType}
+   */
+  grayCandle;
+  /**
+   * @type {ItemType}
+   */
+  lightGrayCandle;
+  /**
+   * @type {ItemType}
+   */
+  cyanCandle;
+  /**
+   * @type {ItemType}
+   */
+  purpleCandle;
+  /**
+   * @type {ItemType}
+   */
+  blueCandle;
+  /**
+   * @type {ItemType}
+   */
+  brownCandle;
+  /**
+   * @type {ItemType}
+   */
+  greenCandle;
+  /**
+   * @type {ItemType}
+   */
+  redCandle;
+  /**
+   * @type {ItemType}
+   */
+  blackCandle;
+  /**
+   * @type {ItemType}
+   */
+  element0;
+  /**
+   * @type {ItemType}
+   */
+  element1;
+  /**
+   * @type {ItemType}
+   */
+  element2;
+  /**
+   * @type {ItemType}
+   */
+  element3;
+  /**
+   * @type {ItemType}
+   */
+  element4;
+  /**
+   * @type {ItemType}
+   */
+  element5;
+  /**
+   * @type {ItemType}
+   */
+  element6;
+  /**
+   * @type {ItemType}
+   */
+  element7;
+  /**
+   * @type {ItemType}
+   */
+  element8;
+  /**
+   * @type {ItemType}
+   */
+  element9;
+  /**
+   * @type {ItemType}
+   */
+  element10;
+  /**
+   * @type {ItemType}
+   */
+  element11;
+  /**
+   * @type {ItemType}
+   */
+  element12;
+  /**
+   * @type {ItemType}
+   */
+  element13;
+  /**
+   * @type {ItemType}
+   */
+  element14;
+  /**
+   * @type {ItemType}
+   */
+  element15;
+  /**
+   * @type {ItemType}
+   */
+  element16;
+  /**
+   * @type {ItemType}
+   */
+  element17;
+  /**
+   * @type {ItemType}
+   */
+  element18;
+  /**
+   * @type {ItemType}
+   */
+  element19;
+  /**
+   * @type {ItemType}
+   */
+  element20;
+  /**
+   * @type {ItemType}
+   */
+  element21;
+  /**
+   * @type {ItemType}
+   */
+  element22;
+  /**
+   * @type {ItemType}
+   */
+  element23;
+  /**
+   * @type {ItemType}
+   */
+  element24;
+  /**
+   * @type {ItemType}
+   */
+  element25;
+  /**
+   * @type {ItemType}
+   */
+  element26;
+  /**
+   * @type {ItemType}
+   */
+  element27;
+  /**
+   * @type {ItemType}
+   */
+  element28;
+  /**
+   * @type {ItemType}
+   */
+  element29;
+  /**
+   * @type {ItemType}
+   */
+  element30;
+  /**
+   * @type {ItemType}
+   */
+  element31;
+  /**
+   * @type {ItemType}
+   */
+  element32;
+  /**
+   * @type {ItemType}
+   */
+  element33;
+  /**
+   * @type {ItemType}
+   */
+  element34;
+  /**
+   * @type {ItemType}
+   */
+  element35;
+  /**
+   * @type {ItemType}
+   */
+  element36;
+  /**
+   * @type {ItemType}
+   */
+  element37;
+  /**
+   * @type {ItemType}
+   */
+  element38;
+  /**
+   * @type {ItemType}
+   */
+  element39;
+  /**
+   * @type {ItemType}
+   */
+  element40;
+  /**
+   * @type {ItemType}
+   */
+  element41;
+  /**
+   * @type {ItemType}
+   */
+  element42;
+  /**
+   * @type {ItemType}
+   */
+  element43;
+  /**
+   * @type {ItemType}
+   */
+  element44;
+  /**
+   * @type {ItemType}
+   */
+  element45;
+  /**
+   * @type {ItemType}
+   */
+  element46;
+  /**
+   * @type {ItemType}
+   */
+  element47;
+  /**
+   * @type {ItemType}
+   */
+  element48;
+  /**
+   * @type {ItemType}
+   */
+  element49;
+  /**
+   * @type {ItemType}
+   */
+  element50;
+  /**
+   * @type {ItemType}
+   */
+  element51;
+  /**
+   * @type {ItemType}
+   */
+  element52;
+  /**
+   * @type {ItemType}
+   */
+  element53;
+  /**
+   * @type {ItemType}
+   */
+  element54;
+  /**
+   * @type {ItemType}
+   */
+  element55;
+  /**
+   * @type {ItemType}
+   */
+  element56;
+  /**
+   * @type {ItemType}
+   */
+  element57;
+  /**
+   * @type {ItemType}
+   */
+  element58;
+  /**
+   * @type {ItemType}
+   */
+  element59;
+  /**
+   * @type {ItemType}
+   */
+  element60;
+  /**
+   * @type {ItemType}
+   */
+  element61;
+  /**
+   * @type {ItemType}
+   */
+  element62;
+  /**
+   * @type {ItemType}
+   */
+  element63;
+  /**
+   * @type {ItemType}
+   */
+  element64;
+  /**
+   * @type {ItemType}
+   */
+  element65;
+  /**
+   * @type {ItemType}
+   */
+  element66;
+  /**
+   * @type {ItemType}
+   */
+  element67;
+  /**
+   * @type {ItemType}
+   */
+  element68;
+  /**
+   * @type {ItemType}
+   */
+  element69;
+  /**
+   * @type {ItemType}
+   */
+  element70;
+  /**
+   * @type {ItemType}
+   */
+  element71;
+  /**
+   * @type {ItemType}
+   */
+  element72;
+  /**
+   * @type {ItemType}
+   */
+  element73;
+  /**
+   * @type {ItemType}
+   */
+  element74;
+  /**
+   * @type {ItemType}
+   */
+  element75;
+  /**
+   * @type {ItemType}
+   */
+  element76;
+  /**
+   * @type {ItemType}
+   */
+  element77;
+  /**
+   * @type {ItemType}
+   */
+  element78;
+  /**
+   * @type {ItemType}
+   */
+  element79;
+  /**
+   * @type {ItemType}
+   */
+  element80;
+  /**
+   * @type {ItemType}
+   */
+  element81;
+  /**
+   * @type {ItemType}
+   */
+  element82;
+  /**
+   * @type {ItemType}
+   */
+  element83;
+  /**
+   * @type {ItemType}
+   */
+  element84;
+  /**
+   * @type {ItemType}
+   */
+  element85;
+  /**
+   * @type {ItemType}
+   */
+  element86;
+  /**
+   * @type {ItemType}
+   */
+  element87;
+  /**
+   * @type {ItemType}
+   */
+  element88;
+  /**
+   * @type {ItemType}
+   */
+  element89;
+  /**
+   * @type {ItemType}
+   */
+  element90;
+  /**
+   * @type {ItemType}
+   */
+  element91;
+  /**
+   * @type {ItemType}
+   */
+  element92;
+  /**
+   * @type {ItemType}
+   */
+  element93;
+  /**
+   * @type {ItemType}
+   */
+  element94;
+  /**
+   * @type {ItemType}
+   */
+  element95;
+  /**
+   * @type {ItemType}
+   */
+  element96;
+  /**
+   * @type {ItemType}
+   */
+  element97;
+  /**
+   * @type {ItemType}
+   */
+  element98;
+  /**
+   * @type {ItemType}
+   */
+  element99;
+  /**
+   * @type {ItemType}
+   */
+  element100;
+  /**
+   * @type {ItemType}
+   */
+  element101;
+  /**
+   * @type {ItemType}
+   */
+  element102;
+  /**
+   * @type {ItemType}
+   */
+  element103;
+  /**
+   * @type {ItemType}
+   */
+  element104;
+  /**
+   * @type {ItemType}
+   */
+  element105;
+  /**
+   * @type {ItemType}
+   */
+  element106;
+  /**
+   * @type {ItemType}
+   */
+  element107;
+  /**
+   * @type {ItemType}
+   */
+  element108;
+  /**
+   * @type {ItemType}
+   */
+  element109;
+  /**
+   * @type {ItemType}
+   */
+  element110;
+  /**
+   * @type {ItemType}
+   */
+  element111;
+  /**
+   * @type {ItemType}
+   */
+  element112;
+  /**
+   * @type {ItemType}
+   */
+  element113;
+  /**
+   * @type {ItemType}
+   */
+  element114;
+  /**
+   * @type {ItemType}
+   */
+  element115;
+  /**
+   * @type {ItemType}
+   */
+  element116;
+  /**
+   * @type {ItemType}
+   */
+  element117;
+  /**
+   * @type {ItemType}
+   */
+  element118;
+  /**
+   * @type {ItemType}
+   */
+  composter;
+  /**
+   * @type {ItemType}
+   */
+  netheriteBlock;
+  /**
+   * @type {ItemType}
+   */
+  ancientDebris;
+  /**
+   * @type {ItemType}
+   */
+  respawnAnchor;
+  /**
+   * @type {ItemType}
+   */
+  cryingObsidian;
+  /**
+   * @type {ItemType}
+   */
+  boat;
+  /**
+   * @type {ItemType}
+   */
+  dye;
+  /**
+   * @type {ItemType}
+   */
+  bannerPattern;
+  /**
+   * @type {ItemType}
+   */
+  spawnEgg;
+  /**
+   * @type {ItemType}
+   */
+  endCrystal;
+  /**
+   * @type {ItemType}
+   */
+  glowBerries;
+  /**
+   * @type {ItemType}
+   */
+  acaciaButton;
+  /**
+   * @type {ItemType}
+   */
+  acaciaFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  acaciaPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  acaciaStairs;
+  /**
+   * @type {ItemType}
+   */
+  acaciaStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  acaciaTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  acaciaWallSign;
+  /**
+   * @type {ItemType}
+   */
+  activatorRail;
+  /**
+   * @type {ItemType}
+   */
+  allow;
+  /**
+   * @type {ItemType}
+   */
+  amethystBlock;
+  /**
+   * @type {ItemType}
+   */
+  amethystCluster;
+  /**
+   * @type {ItemType}
+   */
+  andesiteStairs;
+  /**
+   * @type {ItemType}
+   */
+  azalea;
+  /**
+   * @type {ItemType}
+   */
+  bambooSapling;
+  /**
+   * @type {ItemType}
+   */
+  barrier;
+  /**
+   * @type {ItemType}
+   */
+  basalt;
+  /**
+   * @type {ItemType}
+   */
+  bedrock;
+  /**
+   * @type {ItemType}
+   */
+  beeNest;
+  /**
+   * @type {ItemType}
+   */
+  beehive;
+  /**
+   * @type {ItemType}
+   */
+  bigDripleaf;
+  /**
+   * @type {ItemType}
+   */
+  birchButton;
+  /**
+   * @type {ItemType}
+   */
+  birchFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  birchPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  birchStairs;
+  /**
+   * @type {ItemType}
+   */
+  birchStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  birchTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  birchWallSign;
+  /**
+   * @type {ItemType}
+   */
+  blackCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  blackGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  blackstone;
+  /**
+   * @type {ItemType}
+   */
+  blackstoneDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  blackstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  blackstoneWall;
+  /**
+   * @type {ItemType}
+   */
+  blueCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  blueGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  blueIce;
+  /**
+   * @type {ItemType}
+   */
+  boneBlock;
+  /**
+   * @type {ItemType}
+   */
+  bookshelf;
+  /**
+   * @type {ItemType}
+   */
+  borderBlock;
+  /**
+   * @type {ItemType}
+   */
+  brickBlock;
+  /**
+   * @type {ItemType}
+   */
+  brickStairs;
+  /**
+   * @type {ItemType}
+   */
+  brownCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  brownGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  brownMushroom;
+  /**
+   * @type {ItemType}
+   */
+  bubbleColumn;
+  /**
+   * @type {ItemType}
+   */
+  buddingAmethyst;
+  /**
+   * @type {ItemType}
+   */
+  cactus;
+  /**
+   * @type {ItemType}
+   */
+  calcite;
+  /**
+   * @type {ItemType}
+   */
+  candleCake;
+  /**
+   * @type {ItemType}
+   */
+  carrots;
+  /**
+   * @type {ItemType}
+   */
+  caveVines;
+  /**
+   * @type {ItemType}
+   */
+  caveVinesBodyWithBerries;
+  /**
+   * @type {ItemType}
+   */
+  caveVinesHeadWithBerries;
+  /**
+   * @type {ItemType}
+   */
+  chainCommandBlock;
+  /**
+   * @type {ItemType}
+   */
+  chemicalHeat;
+  /**
+   * @type {ItemType}
+   */
+  chest;
+  /**
+   * @type {ItemType}
+   */
+  chiseledDeepslate;
+  /**
+   * @type {ItemType}
+   */
+  chiseledNetherBricks;
+  /**
+   * @type {ItemType}
+   */
+  chiseledPolishedBlackstone;
+  /**
+   * @type {ItemType}
+   */
+  chorusFlower;
+  /**
+   * @type {ItemType}
+   */
+  chorusPlant;
+  /**
+   * @type {ItemType}
+   */
+  clay;
+  /**
+   * @type {ItemType}
+   */
+  coalBlock;
+  /**
+   * @type {ItemType}
+   */
+  coalOre;
+  /**
+   * @type {ItemType}
+   */
+  cobbledDeepslate;
+  /**
+   * @type {ItemType}
+   */
+  cobbledDeepslateDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  cobbledDeepslateStairs;
+  /**
+   * @type {ItemType}
+   */
+  cobbledDeepslateWall;
+  /**
+   * @type {ItemType}
+   */
+  cobblestone;
+  /**
+   * @type {ItemType}
+   */
+  cocoa;
+  /**
+   * @type {ItemType}
+   */
+  commandBlock;
+  /**
+   * @type {ItemType}
+   */
+  copperOre;
+  /**
+   * @type {ItemType}
+   */
+  coralFanHang;
+  /**
+   * @type {ItemType}
+   */
+  coralFanHang2;
+  /**
+   * @type {ItemType}
+   */
+  coralFanHang3;
+  /**
+   * @type {ItemType}
+   */
+  crackedDeepslateBricks;
+  /**
+   * @type {ItemType}
+   */
+  crackedDeepslateTiles;
+  /**
+   * @type {ItemType}
+   */
+  crackedNetherBricks;
+  /**
+   * @type {ItemType}
+   */
+  crackedPolishedBlackstoneBricks;
+  /**
+   * @type {ItemType}
+   */
+  craftingTable;
+  /**
+   * @type {ItemType}
+   */
+  crimsonButton;
+  /**
+   * @type {ItemType}
+   */
+  crimsonDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  crimsonFence;
+  /**
+   * @type {ItemType}
+   */
+  crimsonFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  crimsonFungus;
+  /**
+   * @type {ItemType}
+   */
+  crimsonHyphae;
+  /**
+   * @type {ItemType}
+   */
+  crimsonNylium;
+  /**
+   * @type {ItemType}
+   */
+  crimsonPlanks;
+  /**
+   * @type {ItemType}
+   */
+  crimsonPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  crimsonStairs;
+  /**
+   * @type {ItemType}
+   */
+  crimsonStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  crimsonStem;
+  /**
+   * @type {ItemType}
+   */
+  crimsonTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  crimsonWallSign;
+  /**
+   * @type {ItemType}
+   */
+  cyanCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  cyanGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  darkOakButton;
+  /**
+   * @type {ItemType}
+   */
+  darkOakFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  darkOakPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  darkOakStairs;
+  /**
+   * @type {ItemType}
+   */
+  darkOakTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  darkPrismarineStairs;
+  /**
+   * @type {ItemType}
+   */
+  darkoakStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  darkoakWallSign;
+  /**
+   * @type {ItemType}
+   */
+  daylightDetector;
+  /**
+   * @type {ItemType}
+   */
+  daylightDetectorInverted;
+  /**
+   * @type {ItemType}
+   */
+  deadbush;
+  /**
+   * @type {ItemType}
+   */
+  deepslate;
+  /**
+   * @type {ItemType}
+   */
+  deepslateBrickDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  deepslateBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  deepslateBrickWall;
+  /**
+   * @type {ItemType}
+   */
+  deepslateBricks;
+  /**
+   * @type {ItemType}
+   */
+  deepslateCoalOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateCopperOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateDiamondOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateEmeraldOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateGoldOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateIronOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateLapisOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateRedstoneOre;
+  /**
+   * @type {ItemType}
+   */
+  deepslateTileDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  deepslateTileStairs;
+  /**
+   * @type {ItemType}
+   */
+  deepslateTileWall;
+  /**
+   * @type {ItemType}
+   */
+  deepslateTiles;
+  /**
+   * @type {ItemType}
+   */
+  deny;
+  /**
+   * @type {ItemType}
+   */
+  detectorRail;
+  /**
+   * @type {ItemType}
+   */
+  diamondBlock;
+  /**
+   * @type {ItemType}
+   */
+  diamondOre;
+  /**
+   * @type {ItemType}
+   */
+  dioriteStairs;
+  /**
+   * @type {ItemType}
+   */
+  dirtWithRoots;
+  /**
+   * @type {ItemType}
+   */
+  dispenser;
+  /**
+   * @type {ItemType}
+   */
+  doubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  doubleWoodenSlab;
+  /**
+   * @type {ItemType}
+   */
+  dragonEgg;
+  /**
+   * @type {ItemType}
+   */
+  driedKelpBlock;
+  /**
+   * @type {ItemType}
+   */
+  dripstoneBlock;
+  /**
+   * @type {ItemType}
+   */
+  dropper;
+  /**
+   * @type {ItemType}
+   */
+  emeraldBlock;
+  /**
+   * @type {ItemType}
+   */
+  emeraldOre;
+  /**
+   * @type {ItemType}
+   */
+  enchantingTable;
+  /**
+   * @type {ItemType}
+   */
+  endBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  endBricks;
+  /**
+   * @type {ItemType}
+   */
+  endGateway;
+  /**
+   * @type {ItemType}
+   */
+  endPortal;
+  /**
+   * @type {ItemType}
+   */
+  endRod;
+  /**
+   * @type {ItemType}
+   */
+  endStone;
+  /**
+   * @type {ItemType}
+   */
+  enderChest;
+  /**
+   * @type {ItemType}
+   */
+  exposedCopper;
+  /**
+   * @type {ItemType}
+   */
+  exposedCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  exposedCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  exposedDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  fenceGate;
+  /**
+   * @type {ItemType}
+   */
+  fire;
+  /**
+   * @type {ItemType}
+   */
+  floweringAzalea;
+  /**
+   * @type {ItemType}
+   */
+  flowingLava;
+  /**
+   * @type {ItemType}
+   */
+  flowingWater;
+  /**
+   * @type {ItemType}
+   */
+  frostedIce;
+  /**
+   * @type {ItemType}
+   */
+  furnace;
+  /**
+   * @type {ItemType}
+   */
+  gildedBlackstone;
+  /**
+   * @type {ItemType}
+   */
+  glass;
+  /**
+   * @type {ItemType}
+   */
+  glassPane;
+  /**
+   * @type {ItemType}
+   */
+  glowLichen;
+  /**
+   * @type {ItemType}
+   */
+  glowingobsidian;
+  /**
+   * @type {ItemType}
+   */
+  glowstone;
+  /**
+   * @type {ItemType}
+   */
+  goldBlock;
+  /**
+   * @type {ItemType}
+   */
+  goldOre;
+  /**
+   * @type {ItemType}
+   */
+  goldenRail;
+  /**
+   * @type {ItemType}
+   */
+  graniteStairs;
+  /**
+   * @type {ItemType}
+   */
+  grass;
+  /**
+   * @type {ItemType}
+   */
+  grassPath;
+  /**
+   * @type {ItemType}
+   */
+  gravel;
+  /**
+   * @type {ItemType}
+   */
+  grayCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  grayGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  greenCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  greenGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  hangingRoots;
+  /**
+   * @type {ItemType}
+   */
+  hardGlass;
+  /**
+   * @type {ItemType}
+   */
+  hardGlassPane;
+  /**
+   * @type {ItemType}
+   */
+  hardenedClay;
+  /**
+   * @type {ItemType}
+   */
+  hayBlock;
+  /**
+   * @type {ItemType}
+   */
+  heavyWeightedPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  honeyBlock;
+  /**
+   * @type {ItemType}
+   */
+  honeycombBlock;
+  /**
+   * @type {ItemType}
+   */
+  ice;
+  /**
+   * @type {ItemType}
+   */
+  infestedDeepslate;
+  /**
+   * @type {ItemType}
+   */
+  infoUpdate;
+  /**
+   * @type {ItemType}
+   */
+  infoUpdate2;
+  /**
+   * @type {ItemType}
+   */
+  invisiblebedrock;
+  /**
+   * @type {ItemType}
+   */
+  ironBars;
+  /**
+   * @type {ItemType}
+   */
+  ironBlock;
+  /**
+   * @type {ItemType}
+   */
+  ironOre;
+  /**
+   * @type {ItemType}
+   */
+  ironTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  jigsaw;
+  /**
+   * @type {ItemType}
+   */
+  jukebox;
+  /**
+   * @type {ItemType}
+   */
+  jungleButton;
+  /**
+   * @type {ItemType}
+   */
+  jungleFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  junglePressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  jungleStairs;
+  /**
+   * @type {ItemType}
+   */
+  jungleStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  jungleTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  jungleWallSign;
+  /**
+   * @type {ItemType}
+   */
+  ladder;
+  /**
+   * @type {ItemType}
+   */
+  lapisBlock;
+  /**
+   * @type {ItemType}
+   */
+  lapisOre;
+  /**
+   * @type {ItemType}
+   */
+  largeAmethystBud;
+  /**
+   * @type {ItemType}
+   */
+  lava;
+  /**
+   * @type {ItemType}
+   */
+  lavaCauldron;
+  /**
+   * @type {ItemType}
+   */
+  lectern;
+  /**
+   * @type {ItemType}
+   */
+  lever;
+  /**
+   * @type {ItemType}
+   */
+  lightBlueCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  lightBlueGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  lightGrayCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  lightWeightedPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  lightningRod;
+  /**
+   * @type {ItemType}
+   */
+  limeCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  limeGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  litBlastFurnace;
+  /**
+   * @type {ItemType}
+   */
+  litDeepslateRedstoneOre;
+  /**
+   * @type {ItemType}
+   */
+  litFurnace;
+  /**
+   * @type {ItemType}
+   */
+  litRedstoneLamp;
+  /**
+   * @type {ItemType}
+   */
+  litRedstoneOre;
+  /**
+   * @type {ItemType}
+   */
+  litSmoker;
+  /**
+   * @type {ItemType}
+   */
+  lodestone;
+  /**
+   * @type {ItemType}
+   */
+  magentaCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  magentaGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  mediumAmethystBud;
+  /**
+   * @type {ItemType}
+   */
+  melonBlock;
+  /**
+   * @type {ItemType}
+   */
+  melonStem;
+  /**
+   * @type {ItemType}
+   */
+  mobSpawner;
+  /**
+   * @type {ItemType}
+   */
+  mossBlock;
+  /**
+   * @type {ItemType}
+   */
+  mossCarpet;
+  /**
+   * @type {ItemType}
+   */
+  mossyCobblestone;
+  /**
+   * @type {ItemType}
+   */
+  mossyCobblestoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  mossyStoneBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  movingblock;
+  /**
+   * @type {ItemType}
+   */
+  mycelium;
+  /**
+   * @type {ItemType}
+   */
+  netherBrick;
+  /**
+   * @type {ItemType}
+   */
+  netherBrickFence;
+  /**
+   * @type {ItemType}
+   */
+  netherBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  netherGoldOre;
+  /**
+   * @type {ItemType}
+   */
+  netherWartBlock;
+  /**
+   * @type {ItemType}
+   */
+  netherrack;
+  /**
+   * @type {ItemType}
+   */
+  netherreactor;
+  /**
+   * @type {ItemType}
+   */
+  normalStoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  noteblock;
+  /**
+   * @type {ItemType}
+   */
+  oakStairs;
+  /**
+   * @type {ItemType}
+   */
+  observer;
+  /**
+   * @type {ItemType}
+   */
+  obsidian;
+  /**
+   * @type {ItemType}
+   */
+  orangeCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  orangeGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  oxidizedCopper;
+  /**
+   * @type {ItemType}
+   */
+  oxidizedCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  oxidizedCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  oxidizedDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  packedIce;
+  /**
+   * @type {ItemType}
+   */
+  pinkCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  pinkGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  pistonarmcollision;
+  /**
+   * @type {ItemType}
+   */
+  podzol;
+  /**
+   * @type {ItemType}
+   */
+  pointedDripstone;
+  /**
+   * @type {ItemType}
+   */
+  polishedAndesiteStairs;
+  /**
+   * @type {ItemType}
+   */
+  polishedBasalt;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstone;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneBrickDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneBrickWall;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneBricks;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneButton;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstonePressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  polishedBlackstoneWall;
+  /**
+   * @type {ItemType}
+   */
+  polishedDeepslate;
+  /**
+   * @type {ItemType}
+   */
+  polishedDeepslateDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  polishedDeepslateStairs;
+  /**
+   * @type {ItemType}
+   */
+  polishedDeepslateWall;
+  /**
+   * @type {ItemType}
+   */
+  polishedDioriteStairs;
+  /**
+   * @type {ItemType}
+   */
+  polishedGraniteStairs;
+  /**
+   * @type {ItemType}
+   */
+  portal;
+  /**
+   * @type {ItemType}
+   */
+  potatoes;
+  /**
+   * @type {ItemType}
+   */
+  powderSnow;
+  /**
+   * @type {ItemType}
+   */
+  poweredComparator;
+  /**
+   * @type {ItemType}
+   */
+  poweredRepeater;
+  /**
+   * @type {ItemType}
+   */
+  prismarineBricksStairs;
+  /**
+   * @type {ItemType}
+   */
+  prismarineStairs;
+  /**
+   * @type {ItemType}
+   */
+  pumpkinStem;
+  /**
+   * @type {ItemType}
+   */
+  purpleCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  purpleGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  purpurStairs;
+  /**
+   * @type {ItemType}
+   */
+  quartzBricks;
+  /**
+   * @type {ItemType}
+   */
+  quartzOre;
+  /**
+   * @type {ItemType}
+   */
+  quartzStairs;
+  /**
+   * @type {ItemType}
+   */
+  rail;
+  /**
+   * @type {ItemType}
+   */
+  rawCopperBlock;
+  /**
+   * @type {ItemType}
+   */
+  rawGoldBlock;
+  /**
+   * @type {ItemType}
+   */
+  rawIronBlock;
+  /**
+   * @type {ItemType}
+   */
+  redCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  redGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  redMushroom;
+  /**
+   * @type {ItemType}
+   */
+  redNetherBrick;
+  /**
+   * @type {ItemType}
+   */
+  redNetherBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  redSandstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  redstoneBlock;
+  /**
+   * @type {ItemType}
+   */
+  redstoneLamp;
+  /**
+   * @type {ItemType}
+   */
+  redstoneOre;
+  /**
+   * @type {ItemType}
+   */
+  redstoneTorch;
+  /**
+   * @type {ItemType}
+   */
+  redstoneWire;
+  /**
+   * @type {ItemType}
+   */
+  repeatingCommandBlock;
+  /**
+   * @type {ItemType}
+   */
+  reserved6;
+  /**
+   * @type {ItemType}
+   */
+  sandstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  sculkSensor;
+  /**
+   * @type {ItemType}
+   */
+  shroomlight;
+  /**
+   * @type {ItemType}
+   */
+  silverGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  slime;
+  /**
+   * @type {ItemType}
+   */
+  smallAmethystBud;
+  /**
+   * @type {ItemType}
+   */
+  smallDripleafBlock;
+  /**
+   * @type {ItemType}
+   */
+  smoothBasalt;
+  /**
+   * @type {ItemType}
+   */
+  smoothQuartzStairs;
+  /**
+   * @type {ItemType}
+   */
+  smoothRedSandstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  smoothSandstoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  smoothStone;
+  /**
+   * @type {ItemType}
+   */
+  snow;
+  /**
+   * @type {ItemType}
+   */
+  soulFire;
+  /**
+   * @type {ItemType}
+   */
+  soulLantern;
+  /**
+   * @type {ItemType}
+   */
+  soulSand;
+  /**
+   * @type {ItemType}
+   */
+  soulSoil;
+  /**
+   * @type {ItemType}
+   */
+  soulTorch;
+  /**
+   * @type {ItemType}
+   */
+  sporeBlossom;
+  /**
+   * @type {ItemType}
+   */
+  spruceButton;
+  /**
+   * @type {ItemType}
+   */
+  spruceFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  sprucePressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  spruceStairs;
+  /**
+   * @type {ItemType}
+   */
+  spruceStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  spruceTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  spruceWallSign;
+  /**
+   * @type {ItemType}
+   */
+  standingBanner;
+  /**
+   * @type {ItemType}
+   */
+  standingSign;
+  /**
+   * @type {ItemType}
+   */
+  stickypistonarmcollision;
+  /**
+   * @type {ItemType}
+   */
+  stoneBrickStairs;
+  /**
+   * @type {ItemType}
+   */
+  stoneButton;
+  /**
+   * @type {ItemType}
+   */
+  stonePressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  stoneStairs;
+  /**
+   * @type {ItemType}
+   */
+  stonecutter;
+  /**
+   * @type {ItemType}
+   */
+  stonecutterBlock;
+  /**
+   * @type {ItemType}
+   */
+  strippedAcaciaLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedBirchLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedCrimsonHyphae;
+  /**
+   * @type {ItemType}
+   */
+  strippedCrimsonStem;
+  /**
+   * @type {ItemType}
+   */
+  strippedDarkOakLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedJungleLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedOakLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedSpruceLog;
+  /**
+   * @type {ItemType}
+   */
+  strippedWarpedHyphae;
+  /**
+   * @type {ItemType}
+   */
+  strippedWarpedStem;
+  /**
+   * @type {ItemType}
+   */
+  structureBlock;
+  /**
+   * @type {ItemType}
+   */
+  structureVoid;
+  /**
+   * @type {ItemType}
+   */
+  sweetBerryBush;
+  /**
+   * @type {ItemType}
+   */
+  target;
+  /**
+   * @type {ItemType}
+   */
+  tintedGlass;
+  /**
+   * @type {ItemType}
+   */
+  torch;
+  /**
+   * @type {ItemType}
+   */
+  trapdoor;
+  /**
+   * @type {ItemType}
+   */
+  trappedChest;
+  /**
+   * @type {ItemType}
+   */
+  tripwire;
+  /**
+   * @type {ItemType}
+   */
+  tripwireHook;
+  /**
+   * @type {ItemType}
+   */
+  tuff;
+  /**
+   * @type {ItemType}
+   */
+  twistingVines;
+  /**
+   * @type {ItemType}
+   */
+  underwaterTorch;
+  /**
+   * @type {ItemType}
+   */
+  unknown;
+  /**
+   * @type {ItemType}
+   */
+  unlitRedstoneTorch;
+  /**
+   * @type {ItemType}
+   */
+  unpoweredComparator;
+  /**
+   * @type {ItemType}
+   */
+  unpoweredRepeater;
+  /**
+   * @type {ItemType}
+   */
+  vine;
+  /**
+   * @type {ItemType}
+   */
+  wallBanner;
+  /**
+   * @type {ItemType}
+   */
+  wallSign;
+  /**
+   * @type {ItemType}
+   */
+  warpedButton;
+  /**
+   * @type {ItemType}
+   */
+  warpedDoubleSlab;
+  /**
+   * @type {ItemType}
+   */
+  warpedFence;
+  /**
+   * @type {ItemType}
+   */
+  warpedFenceGate;
+  /**
+   * @type {ItemType}
+   */
+  warpedFungus;
+  /**
+   * @type {ItemType}
+   */
+  warpedHyphae;
+  /**
+   * @type {ItemType}
+   */
+  warpedNylium;
+  /**
+   * @type {ItemType}
+   */
+  warpedPlanks;
+  /**
+   * @type {ItemType}
+   */
+  warpedPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  warpedStairs;
+  /**
+   * @type {ItemType}
+   */
+  warpedStandingSign;
+  /**
+   * @type {ItemType}
+   */
+  warpedStem;
+  /**
+   * @type {ItemType}
+   */
+  warpedTrapdoor;
+  /**
+   * @type {ItemType}
+   */
+  warpedWallSign;
+  /**
+   * @type {ItemType}
+   */
+  warpedWartBlock;
+  /**
+   * @type {ItemType}
+   */
+  water;
+  /**
+   * @type {ItemType}
+   */
+  waxedCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  waxedDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedExposedCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedExposedCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedExposedCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  waxedExposedDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedOxidizedCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedOxidizedCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedOxidizedCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  waxedOxidizedDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  waxedWeatheredCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedWeatheredCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  waxedWeatheredCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  waxedWeatheredDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  weatheredCopper;
+  /**
+   * @type {ItemType}
+   */
+  weatheredCutCopper;
+  /**
+   * @type {ItemType}
+   */
+  weatheredCutCopperStairs;
+  /**
+   * @type {ItemType}
+   */
+  weatheredDoubleCutCopperSlab;
+  /**
+   * @type {ItemType}
+   */
+  web;
+  /**
+   * @type {ItemType}
+   */
+  weepingVines;
+  /**
+   * @type {ItemType}
+   */
+  whiteCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  whiteGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  witherRose;
+  /**
+   * @type {ItemType}
+   */
+  woodenButton;
+  /**
+   * @type {ItemType}
+   */
+  woodenPressurePlate;
+  /**
+   * @type {ItemType}
+   */
+  yellowCandleCake;
+  /**
+   * @type {ItemType}
+   */
+  yellowGlazedTerracotta;
+  /**
+   * @type {ItemType}
+   */
+  ["item.acaciaDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.bed"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.beetroot"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.birchDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.camera"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.campfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.cauldron"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.chain"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.crimsonDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.darkOakDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.flowerPot"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.glowFrame"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.hopper"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.ironDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.jungleDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.kelp"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.netherSprouts"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.netherWart"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.reeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.skull"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.soulCampfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.spruceDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.warpedDoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.wheat"];
+  /**
+   * @type {ItemType}
+   */
+  ["item.woodenDoor"];
+
+  // Namespace
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:air"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:apple"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_apple"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:enchanted_golden_apple"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mushroom_stew"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bread"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:porkchop"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_porkchop"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:salmon"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tropical_fish"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pufferfish"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_cod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_salmon"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dried_kelp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cookie"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:melon_slice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beef"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_beef"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chicken"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_chicken"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rotten_flesh"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spider_eye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:carrot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:potato"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:baked_potato"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:poisonous_potato"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_carrot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pumpkin_pie"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beetroot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beetroot_soup"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sweet_berries"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rabbit"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_rabbit"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rabbit_stew"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wheat_seeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pumpkin_seeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:melon_seeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_wart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beetroot_seeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flint_and_steel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:arrow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:charcoal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_ingot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gold_ingot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bowl"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:string"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:feather"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gunpowder"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wheat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chainmail_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chainmail_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chainmail_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chainmail_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shield"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flint"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:painting"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oak_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:milk_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:water_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lava_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cod_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:salmon_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tropical_fish_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pufferfish_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:powder_snow_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:axolotl_bucket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:minecart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:saddle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:snowball"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oak_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:kelp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:clay_ball"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sugar_cane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:paper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:book"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:slime_ball"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chest_minecart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:compass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fishing_rod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:clock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glowstone_dust"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:black_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:green_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blue_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purple_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cyan_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_gray_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gray_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pink_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lime_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:yellow_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_blue_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magenta_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:orange_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:white_dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bone_meal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cocoa_beans"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ink_sac"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lapis_lazuli"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sugar"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bed"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:repeater"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:filled_map"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shears"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ender_pearl"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blaze_rod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ghast_tear"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gold_nugget"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:potion"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glass_bottle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fermented_spider_eye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blaze_powder"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magma_cream"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brewing_stand"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cauldron"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ender_eye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glistering_melon_slice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chicken_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cow_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pig_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sheep_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wolf_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mooshroom_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:creeper_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:enderman_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:silverfish_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:skeleton_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:slime_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spider_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:zombie_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:zombie_pigman_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:villager_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:squid_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ocelot_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:witch_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bat_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ghast_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magma_cube_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blaze_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cave_spider_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:horse_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rabbit_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:endermite_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:guardian_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stray_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:husk_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wither_skeleton_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:donkey_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mule_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:skeleton_horse_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:zombie_horse_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shulker_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:npc_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:elder_guardian_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polar_bear_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:llama_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:vindicator_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:evoker_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:vex_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:zombie_villager_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:parrot_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tropical_fish_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cod_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pufferfish_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:salmon_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:drowned_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dolphin_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:turtle_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:phantom_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:agent_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cat_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:panda_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fox_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pillager_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wandering_trader_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ravager_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bee_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:strider_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hoglin_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:piglin_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:zoglin_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:piglin_brute_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:axolotl_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:goat_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_squid_spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_ink_sac"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:copper_ingot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:copper_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:exposed_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weathered_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oxidized_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_exposed_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_weathered_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_oxidized_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_iron"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_gold"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:experience_bottle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fire_charge"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:writable_book"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:written_book"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:emerald"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flower_pot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:empty_map"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:skull"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:carrot_on_a_stick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_star"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:firework_rocket"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:firework_star"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:enchanted_book"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:comparator"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherbrick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:quartz"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tnt_minecart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hopper_minecart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hopper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rabbit_foot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rabbit_hide"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leather_horse_armor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_horse_armor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_horse_armor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_horse_armor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_13"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_cat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_blocks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_chirp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_far"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_mall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_mellohi"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_stal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_strad"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_ward"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_11"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_wait"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:trident"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lead"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:name_tag"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:prismarine_crystals"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mutton"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cooked_mutton"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:armor_stand"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chorus_fruit"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:popped_chorus_fruit"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dragon_breath"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:splash_potion"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lingering_potion"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:command_block_minecart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:elytra"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:prismarine_shard"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shulker_shell"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:banner"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:totem_of_undying"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_nugget"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nautilus_shell"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:heart_of_the_sea"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:scute"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:turtle_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:phantom_membrane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crossbow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flower_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:creeper_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:skull_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mojang_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:field_masoned_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bordure_indented_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:piglin_banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:campfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:suspicious_stew"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:honeycomb"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:honey_bottle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:camera"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:compound"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ice_bomb"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bleach"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rapid_fertilizer"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:balloon"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:medicine"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sparkler"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_stick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lodestone_compass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_ingot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_sword"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_shovel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_pickaxe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_axe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_hoe"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_scrap"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_fungus_on_a_stick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chain"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:music_disc_pigstep"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_sprouts"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blackstone_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_brick_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_campfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:goat_horn"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobbled_deepslate_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_deepslate_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_tile_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_brick_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:amethyst_shard"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spyglass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dirt"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:farmland"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sand"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stained_hardened_clay"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wool"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:carpet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fence"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stonebrick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_stone_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_stone_slab2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_stone_slab3"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_stone_slab4"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:real_double_stone_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:real_double_stone_slab2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:real_double_stone_slab3"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:real_double_stone_slab4"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_fan"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_fan_dead"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sea_pickle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sapling"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leaves"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:leaves2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:azalea_leaves"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:azalea_leaves_flowered"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sandstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_sandstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_roots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_roots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:yellow_flower"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_flower"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_plant"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waterlily"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sponge"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:snow_layer"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:planks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:quartz_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purpur_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobblestone_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tallgrass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:seagrass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_mushroom_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_mushroom_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:log2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_portal_frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:anvil"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:monster_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brewingstandblock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beacon"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:conduit"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:prismarine"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sealantern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:concrete"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:concrete_powder"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magma"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stained_glass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stained_glass_pane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:undyed_shulker_box"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shulker_box"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:piston"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sticky_piston"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:turtle_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bamboo"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:scaffolding"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blast_furnace"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smoker"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smithing_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:barrel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lantern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:loom"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:grindstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bell"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cartography_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fletching_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wood"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chemistry_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tnt"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hard_stained_glass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hard_stained_glass_pane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:colored_torch_rg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:colored_torch_bp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pumpkin"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:carved_pumpkin"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_pumpkin"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:white_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:orange_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magenta_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_blue_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:yellow_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lime_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pink_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gray_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_gray_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cyan_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purple_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blue_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:green_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:black_candle"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_0"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_1"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_3"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_4"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_5"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_6"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_7"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_8"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_9"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_10"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_11"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_12"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_13"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_14"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_15"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_16"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_17"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_18"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_19"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_20"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_21"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_22"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_23"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_24"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_25"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_26"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_27"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_28"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_29"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_30"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_31"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_32"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_33"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_34"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_35"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_36"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_37"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_38"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_39"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_40"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_41"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_42"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_43"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_44"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_45"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_46"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_47"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_48"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_49"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_50"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_51"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_52"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_53"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_54"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_55"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_56"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_57"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_58"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_59"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_60"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_61"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_62"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_63"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_64"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_65"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_66"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_67"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_68"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_69"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_70"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_71"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_72"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_73"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_74"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_75"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_76"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_77"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_78"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_79"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_80"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_81"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_82"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_83"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_84"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_85"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_86"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_87"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_88"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_89"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_90"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_91"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_92"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_93"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_94"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_95"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_96"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_97"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_98"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_99"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_100"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_101"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_102"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_103"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_104"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_105"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_106"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_107"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_108"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_109"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_110"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_111"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_112"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_113"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_114"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_115"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_116"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_117"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:element_118"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:composter"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherite_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ancient_debris"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:respawn_anchor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crying_obsidian"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:boat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dye"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:banner_pattern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spawn_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_crystal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_berries"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.acacia_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:acacia_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:activator_rail"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:allow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:amethyst_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:amethyst_cluster"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:andesite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:azalea"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bamboo_sapling"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:barrier"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:basalt"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.bed"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bedrock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bee_nest"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:beehive"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.beetroot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:big_dripleaf"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.birch_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:birch_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:black_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:black_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blackstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blackstone_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blackstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blackstone_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blue_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blue_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:blue_ice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bone_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bookshelf"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:border_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brick_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:brown_mushroom"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:bubble_column"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:budding_amethyst"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cactus"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:calcite"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.camera"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.campfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:carrots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.cauldron"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cave_vines"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cave_vines_body_with_berries"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cave_vines_head_with_berries"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.chain"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chain_command_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chemical_heat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chest"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chiseled_deepslate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chiseled_nether_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chiseled_polished_blackstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chorus_flower"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:chorus_plant"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:clay"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coal_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coal_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobbled_deepslate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobbled_deepslate_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobbled_deepslate_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobbled_deepslate_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cobblestone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cocoa"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:command_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:copper_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_fan_hang"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_fan_hang2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:coral_fan_hang3"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cracked_deepslate_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cracked_deepslate_tiles"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cracked_nether_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cracked_polished_blackstone_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crafting_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.crimson_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_fence"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_fungus"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_hyphae"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_nylium"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_planks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:crimson_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cyan_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:cyan_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.dark_oak_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_oak_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dark_prismarine_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:darkoak_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:darkoak_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:daylight_detector"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:daylight_detector_inverted"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deadbush"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_brick_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_brick_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_coal_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_copper_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_diamond_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_emerald_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_gold_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_iron_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_lapis_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_redstone_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_tile_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_tile_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_tile_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deepslate_tiles"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:deny"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:detector_rail"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diamond_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:diorite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dirt_with_roots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dispenser"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:double_wooden_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dragon_egg"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dried_kelp_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dripstone_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:dropper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:emerald_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:emerald_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:enchanting_table"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_gateway"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_portal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_rod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:end_stone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ender_chest"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:exposed_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:exposed_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:exposed_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:exposed_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:fire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.flower_pot"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flowering_azalea"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flowing_lava"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:flowing_water"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:frosted_ice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:furnace"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gilded_blackstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glass_pane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.glow_frame"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glow_lichen"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glowingobsidian"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:glowstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gold_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gold_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:golden_rail"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:granite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:grass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:grass_path"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gravel"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gray_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:gray_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:green_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:green_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hanging_roots"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hard_glass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hard_glass_pane"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hardened_clay"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:hay_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:heavy_weighted_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:honey_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:honeycomb_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.hopper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:infested_deepslate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:info_update"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:info_update2"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:invisiblebedrock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_bars"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.iron_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:iron_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jigsaw"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jukebox"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.jungle_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:jungle_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.kelp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:ladder"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lapis_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lapis_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:large_amethyst_bud"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lava"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lava_cauldron"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lectern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lever"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_blue_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_blue_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_gray_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:light_weighted_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lightning_rod"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lime_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lime_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_blast_furnace"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_deepslate_redstone_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_furnace"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_redstone_lamp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_redstone_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lit_smoker"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:lodestone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magenta_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:magenta_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:medium_amethyst_bud"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:melon_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:melon_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mob_spawner"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:moss_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:moss_carpet"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mossy_cobblestone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mossy_cobblestone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mossy_stone_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:movingblock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:mycelium"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_brick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_brick_fence"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_gold_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.nether_sprouts"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.nether_wart"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:nether_wart_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherrack"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:netherreactor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:normal_stone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:noteblock"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oak_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:observer"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:obsidian"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:orange_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:orange_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oxidized_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oxidized_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oxidized_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:oxidized_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:packed_ice"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pink_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pink_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pistonarmcollision"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:podzol"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pointed_dripstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_andesite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_basalt"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_brick_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_brick_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_blackstone_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_deepslate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_deepslate_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_deepslate_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_deepslate_wall"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_diorite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:polished_granite_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:portal"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:potatoes"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:powder_snow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:powered_comparator"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:powered_repeater"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:prismarine_bricks_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:prismarine_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:pumpkin_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purple_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purple_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:purpur_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:quartz_bricks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:quartz_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:quartz_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:rail"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_copper_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_gold_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:raw_iron_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_mushroom"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_nether_brick"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_nether_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:red_sandstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone_lamp"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone_ore"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone_torch"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:redstone_wire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.reeds"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:repeating_command_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:reserved6"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sandstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sculk_sensor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:shroomlight"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:silver_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.skull"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:slime"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:small_amethyst_bud"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:small_dripleaf_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smooth_basalt"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smooth_quartz_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smooth_red_sandstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smooth_sandstone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:smooth_stone"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:snow"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.soul_campfire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_fire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_lantern"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_sand"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_soil"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:soul_torch"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spore_blossom"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.spruce_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:spruce_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:standing_banner"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stickypistonarmcollision"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_brick_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stone_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stonecutter"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stonecutter_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_acacia_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_birch_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_crimson_hyphae"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_crimson_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_dark_oak_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_jungle_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_oak_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_spruce_log"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_warped_hyphae"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:stripped_warped_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:structure_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:structure_void"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:sweet_berry_bush"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:target"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tinted_glass"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:torch"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:trapped_chest"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tripwire"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tripwire_hook"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:tuff"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:twisting_vines"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:underwater_torch"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:unknown"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:unlit_redstone_torch"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:unpowered_comparator"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:unpowered_repeater"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:vine"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wall_banner"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.warped_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_double_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_fence"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_fence_gate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_fungus"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_hyphae"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_nylium"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_planks"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_standing_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_stem"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_trapdoor"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_wall_sign"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:warped_wart_block"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:water"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_exposed_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_exposed_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_exposed_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_exposed_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_oxidized_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_oxidized_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_oxidized_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_oxidized_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_weathered_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_weathered_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_weathered_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:waxed_weathered_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weathered_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weathered_cut_copper"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weathered_cut_copper_stairs"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weathered_double_cut_copper_slab"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:web"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:weeping_vines"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.wheat"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:white_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:white_glazed_terracotta"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wither_rose"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_button"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:item.wooden_door"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:wooden_pressure_plate"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:yellow_candle_cake"];
+  /**
+   * @type {ItemType}
+   */
+  ["minecraft:yellow_glazed_terracotta"];
+
+  // Addon added blocks and items example
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testitem"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testtool"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_armor_boots"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_armor_chestplate"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_armor_helmet"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_armor_leggings"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_block_placer"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_food"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_item"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:test_tool"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testblock"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testfacing"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testhalf"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testlog"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testnewblock"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testore"];
+  /**
+   * @type {ItemType}
+   */
+  ["toka7290:testmob_spawn_egg"];
+}
