@@ -312,20 +312,6 @@ class Helper {
     this.getBlock = function (blockLocation) {
       return;
     };
-    /**
-     *
-     * @param {Minecraft.BlockLocation} blockLocation
-     * @return {Minecraft.Direction}
-     */
-    this.getFenceConnectivity = function (blockLocation) {
-      return;
-    };
-    /**
-     * @return {Minecraft.Direction}
-     */
-    this.getTestDirection = function () {
-      return;
-    };
     this.killAllEntities = function () {
       return;
     };
