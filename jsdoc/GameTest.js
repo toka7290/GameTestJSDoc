@@ -337,6 +337,13 @@ class Helper {
     this.getFenceConnectivity = function (location) {
       return;
     };
+    /**
+     *
+     * @return {Minecraft.Direction}
+     */
+    this.getTestDirection = function () {
+      return;
+    };
     this.killAllEntities = function () {
       return;
     };
@@ -375,7 +382,23 @@ class Helper {
      * @param {Minecraft.BlockLocation} worldLocation
      * @return {Minecraft.BlockLocation}
      */
+    this.relativeBlockLocation = function (worldLocation) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.Location} worldLocation
+     * @return {Minecraft.Location}
+     */
     this.relativeLocation = function (worldLocation) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.Direction} direction
+     * @return {Minecraft.Direction}
+     */
+    this.rotateDirection = function (direction) {
       return;
     };
 
@@ -452,6 +475,15 @@ class Helper {
      * @return {Minecraft.Entity}
      */
     this.spawnWithoutBehaviors = function (entityIdentifier, position) {
+      return;
+    };
+    /**
+     *
+     * @param {String} entityIdentifier
+     * @param {Location} position
+     * @returns
+     */
+    this.spawnWithoutBehaviorsAtLocation = function (entityIdentifier, position) {
       return;
     };
     /**
@@ -545,7 +577,7 @@ class Helper {
 
     /**
      *
-     * @param {Minecraft.BlockLocation} target
+     * @param {Minecraft.Entity} target
      * @param {Minecraft.BlockLocation} blockLocation
      * @param {Number} speed
      */
@@ -554,7 +586,7 @@ class Helper {
     };
     /**
      *
-     * @param {Minecraft.BlockLocation} target
+     * @param {Minecraft.Entity} target
      * @param {Minecraft.Location} location
      * @param {Number} speed
      */
@@ -565,6 +597,14 @@ class Helper {
      *
      * @param {Minecraft.BlockLocation} relativeLocation
      * @return {Minecraft.BlockLocation}
+     */
+    this.worldBlockLocation = function (relativeLocation) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.Location} relativeLocation
+     * @return {Minecraft.Location}
      */
     this.worldLocation = function (relativeLocation) {
       return;

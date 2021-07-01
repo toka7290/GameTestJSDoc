@@ -3417,17 +3417,14 @@ class Component {
   }
 }
 
-/**
- * @enum {Number}
- */
-export const Direction = {
-  down: 0,
-  up: 1,
-  north: 2,
-  south: 3,
-  west: 4,
-  east: 5,
-};
+export class Direction {
+  static down = 0;
+  static up = 1;
+  static north = 2;
+  static south = 3;
+  static west = 4;
+  static east = 5;
+}
 
 class Dimension {
   /**
