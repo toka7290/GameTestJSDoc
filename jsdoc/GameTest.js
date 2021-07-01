@@ -145,13 +145,17 @@ class Helper {
      * @param {Minecraft.BlockLocation} location
      * @param {Boolean} canReach
      */
-    this.assertCanReachLocation = function (mob, location, canReach) {};
+    this.assertCanReachLocation = function (mob, location, canReach) {
+      return;
+    };
     /**
      *
      * @param {Boolean} arg
      * @param {String} errorMessage
      */
-    this.assert = function (arg, errorMessage) {};
+    this.assert = function (arg, errorMessage) {
+      return;
+    };
     /**
      *
      * @param {ItemStack} itemName
@@ -327,16 +331,10 @@ class Helper {
     };
     /**
      *
-     * @param {Minecraft.BlockLocation} blockLocation
+     * @param {Minecraft.BlockLocation} location
      * @return {Minecraft.Direction}
      */
-    this.getFenceConnectivity = function (blockLocation) {
-      return;
-    };
-    /**
-     * @return {Minecraft.Direction}
-     */
-    this.getTestDirection = function () {
+    this.getFenceConnectivity = function (location) {
       return;
     };
     this.killAllEntities = function () {
