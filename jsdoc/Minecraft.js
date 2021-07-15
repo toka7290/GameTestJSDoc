@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
  * @author toka7290
- * @since v1.17.20.20
- * @version v1.17.20.20
+ * @since v1.17.20.22
+ * @version v1.17.20.22
  * @name Minecraft
  * @memberof MinecraftGameTest
  * @license MIT
@@ -276,7 +276,7 @@ export const BlockProperties = {
   ageBit: "age_bit",
 };
 
-export class BlockTypes {
+export class MinecraftBlockTypes {
   /**
    * @return {BlockType[]}
    */
@@ -3485,7 +3485,7 @@ class Effect {
  * @typedef {{getName:function():String}} EffectType
  */
 
-export class Effects {
+export class MinecraftEffectTypes {
   /**@type {EffectType} */
   static empty;
   /**@type {EffectType} */
@@ -3780,13 +3780,13 @@ export class World {
      */
     tick,
     /**
-     * @type {ChangeWeatherEventSignal}
+     * @type {WeatherChangeEventSignal}
      */
-    changeWeather,
+    weatherChange,
     /**
-     * @type {AddEffectEventSignal}
+     * @type {EffectAddEventSignal}
      */
-    addEffect,
+    effectAdd,
     /**
      * @type {BeforeChatEventSignal}
      */
@@ -3796,9 +3796,9 @@ export class World {
      */
     chat,
     /**
-     * @type {EntityEventSignal}
+     * @type {EntityCreateEventSignal}
      */
-    createEntity,
+    entityCreate,
     /**
      * @type {BeforeExplosionEventSignal}
      */
@@ -3808,24 +3808,24 @@ export class World {
      */
     explosion,
     /**
-     * @type {ExplodeBlockSignal}
+     * @type {BlockExplodeEventSignal}
      */
-    explodeBlock,
+    blockExplode,
     /**
-     * @type {ActivatePistonEventSignal}
+     * @type {PistonActivateEventSignal}
      */
-    activatePiston,
+    pistonActivate,
     /**
-     * @type {BeforeActivatePistonEventSignal}
+     * @type {BeforePistonActivateEventSignal}
      */
-    beforeActivatePiston,
+    beforePistonActivate,
   };
 }
 
 class TickEventSignal {
   /**
    *
-   * @param {function():void} callback
+   * @param {function(TickEvent):void} callback
    * @returns {function}
    */
   subscribe(callback) {
@@ -3840,10 +3840,17 @@ class TickEventSignal {
     return;
   }
 }
-class ChangeWeatherEventSignal {
+class TickEvent {
+  /**
+   * @type {Number}
+   */
+  currentTick;
+}
+
+class WeatherChangeEventSignal {
   /**
    *
-   * @param {function(WeatherChangedEvent):void} callback
+   * @param {function(WeatherChangeEvent):void} callback
    * @returns {function}
    */
   subscribe(callback) {
@@ -3851,14 +3858,14 @@ class ChangeWeatherEventSignal {
   }
   /**
    *
-   * @param {ChangeWeatherEventSignal} event
+   * @param {WeatherChangeEventSignal} event
    * @returns
    */
   unsubscribe(event) {
     return;
   }
 }
-class WeatherChangedEvent {
+class WeatherChangeEvent {
   /**
    * @type {String}
    */
@@ -3873,10 +3880,10 @@ class WeatherChangedEvent {
   lightning;
 }
 
-class AddEffectEventSignal {
+class EffectAddEventSignal {
   /**
    *
-   * @param {function(ActorAddEffectEvent):void} callback
+   * @param {function(EffectAddEvent):void} callback
    * @returns
    */
   subscribe(callback) {
@@ -3884,14 +3891,14 @@ class AddEffectEventSignal {
   }
   /**
    *
-   * @param {AddEffectEventSignal} event
+   * @param {EffectAddEventSignal} event
    * @returns {function}
    */
   unsubscribe(event) {
     return;
   }
 }
-class ActorAddEffectEvent {
+class EffectAddEvent {
   /**
    * @type {Entity}
    */
@@ -3917,7 +3924,7 @@ class BeforeChatEventSignal {
   }
   /**
    *
-   * @param {ActorAddEffectEvent} event
+   * @param {EffectAddEvent} event
    * @returns
    */
   unsubscribe(event) {
@@ -3973,10 +3980,10 @@ class ChatEvent {
   cancel = Boolean();
 }
 
-class EntityEventSignal {
+class EntityCreateEventSignal {
   /**
    *
-   * @param {function(EntityEvent):void} callback
+   * @param {function(EntityCreateEvent):void} callback
    * @returns {function}
    */
   subscribe(callback) {
@@ -3984,14 +3991,14 @@ class EntityEventSignal {
   }
   /**
    *
-   * @param {EntityEventSignal} event
+   * @param {EntityCreateEventSignal} event
    * @returns
    */
   unsubscribe(event) {
     return;
   }
 }
-class EntityEvent {
+class EntityCreateEvent {
   /**
    * @type {Entity}
    */
@@ -4067,9 +4074,9 @@ class ExplosionEvent {
   source;
 }
 
-class ExplodeBlockSignal {
+class BlockExplodeEventSignal {
   /**
-   * @param {function(ExplodeBlockEvent):void} callback
+   * @param {function(BlockExplodeEvent):void} callback
    * @returns {function}
    */
   subscribe(callback) {
@@ -4077,14 +4084,14 @@ class ExplodeBlockSignal {
   }
   /**
    *
-   * @param {ExplodeBlockSignal} event
+   * @param {BlockExplodeEventSignal} event
    * @returns
    */
   unsubscribe(event) {
     return;
   }
 }
-class ExplodeBlockEvent {
+class BlockExplodeEvent {
   /**
    * @param {Entity}
    */
@@ -4095,7 +4102,7 @@ class ExplodeBlockEvent {
   destroyedBlock;
 }
 
-class ActivatePistonEventSignal {
+class PistonActivateEventSignal {
   /**
    *
    * @param {function(ActivatePistonEvent):void} callback
@@ -4106,23 +4113,23 @@ class ActivatePistonEventSignal {
   }
   /**
    *
-   * @param {ActivatePistonEventSignal} event
+   * @param {PistonActivateEventSignal} event
    * @returns
    */
   unsubscribe(event) {
     return;
   }
 }
-class ActivatePistonEvent {
+class PistonActivateEvent {
   piston = new BlockPistonComponent();
   isExpanding = Boolean();
   cancel = Boolean();
 }
 
-class BeforeActivatePistonEventSignal {
+class BeforePistonActivateEventSignal {
   /**
    *
-   * @param {function(BeforeActivatePistonEvent):void} callback
+   * @param {function(BeforePistonActivateEvent):void} callback
    * @returns {function}
    */
   subscribe(callback) {
@@ -4130,14 +4137,14 @@ class BeforeActivatePistonEventSignal {
   }
   /**
    *
-   * @param {BeforeActivatePistonEventSignal} event
+   * @param {BeforePistonActivateEventSignal} event
    * @returns
    */
   unsubscribe(event) {
     return;
   }
 }
-class BeforeActivatePistonEvent {
+class BeforePistonActivateEvent {
   piston = new BlockPistonComponent();
   isExpanding = Boolean();
 }
@@ -4182,7 +4189,7 @@ class BlockPistonComponent {
  * @typedef {{getName:function():String}} ItemType
  */
 
-export class Items {
+export class MinecraftItemTypes {
   /**
    * @type {ItemType}
    */
