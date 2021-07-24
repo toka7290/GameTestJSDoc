@@ -1,13 +1,13 @@
 /**
- * @file Minecraft (Bedrock) GameTest Framework GameTest module JSDoc
+ * @file Minecraft (Bedrock) GameTest Framework mojang-gametest module JSDoc
  * @author toka7290
- * @since v1.17.20.22
- * @version v1.17.20.22
- * @name GameTest
+ * @since v1.17.20.23
+ * @version v1.17.20.23
+ * @name mojang-gametest
  * @memberof MinecraftGameTest
  * @license MIT
  */
-import * as Minecraft from "./Minecraft";
+import * as Minecraft from "./mojang-minecraft";
 
 /**
  *
@@ -113,30 +113,21 @@ class Helper {
   constructor() {
     /**
      *
-     * @param {String} blockStateName
-     * @param {String} stateValue
-     * @param {Minecraft.BlockLocation} position
+     * @param {Minecraft.BlockLocation} blockLocation
+     * @param {(Block) => boolean} callback
      * @return {any}
      */
-    this.assertBlockState = function (blockStateName, stateValue, position) {
-      return;
-    };
-    /**
-     * @function
-     * @param {Minecraft.BlockType} block
-     * @param {Minecraft.BlockLocation} position
-     * @return {any}
-     */
-    this.assertBlockTypeNotPresent = function (block, position) {
+    this.assertBlockState = function (blockLocation, callback) {
       return;
     };
     /**
      *
-     * @param {Minecraft.BlockType} block
-     * @param {Minecraft.BlockLocation} position
+     * @param {Minecraft.BlockType} blockType
+     * @param {Minecraft.BlockLocation} blockLocation
+     * @param {Boolean} isPresent
      * @return {any}
      */
-    this.assertBlockTypePresent = function (block, position) {
+    this.assertBlockPresent = function (blockType, blockLocation, isPresent) {
       return;
     };
     /**
@@ -178,7 +169,7 @@ class Helper {
      * @param {String} entityIdentifier
      * @param {function(Entity):void} callback
      */
-    this.assertEntityData = function (position, entityIdentifier, callback) {
+    this.assertEntityState = function (position, entityIdentifier, callback) {
       return;
     };
     /**
@@ -217,48 +208,28 @@ class Helper {
     };
     /**
      *
-     * @param {String} entityIdentifier
-     * @param {Minecraft.BlockLocation} position
+     * @param {String} entityTypeIdentifier
+     * @param {Minecraft.BlockLocation} blockLocation
+     * @param {Boolean} isPresent
      */
-    this.assertEntityNotPresent = function (entityIdentifier, position) {
+    this.assertEntityPresent = function (entityTypeIdentifier, blockLocation, isPresent) {
       return;
     };
     /**
      *
-     * @param {String} entityIdentifier
+     * @param {String} entityTypeIdentifier
+     * @param {Boolean} isPresent
      */
-    this.assertEntityNotPresentInArea = function (entityIdentifier) {
+    this.assertEntityPresentInArea = function (entityTypeIdentifier, isPresent) {
       return;
     };
     /**
      *
-     * @param {String} entityIdentifier
-     * @param {Location} position
+     * @param {String} entityTypeIdentifier
+     * @param {Location} location
+     * @param {Boolean} isTouching
      */
-    this.assertEntityNotTouching = function (entityIdentifier, position) {
-      return;
-    };
-    /**
-     *
-     * @param {String} entityIdentifier
-     * @param {Minecraft.BlockLocation} position
-     */
-    this.assertEntityPresent = function (entityIdentifier, position) {
-      return;
-    };
-    /**
-     *
-     * @param {String} entityIdentifier
-     */
-    this.assertEntityPresentInArea = function (entityIdentifier) {
-      return;
-    };
-    /**
-     *
-     * @param {String} entityIdentifier
-     * @param {Location} position
-     */
-    this.assertEntityTouching = function (entityIdentifier, position) {
+    this.assertEntityTouching = function (entityTypeIdentifier, location, isTouching) {
       return;
     };
     /**
@@ -560,18 +531,11 @@ class Helper {
     };
     /**
      *
-     * @param {String} entityIdentifier
-     * @param {Minecraft.BlockLocation} position
+     * @param {String} entityTypeIdentifier
+     * @param {Minecraft.Location} location
+     * @param {Boolean} isPresent
      */
-    this.succeedWhenEntityNotPresent = function (entityIdentifier, position) {
-      return;
-    };
-    /**
-     *
-     * @param {String} entityIdentifier
-     * @param {Minecraft.BlockLocation} position
-     */
-    this.succeedWhenEntityPresent = function (entityIdentifier, position) {
+    this.succeedWhenEntityPresent = function (entityTypeIdentifier, location, isPresent) {
       return;
     };
 

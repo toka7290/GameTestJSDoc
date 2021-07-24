@@ -1,9 +1,9 @@
 /**
- * @file Minecraft (Bedrock) GameTest Framework Minecraft module JSDoc
+ * @file Minecraft (Bedrock) GameTest Framework mojang-minecraft module JSDoc
  * @author toka7290
- * @since v1.17.20.22
- * @version v1.17.20.22
- * @name Minecraft
+ * @since v1.17.20.23
+ * @version v1.17.20.23
+ * @name mojang-minecraft
  * @memberof MinecraftGameTest
  * @license MIT
  */
