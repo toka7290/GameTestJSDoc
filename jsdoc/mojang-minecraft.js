@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework mojang-minecraft module JSDoc
  * @author toka7290
- * @since v1.17.20.23
- * @version v1.17.20.23
+ * @since v1.17.30.23
+ * @version v1.17.30.23
  * @name mojang-minecraft
  * @memberof MinecraftGameTest
  * @license MIT
@@ -275,6 +275,15 @@ export const BlockProperties = {
   age: "age",
   ageBit: "age_bit",
 };
+
+export class Color {
+  constructor(red, green, blue, alpha) {
+    this.red = red;
+    this.green = green;
+    this.blue = blue;
+    this.alpha = alpha;
+  }
+}
 
 export class MinecraftBlockTypes {
   /**

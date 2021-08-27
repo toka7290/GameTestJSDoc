@@ -1,8 +1,8 @@
 /**
  * @file Minecraft (Bedrock) GameTest Framework mojang-gametest module JSDoc
  * @author toka7290
- * @since v1.17.20.23
- * @version v1.17.20.23
+ * @since v1.17.30.23
+ * @version v1.17.30.23
  * @name mojang-gametest
  * @memberof MinecraftGameTest
  * @license MIT
@@ -30,6 +30,18 @@ export var Tags = {
   suiteDisabled: "suite:disabled",
   suiteAll: "suite:all",
   suiteDebug: "suite:debug",
+};
+
+/**
+ * @return {Object}
+ * @readonly
+ * @enum {Number}
+ */
+export var FluidType = {
+  water: 0,
+  lava: 1,
+  powderSnow: 2,
+  potion: 3,
 };
 
 class RegistrationBuilder {
@@ -252,20 +264,12 @@ class Helper {
     };
     /**
      *
-     * @param {ItemType} itemType
-     * @param {Minecraft.BlockLocation} position
-     * @param {Number} searchDistance
-     */
-    this.assertItemEntityNotPresent = function (itemType, position, searchDistance) {
-      return;
-    };
-    /**
-     *
      * @param {ItemType} item
      * @param {Minecraft.BlockLocation} position
      * @param {Number} searchDistance
+     * @param {Boolean} isPresent
      */
-    this.assertItemEntityPresent = function (item, position, searchDistance) {
+    this.assertItemEntityPresent = function (item, position, searchDistance, isPresent) {
       return;
     };
     /**
@@ -403,6 +407,15 @@ class Helper {
      * @param {Minecraft.BlockLocation} position
      */
     this.setBlockType = function (block, position) {
+      return;
+    };
+    /**
+     *
+     * @param {Minecraft.BlockLocation} position
+     * @param {Number} fluidType
+     * @returns
+     */
+    this.setFluidContainer = function (position, fluidType) {
       return;
     };
     /**
