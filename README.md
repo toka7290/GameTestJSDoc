@@ -1,4 +1,4 @@
-# GameTest JSDoc(Stop updating)
+# GameTest JSDoc
 
 Intellisense the Minecraft (Bedrock) GameTest Framework.
 
